@@ -1,0 +1,93 @@
+<apex:page Controller="P2P_ExportStatementFilter" showHeader="false" renderAs="pdf" standardStylesheets="false">
+<apex:form >
+    <html>
+        <head>
+            <apex:stylesheet value="{!URLFOR($Resource.P2P_ExportPDF,'style/pdf.css')}"/>           
+        </head>
+        <body>
+            <div class="wrap">
+                <div class="title">{!acc.Name} invoice report</div>
+                <div class="header">
+                    <div class="subtitle">Grand Total</div>
+                    <div class="row">
+                        <div class="label">Invoice Amount(exc VAT):</div>
+                        <div class="data"><apex:outputField value="{!totalInv.Invoice_Amount_exc_VAT__c}" /></div>
+                    </div>
+                    <div class="row">
+                        <div class="label">Invoice Amount(inc VAT):</div>
+                        <div class="data"><apex:outputField value="{!totalInv.Invoice_Amount__c}" /></div>
+                    </div>
+                    <div class="row">
+                        <div class="label">Amount Paid:</div>
+                        <div class="data"><apex:outputField value="{!totalInv.Amount_Paid__c}" /></div>
+                    </div>
+                    <div class="row">
+                        <div class="label">Amount Due:</div>
+                        <div class="data"><apex:outputField value="{!totalInv.Invoice_Amount_Extra__c}" /></div>
+                    </div>
+                    <div class="row">
+                        <div class="label">Invoice Found:</div>
+                        <div class="data">{!getInvCount} records</div>
+                    </div>
+                </div>
+                
+                <div class="content">
+                    <div class="bar">
+                        Invoices Detail                 
+                    </div>
+                    
+                    <table>
+                        <tr>
+                            <th>Invoice Number</th>
+                            <th>Amount exc</th>
+                            <th>Amount inc</th>
+                            <th>Amount Paid</th>
+                            <th>Amount Due</th>
+                            <th>Invoice Date</th>
+                            <th>Account Number</th>
+                            <th>Invoice Period</th>
+                            <th>Payment Date</th>
+                            <th>Payment Status</th>                     
+                        </tr>
+                        <apex:repeat value="{!lstInvoices}" var="item">
+                            <tr>
+                                <td>
+                                    <apex:outputText value="{!item.name}"/>
+                                </td>
+                                <td>
+                                    <apex:outputField value="{!item.Invoice_Amount_exc_VAT__c}"/>
+                                </td>
+                                <td>
+                                    <apex:outputField value="{!item.Invoice_Amount__c}"/>
+                                </td>
+                                <td>
+                                    <apex:outputField value="{!item.Amount_Paid__c}"/>
+                                </td>
+                                <td>
+                                    <apex:outputField value="{!item.Amount_Due__c}"/>
+                                </td>
+                                <td>
+                                    <apex:outputField value="{!item.Invoice_Date__c}"/>
+                                </td>
+                                <td>
+                                    <apex:outputText value="{!item.Account_Number__c}"/>
+                                </td>
+                                <td>
+                                    <apex:outputField value="{!item.Period_From__c}"/><span> - </span>
+                                    <apex:outputField value="{!item.Period_Until__c}"/>                         
+                                </td>
+                                <td>
+                                    <apex:outputField value="{!item.Payment_Date__c}"/>
+                                </td>
+                                <td>
+                                    <apex:outputField value="{!item.Payment_Status__c}"/>
+                                </td>
+                            </tr>
+                        </apex:repeat>
+                    </table>
+                </div>
+            </div>      
+        </body>
+    </html>
+</apex:form>
+</apex:page>

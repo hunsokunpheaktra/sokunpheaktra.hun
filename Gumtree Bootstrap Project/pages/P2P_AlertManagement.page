@@ -1,0 +1,93 @@
+<apex:page controller="P2P_AlertManagementController" showHeader="true" tabstyle="PRO_Alert_Management__tab" title="PRO Alert Management" cache="false" sidebar="false">
+   <style>
+
+   </style>
+
+ <div class="bPageTitle">
+        <div class="ptBody secondaryPalette">
+            <div class="content">
+            <apex:image id="theImage" value="{!URLFOR($Resource.P2P_Icons, 'gumtree-icons/signal-icon.png')}" styleClass="pageTitleIcon"/>
+            <apex:outputPanel >
+            <h2 class="pageType"><apex:outputText value="PRO console"/></h2>
+            <h1 class="pageDescription"><apex:outputText value="Alert Management"/></h1>
+            </apex:outputPanel>
+            </div>
+        </div> 
+    </div>
+<apex:form >   
+    <apex:pageBlock title="Filters" id="search">
+       <apex:pageBlockSection collapsible="false">
+          <apex:pageblockSectionItem >
+          <apex:outputLabel value="Account type:" for="ps"/>
+          <apex:selectList value="{!pstatus}" size="1" id="pstatus" style="width:100px">
+            <apex:selectOptions value="{!pstatuses}" />
+            <apex:actionSupport event="onchange" rerender="std,ftd3,ftd7,ftd14,ftdu7,ftds7,debug" status="status"/>
+          </apex:selectList>
+          </apex:pageBlockSectionItem>
+          <apex:pageblockSectionItem >
+          <apex:outputLabel value="Account status:" for="ps"/>
+          <apex:selectList value="{!accstatus}" size="1" id="astatus" style="width:100px">
+            <apex:selectOptions value="{!accstatuses}" />
+            <apex:actionSupport event="onchange" rerender="std,ftd3,ftd7,ftd14,ftdu7,ftds7,debug" status="status"/>
+          </apex:selectList>
+          </apex:pageBlockSectionItem>
+         <apex:pageBlockSectionItem >
+         <apex:outputLabel value="Module:" for="site"/>
+          <apex:selectList value="{!site}" size="1" id="site" style="width:100px">
+            <apex:selectOptions value="{!sites}"/>
+            <apex:actionSupport event="onchange" rerender="std,ftd3,ftd7,ftd14,ftdu7,ftds7" status="status"/>
+          </apex:selectList>
+          </apex:pageBlockSectionItem>
+        
+       </apex:pageBlockSection>
+
+    </apex:pageBlock>
+    <apex:pageBlock title="Create new alert">
+        <apex:pageBlockSection >
+            <apex:inputField value="{!m.Message_Type__c}" id="type" styleClass="form-control" html-placeholder="Type"/>    
+            <apex:inputField value="{!m.Status__c}" id="status" styleClass="form-control" html-placeholder="Status"/>    
+            <apex:inputField value="{!m.Module__c}" id="module" styleClass="form-control" html-placeholder="Module"/>    
+            <apex:inputField value="{!m.Message_Start_DateTime__c}" id="start" styleClass="form-control" html-placeholder="Message Start"/>      
+            <apex:inputField value="{!m.MessageText__c}" id="text" styleClass="form-control" html-placeholder="Message Text"/>  
+            <apex:inputField value="{!m.Message_End_DateTime__c}" id="end" styleClass="form-control" html-placeholder="Message End"/>                
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    
+   <apex:pageBlock >
+    <apex:pageBlockSection id="alertTable" columns="1" 
+        title="Active alerts across all modules">
+        <apex:PageBlockTable value="{!messages}" var="m" id="m" columns="12" width="100%">
+          <apex:column >
+                        <apex:facet name="header">
+                            <apex:inputCheckbox onclick="checkAll(this)" />
+                        </apex:facet>
+          </apex:column>
+          <apex:column value="{!m.Name}" width="" headerValue="Alert No."/>
+          <apex:column value="{!m.Message_Type__c}" width="" headerValue="Type"/>
+          <apex:column value="{!m.Module__c}" width="" headerValue="Module"/>
+          <apex:column value="{!m.Account__r.Account_Type_Parent__c}" width="" headerValue="Account type"/>
+          <apex:column value="{!m.Account__c}" width="" headerValue="Account"/>
+          <apex:column value="{!m.Message_Start_DateTime__c}" width="" headerValue="Start"/>
+          <apex:column value="{!m.Message_End_DateTime__c}" width="" headerValue="End"/>
+          <apex:column value="{!m.Status__c}" width="" headerValue="Status"/>
+          <apex:column value="{!m.MessageText__c}" width="" headerValue="Message Text"/>
+        </apex:PageBlockTable>
+      </apex:pageBlockSection>
+    </apex:pageBlock>
+          
+      <div style="position: relative;">
+          <apex:actionstatus id="status">
+            <apex:facet name="start">
+              <div class="waitingSearchDiv" id="el_loading" style="background-color: #fbfbfb;
+                               height: 100%;opacity:0.65;width:100%;"> 
+                <div class="waitingHolder" style="top: 74.2px; width: 91px;">
+                  <img class="waitingImage" src="/img/loading.gif" title="Please Wait..." />
+                  <span class="waitingDescription">Loading...</span>
+                </div>
+              </div>
+            </apex:facet>
+          </apex:actionstatus>
+
+</div>
+</apex:form>
+</apex:page>

@@ -1,0 +1,21 @@
+<apex:component controller="P2P_VoteIdea" allowDML="true">
+    
+    <apex:attribute name="dto" type="P2P_DtoIdea" description="Idea" assignTo="{!dtoIdea}" required="true"/>
+    
+    <apex:panelGrid id="grid" columns="5">
+        <apex:commandLink action="{!thumbsUp}" rendered="{!AND(dto.isVoteUp==false, dto.isVoteDown==false)}" styleClass="default_vote" rerender="grid"/>
+        <apex:commandLink rendered="{!dto.isVoteUp}" styleClass="default_vote vote_voted" style="pointer-events: none;cursor: default;"/>
+        <apex:commandLink rendered="{!dto.isVoteDown}" styleClass="default_vote vote_unvote" style="pointer-events: none;cursor: default;"/>
+        <apex:outputLabel >&nbsp;&nbsp;</apex:outputLabel>
+        
+        <apex:panelGrid columns="1" style="text-align: center">
+            <apex:outputText value="{!FLOOR(dto.voteTotal)}" styleClass="{!IF(dto.voteTotal>0,'number_of_vote votePositive', IF(dto.voteTotal<0,'number_of_vote voteNegative','number_of_vote'))}" style="margin-top:5px;"/>
+            <apex:outputLabel >votes</apex:outputLabel>
+        </apex:panelGrid>
+        
+        <apex:outputLabel >&nbsp;&nbsp;</apex:outputLabel>
+        <apex:commandLink action="{!thumbsDown}" rendered="{!AND(dto.isVoteDown==false, dto.isVoteUp==false)}" styleClass="default_unvote" rerender="grid"/>
+        <apex:commandLink rendered="{!dto.isVoteDown}" styleClass="default_unvote unvote_voted" style="pointer-events: none;cursor: default;"/>
+        <apex:commandLink rendered="{!dto.isVoteUp}" styleClass="default_unvote unvote_unvote" style="pointer-events: none;cursor: default;"/>
+    </apex:panelGrid>
+</apex:component>

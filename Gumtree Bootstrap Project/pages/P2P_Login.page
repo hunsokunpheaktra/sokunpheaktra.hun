@@ -1,0 +1,71 @@
+<apex:page docType="html-5.0" controller="P2P_CustomLoginController" showHeader="false" sidebar="false" standardStylesheets="false">
+
+<style>
+
+    .btn{
+         border-radius: 3px;
+         border: none;
+         box-shadow: 0 3px 2px -1px #666666;
+         color: #fff !important;
+         cursor: pointer;
+         float: right;
+         font-size: 16px;
+         line-height: 16px;
+         margin-top: 10px;
+         padding: 5px 10px;
+         text-align: center;
+         width: 100%;
+         background-color: #f4731e;
+         height: 25px;
+         padding-left: 28px;
+      }
+                    
+      .btnAddStandardAd{
+         box-shadow: 0 2px 2px -1px #666666;
+         padding-left: 0;
+         padding-right: 0;
+      }
+      
+</style>
+
+    <apex:stylesheet value="{!URLFOR($Resource.P2P_Bootstrap, 'dist/css/bootstrap.min.css')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.P2P_Bootstrap, 'dist/js/bootstrap.min.js')}"/>
+
+    <div>    
+
+<img src="/servlet/servlet.FileDownload?file=01511000000Fwbr"/>
+
+    <apex:form styleClass="form-horizontal">
+      <fieldset>
+        <div id="legend">
+          <legend class="">Please Login</legend>
+        </div>
+        <div>
+
+          <!-- Username -->
+          <apex:outputLabel value="Email address" styleClass="col-lg-2 control-label" for="username"/>
+          <div>
+              <apex:inputText value="{!username}" id="username" styleClass="form-control" />
+          </div>
+        </div>
+   
+        <div>
+          <!-- Password-->
+          <apex:outputLabel value="Gumtree Password" styleClass="col-lg-2 control-label" for="password"/>
+          <div>
+            <apex:inputSecret id="password" value="{!password}" styleClass="form-control" />
+          </div>
+        </div>
+ 
+        <div>
+          <!-- Button -->
+          <div></div>
+          <div>
+            <apex:commandButton action="{!login}" styleClass="btn btnAddStandardAd" value="Continue"/>
+          </div>
+        </div>
+      </fieldset>
+    </apex:form>
+    </div>
+
+</apex:page>

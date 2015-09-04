@@ -1,0 +1,738 @@
+<!--
+
+GTCRM-1232 - PRO manage ads force.com console
+- Splash marketing screen on customer first login
+- Highlight benefits of console
+- Include how to use guides
+- Link to page from support section post first login
+
+-->
+
+<apex:page showHeader="false" sidebar="false" standardController="Account" extensions="P2P_IntroController" standardStylesheets="false" id="thePage" docType="html-5.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    
+    <link rel="stylesheet" href="{!URLFOR($Resource.P2P_Popup, 'venobox/venobox.css')}" type="text/css" media="screen" />
+    <script type="text/javascript" src="{!URLFOR($Resource.P2P_Popup, 'venobox/venobox.js')}"></script>
+    
+    <apex:stylesheet value="{!URLFOR($Resource.P2P_Resources, 'css/bootstrap.min.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.P2P_Resources, 'css/custom_bootrap.css')}" />
+    <script src="{!URLFOR($Resource.P2P_Resources, 'js/bootstrap.min.js')}"></script>
+    <script src="{!URLFOR($Resource.P2P_ResMyCheckout, 'jquery.popupoverlay.js')}"></script>
+    
+    <style>
+                    .wrapConfirm .checkbox-checked{
+                        float: left;
+                    }
+                    .wrapConfirm{
+                        float: left;
+                        margin-top: 15px;
+                        padding-left: 10px;
+                        width: 100%;    
+                    }
+                    .termCondition{
+                        float: left;
+                        margin-top: 5px;
+                        padding-left: 10px;
+                    }
+                    .paddingBefore1024{
+                        padding-left: 26px;
+                    }
+                    .wrapMeByBlock{
+                        background-color: #fff;
+                        float: left;
+                        padding: 15px;
+                        width: 100%;
+                    }
+                  
+                    .wrapChartSignal{
+                        border-bottom: 1px solid #cdcdcd;
+                        float: left;
+                        width: 100%;
+                    }
+                    .miniTitle{
+                        font-size: 20px;
+                        float: left;
+                    }
+                    
+                    .clearPadding{
+                        padding-left: 0;
+                        padding-right: 0;
+                    }
+                    .clearpaddingright{
+                        padding-right: 0;
+                    }
+                    .clearpaddingleft{
+                        padding-left: 0;
+                    }
+                    
+                    .inputFullWidth{
+                        width: 100%;
+                    }
+                   
+                    .hideAllSize{
+                        display: none;
+                    }
+                    
+                    .clearMe{
+                        float: left;
+                        width: 100%;
+                        clear: both;
+                    }
+                    
+                    .paddingTop{
+                        padding-top: 15px;
+                    }
+                    
+                    .paddingLeft{
+                        padding-left: 15px;
+                    }
+                    .paddingRight{
+                        padding-right: 15px;
+                    }
+                    
+                    .btn{
+                        border-radius: 3px;
+                        border: none;
+                        box-shadow: 0 3px 2px -1px #666666;
+                        color: #fff !important;
+                        cursor: pointer;
+                        float: right;
+                        font-size: 16px;
+                        line-height: 16px;
+                        margin-top: 10px;
+                        padding: 5px 10px;
+                        text-align: center;
+                        width: 100%;
+                        background-color: #f4731e;
+                        height: 25px;
+                        padding-left: 28px;
+                    }
+                    .iColorGreen{
+                        color: green;
+                    }
+                    
+                    .iColorBlue{
+                        color: #2A5DB0;
+                    }
+                    .iColorGrey{
+                        color: #939598;
+                    }
+                    .iBold{
+                        font-family: "SourceSansPro Bold";
+                    }
+                    .iRadius{
+                        -webkit-border-radius: 5px;    
+                        border-radius: 5px; 
+                        -moz-border-radius:5px;
+                        -khtml-border-radius:5px;
+                    }
+                    
+                    .iRadiusMini{
+                        -webkit-border-radius: 3px;    
+                        border-radius: 3px; 
+                        -moz-border-radius:3px;
+                        -khtml-border-radius:3px;
+                    }
+                    .spacingTop{
+                        margin-top: 15px;
+                    }
+                    .colSearch{
+                        float: left;
+                        width: 25%;
+                        padding-left: 15px;
+                        position: relative;
+                        min-height: 65px;
+                    }
+                    .paddingForButton{
+                        padding-right: 50px;
+                    }
+                    .lockBreakLine{
+                        white-space: nowrap;
+                    }
+                    .wrapCheckProduct{
+                        float: left;
+                        padding-left: 43px;
+                        position: relative;
+                        width: 25%;
+                    }
+                    .wrapDescriptionProduct{
+                        float: left;
+                        padding-left: 15px;
+                        width: 50%;
+                    }
+                    .wrapActionAdd{
+                        float: right;
+                        padding-left: 15px;
+                        text-align: right;
+                        width: 25%;
+                    }
+                    .lblAdd{
+                        display: inline-block;
+                        line-height: 12px;
+                        margin-right: 5px;
+                        position: relative;
+                        width: 92px;
+                    }
+                    .labelCheckProduct{
+                        float: left;
+                        position: relative;
+                        width: 100%;
+                    }
+                    .checkImagePosition{
+                        left: 15px;
+                        position: absolute;
+                        top: 2px;
+                    }
+                    .subProductCol1{
+                        float: left;
+                        width: 20%;
+                        padding-left: 15px;
+                    }
+                    .subProductCol2{
+                        float: left;
+                        width: 80%;
+                    }
+                    .rowSubProduct{
+                        float: left;
+                        width: 100%;
+                    }
+                    .subProductList{
+                        float: left;
+                        width: 100%;
+                        position: relative;
+                    }
+                    .labelDetail{
+                        float: none;
+                        margin-left: 5px;
+                        position: relative;
+                        top: -1px;
+                    }
+                    .colEachSubProItem{
+                        float: left;
+                        padding-left: 15px;
+                        width: 16.66%;
+                        height: 65px;
+                    }
+                    .subProItemValue{
+                        line-height: 12px;
+                    }
+                    .priceSize{
+                        font-size: 25px;
+                    }
+                    .popular{
+                        bottom: -24px;
+                        display: none;
+                        position: absolute;
+                        right: -22px;
+                    }
+                    
+                    .isPopular .popular{
+                        display: block;
+                    }
+                    .seperateProductItem{
+                        padding-left: 15px;
+                    }
+                    .seperateProductItem hr{
+                        border: 1px solid #cdcdcd;
+                    }
+                    .lineSeperateBlock{
+                        border: 1px solid #cdcdcd;
+                        margin-bottom: 10px;
+                        margin-top: 5px;
+                    }
+                    .wrapBlockTotal{
+                        background-color: #999999;
+                    }
+                    .btnContinue{
+                        padding-left: 0;
+                        padding-right: 0;
+                        margin-top: 0;
+                    }
+                    .alert {
+                        background-color: #f0f0f0;
+                        border: 1px solid transparent;
+                        border-radius: 4px;
+                        float: left;
+                        margin-bottom: 0;
+                        margin-top: 15px;
+                        padding: 15px;
+                        width: 100%;
+                    }
+                    .fontSize{
+                        font-size: 20px;
+                    }
+                    .removePaddingRight{
+                        padding-right: 0;
+                    }
+                    .wrapPopupLeft{
+                        float: left;
+                        padding-right: 15px;
+                        width: 30%;
+                    }
+                    .wrapPopupRight{
+                        float: right;
+                        width: 70%;
+                    }
+                    .wrapButtonAction{
+                        float: left;
+                        padding-right: 15px;
+                        width: 40%;
+                    }
+                    .btnAddStandardAd{
+                        box-shadow: 0 2px 2px -1px #666666;
+                        padding-left: 0;
+                        padding-right: 0;
+                    }
+                    .btnNoThanks{
+                        background-color: #ddd;
+                        box-shadow: 0 2px 2px -1px #666666;
+                        color: #333 !important;
+                        padding-left: 0;
+                        padding-right: 0;
+                    }
+                    .colAction1{
+                        float: left;
+                        margin-right: 2%;
+                        width: 48%;
+                    }
+                    .colAction2{
+                        float: left;
+                        margin-left: 2%;
+                        width: 48%;
+                    }
+                    #my_popup{
+                        background-color: #fff;
+                        max-width: 1150px;
+                        padding: 15px 15px 40px;
+                        width: 95%;
+                        display: none;
+                        position: relative;
+                        border: 2px solid #cdcdcd;
+                        border-radius: 5px;
+                    }
+                    
+                    .titlePopup{
+                        border-bottom: 1px solid #cdcdcd;
+                        font-size: 18px;
+                        margin-bottom: 10px;
+                        padding-bottom: 10px;
+                    }
+                    .wrapDeviceType{
+                        background-color: #ddd;
+                        border-radius: 5px;
+                        float: left;
+                        height: 60px;
+                        margin: 0;
+                        padding: 0;
+                        width: 100%;
+                    }
+                    .company{
+                        background: url("{!URLFOR($Resource.P2P_Intro, 'Company.png')}") no-repeat scroll center center transparent;
+                    }
+                    .financials{
+                        background: url("{!URLFOR($Resource.P2P_Intro, 'Financials.png')}") no-repeat scroll center center transparent;
+                    }
+                    .metrics{
+                        background: url("{!URLFOR($Resource.P2P_Intro, 'Metrics.png')}") no-repeat scroll center center transparent;
+                    }
+                    .store{
+                        background: url("{!URLFOR($Resource.P2P_Intro, 'Store.png')}") no-repeat scroll center center transparent;
+                    }
+                    .support{
+                        background: url("{!URLFOR($Resource.P2P_Intro, 'Support.png')}") no-repeat scroll center center transparent;
+                    }
+                    
+                    .wrapDeviceType li{
+                        float: left;
+                        height: 60px;
+                        list-style: none;
+                        width: 20%;
+                        position: relative;
+                        text-align: center;
+                    }
+                    .wrapDeviceType li:first-child{
+                        border-radius: 5px 0 0 5px;
+                    }
+                    
+                    .wrapDeviceType li:last-child{
+                        border-radius: 0 5px 5px 0;
+                    }
+                    .deviceType{
+                        bottom: -65px;
+                        position: relative;
+                    }
+                    .wrapDeviceType li:HOVER{
+                        cursor: pointer;
+                    }
+                    .company.active{
+                        background: url("{!URLFOR($Resource.P2P_Intro, 'Company-active.png')}") no-repeat scroll center center #ffffff;
+                    }
+                    .financials.active{
+                        background: url("{!URLFOR($Resource.P2P_Intro, 'Financials-active.png')}") no-repeat scroll center center #ffffff;
+                    }
+                    .metrics.active{
+                        background: url("{!URLFOR($Resource.P2P_Intro, 'Metrics-active.png')}") no-repeat scroll center center #ffffff;
+                    }
+                    .store.active{
+                        background: url("{!URLFOR($Resource.P2P_Intro, 'Store-active.png')}") no-repeat scroll center center #ffffff;
+                    }
+                    .support.active{
+                        background: url("{!URLFOR($Resource.P2P_Intro, 'Support-active.png')}") no-repeat scroll center center #ffffff;
+                    }
+                    .popupLeft{
+                        margin: 0;
+                        padding: 0;
+                    }
+                    .popupLeft li{
+                        background: url("{!URLFOR($Resource.P2P_ResMyCheckout, 'tick_icon.png')}") no-repeat scroll 8px center / auto 18px #ddd;
+                        list-style: none;
+                        padding: 10px 10px 10px 40px;
+                        line-height: 16px;
+                    }
+                    .popupLeft li:nth-child(2n){
+                        background-color: #fff;
+                    }
+                    .close_popup{
+                        cursor: pointer;
+                        position: absolute;
+                        right: -10px;
+                        top: -10px;
+                    }
+                    @media (max-width: 1024px){
+                        
+                        .hideUnder1024{
+                            display: none;
+                        }
+                        .showUnder1024{
+                            display: inline-block;
+                        }
+                        .paddingBefore1024{
+                            padding-left: 0;
+                        }
+                        .colEachSubProItem{
+                            width: 33.33%;
+                        }
+                        .subProductCol1{
+                            width: 25%;
+                        }
+                        .subProductCol2{
+                            width: 75%;
+                        }
+                    }
+                    @media (max-width: 1023px){
+                        
+                    }
+                   
+                    @media (max-width: 768px){
+                        .hideUnder768{
+                            display: none;
+                        }
+                        .showUnder768{
+                            display: block;
+                        }
+                        .colSearch{
+                            width: 50%;
+                        }
+                        .lblAdd{
+                            display: none;
+                        }
+                        .wrapCheckProduct{
+                            width: 30%;
+                        }
+                        .wrapActionAdd{
+                            width: 15%
+                        }
+                        .wrapDescriptionProduct{
+                            width: 55%;
+                        }
+                    }
+                    @media (max-width: 767px){
+                        
+                        .hideUnder767{
+                            display: none;
+                        }
+                        .showUnder767{
+                            display: block;
+                        }
+                        .subProductCol1{
+                            width: 100%;
+                        }
+                        .subProductCol2{
+                            width: 100%;
+                        }
+                        .colEachSubProItem{
+                            width: 50%;
+                        }
+                        .removePaddingLeft{
+                            padding-left: 0;
+                        }
+                        .wrapButtonAction{
+                            width: 100%;
+                            padding-left: 0;
+                            padding-right: 0;
+                            margin-top: 40px;
+                        }
+                        .wrapPopupLeft{
+                            width: 100%;
+                            padding-right: 0;
+                        }
+                        .wrapPopupRight{
+                            width: 100%;
+                            margin-top: 15px;
+                        }
+                    }
+                    @media (max-width: 550px){
+                        .wrapCheckProduct{
+                            width: 80%;
+                        }
+                        .wrapActionAdd{
+                            width: 20%
+                        }
+                        .wrapDescriptionProduct{
+                            width: 100%;
+                        }
+                    }
+                    @media (max-width: 480px){
+                        
+                        .hideUnder480{
+                            display: none;
+                        }
+                        .showUnder480{
+                            display: block;
+                        }
+                        
+                    }
+                    @media (max-width: 379px){
+                        .colEachSubProItem{
+                            width: 100%;
+                        }
+                        .hideUnder379{
+                            display: none;
+                        }
+                        .showUnder379{
+                            display: block;
+                        }
+                        .colSearch{
+                            width: 100%;
+                        }
+                        .fullWidth379{
+                            width: 100%;
+                        }
+                        .btnContinue{
+                            margin-top: 5px;
+                        }
+                        
+                    }
+                    .container{
+                        min-width: 320px;
+                    }
+                    .iMiniMarginBottom{
+                        margin-bottom: 5px;
+                    }
+                    
+                    .error{
+                        border-color:red !important;
+                    }
+                    .errorMsg{
+                        display:none;
+                    }
+                    <!--11-Dec-2014 to move text under Finalcial Update to icon -->
+                    .remove-padding-right {
+                        padding-right: 0;
+                        text-align: right;
+                    }
+                 @media (max-width: 767px){
+                    .padding-zero {
+                        padding-left:0;
+                    }
+                    .remove-padding-right {
+                        padding-right: 0;
+                        text-align: left;
+                    }
+                 }   
+                 <!-- 2015-01-02 - Feedback tab integrated with Clicktools by Steve Paul -->
+
+                    .feedback {     
+                      height: 104px; 
+                      width: 104px; 
+                      position: fixed; 
+                      top: 200px; 
+                      left: 97.75%;
+                      z-index: 999;
+                      transform: rotate(-90deg);
+                      -webkit-transform: rotate(-90deg); 
+                      -moz-transform: rotate(-90deg); 
+                      -o-transform: rotate(-90deg); 
+                      -ms-transform: rotate(-90deg);
+                      filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+                    }
+
+                    .feedback a { 
+                      display: block; 
+                      background: #009BDF; <!-- Orange button - background: #f4731e; -->
+                      height: 33px; 
+                      width: 95px; 
+                      padding: 4px 8px;
+                      color: #fff; 
+                      font-family: Arial, sans-serif; 
+                      font-size: 17px; 
+                      font-weight: bold; 
+                      text-decoration: none; 
+                      border-radius: 3px;
+                      border-bottom: 2px solid #009BDF !important;
+                      box-shadow: none;                   
+                    }
+    
+                    .feedback a:hover { 
+                      background: #fc7b26; 
+                      border-bottom: 2px solid #df531b !important;
+                   }                    
+                    
+                </style>
+  <body>                       
+     
+    <!-- 2015-01-02 - Feedback tab integrated with Clicktools by Steve Paul -->
+    <div class="feedback" id="feedback">
+       <!--- hard code Q1 for testing - replace with {!acc.Id} --->
+       <a href="http://supportsurvey.gumtree.com/go?iv=18xfknvyio31q&q1=&q2=&q3=Splash&q4=Web">Feedback</a>
+    </div>
+    <apex:outputPanel styleClass="popupHeaderInfo">
+        <apex:image value="{!URLFOR($Resource.P2P_Icons, 'gumtree-icons/popup-arrow.png')}" /><br/>
+        <apex:outputLabel value="Show info" />
+    </apex:outputPanel> 
+     
+    <div class="container wrapContentBg">
+      <!--- Header --->
+         <div class="row">
+            <div class="col-md-12">
+                <!-- 11-Dec-2014 add 'padding-right: 10px;' to rigth aligne, remove padding rigth -->
+                <div class="accountTitle" style="float: left; width: 100%; padding-right: 10px;">
+                    <div class="col-md-5 col-xs-12 col-sm-5" style="padding-left: 0;">
+                        <img class="imageSignal" src="{!URLFOR($Resource.P2P_Icons, 'gumtree-icons/signal-icon.png')}"/>
+                        <h1 style="color: #009BDF;">Welcome to Gumtree for Business...</h1>
+                    </div>
+                    <div class="col-md-7 col-xs-12 col-sm-7 padding-zero remove-padding-right">
+                            <span style="margin-top: 3px; font-size: 15px; display: block; line-height: 18px;">  
+                           <apex:outputText value="" escape="false" /> 
+                         </span>
+
+                    </div>
+                 </div>
+
+            </div>
+     
+          </div>
+        <br/>
+            <div class="row">     
+                  <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div id="theImage"></div>
+                        <ul class="wrapDeviceType">
+                            <li class="company active" data-index="0">
+                                <span class="deviceType"></span>
+                            </li>
+                            <li class="financials" data-index="1">
+                                <span class="deviceType"></span>
+                            </li>
+                            <li class="metrics" data-index="2">
+                                <span class="deviceType"></span>
+                            </li>
+                            <li class="store" data-index="4">
+                                <span class="deviceType"></span>
+                            </li>
+                            <li class="support" data-index="5">
+                                <span class="deviceType"></span>
+                            </li>
+                        </ul>
+                  </div>
+             </div>
+            <br/>
+              <div class="row">   
+                 <!-- <div class="col-md-4 col-xs-12 col-sm-6"> -->
+                 <div class="col-md-12 col-sm-12 col-xs-12">                
+                    <div class="wrapPopupLeft">
+                        <ul class="popupLeft">
+                            <li id="msg1"><apex:outputText value="Your personalized account overview"/></li>
+                            <li id="msg2"><apex:outputText value="Keep your account information up to date"/></li>
+                            <li id="msg3"><apex:outputText value="Contact your Gumtree account manager"/></li>
+                            <li id="msg4"><apex:outputText value="View and manage your employees"/></li>
+                            <li id="msg5"><apex:outputText value="Update your company ad image"/></li>
+                        </ul>
+                        <br/>
+                        
+                        <div class="colAction1">
+                            <!--- add validation message - are you sure you would like to cancel? - you may not see this section again  --->
+                            <button class="btn btnAddStandardAd">Get started</button>
+                        </div>
+
+                        <div class="colAction2">
+                            <button class="btn btnAddStandardAd">How to guide</button>
+                        </div>
+                        <br/>
+
+                        <br/>                       
+                        <div class="wrapConfirm">
+                            <apex:form id="theForm">
+                                <apex:actionFunction name="changeFeedSetUp" action="{!SplashUpdate}" rerender="theForm"/>
+                                  <input type="image" src="{!URLFOR($Resource.P2P_Resources, 'gumtree-icons/checkbox-32x32.png')}" class="checkbox-checked"/>
+
+                                <!-- <apex:image style="float: left;" url="{!URLFOR($Resource.P2P_Resources, IF(acc.Marketing_Splash__c == true, 'gumtree-icons/checkbox.png', 'gumtree-icons/uncheckbox.png'))}" onclick="changeFeedSetUp()"/> -->
+                            </apex:form>          
+                            <span class="termCondition">Do not show this message again</span>
+                        
+                        </div>
+
+                        <br/>
+                        <br/>
+
+<!---
+                         <br/>
+                         <br/>
+                            <img width="31.5%" align="center" src="{!URLFOR($Resource.P2P_Intro, 'Company-screenshot.png')}"/>
+                            <img width="31.5%" align="center" src="{!URLFOR($Resource.P2P_Intro, 'Company-screenshot.png')}"/>
+                            <img width="31.5%" align="center" src="{!URLFOR($Resource.P2P_Intro, 'Company-screenshot.png')}"/>
+---->                       
+                    </div>
+                    <div class="wrapPopupRight">
+                        <ul class="popupright">
+                            <img width="730px" src="{!URLFOR($Resource.P2P_Intro, 'Company-screenshot.png')}"/>
+                        </ul>
+                    </div>
+                </div>
+
+              </div>
+                    
+                    <script>
+                    
+                        $(document).ready(function() {
+                            $('.readMore').off('click')
+                            .on('click',function(){
+                                //$('#my_popup').popup({
+                                 // scrolllock: true // optional
+                                //});
+                                //$('#my_popup').popup('show',{scrolllock: true});
+                                showPopup($(this).attr('data-value'));
+                            });
+                            
+                            var img = '{!images}'; 
+                            var arrImg = img.split(",");
+                            $("#theImage").html(arrImg[0]);
+                                                        
+                            $('.wrapDeviceType li').off('click')
+                            .on('click',function(){
+                                var that = this;
+                                var device = $(that).attr('data-index');
+                                $('.wrapDeviceType li').each(function(){
+                                    $(this).removeClass('active');
+                                });
+                                $(that).addClass('active');
+                                $("#theImage").html(arrImg[device]);
+                            });
+                        });
+                    </script>
+       
+       </div>
+        
+ </body>
+</apex:page>

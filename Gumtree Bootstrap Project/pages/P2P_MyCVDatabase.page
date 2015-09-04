@@ -1,0 +1,524 @@
+<apex:page standardController="Account" extensions="P2P_MyCVDatabase" standardStylesheets="false" showHeader="false" sidebar="false" >
+    <html>
+          <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+                <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+                <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    
+                <link rel="stylesheet" href="{!URLFOR($Resource.P2P_Popup, 'venobox/venobox.css')}" type="text/css" media="screen" />
+                <script type="text/javascript" src="{!URLFOR($Resource.P2P_Popup, 'venobox/venobox.js')}"></script>
+    
+                <apex:stylesheet value="{!URLFOR($Resource.P2P_Resources, 'css/bootstrap.min.css')}" />
+                <apex:stylesheet value="{!URLFOR($Resource.P2P_Resources, 'css/custom_bootrap.css')}" />
+                <script src="{!URLFOR($Resource.P2P_Resources, 'js/bootstrap.min.js')}"></script>
+                
+                <style>
+        .tRow{
+            line-height: 30px;
+        }
+        .totalSelectedAmountDue{
+            font-weight: 600;
+        }
+        .HeightLightBlockCol2 label, .HeightLightBlockCol1 label{
+            font-weight: 600;
+        }
+        .nextButton {
+            float: left;
+        }
+        .invListSizeChange{float: left;}
+        .pc_col img, .pcTitleItem img{
+            margin-right: 5px;
+        }
+        .exportStatement{
+            background-color: #ddd;
+            border-radius: 3px;
+            box-shadow: 0 2px 2px -1px #666666;
+            color: #333;
+            cursor: pointer;
+            float: right;
+            margin-bottom: 3px;
+            margin-left: 15px;
+            margin-top: 4px;
+            padding: 4px 10px;
+            height: 28px;
+            text-decoration: none !important;
+        }
+        .Current{
+            color: #F7941E;
+            font-weight: 600; 
+        }
+        .Overdue{
+            color: #EF4136;
+            font-weight: 600;
+        }
+        .Paid{
+            color: #7BB74B;
+        }
+        .sCurrent{
+            background-color: #F7941E;
+            border-radius: 3px;
+            color: #fff;
+            padding: 2px 5px;
+            text-transform: uppercase;
+            /* 16-12-14 */
+            float: left;
+            text-align: center;
+            line-height: 18px;
+            width: 100%;
+        }
+        .sOverdue{
+            background-color: #EF4136;
+            border-radius: 3px;
+            color: #fff;
+            padding: 2px 5px;
+            text-transform: uppercase;
+            /*11/12/2014*/
+            text-align:center;
+            float:left;
+            line-height: 18px;
+            width: 100%;
+        }
+        .sPaid{
+            background-color: #7BB74B;
+            border-radius: 3px;
+            color: #fff;
+            padding: 2px 5px;
+            text-transform: uppercase;
+            white-space: nowrap;
+            text-align:center;
+            float:left;
+            line-height: 18px;
+            width: 100%;
+        }
+        .sWritten{
+            background-color: black;
+            border-radius: 3px;
+            color: #fff;
+            padding: 2px 5px;
+            text-transform: uppercase;
+            white-space: nowrap;
+            text-align:center;
+            float:left;
+            line-height: 18px;
+            width: 100%;
+        }
+        .vbox-title{
+            font-size: 30px !important;
+            font-weight: 600;
+        }
+        .textCheckAll{
+            background: none repeat scroll 0 0 transparent;
+            border: medium none;
+            color: #2a5db0;
+        }
+        .btnCheckAll{
+            display: none;
+        }
+        .disableMe{
+              pointer-events: none;
+              cursor: default;
+        }
+        .wrapDescription{
+            text-align: right;
+        }
+        .totalSelectedAmountDue{
+            float: none;
+        }
+        .wrapDescription .titleSpan{
+            float: left;
+        }
+        .filterBy select {
+            text-indent: inherit;
+        }
+        .prevNextLinks{
+            display: inline-block;
+            padding-right: 65px;
+            position: relative;
+            text-align: right;
+        }
+        .prevNextLeft{
+            float: left;
+            margin-top: 9px;
+        }
+        .prevNext{
+            position: absolute;
+            right: -15px;
+            top: 5px;
+            width: 58px;
+        }
+        .pageNum {
+            background-color: white;
+            border: 2px solid #dcdcdc;
+            border-radius: 3px;
+            color: #2a5db0;
+            float: left;
+            margin-left: 4px;
+            padding: 3px 8px;
+            margin-top: 5px;
+        }
+        .wrapFilter{
+            width: 100%;
+        }
+        .activePageNum {
+            background-color: #cccccc;
+            border: 2px solid #dcdcdc;
+            border-radius: 3px;
+            color: black;
+            float: left;
+            margin-left: 4px;
+            padding: 3px 8px;
+            margin-top: 5px;
+        }
+        .prevNextLinks {
+            float: left;
+            padding-right: 45px;
+            position: relative;
+            text-align: right;
+            width: 100%;
+        }
+        <!--11-Dec-2014 to move text under Finalcial Update to icon -->
+        .remove-padding-right {
+            padding-right: 0;
+            text-align: right;
+        }
+         @media (max-width: 767px){
+            .padding-zero {
+                padding-left:0;
+            }
+            .remove-padding-right {
+                padding-right: 0;
+                text-align: left;
+            }
+         }
+        @media (max-width: 608px){
+            .wrapFilter table:first-child{
+                width: 100% !important;
+                margin: 0 !important;
+            }
+            .hideFilter{display: none;}
+            .wrapFilterAction span span:last-child span select{
+                width: 100%;
+            }
+            .exportStatement{
+                width: 50%;
+                margin-left: 3%;
+            }
+            .wrapFilterAction{
+                width: 100%;
+            }
+            .wrapFilterAction span span:last-child span{
+                width: 47%; 
+            }
+            .wrapFilter table:first-child td:last-child{
+                text-align: right;
+            }
+            .wrapFilterAction {
+                margin: 6px auto;
+            }
+        }
+        @media (max-width: 480px){
+        
+            .exportStatement{
+                float: right;
+                width: 50%;
+                margin-left: 2%;
+                min-width: 130px;
+            }
+            .wrapFilterAction span span:last-child span{
+                width: 48%;
+            }
+            .wrapDescription {
+                text-align: left;
+            }
+            .wrapDescription img{
+                margin-top: 10px;
+            }
+            .totalSelectedAmountDue{
+                position: relative;
+                top: -5px;
+            }
+            .wrapDescription .titleSpan {
+                width: 80%;
+            }
+        }
+        
+        @media (max-width: 479px){
+            .exportStatement{
+                float: right;
+                width: 48%;
+                /*margin-left: 10px;*/
+                min-width: 105px;
+                white-space: nowrap;
+                margin-left: 0;
+            }
+            .wrapFilterAction{
+                padding: 0;
+                width: 100%;
+            }
+            .textCheckAll{
+                display: none;
+            }
+            .btnCheckAll{
+                display: block;
+            }
+            .imageInfoCheckAll{
+                display: none;
+            }
+            .wCol2{
+                width: 43%;
+            }
+            .filteby-to-left {
+                float: left !important;
+            }
+        }
+        .tAmountDue{
+            background-color: #f4731e;
+            border-radius: 3px;
+            border-bottom: 2px solid #df531b !important;
+            box-shadow: none;
+            color: #fff !important;
+            float: right;
+            padding: 5px 10px;
+            text-decoration: none !important;
+        }
+        
+        /* 16-12-14 to set line-height of paragraph to 18px */
+        .wrap3HeightLightBlock {
+            line-height: 18px;
+        }
+
+
+      
+    </style>
+   
+    <script>
+        function getScreenCordinates(obj) {
+            var p = {};
+            p.x = obj.offsetLeft;
+            p.y = obj.offsetTop;
+            while (obj.offsetParent) {
+                p.x = p.x + obj.offsetParent.offsetLeft;
+                p.y = p.y + obj.offsetParent.offsetTop;
+                if (obj == document.getElementsByTagName("body")[0]) {
+                    break;
+                }
+                else {
+                    obj = obj.offsetParent;
+                }
+            }
+            return p;
+        }
+        
+        function headerMouseOver(ele, title){
+            $(".popupHeaderInfo label").html(title);
+            var pos = getScreenCordinates(ele);
+            pos.x -= 20;
+            pos.y += 35;
+            
+            var posX = pos.x + $(".popupHeaderInfo").width();
+            if(posX > $(window).width()){
+                var distance = posX - $(window).width() + 5;
+                pos.x -= distance;
+                $(".popupHeaderInfo img").css("margin-left",distance+15+"px"); 
+            }else{
+                $(".popupHeaderInfo img").css("margin-left","15px");
+            }
+            
+            $(".popupHeaderInfo").css({"margin-left":pos.x+"px","margin-top":pos.y+"px"});
+            $(".popupHeaderInfo").show();
+        }
+        
+        function headerMouseOut(ele){
+            $(".popupHeaderInfo").hide();
+        }
+        
+    </script>
+                
+   </head>
+
+       
+    <body>
+
+    <div class="feedback hidden-sm hidden-xs" id="feedback">
+          <!--- hard code Q1 for testing - replace with {!acc.Id} --->
+          <a href="http://supportsurvey.gumtree.com/go?iv=18xfknvyio31q&q1={!acc.id}&q2=&q3=CV Database&q4=Web">Feedback</a>
+    </div>
+
+    <apex:outputPanel styleClass="popupHeaderInfo">
+        <apex:image value="{!URLFOR($Resource.P2P_Icons, 'gumtree-icons/popup-arrow.png')}" /><br/>
+        <apex:outputLabel value="Test Show info" />
+    </apex:outputPanel>
+    
+    <div class="container wrapContentBg">
+      <apex:outputPanel id="msgSysPanel" rendered="{!msgErr.size!=0}">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- 11-Dec-2014 add 'padding-right: 10px;' to rigth aligne, remove padding rigth -->
+                <div class="accountTitle" style="float: left; width: 100%; padding-right: 10px;">
+                    <div class="col-md-5 col-xs-12 col-sm-5" style="padding-left: 0;">
+                        <img class="imageSignal" src="{!URLFOR($Resource.P2P_Icons, 'gumtree-icons/signal-icon.png')}"/> <h1 style="color: #009BDF;">CV Update</h1>
+                    </div>
+                    <div class="col-md-7 col-xs-12 col-sm-7 padding-zero remove-padding-right">
+                       <apex:repeat value="{!msgErr}" var="msg">
+                         <span style="margin-top: 3px; font-size: 15px; display: block; line-height: 18px;">  
+                           <apex:outputText value="{!msg.MessageText__c}" escape="false" /> 
+                         </span>
+                       </apex:repeat>                     
+                    </div>
+                 </div>
+
+            </div>
+     
+          </div>
+           </apex:outputPanel>        
+
+        <!-- <apex:outputPanel id="sumpanel" rendered="{!olicv.size>0}"> -->
+        <apex:outputPanel id="sumpanel">                                                                                                              
+           <div class="row">    
+            <div class="col-md-4 col-xs-12 col-sm-6">
+                <div class="wrap3HeightLightBlock height1">
+                    <h2>Profile Summary</h2>
+                    <div class="HeightLightBlockCol1">    
+                        <Label>New (last 7 days)</Label>
+                        <span style="font-size: 25px; font-family: 'SourceSansPro Light';">
+                            <apex:outputText value="3,000"/>
+                        </span>
+                        
+                    <div class="spacing10px"></div>
+                    </div> 
+                    
+                    <div class="HeightLightBlockCol2"> 
+                        <Label>Total active</Label>
+                        <span style="font-size: 25px; font-family: 'SourceSansPro Light';">
+                            <apex:outputText value="250,000"/>
+                        </span>
+                    </div>
+                 </div>
+            </div>
+            
+            <div class="col-md-4 col-xs-12 col-sm-6">
+                <div class="wrap3HeightLightBlock height1">
+                    <h2>Credit Usage</h2>
+                    <div class="HeightLightBlockCol1">    
+                        <Label>Total</Label>
+                        <span style="font-size: 25px; font-family: 'SourceSansPro Light';">
+                            <apex:outputText value="1,000"/>
+                        </span>
+                        
+                    <div class="spacing10px"></div>
+                    </div> 
+                    
+                    <div class="HeightLightBlockCol2"> 
+                        <Label>Remaining</Label>
+                        <span style="font-size: 25px; font-family: 'SourceSansPro Light';">
+                            <apex:outputText value="250"/>
+                        </span>
+                    </div>
+                 </div>
+            </div>
+             
+            <div class="col-md-4 col-xs-12 col-sm-6">
+                <div class="wrap3HeightLightBlock height1">
+                    <h2>Current Subscription</h2>
+                    <div class="HeightLightBlockCol1">    
+                        <Label>Expiry</Label>
+                        <span style="font-size: 25px; font-family: 'SourceSansPro Light';">
+                            <apex:outputText value="02/02/2015"/>
+                        </span>
+                        
+                    <div class="spacing10px"></div>
+                    </div> 
+                    
+                    <div class="HeightLightBlockCol2"> 
+                             <a href="/apex/P2P_MyCheckout?scontrolCaching=1&accid={!acc.Id}" class="tAmountDue" style="color:black;">Renew now</a>                            
+                    </div>
+                 </div>
+            </div>
+         </div>
+           
+     </apex:outputPanel>           
+     
+                                          
+
+                  <!--- <apex:outputPanel id="cvpanel" rendered="{!olicv.size!=0}"> --->                                                                                                              
+                  <apex:outputPanel id="cvpanel">                                                                                                              
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="accountTitle" style="float: left; width: 100%;">
+
+                                <div class="col-md-7 col-xs-12 col-sm-7">
+                                   <div class="wrapTitleCompanyProfile">
+                                         <div class="title">
+
+                                                        <!--- IF CV Database access end date >= TODAY() --->
+                                                        <!--- Provide access to SkillDrum via SingleSignOn ---> 
+                                                        
+                                                             <apex:panelGrid columns="12" style="float:left;">
+                                                                   <iframe height="1455px" id="theIframe" name="theIframe" src="https://appvault.com/Gumtree/crm/profilesearch.aspx" width="1080px"></iframe>
+                                                             </apex:panelGrid>
+
+                                                                                                                                                                         
+                                                </div>
+                                           </div>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                 </apex:outputPanel>                     
+                
+<!--- <apex:outputPanel id="mktpanel" rendered="{!olicv.size=0}"> --->
+           <apex:outputPanel id="mktpanel">                                                                                                              
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="accountTitle" style="float: left; width: 100%;">
+
+                                <div class="col-md-7 col-xs-12 col-sm-7">
+                                   <div class="wrapTitleCompanyProfile">
+                                         <div class="title">
+                                                       
+                                                        <!--- IF CV Database access end date < TODAY()---->                                                        
+                                                        <!--- Splash marketing page with a link to store to purchase ----> 
+                                                       
+                                                             <apex:panelGrid columns="" style="float:left;">                                                                  
+                                                                   <img class="imageSignal" src="{!URLFOR($Resource.P2P_SkillDrum)}"/>                                                                 
+                                                                   <br/>
+                                                                   Offered in partnership with Gumtree, SkillDrum is an affordable, easy solution to perform a targeted search and connect with active jobseekers matching your specific hiring requirements.
+                                                                   <br/>
+                                                                   <br/>                                                                  
+                                                                   <a href="/apex/P2P_MyCheckout?scontrolCaching=1&accid={!acc.Id}" class="tAmountDue" style="color:black;">Purchase now</a>
+                                                             </apex:panelGrid>                                                                                                                
+                                                </div>
+                                           </div>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                  </apex:outputPanel>    
+
+               </div>
+
+                <script>
+                  $(function () {
+                    $('#myTab a:first').tab('show')
+                  });
+                  $(function() {
+                       $( "#sortable" ).sortable();
+                       $( "#sortable" ).disableSelection();
+                  });
+                 
+                  $('.inActive').off('click').on('click',function(){
+                      var that = $(this);
+                      var fadeActive = that.attr('class');
+                      if(fadeActive.match(/open/gi)){
+                          that.removeClass('open');
+                      }else{
+                          that.addClass('open');
+                      }
+                  });
+  
+                </script>
+                
+ </body>
+
+ </html>
+</apex:page>
