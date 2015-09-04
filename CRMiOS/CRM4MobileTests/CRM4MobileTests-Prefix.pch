@@ -1,0 +1,8 @@
+//
+// Prefix header for all source files of the 'CRM4MobileTests' target in the 'CRM4MobileTests' project
+//
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif

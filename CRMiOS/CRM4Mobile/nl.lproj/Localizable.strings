@@ -1,0 +1,269 @@
+/* 
+ Localizable.strings
+ CRMiOS
+ 
+ Created by Sy Pauv on 9/8/11.
+ Copyright 2011 Fellow Consulting AG. All rights reserved.
+ */
+"ENABLED" = "Enabled";
+"SYNCHRONIZE" = "Synchroniseren";
+"TEST_BUTTON" = "Test";
+"SEND_SYNC_REPORT" = "Stuur Sync Rapport";
+"SEND_ERR_REPT" = "Foutrapport verzenden";
+"PREFERENCES" = "Voorkeuren";
+"CRM_CREDENTIALS" = "CRM Referenties";
+"ENTITIES" = "entiteiten";
+"OTHER" = "ander";
+"TEST_CONNECTION" = "Verbinding testen";
+"EXPORT_ADDRESS_BOOK" = "Export adresboek";
+"AUTO_SYNC" = "Automatische synchronisatie";
+"DISABLED" = "Invalide";
+"EVERY_HOURS" = "Elke %i uur";
+"EVERY_MINUTES" = "Elke %i minuten";
+"IMPORT_ADDRESS_BOOK" = "Adresboek importeren";
+"IMPORT" = "import";
+"OK" = "Goed";
+"CANCEL" = "Annuleren";
+"START" = "Beginnen";
+"STOP" = "Stop";
+"DELETE_DB_CONFIRM" = "Ben je zeker dat je opnieuw wilt init database?";
+"STOP_SYNC_CONFIRM" = "Ben je zeker dat je wilt synchroniseren stoppen?";
+"DELETE_CONFIRM" = "Ben je zeker dat je wilt verwijderen?";
+"SYNC_SUCCESS" = "Synchronisatie gelukt.";
+"SYNC_FAILED" = "Synchronisatie is mislukt.";
+"SYNC_STOP" = "Synchronisatie gestopt door de gebruiker.";
+"SYNC_ERR" = "Synchronisatiefout";
+"OWNER_FILTER" = "eigenaar Filter";
+"LAST_MOD_FILTER" = "Laatste Wijziging Filter";
+"VERSION" = "versie";
+"ABOUT" = "Over";
+"FIX_ERROR" = "fix fout";
+"DAILY_AGENDA" = "Dagelijkse agenda";
+"ADVANCED" = "Gevorderd";
+"REINIT_DATABASE" = "Reinit databank";
+"FILTERS" = "Filters";
+"OBJECT_FILTER" = "%@ Filter";
+"RELATED_ITEMS" = "Gerelateerde items";
+"EDIT" = "Bewerken";
+"NEW" = "Nieuw";
+"DELETE" = "Verwijderen";
+"DELETE_ITEM" = "Verwijderen %@";
+"DETAIL" = "%@ detail";
+"TODAY_VIEW" = "Vandaag";
+"CUSTOM_LAYOUTS" = "Aangepaste lay-outs";
+"CONNECTION_TEST" = "Verbinding testen";
+"CONNECTION_TEST_SUCCESS" = "Verbinding test geslaagd.";
+
+"EXPORT" = "exporteren";
+"Call" = "noemen";
+"Meeting" = "vergadering";
+
+//Encrypt DB translate
+"ENCRYPT_DB_DESCRIPTION" = "CRM4Mobile maakt gebruik van een gecodeerde database op te slaan op de lokale bestandssysteem, zodat u veilig werken offline. Een gecodeerde database moet worden gemaakt voordat u kunt gebruiken CRM4Mobile. Geef een wachtwoord voor de versleutelde database hieronder.";
+
+"OPEN_ENCRYPTED_DESC" = "Voer hieronder uw CRM4Mobile wachtwoord in.";
+
+"ENTER_PASSWORD" = "Voer uw wachtwoord";
+"RE_ENTER_PWD" = "Opnieuw voer uw wachtwoord in";
+"HEADER_ACCESS_DB" = "Toegang tot gecodeerde databank";
+"BUTTON_VALIDATE_PASSWORD" = "Valideren databank";
+"TITLE_ENCRYPTED_DB" = "Gecodeerde databank";
+"HEADER_CREATE_ENCRYPTED_DB" = "Maak een gecodeerde databank";
+"LABEL_PASSWORD_DIFFERENCE" = "Wachtwoord in en bevestig zijn verschil.";
+"LABEL_INVALID_PASSWORD" = "Het wachtwoord moet 8-32 karakters lang zijn.";
+"WRONG_PWD" = "EncryptedLocalStore mag geen gebruik maken publisher ID's doorgegeven in ADL. Neem contact op met de beheerder.";
+"CONFIRM_PWD" = "Bevestig Wachtwoord";
+"DONT_USE_PASSWORD" = "Gebruik geen wachtwoord";
+"USE_PASSWORD" = "Gebruik Password";
+"PASSWORD" = "Wachtwoord";
+
+//entity translate
+"Account_SINGULAR" = "Rekening";
+"Account_PLURAL" = "Rekeningen";
+"Activity_SINGULAR" = "Activiteit";
+"Contact_SINGULAR" = "Contact";
+"Contact_PLURAL" = "Contacten";
+"Appointment_SINGULAR" = "Afspraak";
+"Appointment_PLURAL" = "Afspraak";
+"Task_SINGULAR" = "Taak";
+"Task_PLURAL" = "Taak";
+"Call_SINGULAR" = "Noemen";
+"Call_PLURAL" = "Noemen";
+"Campaign_SINGULAR" = "Campagne";
+"Campaign_PLURAL" = "Campagne";
+"Opportunity_SINGULAR" = "Kans";
+"Opportunity_PLURAL" = "Kans";
+"ServiceRequest_SINGULAR" = "Service aanvraag";
+"ServiceRequest_PLURAL" = "Service aanvraag";
+"Lead_SINGULAR" = "Leiden";
+"Lead_PLURAL" = "Leiden";
+"Product_SINGULAR" = "Product";
+"Product_PLURAL" = "Product";
+"Asset_SINGULAR" = "Asset";
+"Asset_PLURAL" = "Asset";
+"PriceList_SINGULAR" = "Prijslijst";
+"PriceList_PLURAL" = "Prijslijst";
+"PriceListLineItem_SINGULAR" = "Prijslijst Line Item";
+"PriceListLineItem_PLURAL" = "Prijslijst Line Item";
+"SPRequestLineItem_SINGULAR" = "SPRequest LineItem";
+"SPRequestLineItem_PLURAL" = "SPRequest LineItem";
+"SPRequest_SINGULAR" = "Special Pricing Request";
+"SPRequest_PLURAL" = "Special Pricing Requests";
+"User_SINGULAR" = "Gebruiker";
+"User_PLURAL" = "Gebruikers";
+
+
+// sublists
+"Team_SINGULAR" = "Team";
+"Team_PLURAL" = "Teams";
+"Note_SINGULAR" = "Noot";
+"Note_PLURAL" = "Noots";
+"ProductRevenue_SINGULAR"="De Opbrengst van het product";
+"ProductRevenue_PLURAL"="De Opbrengsten van het product";
+"Partner_SINGULAR" = "Partner";
+"Partner_PLURAL" = "Partners";
+"Attachment_SINGULAR" = "Gehechtheid";
+"Attachment_PLURAL" = "Gehechtheid";
+"Competitor_SINGULAR" = "Concurrent";
+"Competitor_PLURAL" = "Concurrenten";
+"ContactRole_SINGULAR" = "Contact";
+"ContactRole_PLURAL" = "Contacten";
+
+//preference translate
+"URL" = "URL";
+"LOGIN" = "Login";
+"REMOTE_CONFIG_FILE" = "Configuratiebestand op afstand de naam";
+
+//picklist translate
+"NO_VALUE" = "Geen waarde";
+
+//Sync error message
+"ORACLE_DOWN" = "De Oracle-server lijkt te zijn naar beneden. Probeer het opnieuw te synchroniseren in een paar minuten.";
+
+//confirm to syn after change filter
+"CONFIRM_SYNC" = "U moet uitvoeren Synchronisatie om de nieuwe instellingen om te werken.";
+
+//request translate
+"READING_COMPANY" = "Lezen Bedrijfsprofiel";
+"READING_DATA" = "Lezing %@ gegevens"; 
+"READING_PICKLISTS" = "Lezing %@ picklijsten";
+"READING_FIELDS" = "Lezing %@ velden";
+"READING_CURRENCY_PICKLIST" = "Lezing valuta picklijsten";
+"READING_DELETE_ITEM" = "Lezing verwijderde items";
+"READING_CUSTOM_RECORD" = "Lezing op maat record types";
+"READING_SERVER_TIME" = "Lezing server tijd";
+"READING_CURRENT_USER" = "Lezing huidige gebruiker";
+"READING_METADATA_CHANGE" = "Lezing MetaData wijzigen";
+"READING_INDUSTRY_PICKLIST" = "Lezing industrie picklijsten";
+"READING_SALESTAGE" = "Lezing verkoopfase";
+"SENDING_DATA" = "Verzending %@ gegevens";
+"SENDING_DELETION" = "Verzending %@ verwijdering";
+"READING_CASCADING" = "Lezing van trapsgewijze lijsten";
+"READING_FIELD_MGMT" = "Lezen veld configuratie";
+"READING_ASSESSMENTS" = "Lezen evaluatiegegevens";
+
+"SYNC_STARTED" = "synchronisatie gestart";
+"READING_REMOTE_CONFIGURATION" = "lezing configuratie op afstand";
+
+"HEADER_KEY_INFO" = "Belangrijke informatie";
+"HEADER_ADDITIONAL_INFO" =  "aanvullende informatie";
+"HEADER_ADDRESS" =  "adres";
+"HEADER_BILLING_ADDRESS" = "Billing Address";
+"HEADER_SHIPPING_ADDRESS" = "verzendadres";
+"HEADER_TARGETING_INFORMATION"= "targeting Informatie";
+"HEADER_CALL_INFORMATION"= "Bel Informatie";
+"HEADER_FINANCIAL_DETAILS"= "Financial Details";
+
+"ACTION_CLONE" = "Kloon";
+"ACTION_LOG_CALL" = "Bellijst";
+"ACTION_VISIT_REPORT" = "Bezoek Verslag";
+"ACTION_COMPLETE" = "Volledig";
+"ACTION_TAKEPICTURE"="Neem Beeld";
+
+"NO_FILTER" = "Geen Filter";
+"FILTER_FAVORITE" = "Favoriet";
+"FILTER_IMPORTANT" = "Belangrijk";
+"FILTER_TODAY" = "Vandaag";
+"FILTER_NEXT_WEEK" = "Volgende Week";
+"FILTER_NEXT_MONTH" = "Volgende Maand";
+"FILTER_LAST_WEEK" = "Afgelopen Week";
+"FILTER_LAST_MONTH" = "Afgelopen Maand";
+"FILTER_CUSTOMER" = "Klant";
+"FILTER_PROSPECT" = "Prospect";
+"FILTER_PARTNER" = "Partner";
+"FILTER_COMPETITOR" = "Deelnemer";
+
+"MANDATORY_FIELDS" = "De velden %@ zijn verplicht.";
+"MANDATORY_FIELD" = "Het veld %@ is verplicht.";
+"CANNOT_UPDATE" = "Kan niet bijwerken";
+"TIME_UPDATE_ERROR" = "Start tijd moet eerder dan Eindtijd worden.";
+
+"CALENDAR" = "Kalender";
+"TEST_PHARMA" = "Het testen van farma-mogelijkheden";
+
+"START_FULL_SYNC" = "Start volledige synchronisatie";
+
+"FEED_TITLE" = "Stroom";
+"FEED_WRITE_COMMENT" = "Geef commentaar...";
+"FEED_WORKING_ON" = "Waar ben je mee bezig?";
+"FEED_PROBLEM_SERVER" = "Kan geen toegang krijgen voeden server.";
+"FEED_COMMENT_TITLE" = "Commentaar";
+
+"OVERDUE" = "ACHTERSTALLIG";
+"TODAY" = "VANDAAG";
+"THIS WEEK" = "DEZE WEEK";
+"NEXT WEEK" = "VOLGENDE WEEK";
+"FUTURE" = "TOEKOMST";
+
+"APPOINTMENT_EXPORT" = "De Benoeming van de uitvoer aan iCal";
+"APPOINTMENT_IMPORT" = "Importeren van afspraken uit iCal";
+"APPOINTMENTS_EXPORTED" = "%i afspraken geëxporteerd.";
+"APPOINTMENTS_IMPORTED" = "%i afspraken geïmporteerd.";
+
+"CONTACT_SORTING" = "Sorterend Contact";
+"CAMERA_NOT_AVAILABLE" = "De camera is niet beschikbaar voor dit iDevice.";
+
+"TODAY_ACTIVITY" = "De Activiteiten van vandaag";
+"TODAY_CONTACT" = "De Contacten van vandaag";
+"NO_CONTACT" = "Geen partner";
+
+"NO" = "Ja";
+"YES" = "Yes";
+"SALES_MAILING" = "CRM4Mobile kunnen worden aangepast verder om aan de behoeften van uw bedrijf te voldoen. Als u sommige specifieke wijzigingen nodig hebt of als u een idee zou willen voorstellen, vrij voelen om ons te contacteren";
+
+"FEEDBACK_EMAIL" = "Contact per e-mail";
+"VISIT_WEBSITE" = "Bezoek de website";
+"LOCATION_NOT_SET" = "De plaats van de benoeming niet plaatste, kan geen kaart tonen";
+"NO_APPOINTMENT" = "Geen Benoeming";
+"CALENDAR_INFO" = "U kunt benoemingen tot stand brengen door contacten aan een datum in de kalender te slepen.";
+
+"FIRST_NAME" = "Voornaam";
+"LAST_NAME" = "Achternaam";
+
+"EXPORT_PDF" = "De uitvoer PDF";
+"EXPORT_CSV" = "De uitvoer CSV";
+"SWITCH_VIEW" = "Switch View";
+"ATTACH_EMAIL" = "Maak aan E-mail vast";
+"CREATE" = "Creër";
+
+"NO_MORE_SYNC" = "U heeft uw quotum gratis synchronisatie. Vraag een licentie.";
+"REQUEST_LICENSE" = "Aanvraag vergunning";
+"CHECKING_LICENSE" = "Controle licentie";
+
+"EMPTY_LOGIN" = "Stel de login veld in Preferences scherm.";
+"EMPTY_PASSWORD" = "Geef het wachtwoord veld in Preferences scherm.";
+"BAD_URL" = "Corrigeer URL-veld in het scherm Voorkeuren Het shoulds op 9 tekens lang zijn.";
+"BAD_SERVER" = "Kan geen verbinding maken met de server. Controleer de URL in Voorkeuren scherm.";
+
+"LOG_INFO" = "Info";
+"LOG_SUCCESS" = "Succes";
+"LOG_ERROR" = "Fout";
+"LOG_WARNING" = "Waarschuwing";
+
+"DATE_CLEAR" = "Verwijderen";
+"RELATED_SEE_ALL" = "Bekijk alle";
+"ALREADY_ADDED" = "Dit product is toegevoegd.";
+
+// Zurich specific
+"WRONG_NIF" = "De NIF code moet 9 tekens lang zijn en mag alleen cijfers en hoofdletters.";
+"DUPLICATE_NIF" = "Deze NIF is al in gebruik door een andere contactpersoon.";

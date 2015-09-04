@@ -1,0 +1,268 @@
+/* 
+ Localizable.strings
+ CRMiOS
+ 
+ Created by Sy Pauv on 9/8/11.
+ Copyright 2011 Fellow Consulting AG. All rights reserved.
+ */
+"ENABLED" = "Actif";
+"SYNCHRONIZE" = "Synchroniser";
+"TEST_BUTTON" = "Tester";
+"SEND_SYNC_REPORT"= "Rapport de synchronisation";
+"SEND_ERR_REPT" = "Rapport d'erreur";
+"PREFERENCES" = "Préférences";
+"CRM_CREDENTIALS" = "Connexion au CRM";
+"ENTITIES" = "Objets";
+"OTHER" = "Autre";
+"TEST_CONNECTION" = "Tester la Connexion";
+"EXPORT_ADDRESS_BOOK" = "Exporter le carnet d'adresses";
+"AUTO_SYNC" = "Synchronisation automatique";
+"DISABLED" = "Désactivé";
+"EVERY_HOURS" = "Toutes les %i heures";
+"EVERY_MINUTES" = "Toutes les %i minutes";
+"IMPORT_ADDRESS_BOOK" = "Importer le carnet d'adresses";
+"IMPORT" = "Importer";
+"OK" = "Ok";
+"CANCEL" = "Annuler";
+"START" = "Démarrer";
+"STOP" = "Stopper";
+"DELETE_DB_CONFIRM" = "Êtes vous sûr de vouloir réinitialiser les données ?";
+"STOP_SYNC_CONFIRM" ="Êtes vous sûr de vouloir interrompre la synchronisation ?";
+"DELETE_CONFIRM" = "Êtes vous sûr de vouloir supprimer ?";
+"SYNC_SUCCESS" = "Synchronisation terminée.";
+"SYNC_FAILED" = "Echec de la synchronisation.";
+"SYNC_STOP" = "Synchronisation interrompue par l'utilisateur.";
+"SYNC_ERR" = "Erreur de synchronisation";
+"OWNER_FILTER" = "Filtrer par propriétaire";
+"LAST_MOD_FILTER" = "Filter par dernière modification";
+"VERSION" = "Version";
+"ABOUT" = "À propos";
+"FIX_ERROR" = "Réparer";
+"DAILY_AGENDA" = "Agenda";
+"ADVANCED" = "Avancé";
+"REINIT_DATABASE" = "Réinitialiser les données";
+"FILTERS" = "Filtres";
+"OBJECT_FILTER" = "Filtre %@";
+"RELATED_ITEMS" = "Objets associés";
+"EDIT" = "Modifier";
+"NEW" = "Créer";
+"DELETE" = "Supprimer";
+"DELETE_ITEM" = "Suppression %@";
+"DETAIL" = "Détail %@";
+"TODAY_VIEW" = "Aujourd'hui";
+"CUSTOM_LAYOUTS" = "Affichage personnalisé";
+"CONNECTION_TEST" = "Test de Connexion";
+"CONNECTION_TEST_SUCCESS" = "Test de Connexion effectué avec succès.";
+"EXPORT" = "Exporter";
+"Call" = "Appeler";
+"Meeting" = "Réunion";
+
+
+"ENCRYPT_DB_DESCRIPTION" = "CRM4Mobile utilise en local une base de donnée cryptée afin de vous permettre de travailler hors-ligne en toute sécurité. Une base de donnée cryptée doit être créée afin d'utiliser CRM4Mobile. Veuillez spécifier ci-dessous un mot de passe pour le cryptage.";
+"OPEN_ENCRYPTED_DESC" = "Veuillez entrer ci-dessous votre mot de passe pour CRM4Mobile.";
+
+"ENTER_PASSWORD" = "Entrez votre mot de passe";
+"RE_ENTER_PWD" = "Confirmation du mot de passe";
+"HEADER_ACCESS_DB" = "Se connecter";
+"BUTTON_VALIDATE_PASSWORD" = "Valider le mot de passe";
+"TITLE_ENCRYPTED_DB" = "CRM4Mobile";
+"HEADER_CREATE_ENCRYPTED_DB" = "Base de données cryptée";
+"LABEL_PASSWORD_DIFFERENCE" = "Le mot de passe et la confirmation du mot de passe sont différents.";
+"LABEL_INVALID_PASSWORD" = "Le mot de passe doit faire de 8 à 32 caractères.";
+"WRONG_PWD" = "Le mot de passe est incorrect.";
+"CONFIRM_PWD" = "Confirmation";
+"DONT_USE_PASSWORD"="Ne pas utiliser de mot de passe";
+"USE_PASSWORD" = "Utiliser un mot de passe";
+"PASSWORD" = "Mot de passe";
+
+//entity translate
+"Account_SINGULAR" = "Compte";
+"Account_PLURAL" = "Comptes";
+"Activity_SINGULAR" = "Activité";
+"Contact_SINGULAR" = "Contact";
+"Contact_PLURAL" = "Contacts";
+"Appointment_SINGULAR" = "Rendez-vous";
+"Appointment_PLURAL" = "Rendez-vous";
+"Task_SINGULAR" = "Tâche";
+"Task_PLURAL" = "Tâches";
+"Call_SINGULAR" = "Appel";
+"Call_PLURAL" = "Appels";
+"Campaign_SINGULAR" = "Campagne";
+"Campaign_PLURAL" = "Campagnes";
+"Opportunity_SINGULAR" = "Opportunité";
+"Opportunity_PLURAL" = "Opportunités";
+"ServiceRequest_SINGULAR" = "Demande de service";
+"ServiceRequest_PLURAL" = "Demandes de service";
+"Lead_SINGULAR" = "Prospect";
+"Lead_PLURAL" = "Prospects";
+"Product_SINGULAR" = "Produit";
+"Product_PLURAL" = "Produits";
+"Asset_SINGULAR" = "Équipement";
+"Asset_PLURAL" = "Équipements";
+"PriceList_SINGULAR" = "Liste de prix";
+"PriceList_PLURAL" = "Listes de prix";
+"PriceListLineItem_SINGULAR" = "Élément de liste de prix";
+"PriceListLineItem_PLURAL" = "Éléments de liste de prix";
+"SPRequestLineItem_SINGULAR" = "Élément Prix Spécial";
+"SPRequestLineItem_PLURAL" = "Éléments Prix Spécial";
+"SPRequest_SINGULAR" = "Demande de prix spécial";
+"SPRequest_PLURAL" = "Demandes de prix spécial";
+"User_SINGULAR" = "Utilisateur";
+"User_PLURAL" = "Utilisateurs";
+
+// sublists
+"Team_SINGULAR" = "Équipe";
+"Team_PLURAL" = "Équipes";
+"Note_SINGULAR" = "Note";
+"Note_PLURAL" = "Notes";
+"ProductRevenue_SINGULAR"="Revenu de produit";
+"ProductRevenue_PLURAL"="Revenus de produit";
+"Partner_SINGULAR" = "Associé";
+"Partner_PLURAL" = "Associés";
+"Attachment_SINGULAR" = "Connexion";
+"Attachment_PLURAL" = "Connexions";
+"Competitor_SINGULAR" = "Concurrent";
+"Competitor_PLURAL" = "Concurrents";
+"ContactRole_SINGULAR" = "Contact";
+"ContactRole_PLURAL" = "Contacts";
+
+
+//preference translate
+"URL" = "URL";
+"LOGIN" = "Nom utilisateur";
+"REMOTE_CONFIG_FILE" = "Fichier de configuration distant";
+
+//picklist translate
+"NO_VALUE" = "Pas de valeur";
+
+//Sync error message
+"ORACLE_DOWN" = "Le serveur Oracle semble être arrêté. Veuillez réessayer la synchronisation dans quelques minutes.";
+
+//confirm to syn after change filter
+"CONFIRM_SYNC" = "Veuillez effectuer une synchronisation afin que les nouveaux réglages soient effectifs.";
+
+//request translate
+"READING_COMPANY" = "Lecture du profil de la société";
+"READING_DATA" = "Lecture données %@"; 
+"READING_PICKLISTS" = "Lecture listes %@";
+"READING_FIELDS" = "Lecture champs %@";
+"READING_CURRENCY_PICKLIST" = "Lecture liste devises";
+"READING_DELETE_ITEM" = "Lecture des éléments supprimés";
+"READING_CUSTOM_RECORD" = "Lecture des types personnalisés";
+"READING_SERVER_TIME" = "Lecture heure du serveur";
+"READING_CURRENT_USER" = "Lecture infos utilisateur";
+"READING_METADATA_CHANGE" = "Lecture des modifications des métadonnées";
+"READING_INDUSTRY_PICKLIST" = "Lecture de la liste des industries";
+"READING_SALESTAGE" = "Lecture des processus de vente";
+"SENDING_DATA" = "Envoi données %@";
+"SENDING_DELETION" = "Envoi suppressions %@";
+"READING_CASCADING" = "Lecture des listes liées";
+"READING_FIELD_MGMT" = "Lecture configuration champs";
+"READING_ASSESSMENTS" = "Lecture des évaluations";
+
+"SYNC_STARTED" = "Synchronisation démarrée";
+"READING_REMOTE_CONFIGURATION" = "Lecture configuration distante";
+
+"HEADER_KEY_INFO" = "Informations clés";
+"HEADER_ADDITIONAL_INFO" = "Informations complémentaires";
+"HEADER_ADDRESS" = "Adresse";
+"HEADER_BILLING_ADDRESS" = "Adresse de facturation";
+"HEADER_SHIPPING_ADDRESS" = "Adresse d'expédition";
+"HEADER_TARGETING_INFORMATION"= "Ciblage de l'information";
+"HEADER_CALL_INFORMATION"= "Informations sur les appels";
+"HEADER_FINANCIAL_DETAILS"= "Détails financiers";
+
+"ACTION_CLONE" = "Cloner";
+"ACTION_LOG_CALL" = "Appel";
+"ACTION_VISIT_REPORT" = "Visite";
+"ACTION_COMPLETE" = "Complet";
+"ACTION_TAKEPICTURE"="Prenez la photo";
+
+"NO_FILTER" = "Pas de filtre";
+"FILTER_FAVORITE" = "Favoris";
+"FILTER_IMPORTANT" = "Important";
+"FILTER_TODAY" = "Aujourd'hui";
+"FILTER_NEXT_WEEK" = "Semaine Prochaine";
+"FILTER_NEXT_MONTH" = "Mois Prochain";
+"FILTER_LAST_WEEK" = "Semaine Dernière";
+"FILTER_LAST_MONTH" = "Mois Dernier";
+"FILTER_CUSTOMER" = "Client";
+"FILTER_PROSPECT" = "Prospect";
+"FILTER_PARTNER" = "Partenaire";
+"FILTER_COMPETITOR" = "Concurrent";
+
+"MANDATORY_FIELDS" = "Les champs %@ sont obligatoires.";
+"MANDATORY_FIELD" = "Le %@ champ est obligatoire.";
+"CANNOT_UPDATE" = "Mise à jour impossible.";
+"TIME_UPDATE_ERROR" = "L'heure de fin doit être postérieure à l'heure de début.";
+
+"CALENDAR" = "Calendrier";
+"TEST_PHARMA" = "Test option pharma";
+
+"START_FULL_SYNC" = "Démarrer une synchro complète";
+
+"FEED_TITLE" = "Flux";
+"FEED_WRITE_COMMENT" = "Ajouter un commentaire...";
+"FEED_WORKING_ON" = "Sur quoi travaillez vous ?";
+"FEED_PROBLEM_SERVER" = "Impossible d'accéder au serveur de flux.";
+"FEED_COMMENT_TITLE" = "Commentaire";
+
+"OVERDUE" = "EN RETARD";
+"TODAY" = "AUJOURD'HUI";
+"THIS WEEK" = "CETTE SEMAINE";
+"NEXT WEEK" = "LA SEMAINE PROCHAINE";
+"FUTURE" = "FUTUR";
+
+"APPOINTMENT_EXPORT" = "Exporter les rendez-vous vers iCal";
+"APPOINTMENT_IMPORT" = "Importer les rendez-vous depuis iCal";
+"APPOINTMENTS_EXPORTED" = "%i rendez-vous exportés.";
+"APPOINTMENTS_IMPORTED" = "%i rendez-vous importés.";
+
+"CONTACT_SORTING" = "Tri des contacts";
+"CAMERA_NOT_AVAILABLE" = "L'appareil-photo n'est pas disponible.";
+
+"TODAY_ACTIVITY" = "Activités d'aujourd'hui";
+"TODAY_CONTACT" = "Contacts d'aujourd'hui";
+"NO_CONTACT" = "Aucun associé";
+
+"NO" = "Non";
+"YES" = "Oui";
+
+"SALES_MAILING" = "CRM4Mobile peut être personnalisé plus avant afin de correspondre aux besoins de votre entreprise. Si vous souhaitez des adaptations spécifiques ou si vous souhaitez suggérer un idée, n'hésitez pas à nous contacter.";
+
+"FEEDBACK_EMAIL" = "Contacter par email";
+"VISIT_WEBSITE" = "Visiter le site web";
+"LOCATION_NOT_SET" = "Emplacement du rendez-vous non renseigné, impossible d'afficher la carte";
+"NO_APPOINTMENT" = "Aucun rendez-vous";
+"CALENDAR_INFO" = "Vous pouvez créer des rendez-vous en glissant des contacts vers une date dans le calendrier.";
+
+"FIRST_NAME" = "Prénom";
+"LAST_NAME" = "Nom";
+
+"EXPORT_PDF" = "Export vers PDF";
+"EXPORT_CSV" = "Export vers CSV";
+"SWITCH_VIEW" = "Changer la vue";
+"ATTACH_EMAIL" = "Joindre à un email";
+"CREATE" = "Créer";
+
+"NO_MORE_SYNC" = "Vous avez épuisé le nombre de synchronizations. Veuillez demander une license.";
+"REQUEST_LICENSE" = "Obtenir license";
+"CHECKING_LICENSE" = "Vérification license";
+
+"EMPTY_LOGIN" = "Le nom utilisateur est vide. Veuillez renseigner le nom utilisateur dans les Préferences.";
+"EMPTY_PASSWORD" = "Le mot de passe est vide. Veuillez renseigner le mot de passe dans les Préferences.";
+"BAD_URL" = "Veuillez corriger l'URL dans les Préferences. Elle doit faire 9 caractères et être composée uniquement de lettres.";
+"BAD_SERVER" = "Impossible d'accéder au serveur. Veuillez vérifier l'URL dans les Préferences.";
+
+"LOG_INFO" = "Info";
+"LOG_SUCCESS" = "Succès";
+"LOG_ERROR" = "Erreur";
+"LOG_WARNING" = "Avertissement";
+
+"DATE_CLEAR" = "Effacer";
+"RELATED_SEE_ALL" = "Tout voir";
+"ALREADY_ADDED" = "Cet élément est déjà présent";
+
+// Zurich specific
+"WRONG_NIF" = "Le code NIF doit faire 9 caractères et doit être composé de chiffres et de lettres majuscules.";
+"DUPLICATE_NIF" = "Ce NIF est déjà utilisé par un autre contact.";

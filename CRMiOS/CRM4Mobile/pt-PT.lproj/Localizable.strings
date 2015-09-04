@@ -1,0 +1,270 @@
+/* 
+ Localizable.strings
+ CRMiOS
+ 
+ Created by Sy Pauv on 9/8/11.
+ Copyright 2011 Fellow Consulting AG. All rights reserved.
+ */
+"ENABLED" = "Habilitado";
+"SYNCHRONIZE" = "Sincronizar";
+"TEST_BUTTON" = "Test";
+"SEND_SYNC_REPORT"= "Enviar sincronização Relatórios";
+"SEND_ERR_REPT" = "Enviar relatório de erros";
+"PREFERENCES" = "Preferências";
+"CRM_CREDENTIALS" = "Credenciais CRM";
+"ENTITIES" = "Entidades";
+"OTHER" = "Outros";
+"TEST_CONNECTION" = "testar Conexão";
+"EXPORT_ADDRESS_BOOK" = "Exportar catálogo de endereços";
+"AUTO_SYNC" = "Sincronização automática";
+"DISABLED" = "Inválido";
+"EVERY_HOURS" = "A cada %i horas";
+"EVERY_MINUTES" = "A cada %i minutos";
+"IMPORT_ADDRESS_BOOK" = "Address Book Import";
+"IMPORT" = "importação";
+"OK" = "Ok";
+"CANCEL"="Cancelar";
+"START" = "Começar";
+"STOP" = "Parar";
+"DELETE_DB_CONFIRM" = "Você tem certeza que quer reinit banco de dados?";
+"STOP_SYNC_CONFIRM" ="Você tem certeza que quer parar a sincronização?";
+"DELETE_CONFIRM" = "Tem certeza de que deseja excluir?";
+"SYNC_SUCCESS" = "sincronização bem-sucedida.";
+"SYNC_FAILED" = "sincronização falhou.";
+"SYNC_STOP" = "sincronização interrompida pelo usuário.";
+"SYNC_ERR" = "erro de sincronização";
+"OWNER_FILTER" = "Filtro proprietário";
+"LAST_MOD_FILTER" = "Última modificação do filtro";
+"VERSION" = "versão";
+"ABOUT" = "sobre";
+"FIX_ERROR" = "corrigir erro";
+"DAILY_AGENDA" = "Agenda diária";
+"ADVANCED" = "Avançado";
+"REINIT_DATABASE" = "Banco de dados reinit";
+"FILTERS" = "Filtros";
+"OBJECT_FILTER" = "Filtro %@";
+"RELATED_ITEMS" = "Itens relacionados";
+"EDIT" = "Editar";
+"NEW" = "Novo";
+"DELETE" = "Excluir";
+"DELETE" = "Excluir %@";
+"DETAIL" = "%@ detalhe";
+"TODAY_VIEW" = "Hoje";
+"CUSTOM_LAYOUTS" = "Layouts personalizados";
+"CONNECTION_TEST" = "Teste de Conexão";
+"CONNECTION_TEST_SUCCESS" = "Teste de conexão bem sucedida.";
+"EXPORT" = "exportar";
+"Call" = "chamada";
+"Meeting" = "reunião";
+
+//Encrypt DB translate
+"ENCRYPT_DB_DESCRIPTION" = "CRM4Mobile usa uma loja de banco de dados criptografado no sistema de arquivos local para permitir que você trabalhe offline de forma segura. Um banco de dados criptografado tem que ser criado antes de u pode usar CRM4Mobile. Por favor, especifique uma senha para o banco de dados criptografado abaixo.";
+
+"OPEN_ENCRYPTED_DESC" = "Por favor digite sua senha CRM4Mobile abaixo.";
+
+"ENTER_PASSWORD" = "Digite sua senha";
+"RE_ENTER_PWD" = "Re-digite a sua senha";
+"HEADER_ACCESS_DB" = "Acesso banco de dados criptografado";
+"BUTTON_VALIDATE_PASSWORD" = "Validar senha";
+"TITLE_ENCRYPTED_DB" = "Banco de dados criptografado";
+"HEADER_CREATE_ENCRYPTED_DB" = "Criar banco de dados criptografado";
+"LABEL_PASSWORD_DIFFERENCE" = "Senha e confirme se diferença.";
+"LABEL_INVALID_PASSWORD" = "A senha deve ser 8-32 caracteres.";
+"WRONG_PWD" = "EncryptedLocalStore não pode usar IDs publisher aprovada em ADL. Entre em contato com o administrador.";
+"CONFIRM_PWD" = "confirmar senha";
+"DONT_USE_PASSWORD"="Não Use Senha";
+"USE_PASSWORD" = "Use a senha";
+"PASSWORD" = "Senha";
+
+
+//entity translate
+"Account_SINGULAR" = "Conta";
+"Account_PLURAL" = "Conta";
+"Activity_SINGULAR" = "atividade";
+"Contact_SINGULAR" = "Contato";
+"Contact_PLURAL" = "Contato";
+"Appointment_SINGULAR" = "Nomeação";
+"Appointment_PLURAL" = "Nomeação";
+"Task_SINGULAR" = "Tarefa";
+"Task_PLURAL" = "Tarefa";
+"Call_SINGULAR" = "Chamada";
+"Call_PLURAL" = "Chamada";
+"Campaign_SINGULAR" = "Campanha";
+"Campaign_PLURAL" = "Campanha";
+"Opportunity_SINGULAR" = "Oportunidade";
+"Opportunity_PLURAL" = "Oportunidade";
+"ServiceRequest_SINGULAR" = "Solicitação de Serviço";
+"ServiceRequest_PLURAL" = "Solicitação de Serviço";
+"Lead_SINGULAR" = "Conduzir";
+"Lead_PLURAL" = "Conduzir";
+"Product_SINGULAR" = "Produto";
+"Product_PLURAL" = "Produto";
+"Asset_SINGULAR" = "Ativos";
+"Asset_PLURAL" = "Ativos";
+"PriceList_SINGULAR" = "Lista dos Preços";
+"PriceList_PLURAL" = "Lista dos Preços";
+"PriceListLineItem_SINGULAR" = "Preço do item de linha Lista";
+"PriceListLineItem_PLURAL" = "Preço do item de linha Lista";
+"SPRequestLineItem_SINGULAR" = "SPRequest item de linha";
+"SPRequestLineItem_PLURAL" = "SPRequest item de linha";
+"SPRequest_SINGULAR" = "Special Pricing Request";
+"SPRequest_PLURAL" = "Special Pricing Requests";
+"User_SINGULAR" = "Usuário";
+"User_PLURAL" = "Usuários";
+
+
+// sublists
+"Team_SINGULAR" = "Equipe";
+"Team_PLURAL" = "Equipes";
+"Note_SINGULAR" = "Nota";
+"Note_PLURAL" = "Notas";
+"ProductRevenue_SINGULAR"="Rendimento do produto";
+"ProductRevenue_PLURAL"="Rendimentos do produto";
+"Partner_SINGULAR" = "Sócio";
+"Partner_PLURAL" = "Sócios";
+"Attachment_SINGULAR" = "Acessório";
+"Attachment_PLURAL" = "Acessórios";
+"Competitor_SINGULAR" = "Concorrente";
+"Competitor_PLURAL" = "Concorrentes";
+"ContactRole_SINGULAR" = "Contato";
+"ContactRole_PLURAL" = "Contato";
+
+//preference translate
+"URL" = "URL";
+"LOGIN" = "Login";
+"REMOTE_CONFIG_FILE" = "Nome do arquivo de configuração remota";
+
+//picklist translate
+"NO_VALUE" = "Sem Valor";
+
+//Sync error message
+"ORACLE_DOWN" = "O servidor Oracle parece ser baixo. Por favor, tente novamente para sincronizar, em poucos minutos.";
+
+//confirm to syn after change filter
+"CONFIRM_SYNC" = "Você deve executar sincronização para obter as novas configurações para o trabalho.";
+
+//request translate
+"READING_COMPANY" = "Leitura perfil da empresa";
+"READING_DATA" = "Leitura %@ dados"; 
+"READING_PICKLISTS" = "Leitura %@ picklists";
+"READING_FIELDS" = "Leitura %@ campos";
+"READING_CURRENCY_PICKLIST" = "Leitura moeda picklists";
+"READING_DELETE_ITEM" = "Leitura itens excluídos";
+"READING_CUSTOM_RECORD" = "Leitura personalizado tipos de registro";
+"READING_SERVER_TIME" = "Leitura hora do servidor";
+"READING_CURRENT_USER" = "Leitura usuário atual";
+"READING_METADATA_CHANGE" = "Leitura Alterar MetaData";
+"READING_INDUSTRY_PICKLIST" = "Leitura indústria picklists";
+"READING_SALESTAGE" = "Leitura fase de vendas";
+"SENDING_DATA" = "Envio %@ dados";
+"SENDING_DELETION" = "Envio %@ eliminação";
+"READING_CASCADING" = "Leitura listas em cascata";
+"READING_FIELD_MGMT" = "Leitura configuração do campo";
+"READING_ASSESSMENTS" = "Leitura dos dados de avaliação";
+
+"SYNC_STARTED" = "Sincronização iniciados";
+"READING_REMOTE_CONFIGURATION" = "Leitura configuração remota";
+
+"HEADER_KEY_INFO" = "Informação chave";
+"HEADER_ADDITIONAL_INFO" = "Informações Adicionais";
+"HEADER_ADDRESS"= "endereço";
+"HEADER_BILLING_ADDRESS" = "Endereço de faturamento";
+"HEADER_SHIPPING_ADDRESS" = "Endereço para envio";
+"HEADER_TARGETING_INFORMATION"= "Segmentação Informação";
+"HEADER_CALL_INFORMATION"= "Informação chamada";
+"HEADER_FINANCIAL_DETAILS"= "Detalhes financeiros";
+
+"ACTION_CLONE" = "Clone";
+"ACTION_LOG_CALL" = "Registo de chamadas";
+"ACTION_VISIT_REPORT" = "Visite Relatórios";
+"ACTION_COMPLETE" = "Completo";
+"ACTION_TAKEPICTURE"="Tome o retrato";
+
+"NO_FILTER" = "Sem Filtro";
+"FILTER_FAVORITE" = "Preferido";
+"FILTER_IMPORTANT" = "Importante";
+"FILTER_TODAY" = "Hoje";
+"FILTER_NEXT_WEEK" = "Próxima Semana";
+"FILTER_NEXT_MONTH" = "Próximo Mês";
+"FILTER_LAST_WEEK" = "Semana Passada";
+"FILTER_LAST_MONTH" = "Mês Passado";
+"FILTER_CUSTOMER" = "Cliente";
+"FILTER_PROSPECT" = "Prospect";
+"FILTER_PARTNER" = "Parceiro";
+"FILTER_COMPETITOR" = "Concorrente";
+
+"MANDATORY_FIELDS" = "A %@ campos são de preenchimento obrigatório.";
+"MANDATORY_FIELD" = "O %@ campo é obrigatório.";
+"CANNOT_UPDATE" = "Não é possível atualizar";
+"TIME_UPDATE_ERROR" = "Horário de início deve ser anterior ao tempo do fim.";
+
+"CALENDAR" = "Calendário";
+"TEST_PHARMA" = "Capacidades de teste pharma";
+
+"START_FULL_SYNC" = "Iniciar Sincronização total";
+
+"FEED_TITLE" = "Fluxo";
+"FEED_WRITE_COMMENT" = "Escrever um comentário...";
+"FEED_WORKING_ON" = "O que você está trabalhando ?";
+"FEED_PROBLEM_SERVER" = "Não é possível acessar servidor feed.";
+"FEED_COMMENT_TITLE" = "Comentário";
+
+"OVERDUE" = "EXPIRADO";
+"TODAY" = "HOJE";
+"THIS WEEK" = "ESTA SEMANA";
+"NEXT WEEK" = "NA PRÓXIMA SEMANA";
+"FUTURE" = "FUTURO";
+
+"APPOINTMENT_EXPORT" = "Nomeação da exportação a iCal";
+"APPOINTMENT_IMPORT" = "Importar compromissos do iCal";
+"APPOINTMENTS_EXPORTED" = "%i nomeações exportado.";
+"APPOINTMENTS_IMPORTED" = "%i nomeações importados.";
+
+"CONTACT_SORTING" = "Classificando o contato";
+"CAMERA_NOT_AVAILABLE" = "A câmera não está disponível para este iDevice.";
+
+"TODAY_ACTIVITY" = "Atividades de hoje";
+"TODAY_CONTACT" = "Contatos de hoje";
+"NO_CONTACT" = "Nenhum sócio";
+
+"NO" = "Não";
+"YES" = "Sim";
+"SALES_MAILING" = "CRM4Mobile pode ser personalizado mais para encontrar as necessidades da sua companhia. Se você precisa algumas modificações específicas ou se você gostaria de sugerir uma idéia, sinta livre contatar-nos";
+
+"FEEDBACK_EMAIL" = "Contato por email";
+"VISIT_WEBSITE" = "Visite o site";
+"LOCATION_NOT_SET" = "A posição da nomeação não ajustada, não pode indicar o mapa";
+"NO_APPOINTMENT" = "Nenhuma nomeação";
+"CALENDAR_INFO" = "Você pode criar nomeações arrastando contatos a uma data no calendário.";
+
+"FIRST_NAME" = "Nome";
+"LAST_NAME" = "Sobrenome";
+
+"EXPORT_PDF" = "Exportação da PDF";
+"EXPORT_CSV" = "Exportação da CSV";
+"SWITCH_VIEW" = "Comute a vista";
+
+"ATTACH_EMAIL" = "Attach To Email";
+"CREATE" = "Crie";
+
+"NO_MORE_SYNC" = "Você chegou a sincronização quota livre. Por favor, solicitar uma licença.";
+"REQUEST_LICENSE" = "Pedido licença";
+"CHECKING_LICENSE" = "Verificação de licença";
+
+"EMPTY_LOGIN" = "Por favor, defina o campo de login na tela Preferências.";
+"EMPTY_PASSWORD" = "Por favor, defina o campo de senha na tela de Preferências.";
+"BAD_URL" = "Favor campo URL correta na tela Preferências Ele deverias ser de 9 caracteres.";
+"BAD_SERVER" = "Não foi possível conectar ao servidor. Por favor, verifique a URL na tela Preferências.";
+
+"LOG_INFO" = "Informações";
+"LOG_SUCCESS" = "Sucesso";
+"LOG_ERROR" = "Erro";
+"LOG_WARNING" = "Aviso";
+
+"DATE_CLEAR" = "Excluir";
+"RELATED_SEE_ALL" = "Ver todos";
+"ALREADY_ADDED" = "Este item já foi adicionado.";
+
+// Zurich specific
+"WRONG_NIF" = "O código NIF deve ter 9 caracteres e deve conter apenas dígitos e letras maiúsculas.";
+"DUPLICATE_NIF" = "Este NIF já é usado por outro contato.";

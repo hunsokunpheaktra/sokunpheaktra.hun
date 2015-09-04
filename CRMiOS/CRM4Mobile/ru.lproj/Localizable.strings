@@ -1,0 +1,268 @@
+/* 
+ Localizable.strings
+ CRMiOS
+ 
+ Created by Sy Pauv on 9/8/11.
+ Copyright 2011 Fellow Consulting AG. All rights reserved.
+ */
+"ENABLED" = "Включено";
+"SYNCHRONIZE" = "Синхронизировать";
+"TEST_BUTTON" = "Тест";
+"SEND_SYNC_REPORT"= "Отправить доклад синхронизации";
+"SEND_ERR_REPT" = "Отправить ошибки";
+"PREFERENCES" = "Настройки";
+"CRM_CREDENTIALS" = "Полномочия CRM";
+"ENTITIES" = "Лица";
+"OTHER" = "Другие";
+"TEST_CONNECTION" = "Проверить подключение";
+"EXPORT_ADDRESS_BOOK" = "Экспорт адресной книги";
+"AUTO_SYNC" = "Автоматическая синхронизация";
+"DISABLED" = "Инвалид";
+"EVERY_HOURS" = "Каждые %i часа";
+"EVERY_MINUTES" = "Каждые %i минут";
+"IMPORT_ADDRESS_BOOK" = "Импортировать адресную книгу";
+"IMPORT" = "Импорт";
+"OK" = "Ок";
+"CANCEL"="Отменить";
+"START" = "Старт";
+"STOP" = "Стоп";
+"DELETE_DB_CONFIRM" = "Вы действительно хотите удалить базы данных?";
+"STOP_SYNC_CONFIRM" ="Вы действительно хотите остановить синхронизацию?";
+"DELETE_CONFIRM" = "Вы действительно хотите удалить?";
+"SYNC_SUCCESS" = "Синхронизация удалась.";
+"SYNC_FAILED" = "Синхронизация не удалась.";
+"SYNC_STOP" = "Остановить синхронизацию.";
+"SYNC_ERR" = "Ошибка в синхронизации.";
+"OWNER_FILTER" = "Владелец фильтра";
+"LAST_MOD_FILTER" = "Последняя модификация фильтра";
+"VERSION" = "Версия";
+"ABOUT" = "О програме";
+"FIX_ERROR" = "Ошибка исправлена";
+"DAILY_AGENDA" = "Дневник";
+"ADVANCED" = "Изменить";
+"REINIT_DATABASE" = "Инициализация базы данных";
+"FILTERS" = "Фильтры";
+"OBJECT_FILTER" = "%@ Фильтры";
+"RELATED_ITEMS" = "По теме";
+"EDIT" = "Обработка";
+"NEW" = "Новый";
+"DELETE" = "Удалить";
+"DELETE_ITEM" = "Удалить %@";
+"DETAIL" = "%@ Детали";
+"TODAY_VIEW" = "Сегодня";
+"CUSTOM_LAYOUTS" = "Пользовательские форматы";
+"CONNECTION_TEST" = "Тест соединения";
+"CONNECTION_TEST_SUCCESS" = "Тест соединения прошел успешно.";
+"EXPORT" = "Экспорт";
+"Call" = "Звонки";
+"Meeting" = "Встречи";
+
+//Encrypt DB translate
+"ENCRYPT_DB_DESCRIPTION" = "Укажите пароль для доступа к зашифрованной базе данных.";
+
+"OPEN_ENCRYPTED_DESC" = "Введите Ваш пароль.";
+
+"ENTER_PASSWORD" = "Введите свой пароль";
+"RE_ENTER_PWD" = "Введите свой ​​пароль";
+"HEADER_ACCESS_DB" = "Доступ к зашифрованной базе данных";
+"BUTTON_VALIDATE_PASSWORD" = "Проверка базы данных";
+"TITLE_ENCRYPTED_DB" = "Зашифрованные базы данных";
+"HEADER_CREATE_ENCRYPTED_DB" = "Создание зашифрованной базы данных";
+"LABEL_PASSWORD_DIFFERENCE" = "Двойная проверка пароля.";
+"LABEL_INVALID_PASSWORD" = "Пароль должен иметь 8-32 символов.";
+"WRONG_PWD" = "Неправильный пароль, обратитесь к администратору.";
+"CONFIRM_PWD" = "Подтвердите пароль";
+"DONT_USE_PASSWORD"="Не использовать пароль";
+"USE_PASSWORD" = "Использовать пароль";
+"PASSWORD" = "Пароль";
+
+//entity translate
+"Account_SINGULAR" = "Клиент";
+"Account_PLURAL" = "Клиенты";
+"Activity_SINGULAR" = "Деятельность";
+"Contact_SINGULAR" = "Контакт";
+"Contact_PLURAL" = "Контакты";
+"Appointment_SINGULAR" = "Встреча/Повестка";
+"Appointment_PLURAL" = "Встречи/Повестки";
+"Task_SINGULAR" = "Задача";
+"Task_PLURAL" = "Задачи";
+"Call_SINGULAR" = "Звонок";
+"Call_PLURAL" = "Звонки";
+"Campaign_SINGULAR" = "Компания";
+"Campaign_PLURAL" = "Компании";
+"Opportunity_SINGULAR" = "Потенциальная сделка";
+"Opportunity_PLURAL" = "Потенциальные сделки";
+"ServiceRequest_SINGULAR" = "Поддержка/обслуживание";
+"ServiceRequest_PLURAL" = "Поддержки/обслуживание";
+"Lead_SINGULAR" = "Потенциальный клиент";
+"Lead_PLURAL" = "Потенциальные клиенты";
+"Product_SINGULAR" = "Продукт";
+"Product_PLURAL" = "Продукты";
+"Asset_SINGULAR" = "Актива";
+"Asset_PLURAL" = "Активы";
+"PriceList_SINGULAR" = "Прайс-лист";
+"PriceList_PLURAL" = "Прайс-листы";
+"PriceListLineItem_SINGULAR" = "Прайс-лист позиции";
+"PriceListLineItem_PLURAL" = "Прайс-листы позиции";
+"SPRequestLineItem_SINGULAR" = "Запрос специальной цены";
+"SPRequestLineItem_PLURAL" = "Запрос специальных цен";
+"SPRequest_SINGULAR" = "Запрос специальной цены";
+"SPRequest_PLURAL" = "Запрос специальных цен";
+"User_SINGULAR" = "Пользователь";
+"User_PLURAL" = "Пользователи";
+
+
+// sublists
+"Team_SINGULAR" = "Команда";
+"Team_PLURAL" = "Команды";
+"Note_SINGULAR" = "Пометка";
+"Note_PLURAL" = "Пометки";
+"ProductRevenue_SINGULAR"="Оборот продукта";
+"ProductRevenue_PLURAL"="Оборот продуктов";
+"Partner_SINGULAR" = "Партнер";
+"Partner_PLURAL" = "Портнёры";
+"Attachment_SINGULAR" = "Приложение";
+"Attachment_PLURAL" = "Приложения";
+"Competitor_SINGULAR" = "Конкурент";
+"Competitor_PLURAL" = "Конкурентов";
+"ContactRole_SINGULAR" = "Контакт";
+"ContactRole_PLURAL" = "Контакты";
+
+//preference translate
+"URL" = "URL";
+"LOGIN" = "Войти";
+"REMOTE_CONFIG_FILE" = "Удалить настройки";
+
+//picklist translate
+"NO_VALUE" = "Значение не найдено";
+
+//Sync error message
+"ORACLE_DOWN" = "Сервер не доступен. Пожалуйста, попробуйте еще раз, чтобы синхронизировать через несколько минут.";
+
+//confirm to syn after change filter
+"CONFIRM_SYNC" = "Необходимо выполнить синхронизацию, чтобы получить новые данные для работы.";
+
+//request translate
+"READING_COMPANY" = "Чтение компании";
+"READING_DATA" = "Чтение %@ данные"; 
+"READING_PICKLISTS" = "Чтение %@ списков";
+"READING_FIELDS" = "чтение %@ полей";
+"READING_CURRENCY_PICKLIST" = "Чтение валютных списков";
+"READING_DELETE_ITEM" = "Чтение удаленных элементов";
+"READING_CUSTOM_RECORD" = "Чтение пользовательских записей";
+"READING_SERVER_TIME" = "чтение сервером времени";
+"READING_CURRENT_USER" = "Чтение актуального пользователя";
+"READING_METADATA_CHANGE" = "Чтение изменённых метаданных";
+"READING_INDUSTRY_PICKLIST" = "Чтение списков промышленности";
+"READING_SALESTAGE" = "Чтение этапов продаж";
+"SENDING_DATA" = "Отправка %@ данных";
+"SENDING_DELETION" = "отправка %@ удаленых";
+"READING_CASCADING" = "Чтение каскадные списки";
+"READING_FIELD_MGMT" = "Чтение конфигурации поля";
+"READING_ASSESSMENTS" = "Чтение данных оценки";
+
+"SYNC_STARTED" = "Синхронизация началась";
+"READING_REMOTE_CONFIGURATION" = "Чтение удаленных конфигураций";
+
+"HEADER_KEY_INFO" = "Ключ. информ.";
+"HEADER_ADDITIONAL_INFO" = "Дополнительная информация";
+"HEADER_ADDRESS" = "Адрес";
+"HEADER_BILLING_ADDRESS" = "Адрес для выставления счета";
+"HEADER_SHIPPING_ADDRESS" = "Адрес доставки";
+"HEADER_TARGETING_INFORMATION"= "Таргетинговая информация";
+"HEADER_CALL_INFORMATION"= "Информация о званках";
+"HEADER_FINANCIAL_DETAILS"= "Финансовая информация";
+
+"ACTION_CLONE" = "Дупликация";
+"ACTION_LOG_CALL" = "Список звонков";
+"ACTION_VISIT_REPORT" = "Отчет посещений";
+"ACTION_COMPLETE" = "Закончено";
+"ACTION_TAKEPICTURE"="Фото";
+
+"NO_FILTER" = "Нет фильтра";
+"FILTER_FAVORITE" = "Фавориты";
+"FILTER_IMPORTANT" = "важный";
+"FILTER_TODAY" = "Сегодня";
+"FILTER_NEXT_WEEK" = "Следующая неделя";
+"FILTER_NEXT_MONTH" = "Следующий месяц";
+"FILTER_LAST_WEEK" = "За последнюю неделю";
+"FILTER_LAST_MONTH" = "За последний месяц";
+"FILTER_CUSTOMER" = "Клиент";
+"FILTER_PROSPECT" = "Проспект";
+"FILTER_PARTNER" = "Партнер";
+"FILTER_COMPETITOR" = "Конкурент";
+
+"MANDATORY_FIELDS" = "Поля %@ являются обязательными.";
+"MANDATORY_FIELD" = "%@ поле является обязательным.";
+"CANNOT_UPDATE" = "Невозможно обновить";
+"TIME_UPDATE_ERROR" = "Сессия закончена.";
+
+"CALENDAR" = "Календарь";
+"TEST_PHARMA" = "Тестирование фармацевтической возможности";
+
+"START_FULL_SYNC" = "Начало полной синхронизации";
+
+"FEED_TITLE" = "Поток";
+"FEED_WRITE_COMMENT" = "Написать комментарий...";
+"FEED_WORKING_ON" = "Что вы работаете ?";
+"FEED_PROBLEM_SERVER" = "Нет доступа к серверу кормить.";
+"FEED_COMMENT_TITLE" = "Kомментарий";
+
+"OVERDUE" = "Просрочено";
+"TODAY" = "Сегодня";
+"THIS WEEK" = "Неделя";
+"NEXT WEEK" = "Следующая неделя";
+"FUTURE" = "Будущее";
+
+"APPOINTMENT_EXPORT" = "Время приёма информации";
+"APPOINTMENT_IMPORT" = "Импорт встреч из iCal";
+"APPOINTMENTS_EXPORTED" = "%i Назначения экспорт.";
+"APPOINTMENTS_IMPORTED" = "%i назначений импортировать.";
+
+"CONTACT_SORTING" = "Сортировка контактов";
+"CAMERA_NOT_AVAILABLE" = "Камера не доступна для работы.";
+
+"TODAY_ACTIVITY" = "Сегодняшние действия";
+"TODAY_CONTACT" = "Сегодняшние контакты";
+"NO_CONTACT" = "Отсутствие контакта";
+"NO" = "Нет";
+"YES" = "Да";
+
+"SALES_MAILING" = "CRM4Mobile может быть приспособлен и использован таким образом, чтобы полностью выполнить потребности Вашей фирмы. Если Вам необходимы специфические решения или у Вас есть интересная идея - свяжитесь с нами.";
+
+"FEEDBACK_EMAIL" = "контакт по e-mail";
+"VISIT_WEBSITE" = "посетите веб-сайт";
+"LOCATION_NOT_SET" = "Местоположение не установлено";
+"NO_APPOINTMENT" = "Задача отсутствует";
+"CALENDAR_INFO" = "Вы можете создать назначения путем волочить контакты к дате в календаре.";
+
+"FIRST_NAME" = "Имя";
+"LAST_NAME" = "Фамилия";
+
+"EXPORT_PDF" = "Отправка PDF";
+"EXPORT_CSV" = "Отправка CSV";
+"SWITCH_VIEW" = "Переключение вида";
+"ATTACH_EMAIL" = "Прикрепить приложение";
+"CREATE" = "Создать";
+
+"NO_MORE_SYNC" = "Бесплатный абонемент закончился. Пожалуйста, купите лицензию.";
+"REQUEST_LICENSE" = "Запрос лицензии";
+"CHECKING_LICENSE" = "Проверка лицензии";
+
+"EMPTY_LOGIN" = "Пожалуйста, установите поле логина на экране Настройки.";
+"EMPTY_PASSWORD" = "Пожалуйста, установите в поле пароля на экране настройки.";
+"BAD_URL" = "Пожалуйста, исправьте поля URL, оно должно иметь 9 символов.";
+"BAD_SERVER" = "Не удалось подключиться к серверу. Пожалуйста, проверьте URL в экран настройки.";
+
+"LOG_INFO" = "информация";
+"LOG_SUCCESS" = "успех";
+"LOG_ERROR" = "ошибка";
+"LOG_WARNING" = "Предупреждение";
+
+"DATE_CLEAR" = "удалять";
+"RELATED_SEE_ALL" = "посмотреть все";
+"ALREADY_ADDED" = "Этот пункт уже добавлен.";
+
+// Zurich specific
+"WRONG_NIF" = "код NIF должны быть длиной 9 символов и должен содержать только цифры и буквы.";
+"DUPLICATE_NIF" = "Это NIF уже используется другой контакт.";

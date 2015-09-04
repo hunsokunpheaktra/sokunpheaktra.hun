@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>82935AD2-6377-4733-A0F9-9834E4838494</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CRMiOS</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>354d11bc-50c1-487d-8ea0-55055d741fa8++1379</key>
+		<string>https://srv25.svn-repos.de/dev483/CRMGadget/CRMiOS</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CRMiOS.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>354d11bc-50c1-487d-8ea0-55055d741fa8++1379</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>354d11bc-50c1-487d-8ea0-55055d741fa8++1379</key>
+		<string>https://srv25.svn-repos.de/dev483/CRMGadget</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://srv25.svn-repos.de/dev483/CRMGadget/CRMiOS/CRMiOS.xcodeproj</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>354d11bc-50c1-487d-8ea0-55055d741fa8++1379</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>354d11bc-50c1-487d-8ea0-55055d741fa8++1379</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CRMiOS</string>
+		</dict>
+	</array>
+</dict>
+</plist>

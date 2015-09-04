@@ -1,0 +1,1037 @@
+<configuration name="Default Configuration" level="6">
+    <properties>
+        <property name="iAdsEnabled">yes</property>
+        <property name="canExportData">yes</property>
+        <property name="canExportPDF">yes</property>
+        <property name="canExportICal">yes</property>
+        <property name="aboutText">%SALES_MAILING%</property>
+        <property name="aboutMail">sales@fellow-consulting.de</property>
+        <property name="aboutWeb">http://www.fellow-consulting.de/</property>
+        <!-- <property name="LandolakesFilterUsers">yes</property> -->
+        <!-- <property name="feedURL">http://feed-simulator.appspot.com</property> -->
+        <!-- <property name="feedURL">https://crmodbridgetest.appspot.com/crmod_bridge</property> -->
+    </properties>
+    <subtypes>
+        <subtype entity="Account" icon-name="190-bank.png" 
+            display-text="{AccountName}" secondary-text="{Location}"
+            group-by="{FIRST:AccountName}">
+            <mandatory-fields>
+                <mandatory-field>AccountName</mandatory-field>
+            </mandatory-fields>
+            <actions>
+                <action name="%CLONE%" clone="YES"/>
+                <action name="%LOG_CALL%" target-entity="Activity">
+                    <set-field name="Activity">Task</set-field>
+                    <set-field name="Type">Call</set-field>
+                    <set-field name="Subject">{AccountName} Call</set-field>
+                    <set-field name="DueDate">{TODAY}</set-field>
+                    <set-field name="Status">Completed</set-field>
+                    <set-field name="Priority">3-Low</set-field>
+                    <set-field name="AccountId">{Id}</set-field>
+                </action>
+                <action name="%VISIT_REPORT%" target-entity="Activity">
+                    <set-field name="Activity">Appointment</set-field>
+                    <set-field name="Type">Meeting</set-field>
+                    <set-field name="Subject">{AccountName} Visit</set-field>
+                    <set-field name="StartTime">{NOW}</set-field>
+                    <set-field name="EndTime">{NOW}</set-field>
+                    <set-field name="Status">Completed</set-field>
+                    <set-field name="AccountId">{Id}</set-field>
+                </action>
+            </actions>
+            <sublists>
+                <!-- <sublist-layout name="Note" display-text="{Subject}" icon-name="180-stickynote.png">
+                    <sublist-field>Subject</sublist-field>
+                    <sublist-field>Description</sublist-field>
+                </sublist-layout> -->
+                <!-- <sublist-layout name="Competitor" display-text="{CompetitorName}" icon-name="190-bank.png">
+                    <sublist-field>CompetitorName</sublist-field>
+                    <sublist-field>Comments</sublist-field>
+                </sublist-layout> -->
+                <!-- <sublist-layout name="Partner" display-text="{PartnerName}" icon-name="190-bank.png">
+                    <sublist-field>PartnerName</sublist-field>
+                    <sublist-field>PrimaryContactId</sublist-field>
+                    <sublist-field>RelationshipRole</sublist-field>
+                </sublist-layout> -->
+                <!-- <sublist-layout name="Attachment" display-text="{DisplayFileName}" icon-name="68-paperclip.png"/> -->
+            </sublists>
+            <list-layout>
+                <filter-set field="AccountType">
+                    <filter value="Customer">%CUSTOMER%</filter>
+                    <filter value="Prospect">%PROSPECT%</filter>
+                    <filter value="Partner">%PARTNER%</filter>
+                    <filter optional="YES" value="Competitor">%COMPETITOR%</filter>
+                </filter-set>
+                <icons icon-field="AccountType">
+                    <icon value="Competitor">bullet_ball_glass_red.png</icon>
+                    <icon value="Customer">bullet_ball_glass_green.png</icon>
+                    <icon value="Prospect">bullet_ball_glass_yellow.png</icon>
+                    <icon value="Partner">bullet_ball_glass_blue.png</icon>
+                </icons>    
+            </list-layout>
+            <detail-layout>
+                <page name="%KEY_INFO%">
+                    <section name="%KEY_INFO%">
+                        <field>AccountName</field>
+                        <field>AccountType</field>
+                        <field>Location</field>
+                        <field>MainPhone</field>
+                        <field>MainFax</field>
+                        <field>WebSite</field>    
+                    </section>
+                    <section name="%ADDRESS%">
+                        <field>PrimaryBillToStreetAddress</field>
+                        <field>PrimaryBillToPostalCode</field>
+                        <field>PrimaryBillToCity</field>
+                        <field>PrimaryBillToCountry</field>
+                    </section> 
+                    <section name="%ADDITIONAL_INFO%">
+                        <field>Priority</field>
+                        <field>Industry</field>
+                        <field>PublicCompany</field>
+                    </section>
+                </page>
+            </detail-layout>
+        </subtype>    
+        
+        <subtype entity="Activity" name="Appointment"
+            icon-name="11-clock.png" order-field="StartTime" order-ascending="NO" 
+            display-text="{HOUR:StartTime} - {Subject}" secondary-text="{Description}"
+            group-by="{DATE:StartTime}">
+            <criterias>
+                <criteria field="Activity" value="Appointment"/>
+                <criteria field="Type" different="Call"/>
+            </criterias>
+            <mandatory-fields>
+                <mandatory-field>Subject</mandatory-field>
+                <mandatory-field>StartTime</mandatory-field>
+                <mandatory-field>EndTime</mandatory-field>
+            </mandatory-fields>
+            <actions>
+                <action name="%CLONE%" clone="YES"/>
+            </actions>
+            <sublists>
+                <!-- <sublist-layout name="Contact" display-text="{ContactFullName}" icon-name="111-user.png">
+                    <sublist-field>ContactFullName</sublist-field>
+                </sublist-layout>
+                <sublist-layout name="User" display-text="{UserAlias}" icon-name="145-persondot.png">
+                    <sublist-field>UserAlias</sublist-field>
+                </sublist-layout>  -->
+            </sublists>
+            <list-layout>
+                <filter-set field="StartTime">
+                    <filter start="{TODAY}" end="{TODAY+1}">%TODAY%</filter>
+                    <filter start="{TODAY}" end="{TODAY+7}">%NEXT_WEEK%</filter>
+                    <filter start="{TODAY}" end="{TODAY+30}">%NEXT_MONTH%</filter>
+                    <filter optional="YES" start="{TODAY-7}" end="{TODAY}">%LAST_WEEK%</filter>
+                    <filter optional="YES" start="{TODAY-30}" end="{TODAY}">%LAST_MONTH%</filter>
+                </filter-set>
+            </list-layout>
+            <detail-layout>
+                <page name="%KEY_INFO%">
+                    <section name="%KEY_INFO%">
+                        <field>Subject</field>
+                        <field>Description</field>
+                        <field>StartTime</field>
+                        <field>EndTime</field>
+                        <field>Type</field>
+                        <field>Status</field>
+                    </section>
+                    <section name="%ADDITIONAL_INFO%">
+                        <field>Private</field>
+                        <field>Location</field>
+                    </section>
+                </page>
+            </detail-layout>
+        </subtype>
+        
+        
+        <subtype entity="Activity" name="Call"
+            icon-name="75-phone.png" order-field="StartTime" order-ascending="NO" 
+            display-text="{HOUR:StartTime} - {Subject}" secondary-text="{Description}"
+            group-by="{DATE:StartTime}">
+            <criterias>
+                <criteria field="Activity" value="Appointment"/>
+                <criteria field="Type" value="Call"/>
+            </criterias>
+            <mandatory-fields>
+                <mandatory-field>Subject</mandatory-field>
+                <mandatory-field>StartTime</mandatory-field>
+                <mandatory-field>EndTime</mandatory-field>
+            </mandatory-fields>
+            <action name="%CLONE%" clone="YES"/>
+            <list-layout>
+                <filter-set field="StartTime">
+                    <filter start="{TODAY}" end="{TODAY+1}">%TODAY%</filter>
+                    <filter start="{TODAY}" end="{TODAY+7}">%NEXT_WEEK%</filter>
+                    <filter start="{TODAY}" end="{TODAY+30}">%NEXT_MONTH%</filter>
+                    <filter optional="YES" start="{TODAY-7}" end="{TODAY}">%LAST_WEEK%</filter>
+                    <filter optional="YES" start="{TODAY-30}" end="{TODAY}">%LAST_MONTH%</filter>
+                </filter-set>
+            </list-layout>
+            <detail-layout>
+                <page name="%KEY_INFO%">
+                    <section name="%KEY_INFO%">
+                        <field>Subject</field>
+                        <field>Status</field>
+                        <field>StartTime</field>
+                        <field>EndTime</field>
+                    </section>
+                    <section name="%ADDITIONAL_INFO%">
+                        <field>Description</field>
+                        <field>NextCall</field>
+                    </section>
+                </page>
+            </detail-layout>
+        </subtype>
+        
+        <subtype entity="Activity" name="Task"
+            icon-name="117-todo.png" order-field="DueDate" order-ascending="NO"
+            display-text="{Subject}" secondary-text="{Description}"
+            group-by="{DATE:DueDate}">
+            <criterias>
+                <criteria field="Activity" value="Task"/>
+            </criterias>
+            <mandatory-fields>
+                <mandatory-field>Subject</mandatory-field>
+                <mandatory-field>DueDate</mandatory-field>
+            </mandatory-fields>
+            <actions>
+                <action name="%CLONE%" clone="YES"/>
+                <action name="%COMPLETE%" update="YES">
+                    <set-field name="Status">Completed</set-field>
+                </action>
+            </actions>
+            <sublists>
+                <!-- <sublist-layout name="Attachment" display-text="{DisplayFileName}" icon-name="68-paperclip.png"/> -->
+            </sublists>
+            <list-layout>
+                <list-layout>
+                    <filter-set field="DueDate">
+                        <filter start="{TODAY}" end="{TODAY+1}">%TODAY%</filter>
+                        <filter start="{TODAY}" end="{TODAY+7}">%NEXT_WEEK%</filter>
+                        <filter start="{TODAY}" end="{TODAY+30}">%NEXT_MONTH%</filter>
+                        <filter optional="YES" start="{TODAY-7}" end="{TODAY}">%LAST_WEEK%</filter>
+                        <filter optional="YES" start="{TODAY-30}" end="{TODAY}">%LAST_MONTH%</filter>
+                    </filter-set>
+                </list-layout>
+            </list-layout>
+            <detail-layout>
+                <page name="%KEY_INFO%">
+                    <section name="%KEY_INFO%">
+                        <field>Subject</field>
+                        <field>Description</field>
+                        <field>DueDate</field>
+                        <field>Type</field>
+                        <field>Status</field>
+                        <field>Priority</field>
+                    </section>
+                    <section name="%ADDITIONAL_INFO%">
+                        <field>Private</field>
+                        <field>Location</field>
+                    </section>
+                </page>
+            </detail-layout>
+        </subtype>
+        
+        <subtype entity="Campaign" singular-name="Campaign" plural-name="Campaigns" icon-name="13-target.png" 
+            display-text="{CampaignName}" secondary-text="{CampaignType}"
+            group-by="{FIRST:CampaignName}">
+            <mandatory-fields>
+                <mandatory-field>CampaignName</mandatory-field>
+                <mandatory-field>SourceCode</mandatory-field>
+            </mandatory-fields>
+            <actions>
+                <action name="%CLONE%" clone="YES"/>
+            </actions>
+            <list-layout>
+                <filter-set field="CampaignType">
+                    <filter value="Email">Email</filter>
+                    <filter value="Advertisement">Advertisement</filter>
+                    <filter value="Direct Mail" optional="YES">Direct Mail</filter>
+                    <filter value="Web Site" optional="YES">Web Site</filter>
+                    <filter value="Event - Trade Show" optional="YES">Event - Trade Show</filter>
+                </filter-set>
+            </list-layout>
+            <detail-layout>
+                <page name="%KEY_INFO%">
+                    <section name="%KEY_INFO%">
+                        <field>CampaignName</field>
+                        <field>CampaignType</field>
+                        <field>SourceCode</field>
+                        <field>StartDate</field>
+                        <field>EndDate</field>
+                        <field>Status</field>
+                    </section>
+                    <section name="%ADDITIONAL_INFO%">
+                        <field>RevenueTarget</field> 
+                        <field>Offer</field>
+                        <field>ActualCost</field>
+                        <field>BudgetedCost</field>
+                    </section>
+                </page>
+            </detail-layout>
+        </subtype>
+        
+        <subtype entity="Contact" icon-name="111-user.png"
+            display-text="{ContactFirstName} {ContactLastName}" secondary-text="{AccountName}"
+            group-by="{FIRST:ContactLastName}">
+            <mandatory-fields>
+                <mandatory-field>ContactFirstName</mandatory-field>
+                <mandatory-field>ContactLastName</mandatory-field>
+            </mandatory-fields>
+            <actions>
+                <action name="%CLONE%" clone="YES"/>
+                <action name="%LOG_CALL%" target-entity="Activity">
+                    <set-field name="Activity">Task</set-field>
+                    <set-field name="Type">Call</set-field>
+                    <set-field name="Subject">{ContactFirstName} {ContactLastName} Call</set-field>
+                    <set-field name="DueDate">{TODAY}</set-field>
+                    <set-field name="Status">Completed</set-field>
+                    <set-field name="Priority">3-Low</set-field>
+                    <set-field name="PrimaryContactId">{Id}</set-field>
+                    <set-field name="AccountId">{AccountId}</set-field>
+                </action>
+                <action name="%VISIT_REPORT%" target-entity="Activity">
+                    <set-field name="Activity">Appointment</set-field>
+                    <set-field name="Type">Meeting</set-field>
+                    <set-field name="Subject">{ContactFirstName} {ContactLastName} Visit</set-field>
+                    <set-field name="StartTime">{NOW}</set-field>
+                    <set-field name="EndTime">{NOW}</set-field>
+                    <set-field name="Status">Completed</set-field>
+                    <set-field name="PrimaryContactId">{Id}</set-field>
+                    <set-field name="AccountId">{AccountId}</set-field>
+                </action>
+            </actions>
+            <list-layout>
+                <filter-set field="ContactType">
+                    <filter value="Customer">Customer</filter>
+                    <filter value="Prospect">Prospect</filter>
+                    <filter value="Partner">Partner</filter>
+                    <filter value="Competitor" optional="true">Competitor</filter>
+                </filter-set>
+                <icons icon-field="MrMrs">
+                    <icon value="Mr.">man.png</icon>
+                    <icon value="Dr.">doctor.png</icon>
+                    <icon value="Ms.">woman.png</icon>
+                    <icon value="Mrs.">woman.png</icon>
+                    <icon value="Miss.">woman.png</icon>
+                </icons>
+            </list-layout>
+            <detail-layout>
+                <page name="%KEY_INFO%">
+                    <section name="%KEY_INFO%">
+                        <field>ContactFirstName</field>
+                        <field>ContactLastName</field>
+                        <field>ContactType</field>
+                        <field>WorkPhone</field>
+                        <field>WorkFax</field>
+                        <field>ContactEmail</field>
+                    </section>
+                    <section name="%ADDITIONAL_INFO%">
+                        <field>JobTitle</field>
+                        <field>Department</field>
+                        <field>MrMrs</field>
+                    </section>
+                </page>
+            </detail-layout>
+        </subtype>
+        
+        <subtype entity="Opportunity" icon-name="imgOpportunity.png"
+            display-text="{OpportunityName}" secondary-text="{AccountName}" order-field="CloseDate" order-ascending="NO"
+            group-by="{DATE:CloseDate}">
+            <mandatory-fields>
+                <mandatory-field>OpportunityName</mandatory-field>
+                <mandatory-field>SalesStage</mandatory-field>
+                <mandatory-field>CloseDate</mandatory-field>
+            </mandatory-fields>
+            <actions>
+                <action name="%CLONE%" clone="YES"/>
+            </actions>
+            <sublists>
+                <sublist-layout name="ContactRole" display-text="{ContactFirstName} {ContactLastName} - {BuyingRole}" icon-name="111-user.png">
+                    <sublist-field>ContactFirstName</sublist-field>
+                    <sublist-field>ContactLastName</sublist-field>
+                    <sublist-field>Primary</sublist-field>
+                    <sublist-field>BuyingRole</sublist-field>
+                </sublist-layout>
+                <!-- <sublist-layout name="Competitor" display-text="{CompetitorName}" icon-name="190-bank.png">
+                    <sublist-field>CompetitorName</sublist-field>
+                    <sublist-field>Comments</sublist-field>
+                </sublist-layout> -->
+                <!-- <sublist-layout name="Partner" display-text="{PartnerName}" icon-name="123-id-card.png">
+                    <sublist-field>PartnerName</sublist-field>
+                    <sublist-field>Comments</sublist-field>
+                </sublist-layout> -->
+                <!-- <sublist-layout name="ProductRevenue" display-text="{ProductName}" icon-name="16-line-chart.png">
+                    <sublist-field>ProductName</sublist-field>
+                    <sublist-field>Quantity</sublist-field>
+                    <sublist-field>PurchasePrice</sublist-field>
+                    <sublist-field>Revenue</sublist-field>
+                </sublist-layout> -->
+            </sublists>
+            <list-layout>
+                <filter-set field="SalesStage">
+                    <filter value="Qualified Lead">Qualified Lead</filter>
+                    <filter value="Short List">Short List</filter>
+                    <filter value="Building Vision" optional="YES">Building Vision</filter>
+                    <filter value="Selected" optional="YES">Selected</filter>
+                    <filter value="Negotiation" optional="YES">Negotiation</filter>
+                    <filter value="Closed/Won" optional="YES">Closed/Won</filter>
+                    <filter value="Closed/Lost" optional="YES">Closed/Lost</filter>
+                </filter-set>
+                <list-icons icon-field="Priority">
+                    <icon value="High">bullet_ball_glass_red.png</icon>
+                    <icon value="Medium">bullet_ball_glass_yellow.png</icon>
+                    <icon value="Low">bullet_ball_glass_green.png</icon>
+                </list-icons>
+            </list-layout>
+            <detail-layout>
+                <page name="%KEY_INFO%">
+                    <section name="%KEY_INFO%">
+                        <field>OpportunityName</field>
+                        <field>SalesStage</field>
+                        <field>NextStep</field>
+                        <field>Revenue</field>
+                        <field>CloseDate</field>
+                        <field>Forecast</field>
+                    </section>
+                    <section name="%ADDITIONAL_INFO%">
+                        <field>CurrencyCode</field>
+                        <field>Status</field>
+                        <field>Priority</field>
+                        <field>LeadSource</field>
+                        <field>Probability</field>
+                        <field>ReasonWonLost</field>
+                        <field>OpportunityType</field>
+                    </section>
+                </page>
+            </detail-layout>
+        </subtype>
+        
+        <subtype entity="ServiceRequest" icon-name="90-life-buoy.png"
+            display-text="{SRNumber}" secondary-text="{Subject}">
+            <mandatory-fields>
+                <mandatory-field>SRNumber</mandatory-field>
+            </mandatory-fields>
+            <actions>
+                <action name="%CLONE%" clone="YES"/>
+            </actions>
+            <sublists>
+                <!-- <sublist-layout name="Attachment" display-text="{DisplayFileName}" icon-name="68-paperclip.png"/> -->
+            </sublists>
+            <list-layout>
+                <filter-set field="Status">
+                    <filter value="Open">Open</filter>
+                    <filter value="Pending">Pending</filter>
+                    <filter value="Closed">Closed</filter>
+                    <filter value="Open - Escalated" optional="YES">Open - Escalated</filter>
+                    <filter value="Cancelled" optional="YES">Cancelled</filter>
+                </filter-set>
+                <icons icon-field="Priority">
+                    <icon value="1-ASAP">bullet_ball_glass_red.png</icon>
+                    <icon value="2-High">bullet_ball_glass_red.png</icon>
+                    <icon value="3-Medium">bullet_ball_glass_yellow.png</icon>
+                    <icon value="4-Low">bullet_ball_glass_green.png</icon>
+                </icons>
+            </list-layout>
+            <detail-layout>
+                <page name="%KEY_INFO%">
+                    <section name="%KEY_INFO%">
+                        <field>SRNumber</field>
+                        <field>Subject</field>
+                        <field>Type</field>
+                        <field>Priority</field>
+                        <field>OpenedTime</field>
+                        <field>Status</field>
+                    </section>
+                    <section name="%ADDITIONAL_INFO%">
+                        <field>WorkPhone</field>
+                        <field>Area</field>
+                        <field>Cause</field>
+                        <field>Source</field>
+                    </section>
+                </page>
+            </detail-layout>
+        </subtype>
+        
+        <subtype entity="Lead" icon-name="lead.png"
+            display-text="{LeadFirstName} {LeadLastName}" secondary-text="{AccountName}"
+            group-by="{FIRST:LeadLastName}">
+            <mandatory-fields>
+                <mandatory-field>LeadFirstName</mandatory-field>
+                <mandatory-field>LeadLastName</mandatory-field>
+            </mandatory-fields>
+            <actions>
+                <action name="%CLONE%" clone="YES"/>
+            </actions>
+            <list-layout>
+                <filter-set field="LeadType">
+                    <filter value="Customer">Customer</filter>
+                    <filter value="Prospect">Prospect</filter>
+                    <filter value="Partner">Partner</filter>
+                    <filter value="Competitor" optional="YES">Competitor</filter>
+                </filter-set>
+                <icons icon-field="MrMrs">
+                    <icon value="Mr.">man.png</icon>
+                    <icon value="Dr.">doctor.png</icon>
+                    <icon value="Ms.">woman.png</icon>
+                    <icon value="Mrs.">woman.png</icon>
+                    <icon value="Miss.">woman.png</icon>
+                </icons>
+            </list-layout>
+            <detail-layout>
+                <page name="%KEY_INFO%">
+                    <section name="%KEY_INFO%">
+                        <field>LeadFirstName</field>
+                        <field>LeadLastName</field>
+                        <field>Status</field>
+                        <field>JobTitle</field>
+                        <field>PrimaryPhone</field>
+                        <field>FaxPhone</field>
+                        <field>LeadEmail</field>
+                    </section>
+                </page>
+            </detail-layout>
+        </subtype>
+        
+        <subtype entity="Product" icon-name="Product.png"
+            display-text="{Name}" secondary-text="{Category}">
+            <actions>
+                <action name="%CLONE%" clone="YES"/>
+            </actions>
+            <mandatory-fields>
+                <mandatory-field>Name</mandatory-field>
+            </mandatory-fields>
+            <detail-layout>
+                <page name="%KEY_INFO%">
+                    <section name="%KEY_INFO%">
+                        <field>Name</field>
+                        <field>ProductCategory</field>
+                        <field>Type</field>
+                        <field>ProductType</field>
+                        <field>Status</field>
+                        <field>Orderable</field>
+                    </section>
+                </page>
+            </detail-layout>
+        </subtype>
+        
+        <subtype entity="CustomObject1" display-text="{Name}" secondary-text="{Type}" name="CustomObject1" order-ascending="yes">
+            <actions>
+                <action name="%CLONE%" clone="YES"/>
+            </actions>
+            <detail-layout>
+                <page name="%KEY_INFO%">
+                    <section name="%KEY_INFO%">
+                        <field>Name</field>
+                    </section>
+                </page>
+            </detail-layout>
+        </subtype>
+        
+        <subtype entity="CustomObject4" display-text="{Name}" secondary-text="{Type}" name="CustomObject4" order-ascending="yes">
+            <actions>
+                <action name="%CLONE%" clone="YES"/>
+            </actions>
+            <detail-layout>
+                <page name="%KEY_INFO%">
+                    <section name="%KEY_INFO%">
+                        <field>Name</field>
+                    </section>
+                </page>
+            </detail-layout>
+        </subtype>
+        
+        <subtype entity="Asset" display-text="{Product}" secondary-text="{PurchaseDate}" icon-name="166-newspaper.png">
+            <actions>
+                <action name="%CLONE%" clone="yes"/>
+            </actions>
+            <detail-layout>
+                <page name="%KEY_INFO%">
+                    <section name="%KEY_INFO%">
+                        <field>Product</field>
+                        <field>SerialNumber</field>
+                        <field>PurchaseDate</field>
+                        <field>PurchasePrice</field>
+                        <field>AssetType</field>
+                        <field>Quantity</field>
+                        <field>ShipDate</field>
+                        <field>Warranty</field>
+                        <field>Contract</field>
+                    </section>
+                    <section name="%ADDITIONAL_INFO%">
+                        <field>Description</field>
+                    </section>
+                </page>
+            </detail-layout>
+        </subtype>
+        
+        <subtype entity="PriceList" icon-name="166-newspaper.png"
+            display-text="{PriceListName}" secondary-text="{Status}">
+            <actions>
+                <action name="%CLONE%" clone="YES"/>
+            </actions>
+            <detail-layout>
+                <page name="%KEY_INFO%">
+                    <section name="%KEY_INFO%">
+                        <field>PriceListName</field>
+                        <field>EffectiveFrom</field>
+                        <field>EffectiveTo</field>
+                        <field>Type</field>
+                        <field>Status</field>
+                        <field>Description</field>
+                    </section>
+                </page>
+            </detail-layout>
+        </subtype>
+        
+        <subtype entity="PriceListLineItem" 
+            icon-name="PriceListItem.png"
+            display-text="{ProductName}">
+            <detail-layout>
+                <page name="%KEY_INFO%">
+                    <section name="%KEY_INFO%">
+                        <field>Id</field>
+                        <field>EffectiveFrom</field>
+                        <field>EffectiveTo</field>
+                        <field>PriceType</field>
+                        <field>ListPrice</field>
+                    </section>
+                </page>
+            </detail-layout>
+        </subtype>
+        
+        <subtype entity="SPRequest" 
+            icon-name="172-pricetag.png"
+            display-text="{SPRequestName}" secondary-text="{SubmissionStatus}">
+            <actions>
+                <action name="%CLONE%" clone="YES"/>
+            </actions>
+            <detail-layout>
+                <page name="%KEY_INFO%">
+                    <section name="%KEY_INFO%">
+                        <field>SPRequestName</field>
+                        <field>SubmissionStatus</field>
+                        <field>DueDate</field>
+                        <field>StartDate</field>
+                        <field>EndDate</field>
+                        <field>Description</field>
+                    </section>
+                </page>
+            </detail-layout>
+        </subtype>
+        
+        <subtype entity="SPRequestLineItem" 
+            icon-name="172-pricetag.png"
+            display-text="{Id}">
+            <detail-layout>
+                <page name="%KEY_INFO%">
+                    <section name="%KEY_INFO%">
+                        <field>Id</field>
+                        <field>Quantity</field>
+                        <field>PurchaseCost</field>
+                        <field>RequestedCost</field>
+                        <field>AuthorizedCost</field>
+                        <field>AuthorizedDiscountPercent</field>
+                    </section>
+                </page>
+            </detail-layout>
+        </subtype>
+        
+        <subtype entity="User" 
+            icon-name="145-persondot.png"
+            display-text="{FullName}">
+        </subtype>
+        
+        <subtype entity="Category" 
+            icon-name="Product.png"
+            display-text="{Name}">
+        </subtype>
+        
+    </subtypes>
+    <entities>
+        <entity name="User" search-field="FullName" can-create="no" can-update="no" can-delete="no" hidden="yes">
+            <field>Id</field>
+            <field>Alias</field>
+            <field>Company</field>
+            <field>CompanySignInID</field>
+            <field>CurrencyCode</field>
+            <field>FirstName</field>
+            <field>FullName</field>
+            <field>JobTitle</field>
+            <field>Language</field>
+            <field>LanguageCode</field>
+            <field>LastLoggedIn</field>
+            <field>LastName</field>
+            <field>Locale</field>
+            <field>LocaleCode</field>
+            <field>Market</field>
+            <field>MiddleName</field>
+            <field>PartnerOrganizationId</field>
+            <field>PersonalCountry</field>
+            <field>PhoneNumber</field>
+            <field>PrimaryGroup</field>
+            <field>Region</field>
+            <field>Role</field>
+            <field>RoleId</field>
+            <field>SalesProcessId</field>
+            <field>SalesProcessName</field>
+            <field>Status</field>
+            <field>SubMarket</field>
+            <field>SubRegion</field>
+            <field>Supervisor</field>
+            <field>TimeZoneId</field>
+            <field>TimeZoneName</field>
+            <field>UserLoginId</field>
+            <field>UserSignInId</field>
+            <field>WorkFax</field>
+        </entity>
+        
+        <entity name="Account" search-field="AccountName">
+            <field>Id</field>
+            <field>AccountName</field>
+            <field>AccountType</field>
+            <field>Location</field>
+            <field>MainPhone</field>
+            <field>MainFax</field>
+            <field>WebSite</field>
+            <field>PrimaryContactId</field>
+            <field>PrimaryContactFullName</field>
+            <field>Priority</field>
+            <field>Industry</field>
+            <field>ParentAccount</field>
+            <field>ParentAccountId</field>
+            <field>PublicCompany</field>
+            <field>PrimaryBillToStreetAddress</field>
+            <field>PrimaryBillToPostalCode</field>
+            <field>PrimaryBillToCity</field>
+            <field>PrimaryBillToCountry</field>
+            <field>PrimaryBillToProvince</field>
+            <field>SourceCampaignId</field>
+            <field>OwnerId</field>
+            <field>OwnerFullName</field>
+            <field>Owner</field>
+            <field>CustomText33</field>
+            <field>CustomPickList8</field>
+            <field>PrimaryGroup</field>
+
+            <!-- <sublist name="Attachment">
+             <field>Id</field>
+             <field>AccountId</field>
+             <field>DisplayFileName</field>
+             <field>FileNameOrURL</field>
+             <field>FileExtension</field>
+             <field>Description</field>
+             <field>Attachment</field>
+             </sublist> -->
+        </entity>
+        
+        <entity name="Activity" search-field="Subject">
+            <field>Id</field>
+            <field>Subject</field>
+            <field>Description</field>
+            <field>StartTime</field>
+            <field>EndTime</field>
+            <field>Type</field>
+            <field>Private</field>
+            <field>Activity</field>
+            <field>DueDate</field>
+            <field>AccountId</field>
+            <field>AccountName</field>
+            <field>PrimaryContactId</field>
+            <field>PrimaryContact</field>
+            <field>PrimaryContactFirstName</field>
+            <field>PrimaryContactLastName</field>
+            <field>Location</field>
+            <field>Status</field>
+            <field>Priority</field>
+            <field>LeadId</field>
+            <field>Lead</field>
+            <field>OpportunityId</field>
+            <field>OpportunityName</field>
+            <field>Alias</field>
+            <field>OwnerId</field>
+            <field>PrimaryOwnerId</field>
+            <field>ExternalSystemId</field>
+            <field>CampaignId</field>
+            <field>CampaignName</field>
+        </entity>
+        
+        <entity name="Campaign" search-field="CampaignName">
+            <field>Id</field>
+            <field>CampaignName</field>
+            <field>CampaignType</field>
+            <field>SourceCode</field>
+            <field>RevenueTarget</field>
+            <field>Offer</field>
+            <field>ActualCost</field>
+            <field>BudgetedCost</field>
+            <field>Status</field>
+            <field>StartDate</field>
+            <field>EndDate</field>
+            <field>OwnerId</field>
+        </entity>
+        
+        <entity name="Contact" search-field="ContactLastName" alternate-search-field="ContactFirstName">
+            <field>Id</field>
+            <field>ContactFirstName</field>
+            <field>ContactLastName</field>
+            <field>ContactFullName</field>
+            <field>ContactType</field>
+            <field>WorkPhone</field>
+            <field>WorkFax</field>
+            <field>ContactEmail</field>
+            <field>AccountId</field>
+            <field>AccountName</field>
+            <field>JobTitle</field>
+            <field>Department</field>
+            <field>SourceCampaignId</field>
+            <field>MrMrs</field>
+            <field>OwnerId</field>
+            <field>Owner</field>
+            <field>OwnerFullName</field>
+            <field>ManagerId</field>
+            <field>Manager</field>
+        </entity>
+        
+        <entity name="Opportunity" search-field="OpportunityName">
+            <field>Id</field>
+            <field>OpportunityName</field>
+            <field>AccountName</field>
+            <field>CloseDate</field>
+            <field>Revenue</field>
+            <field>SalesStage</field>
+            <field>SalesStageId</field>
+            <field>Forecast</field>
+            <field>NextStep</field>
+            <field>CurrencyCode</field>
+            <field>Status</field>
+            <field>Priority</field>
+            <field>LeadSource</field>
+            <field>Probability</field>
+            <field>ReasonWonLost</field>
+            <field>OpportunityType</field>
+            <field>AccountId</field>
+            <field>OwnerId</field>
+            <field>Owner</field>
+            <field>KeyContactId</field>
+            <field>KeyContactLastName</field>
+            <field>SourceCampaign</field>
+            <field>SourceCampaignId</field>
+            <field>CustomObject1Id</field>
+            <field>ParentoptyId</field>
+            <field>ParentoptyOpportunityName</field>
+            <field>CreatedDate</field>
+        </entity>
+        
+        <entity name="ServiceRequest" search-field="SRNumber">
+            <field>Id</field>
+            <field>SRNumber</field>
+            <field>AccountName</field>
+            <field>WorkPhone</field>
+            <field>Area</field>
+            <field>Cause</field>
+            <field>Type</field>
+            <field>Source</field>
+            <field>Priority</field>
+            <field>Status</field>
+            <field>OpenedTime</field>
+            <field>Subject</field>
+            <field>AccountId</field>
+            <field>ContactId</field>
+            <field>OwnerId</field>
+            <!--  <sublist name="Attachment">
+             <field>Id</field>
+             <field>SRId</field>
+             <field>DisplayFileName</field>
+             <field>FileNameOrURL</field>
+             <field>FileExtension</field>
+             <field>Description</field>
+             <field>Attachment</field>
+             </sublist> -->
+        </entity>
+        
+        <entity name="Lead" search-field="LeadLastName" alternate-search-field="LeadFirstName">
+            <field>AccountId</field>
+            <field>AccountName</field>
+            <field>AnnualRevenues</field>
+            <field>ContactId</field>
+            <field>CampaignId</field>
+            <field>CellularPhone</field>
+            <field>City</field>
+            <field>Company</field>
+            <field>Country</field>
+            <field>CurrencyCode</field>
+            <field>DateofBirth</field>
+            <field>Description</field>
+            <field>EstimatedCloseDate</field>
+            <field>FaxPhone</field>
+            <field>Id</field>
+            <field>JobTitle</field>
+            <field>LeadEmail</field>
+            <field>LeadFirstName</field>
+            <field>LeadFullName</field>
+            <field>LeadLastName</field>
+            <field>LeadOwner</field>
+            <field>LeadType</field>
+            <field>MrMrs</field>
+            <field>NeverEmail</field>
+            <field>NextStep</field>
+            <field>NumberEmployees</field>
+            <field>OpportunityId</field>
+            <field>Owner</field>
+            <field>OwnerId</field>
+            <field>PotentialRevenue</field>
+            <field>PrimaryPhone</field>
+            <field>ProductInterest</field>
+            <field>Profession</field>
+            <field>Province</field>
+            <field>Qualifieddate</field>
+            <field>Rating</field>
+            <field>RejectCode</field>
+            <field>RejectReason</field>
+            <field>SalesPerson</field>
+            <field>SalesPersonFullName</field>
+            <field>SalesRepId</field>
+            <field>Source</field>
+            <field>StateProvince</field>
+            <field>Status</field>
+            <field>StreetAddress</field>
+            <field>StreetAddress2</field>
+            <field>StreetAddress3</field>
+            <field>Website</field>
+            <field>ZipCode</field>
+        </entity>
+        
+        <entity name="Product" search-field="Name" enabled="NO">
+            <field>Id</field>
+            <field>Name</field>
+            <field>Category</field>
+            <field>ProductCategoryId</field>
+            <field>ProductCategory</field>
+            <field>Type</field>
+            <field>ProductType</field>
+            <field>Status</field>
+            <field>Orderable</field>
+            <field>Description</field>
+        </entity>
+        
+        <entity name="Category" search-field="Name" can-create="no" can-update="no" can-delete="no" enabled="NO">
+            <field>Id</field>
+            <field>Name</field>
+        </entity>
+        
+        <entity name="Asset" search-field="Product" enabled="NO">
+            <field>Id</field>
+            <field>Type</field>
+            <field>AssetType</field>
+            <field>ProductId</field>
+            <field>AccountId</field>
+            <field>AccountName</field>
+            <field>Product</field>
+            <field>SerialNumber</field>
+            <field>PurchaseDate</field>
+            <field>PurchasePrice</field>
+            <field>Quantity</field>
+            <field>ShipDate</field>
+            <field>Description</field>
+            <field>Warranty</field>
+            <field>Contract</field>
+        </entity>        
+        
+        <entity name="CustomObject1" search-field="Name" enabled="NO">
+            <field>Id</field>
+            <field>Name</field>
+            <field>Type</field>
+            <field>AccountId</field>
+            <field>OpportunityId</field>
+            <field>OwnerId</field>
+            <field>ContactId</field>
+            <field>ProductId</field>
+        </entity>
+        
+        <entity name="CustomObject2" search-field="Name" enabled="NO">
+            <field>Id</field>
+            <field>Name</field>
+            <field>Type</field>
+            <field>AccountId</field>
+            <field>OpportunityId</field>
+            <field>OwnerId</field>
+            <field>CustomObject1Id</field>
+            <field>ContactId</field>
+            <field>ProductId</field>
+        </entity>
+        
+        <entity name="CustomObject3" search-field="Name" enabled="NO">
+            <field>Id</field>
+            <field>Name</field>
+            <field>Type</field>
+            <field>AccountId</field>
+            <field>OpportunityId</field>
+            <field>OwnerId</field>
+            <field>ContactId</field>
+        </entity>
+        
+        <entity name="CustomObject4" search-field="Name" enabled="NO">
+            <field>Id</field>
+            <field>Name</field>
+            <field>Type</field>
+            <field>AccountId</field>
+            <field>OpportunityId</field>
+            <field>AccountName</field>
+            <field>CustomText30</field>
+            <field>CustomDate0</field>
+            <field>CustomDate1</field>
+            <field>OwnerId</field>
+        </entity>
+        
+        <entity name="PriceList" search-field="PriceListName" enabled="NO">
+            <field>Id</field>
+            <field>PriceListName</field>
+            <field>EffectiveFrom</field>
+            <field>EffectiveTo</field>
+            <field>Type</field>
+            <field>Status</field>
+            <field>Description</field>
+        </entity>
+        
+        <entity name="PriceListLineItem" search-field="ProductName" enabled="NO">
+            <field>Id</field>
+            <field>ProductId</field>
+            <field>ProductName</field>
+            <field>PriceListId</field>
+            <field>EffectiveFrom</field>
+            <field>EffectiveTo</field>
+            <field>PriceType</field>
+            <field>ListPrice</field>
+        </entity>
+        
+        <entity name="SPRequest" search-field="SPRequestName" enabled="NO">
+            <field>Id</field>
+            <field>SPRequestName</field>
+            <field>PrincipalPartnerAccountId</field>
+            <field>SubmissionStatus</field>
+            <field>EndCustomerId</field>
+            <field>DueDate</field>
+            <field>StartDate</field>
+            <field>EndDate</field>
+            <field>Description</field>
+        </entity>
+        
+        <entity name="SPRequestLineItem" search-field="Id" enabled="NO">
+            <field>Id</field>
+            <field>SPRequestId</field>
+            <field>ProductId</field>
+            <field>Quantity</field>
+            <field>PurchaseCost</field>
+            <field>RequestedCost</field>
+            <field>AuthorizedCost</field>
+            <field>AuthorizedDiscountPercent</field>
+            <field>RequestedAmount</field>
+            <field>AuthorizedAmount</field>
+        </entity>
+    </entities>
+    
+    
+</configuration>
