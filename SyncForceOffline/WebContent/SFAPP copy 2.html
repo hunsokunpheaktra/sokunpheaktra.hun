@@ -1,0 +1,856 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Offine Force.com</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+    <script src="connection.js" type="text/javascript"></script>
+    <script src="apex.js" type="text/javascript"></script>
+ 
+    <link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://dev.jtsage.com/cdn/datebox/latest/jquery.mobile.datebox.min.css" /> 
+    
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script> 
+    <script type="text/javascript" src="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.js"></script>
+    
+    <!-- Optional Mousewheel support: http://brandonaaron.net/code/mousewheel/docs -->
+   <!-- <script type="text/javascript" src="PATH/TO/YOUR/COPY/OF/jquery.mousewheel.min.js"></script>-->
+    
+    <script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jquery.mobile.datebox.min.js"></script>
+    
+
+
+<script type="text/javascript">
+    var db;
+    $(document).ready(function(){
+                      //Start Client Database
+                      initClientDB();
+                      
+                      //Register button
+                      $("#register").click(function(){
+                            try{
+                                    var name=$("#register_name").val();
+                                    var password=$("#register_password").val();
+                                    var token=$("#register_token").val();
+                                    register(name,password,token);      
+                                          
+                            }catch(error) {
+                                    alert("Register error:"+error);
+                            }
+                    });
+
+                    //LOGIN BUTTON
+                    $("#login").click(function(){
+                         try{
+                                var name=$("#login_name").val();
+                                var password=$("#login_password").val();      
+                                login(name,password);
+                                      
+                               
+                                          
+                               
+                        }catch(error) {
+                              alert("login error:"+error);
+                        }
+                    });
+                      
+                      
+                      //SYNCHRONIZE 
+                      
+                      $("#synchronize").click(function(){
+                                        try{
+                                              SynchronizeData();
+                                                                                
+                                        }catch(error) {
+                                                 alert("synchronize error:"+error);
+                                        }
+                                        });
+
+                      
+         
+                       $("[name=logout]").click(function(){
+                                        isconnectedSalesforce=false;
+                                        window.location = 'SFAPP.html';                                        
+                      });
+                      
+                     // newbtn
+                      
+                      $("#newaccountbtn").click(function(){
+                                                $.mobile.changePage($("#accountEditpage"), "none", false, false);                                  
+                                            });
+                      
+                      $("#newopportbtn").click(function(){
+                                                $.mobile.changePage($("#opportEditpage"), "none", false, false);                                  
+                                                });
+                      
+                     
+                      
+                     
+                      
+                      //
+                      $("#accountlist li a").click(function(){
+                                        var accountID=$(this).attr("id");
+                                                   gotoAccountDetail(accountID);
+                                                   
+                                        });
+                      
+                      //Go to Register
+                      $("#newAccount").click(function(){
+                      window.location="#registerpage";
+                      
+                      });
+                      
+                     
+    });
+
+       
+    //OPEN CLIENT DATABASE
+    function initClientDB(){
+                      
+                try{
+                      if (!window.openDatabase) {
+                           alert('Not Supported -> Please try with a WebKit Browser');
+                      } else {
+                            db = openDatabase('offlinedb', '1.0', 'Client DB for salesforce', 2 * 1024 * 1024);
+                            db.transaction(function (tx) {
+                                     tx.executeSql('CREATE TABLE IF NOT EXISTS ACCOUNTS (id unique,name,street,state,postalCode,city,country,accountNumber,phone)');
+                                     tx.executeSql('CREATE TABLE IF NOT EXISTS OPPORTS (id unique,accountID,name,description,StageName,amount,closeDate,isClosed,isWon)');
+                                     tx.executeSql('CREATE TABLE IF NOT EXISTS USERS (id unique,name,username,password,token)');
+                                           
+                                          // tx.executeSql('DELETE FROM ACCOUNTS');
+                                         //  tx.executeSql('DELETE FROM OPPORTS');
+                            });
+                            return true;
+                      }
+                }catch(e){
+                      if (e == 2) {
+                             alert("Invalid database version.");
+                      } else {
+                              alert("Unknown error "+e+".");
+                      }
+                      return false;
+                }
+                             
+    }
+    
+      
+    
+    
+    
+        
+    function isContains(a, obj) {
+        for (var i = 0; i < a.length; i++) {
+           // alert(a[i]+'='+obj);
+            if (a[i] === obj) {
+                
+                return true;
+            }
+        }
+        return false;
+    }
+
+    var selAccount;
+    ;
+    
+    function loadAccounts(){
+        try{          
+        db.transaction(function (tx) {
+                       tx.executeSql('SELECT * FROM ACCOUNTS', [], function (tx, results) {
+                                     var len = results.rows.length;
+                                     listAccount=results;
+                                     //alert(len);
+                                     $("#accountlist").html('');
+                                     for (var i = 0; i < len; i++){
+                                     var acc=results.rows.item(i)['id'];
+                                     $("#accountlist").append('<li><a href="#" name='+acc+' onclick="gotoAccountDetail(this.name);">'+results.rows.item(i)['name']+'</a></li>');
+                                      
+                                      }
+                                      //$("#accountlist").listview('refresh');
+                                     });
+                       
+                       tx.executeSql('SELECT * FROM OPPORTS', [], function (tx, results) {
+                                     var len = results.rows.length;
+                                     //alert(len);
+                                     $("#opportlist").html('');
+                                     listOpport=results;
+                                     for (var i = 0; i < len; i++){
+                                     var oppID=results.rows.item(i)['id'];
+                                    // alert(oppID);
+                                     $("#opportlist").append('<li><a href="#" name='+oppID+' onclick="gotoOpportDetail(this.name);">'+results.rows.item(i)['name']+'</a></li>');
+                                      
+                                     }
+                                      //$("#opportlist").listview('refresh');
+                                     });     
+                                      
+                                      
+                       },[],function(){gotoMainPage();});
+        }catch(error){
+            alert("laod data:"+error);
+        }
+        
+       
+
+     } 
+    
+    
+   function  gotoMainPage(){
+       $.mobile.pageLoading(true);
+       $.mobile.changePage($("#account_mainpage"), "none", false, false);
+        $("#accountlist").listview('refresh');
+                  
+    }
+                      
+    Array.prototype.contains = function ( needle ) {
+        for (i in this) {
+            if (this[i] == needle) return true;
+        }
+        return false;
+    }
+
+    
+    //===========ACCOUNT OPERATION================//
+    
+    function gotoAccountDetail(accountId){
+        // alert(accountId);
+        try{ 
+        db.transaction(function (tx) {
+                       
+                       //alert(accountId+'SELECT * FROM ACCOUNTS WHERE id='+accountId);
+                       
+                       
+                       tx.executeSql('SELECT * FROM ACCOUNTS WHERE id="'+accountId+'"', [], function (tx, results) {
+                                     var len = results.rows.length;
+                                    // alert(len);
+                                     for (var i = 0; i < len; i++){
+                                        $("#showName").text(results.rows.item(i)['name']);
+                                        $("#showBillingStreet").text(results.rows.item(i)['street']);
+                                        $("#showBillingState").text(results.rows.item(i)['state']);
+                                        $("#showBillingPostalCode").text(results.rows.item(i)['postalCode']);
+                                        $("#showBillingCity").text(results.rows.item(i)['city']);
+                                        $("#showBillingCountry").text(results.rows.item(i)['country']);
+                                        $("#showAccountNumber").text(results.rows.item(i)['accountNumber']);
+                                        $("#showPhone").text(results.rows.item(i)['phone']);
+                                        $("#showId").text(results.rows.item(i)['id']);
+                                        tx.executeSql('SELECT * FROM OPPORTS WHERE accountId="'+accountId+'"', [], function (tx, results) {
+                                                   var len = results.rows.length;
+                                                   //alert(len);
+                                                    $("#relatedopportlist").html("");
+                                                   for (var i = 0; i < len; i++){
+                                                   var acc=results.rows.item(i)['id'];
+                                                   $("#relatedopportlist").append('<li><a href="#" name='+acc+' onclick="gotoOpportDetail(this.name);">'+results.rows.item(i)['name']+'</a></li>');
+                                                   
+                                                   }
+                                                   $.mobile.changePage($("#accountDetailpage"), "none", false, false);
+                                                   $("#relatedopportlist").listview('refresh');
+                                                   
+                                                   });
+
+                                     break;
+                                     }
+                                  
+                                     
+                                    // $.mobile.changePage($("#accountDetailpage"), "none", false, false);
+                                     
+                                     
+                                     
+                                     
+                                     }, null);
+                       });
+        }catch(error){
+            alert(error);
+        }
+
+        
+    }
+    
+    
+    function gotoOpportDetail(opportID){
+       // alert(opportID);
+        try{ 
+                     var found=false;                            // alert(len);
+                        for (var i = 0; i < listOpport.rows.length; i++){
+                           // alert(listOpport.rows.item(i)['id']+'==='+opportID);
+                            if(listOpport.rows.item(i)['id']==opportID){
+                                found=true;
+                                         $("#showOpportId").text(listOpport.rows.item(i)['id']);
+                                         $("#showOpportAccount").text(listOpport.rows.item(i)['accountID']);
+                                         $("#showOpportName").text(listOpport.rows.item(i)['name']);
+                                         $("#showOpportDescription").text(listOpport.rows.item(i)['description']);
+                                         $("#showOpportStageName").text(listOpport.rows.item(i)['StageName']);
+                                         $("#showOpportAmount").text(listOpport.rows.item(i)['amount']);
+                                         $("#showOpportCloseDate").text(listOpport.rows.item(i)['closeDate']);
+                                         $("#showOpportIsClosed").text(listOpport.rows.item(i)['isClosed']);
+                                         $("#showOpportIsWon").text(listOpport.rows.item(i)['isWon']);
+                                         $.mobile.changePage($("#opportDetailpage"), "none", false, false);
+                                break;
+                                return;
+                                
+                            }
+                        }
+                      if(!found) alert("Record not found!");
+            
+                                                                                               
+                                                       
+                                                      
+                                                       
+            }catch(error){
+            alert(error);
+        }
+        
+        
+    }
+
+    
+    // Variable
+    var listAccount;
+    var listOpport;
+    
+    
+    
+    //LOGIN PAGE CONTROLLER
+    
+    var activeUser;
+    function login(user,pwd){
+        $.mobile.pageLoading();
+        db.transaction(function (tx) {
+                       tx.executeSql('SELECT * FROM USERS WHERE username="'+user+'"', [], function (tx, results) {
+                                     var len = results.rows.length;
+                                     if(len==0) { $.mobile.pageLoading(true);alert(user+' not exist! Please register new account.');}
+                                     for (var i = 0; i < len; i++){
+                                    // alert(pwd+"=="+results.rows.item(i)['password'])
+                                        if(pwd==results.rows.item(i)['password']){//login Sucess
+                                               activeUser=results.rows.item(i);
+                                               $("[name=activeUser]").text(results.rows.item(i)['name']);          
+                                               loadAccounts()
+                                                $.mobile.pageLoading(true);
+                                                 //$.mobile.changePage($("#mainpage"), "none", false, false);
+                                                break;
+                                        }else{
+                                            $.mobile.pageLoading(true);
+                                            alert('Invalid Password');
+                                        }
+                                     }
+                                                                         
+                                     }, null);
+                       });
+        
+    } 
+    
+     //REGISTER PAGE CONTROLLER
+    var isconnectedSalesforce=false;
+    
+    //register action
+    function register(user,pwd,token){
+       // alert("register run");
+        $.mobile.pageLoading();
+        db.transaction(function (tx) {
+                       tx.executeSql('SELECT * FROM USERS WHERE username="'+user+'"', [], function (tx, results) {
+                                     var len = results.rows.length;
+                                   //   alert("No user: "+(len==0));
+                                     if(len==0){
+                                        if(connectFS(user,pwd,token)){//connect to salesforce 
+                                            saveuser(user,pwd,token);
+                                     
+                                        }else{
+                                            alert("unable to connect to Force.com");
+                                    }
+                                     }else{
+                                        alert(user+'registered already!');
+                                     }
+                                     
+                                               
+                                           
+                                             
+                       }, null);
+        });
+    
+    } 
+    
+    //save valid account to database
+    function saveuser(name,pass,token){
+        alert("Select Username, Name, Id From User where Username='"+name+"'");
+        var result = sforce.connection.query("Select Username, Name, Id From User  where Username='"+name+"'",{ onSuccess : success, onFailure : failure});
+        function failure(error){
+            alert("Select user from salesforce error:" + error);
+        }   
+        
+        function success(result){
+           // alert("Sucess")
+            db.transaction(function (tx) {
+            var records = result.getArray("records");
+                          // alert(records.length);
+            if(records.length==0) {alert('Can not find user on Force.com');}
+            for (var i=0; i< records.length; i++){
+                var user = records[i];
+               
+                               tx.executeSql("INSERT INTO USERS (id,name,username,password,token)  VALUES (?,?,?,?,?)", [user.Id,user.Name,user.Username,pass,token],
+                                             
+                                             function(result){alert(user.Username+" was registered sucessfully"); gotoLoginPage(name,pass); $.mobile.pageLoading(true);},
+                                             
+                                             function(tx, error){alert("fail to add user database: "+error)});
+                               
+                             
+                
+            }
+        });
+
+        }
+    }
+    
+    //goto login page
+    function gotoLoginPage(name,pass){
+        var name=$("#login_name").val(name);
+        var password=$("#login_password").val(pass);
+        $.mobile.changePage($("#loginpage"), "none", false, false);
+    }
+    
+    //goto login page
+    function gotoAccountListPage(name,pass){
+        $.mobile.changePage($("#account_mainpage"), "none", false, false);
+        $("#accountlist").listview('refresh');
+    }
+    
+    //goto login page
+    function gotoOpportListPage(name,pass){
+        $.mobile.changePage($("#opport_mainpage"), "none", false, false);
+        $("#opportlist").listview('refresh');
+    }
+    
+    //connect to force.com
+    function connectFS(name,pass,token){
+        
+        
+        sforce.connection.serverUrl = 'https://login.salesforce.com/services/Soap/u/22.0';
+        //alert(sforce.connection.serverUrl);
+        // var result = sforce.connection.login(name, pass+token);
+        //alert(serverUrl+""+sessionID);
+        
+        var result = sforce.connection.login(name, pass+token);
+        //var result = sforce.connection.login('samsinthorn@gmail.com', 'zam1234561jVNIswiKZXW3rLmfz3HE15x');
+        sforce.connection.serverUrl=result.serverUrl;
+        if(sforce.connection.sessionId!=null) {isconnectedSalesforce=true;return true;}
+        return false;
+        
+    }
+    
+    
+    //MAIN PAGE CONTROLLER
+    function SynchronizeData(){
+        if(activeUser==null) {alert("No user found");return;}
+        if(!isconnectedSalesforce){
+           // alert(activeUser['username']+','+activeUser['password']+','+activeUser['token']);
+            if (!connectFS(activeUser['username'],activeUser['password'],activeUser['token'])){alert("can not connect to Force.com ");return}
+        }
+        try{       
+            $.mobile.pageLoading();
+            
+            var result = sforce.connection.query("Select a.Phone, a.Name, a.Id,a.BillingStreet, a.BillingPostalCode,a.BillingState, a.BillingCountry, a.BillingCity, a.AccountNumber, (Select Id, Name, Description, StageName, Amount,CloseDate, IsClosed, IsWon From Opportunities) From Account a limit 25",{ onSuccess : success, onFailure : failure});
+            function failure(error){
+                alert("An error" + error);
+            }   
+            
+            function success(result){
+                // alert("success ");
+                
+                db.transaction(function (tx) {
+                               //EXISTING ID
+                               var sAccountID= new Array();
+                               var sOpportID= new Array();
+                               
+                               //EXISTING ACCOUNT ID 
+                               
+                               tx.executeSql('SELECT * FROM ACCOUNTS', [], function (tx, results) {
+                                             var len = results.rows.length;
+                                             for (var i = 0; i < len; i++){
+                                             sAccountID.push(results.rows.item(i)['id']);
+                                            // alert(results.rows.item(i)['id']);
+                                             }
+                                             //EXISTING OPPORTS ID 
+                                             tx.executeSql('SELECT * FROM OPPORTS', [], function (tx, results) {
+                                                           var len = results.rows.length;
+                                                           for (var i = 0; i < len; i++){
+                                                           sOpportID.push(results.rows.item(i)['id']);                                            
+                                                           }
+                                                           //load Accounts
+                                                           var records = result.getArray("records");
+                                                           for (var i=0; i< records.length; i++){
+                                                           var account = records[i];
+                                                           // alert(account.Id+':'+isContains(sAccountID,account.Id)); 
+                                                           if(isContains(sAccountID,account.Id)){   
+                                                           // alert("update:"+account.Id); 
+                                                           //UPDATE ACCOUNT if EXIST
+                                                           tx.executeSql('UPDATE ACCOUNTS SET name=?,street=?,state=?,postalCode=?,city=?,country=?,accountNumber=?,phone=? WHERE Id=?',[account.Name,account.BillingStreet,account.BillingState,account.BillingPostalCode,account.BillingCity,account.BillingCountry,account.AccountNumber,account.Phone,account.Id],function(result){/*alert("update an account sucessfully"+result)*/},function(tx, error){alert("Update Account :"+error)});
+                                                           
+                                                           }else{
+                                                           // alert("add:"+account.Id);
+                                                           // alert('INSERT Account:'+'"'+account.Id+'"'+'"'+account.Name+'"'+'"'+account.BillingStreet+'"'+'"'+account.BillingState+'"'+'"'+account.BillingPostalCode+'"'+'"'+account.BillingCity+'"'+'"'+account.BillingCountry+'"'+'"'+account.AccountNumber+'"'+'"'+account.Phone+'"'); 
+                                                           tx.executeSql("INSERT INTO ACCOUNTS (id,name,street,state,postalCode,city,country,accountNumber,phone) VALUES (?,?,?,?,?,?,?,?,?)", [account.Id,account.Name,account.BillingStreet,account.BillingState,account.BillingPostalCode,account.BillingCity,account.BillingCountry,account.AccountNumber,account.Phone],function(result){/*alert("Add an account sucessfully"+result);*/},function(tx, error){alert("Add Account :"+error)}); 
+                                                           }  
+                                                           
+                                                           //OPPORTUNITY
+                                                           if (account.Opportunities) {
+                                                           var oppv = new sforce.QueryResultIterator(account.Opportunities); 
+                                                           while(oppv.hasNext()) {
+                                                           var opp = oppv.next();
+                                                           if(isContains(opp,'"'+opp.Id+'"')){   
+                                                           // alert("update opportunity:"+account.Id); 
+                                                           //UPDATE OPPORT if EXIST
+                                                           tx.executeSql('UPDATE OPPORTS SET accountID=?,name=?,description=?,StageName=?,amount=?,closeDate=?,isClosed=?,isWon=? WHERE Id=?',[account.Id,opp.Name,opp.Description,opp.StageName,opp.Amount,opp.CloseDate,opp.IsClosed,opp.IsWon,opp.Id],function(result){/*alert("update an opportuntity sucessfully"+result)*/},function(tx, error){alert("Update Opportunity :"+error)});
+                                                           
+                                                           }else{
+                                                           //alert("add:"+account.Id);
+                                                           
+                                                           tx.executeSql("INSERT INTO OPPORTS (id,accountID,name,description,StageName,amount,closeDate,isClosed,isWon)  VALUES (?,?,?,?,?,?,?,?,?)", [opp.Id,account.Id,opp.Name,opp.Description,opp.StageName,opp.Amount,opp.CloseDate,opp.IsClosed,opp.IsWon],function(result){/*alert("Add an opportuntity sucessfully"+result);*/},function(tx, error){alert("Add Opportunity :"+error)}); 
+                                                           }
+                                                           }
+                                                           } 
+                                                           
+                                                           }
+                                                           
+                                                           loadAccounts();   
+                                                           $.mobile.pageLoading(true);
+                                                           //End code            
+                                                           
+                                                           }, null); 
+                                             
+                                             
+                                             }, null);
+                               
+                               
+                               
+                               
+                               
+                               
+                               });
+            }
+            
+            
+            return true;   
+        }catch(error) {
+            alert(error);
+            return false;
+            
+        }
+    }
+
+
+    
+
+     
+</script>
+</head>
+
+<body>
+    
+    <!--LOGIN PAGE-->
+    <div data-role="page" data-theme="b" id="loginpage">
+        
+	    <div data-role="header">
+	        <h1>Login</h1>
+        </div>
+	    <div data-role="content">
+            <form >
+                <div data-role="fieldcontain">
+                    <label for="login_name">User Name:</label>
+                    <input type="text" name="login_name" id="login_name" value=""  />
+                </div>
+               
+                <div data-role="fieldcontain">
+                    <label for="login_password">Password:</label>
+                    <input type="password" name="login_password" id="login_password" value="" />
+                </div>	
+                        
+	        </form>
+            <button data-role="button" id="login">Login</button>
+            <button data-role="button" id="newAccount">New Account</button>
+            
+	    </div>
+	    <div data-role="footer">
+	        <h4 name="activeUser">Force.com</h4>
+	    </div>
+	</div>
+
+	<!--Register PAGE-->
+    <div data-role="page" data-theme="b" id="registerpage">
+
+	    <div data-role="header">
+            <a href="#loginpage" data-icon="home" id="backAccountDetail">login</a>
+	        <h1>Register</h1>
+          	    </div>
+	    <div data-role="content">
+            <form >
+                <div data-role="fieldcontain">
+                    <label for="register_name">User Name: </label>
+                    <input type="text" name="register_name" id="register_name" value=""  />
+                </div>
+                <div data-role="fieldcontain">
+                    <label for="register_password">Password: </label>
+                    <input type="password" name="register_password" id="register_password" value="" />
+                </div>	
+                <div data-role="fieldcontain">
+                    <label for="register_token">Token:</label>
+                    <input type="text" name="register_token" id="register_token" value="" />
+                </div>	
+	           
+	        </form>
+             <button data-role="button" id="register">Connect</button>
+        
+	    </div>
+	    <div data-role="footer">
+	        <h4 name="activeUser">Force.com</h4>
+	    </div>
+	</div>
+    
+    <!-- ACCOUNT LIST PAGE -->
+ <div data-role="page" data-theme="b" id="account_mainpage">
+        <div data-role="header" data-backbtn="false">
+            
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#" onclick="gotoAccountListPage()" class="ui-btn-active">Account</a></li>
+                    <li><a href="#" onclick="gotoOpportListPage()">Opportunity</a></li>
+                </ul>
+            </div>
+            <h1>Account List</h1>
+        </div>
+        <div data-role="content">
+            
+                <button data-role="button" id="newaccountbtn">New</button>
+            
+            <ul id="accountlist" data-inset="true" data-role="listview" 
+                data-theme="c" data-dividertheme="b">
+               
+            </ul>
+                <button data-role="button" id="synchronize">Synchronize</button>
+            <button data-role="button" id="acclogoutbtn" name="logout">Logout</button>
+            
+        </div>
+        <div data-role="footer">
+            <h4 name="activeUser">Force.com</h4>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+  <!-- ACCOUNT DETAIL-->
+    <div data-role="page" data-theme="b" id="accountDetailpage">
+        <div data-role="header" data-backbtn="false">
+            <a href="#account_mainpage" data-icon="delete" id="backAccountDetail">Back</a>
+
+            <h1>Account Detail</h1>
+        </div>
+        <div data-role="content">
+            <table>
+                <tr>
+                    <td>Account ID:</td>
+                    <td id="showId"></td>
+                </tr>
+
+                <tr>
+                    <td>Account Name:</td>
+                    <td id="showName"></td>
+                </tr>
+                <tr>
+                    <td>BillingStreet:</td>
+                    <td id="showBillingStreet"></td>
+                </tr>
+                <tr>
+                    <td>BillingState:</td>
+                    <td id="showBillingState"></td>
+                </tr>
+                <tr>
+                    <td>BillingPostalCode:</td>
+                    <td id="showBillingPostalCode"></td>
+                </tr>
+                <tr>
+                    <td>BillingCity:</td>
+                    <td id="showBillingCity"></td>
+                </tr>
+                <tr>
+                    <td>BillingCountry:</td>
+                    <td id="showBillingCountry"></td>
+                </tr>
+                <tr>
+                    <td>AccountNumber:</td>
+                    <td id="showAccountNumber" ></td>
+                </tr>
+                <tr>
+                    <td>Phone:</td>
+                    <td id="showPhone"></td>
+                </tr>
+            </table>
+            <h4>Opportuntities</h4>
+             <ul id="relatedopportlist" data-inset="true" data-role="listview" 
+                data-theme="c" data-dividertheme="b"> </ul>
+
+            <form name="accountdetail" id="accountdetail">
+                <button data-role="button" id="editbtn">Edit</button>
+                <button data-role="button" id="deletebtn" data-icon="delete" 
+                    data-theme="e">Delete</button>
+            </form>
+        </div>
+        <div data-role="footer">
+            <h4 name="activeUser">Force.com</h4>
+        </div>
+    </div>
+    
+    <!--ACCOUNT EDIT PAGE-->
+    <div data-role="page" data-theme="b" id="accountEditpage">
+        <div data-role="header" data-backbtn="false">
+             <a href="#account_mainpage" data-icon="delete" id="backEditpage">Back</a>
+            <h1 id="accformheader">New Account</h1>
+            
+        </div>
+        <div data-role="content">
+            <form name="accountform" id="accountform">
+               <div data-role="fieldcontain">
+                        <label for="accountName">Account Name:</label>
+                        <input name="accountName" id="accountName" data-theme="c"/>
+               </div>
+                
+                  <div data-role="fieldcontain">
+                         <label for="BillingStreet">BillingStreet:</label>
+                        <input name="BillingStreet" id="BillingStreet" 
+                            data-theme="c"/>
+                    </div>
+                    <div data-role="fieldcontain">
+                         <label for="BillingState">BillingState:</label>
+                       <input name="BillingState" id="BillingState" 
+                            data-theme="c"/>
+                    </div>
+                   <div data-role="fieldcontain">
+                       <label for="BillingPostalCode">BillingPostalCode:</label>
+
+                        <input name="BillingPostalCode" id="BillingPostalCode" data-theme="c"/>
+                   </div>
+                    <div data-role="fieldcontain">
+                         <label for="BillingCity">BillingCity:</label>
+                        <input name="BillingCity" id="BillingCity" 
+                            data-theme="c"/>
+                    </div>
+                    <div data-role="fieldcontain">
+                         <label for="BillingCountry">BillingCountry:</label>
+                        <input name="BillingCountry" id="BillingCountry" 
+                            data-theme="c"/>
+                    </div>
+                     <div data-role="fieldcontain">
+                         <label for="AccountNumber">AccountNumber:</label>
+                        <input name="AccountNumber" id="AccountNumber" data-theme="c"/>
+                    </div>
+                     <div data-role="fieldcontain">
+                         <label for="Phone">Phone:</label>
+                        <input name="Phone" id="Phone" 
+                            data-theme="c"/>
+                    </div>
+                         
+               
+                <button data-role="button" id="actionaccountbtn">Action</button>
+            </form>
+        </div>
+        <div data-role="footer">
+            <h4 name="activeUser">Force.com</h4>
+        </div>
+    </div>
+    
+    
+   <!--================ OPPORTUNITY SECTION=================-->
+    
+    
+    <!-- OPPORTUNITY LIST PAGE-->
+    <div data-role="page" data-theme="b" id="opport_mainpage">
+        <div data-role="header" data-backbtn="false">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#" onclick="gotoAccountListPage()" >Account</a></li>
+                    <li><a href="#" onclick="gotoOpportListPage()" class="ui-btn-active">Opportunity</a></li>
+                </ul>
+            </div>
+            <h1>Opportunity List</h1>
+        </div>
+        <div data-role="content">
+            
+            <button data-role="button" id="newOpportbtn">New</button>
+            
+            <ul id="opportlist" data-inset="true" data-role="listview" 
+                data-theme="c" data-dividertheme="b">
+            </ul>
+            <button data-role="button" id="synchronize">Synchronize</button>
+            <button data-role="button" id="opplogoutbtn" name="logout">Logout</button>
+            
+        </div>
+        <div data-role="footer">
+            <h4 name="activeUser">Force.com</h4>
+        </div>
+    </div>
+    
+    <!-- OPPORTUNITY DETAIL-->
+    <div data-role="page" data-theme="b" id="opportDetailpage">
+        <div data-role="header" data-backbtn="false">
+            <a href="#opport_mainpage" data-icon="delete" id="backopportDetail">Back</a>
+            
+            <h1>Opportunity Detail</h1>
+        </div>
+        <div data-role="content">
+            <table>
+                <tr>
+                    <td>Opportunity ID:</td>
+                    <td id="showOpportId"></td>
+                </tr>
+                
+                <tr>
+                    <td>Opportunity Name:</td>
+                    <td id="showOpportName"></td>
+                </tr>
+                <tr>
+                    <td>Amount:</td>
+                    <td id="showOpportAmount"></td>
+                </tr>
+                <tr>
+                    <td>CloseDate:</td>
+                    <td id="showOpportCloseDate"></td>
+                </tr>
+                <tr>
+                    <td>Account:</td>
+                    <td id="showOpportAccount"></td>
+                </tr>
+                <tr>
+                    <td>StageName:</td>
+                    <td id="showOpportStageName"></td>
+                </tr>
+                <tr>
+                    <td>IsClosed:</td>
+                    <td id="showOpportIsClosed"></td>
+                </tr>
+                <tr>
+                    <td>IsWon:</td>
+                    <td id="showOpportIsWon" ></td>
+                </tr>
+                <tr>
+                    <td>Description:</td>
+                    <td id="showOpportDescription"></td>
+                </tr>
+            </table>
+           
+            
+            <form name="opportdetail" id="opportdetail">
+                <button data-role="button" id="opporteditbtn">Edit</button>
+                <button data-role="button" id="opportdeletebtn" data-icon="delete" 
+                    data-theme="e">Delete</button>
+            </form>
+        </div>
+        <div data-role="footer">
+            <h4 name="activeUser">Force.com</h4>
+        </div>
+    </div>
+
+
+    
+            
+        
+</body>
+</html>

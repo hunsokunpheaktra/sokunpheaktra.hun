@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<!--
+Copyright (c) 2011, salesforce.com, inc.
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided
+that the following conditions are met:
+
+Redistributions of source code must retain the above copyright notice, this list of conditions and the
+ following disclaimer.
+
+Redistributions in binary form must reproduce the above copyright notice, this list of conditions and
+the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+Neither the name of salesforce.com, inc. nor the names of its contributors may be used to endorse or
+promote products derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
+WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+-->
+<!--
+Sample HTML page showing use of Force.com JavaScript REST Toolkit from
+an HTML5 mobile app using jQuery Mobile
+-->
+<html>
+<head>
+<title>Accounts</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!--
+    For development, you may want to load jQuery/jQuery Mobile from their CDN. 
+-->
+<script type="text/javascript" src="jquery-1.5.2.min.js"></script>
+<!--
+From jQuery-swip - http://code.google.com/p/jquery-swip/source/browse/trunk/jquery.popupWindow.js 
+-->
+<!-- <script type="text/javascript" src="jquery.popup.js"></script> -->
+<!-- <script type="text/javascript" src="forcetk.js"></script> -->
+
+<!--<script type="text/javascript" src="jquery.mobile-1.0a4.min.js"></script>  -->
+<script type="text/javascript" src="connection.js"></script>
+
+
+
+
+
+
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script> -->
+    <!-- <script type="text/javascript" src="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.js"></script> -->
+    
+    <!-- Optional Mousewheel support: http://brandonaaron.net/code/mousewheel/docs -->
+   <!-- <script type="text/javascript" src="PATH/TO/YOUR/COPY/OF/jquery.mousewheel.min.js"></script>-->
+    
+    <!-- <script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jquery.mobile.datebox.min.js"></script> -->
+
+
+
+
+<script type="text/javascript">
+
+// OAuth Configuration 
+//rest
+// var loginUrl    = 'https://login.salesforce.com/';
+// var clientId    = '3MVG9CVKiXR7Ri5rTXLZxJVepcjPdLuBQoKQDuP8kLZL41dwlSW0n4xQbc0yB9VF.TKvTDdaNmEa9nZ_fW5vc';
+// var redirectUri = 'http://localhost:8080/SyncForceOffline/oauthcallback.html';
+// var proxyUrl    = '';
+var loginUrl='http://localhost:8080/SyncForceOffline/oauthLogin.html';
+//alert(loginUrl);
+// We'll get an instance of the REST API client in a callback after we do 
+// OAuth
+
+//var client = new forcetk.Client(clientId, loginUrl, proxyUrl);;
+
+//end rest
+// We use $j rather than $ for jQuery
+if (window.$j === undefined) {
+    $j = $;
+}
+
+$j(document).ready(function() {
+
+    $('#loadingimg').hide();
+    //onclick
+// 	$j('#login').popupWindow({ 
+// 		windowURL: getAuthorizeUrl(loginUrl, clientId, redirectUri),
+// 		windowName: 'Connect',
+// 		centerBrowser: 1,
+// 		height:480, 
+// 		width:440
+// 	});
+
+    $('#synchronize').click(function() {
+        if(!isRunning){
+            $('#loadingimg').show();
+            isRunning = true;
+            i = 0;
+            
+         
+            // Create the animation
+            res = setInterval(draw, 50);
+        }
+        return false;
+        
+    });
+    
+});
+
+
+
+function sessionCallback(oauthResponse) {
+    if (typeof oauthResponse === 'undefined'
+        || typeof oauthResponse['access_token'] === 'undefined') {
+        //$j('#prompt').html('Error - unauthorized!');
+        errorCallback({
+            status: 0, 
+            statusText: 'Unauthorized', 
+            responseText: 'No OAuth response'
+        });
+    } else {
+//         client.setSessionToken(oauthResponse.access_token, null,
+//           oauthResponse.instance_url);
+		//sforce.connection.init(oauthResponse.access_token,oauthResponse.instance_url+'/services/Soap/u/22.0/');
+		//alert('oauthResponse===='+oauthResponse.instance_url);alert('oauthResponse.access_token>>>>>>>>>'+oauthResponse.access_token);
+		sforce.connection.init(oauthResponse.access_token,oauthResponse.instance_url+'/services/Soap/u/22.0/');
+		
+	   // sforce.connection.serverUrl = 'https://login.salesforce.com/services/Soap/u/22.0';  
+// 	    var resultlongin = sforce.connection.login('suntheary.heang@gmail.com','1234561kOKpPH7tdHqMyPlAd1GcQCo');
+// 	  	alert("resultlogin===="+resultlongin.serverUrl);
+// 	    sforce.connection.serverUrl=resultlongin.serverUrl;
+		var result = sforce.connection.query("Select Id From Account",{ onSuccess : success, onFailure : failure});
+    }
+}
+
+function connectFS(){
+    
+    
+    sforce.connection.serverUrl = 'https://login.salesforce.com/services/Soap/u/22.0';
+    //alert(sforce.connection.serverUrl);
+    // var result = sforce.connection.login(name, pass+token);
+    //alert(serverUrl+""+sessionID);
+    
+    var result = sforce.connection.login('suntheary.heang@gmail.com','1234561kOKpPH7tdHqMyPlAd1GcQCo');
+    //var result = sforce.connection.login('samsinthorn@gmail.com', 'zam1234561jVNIswiKZXW3rLmfz3HE15x');
+    sforce.connection.serverUrl=result.serverUrl;
+    if(sforce.connection.sessionId!=null) {isconnectedSalesforce=true;return true;}
+    return false;
+    
+}
+
+//Sync Request
+function failure(error){
+	alert("An error" + error);
+}   
+
+function success(result){
+	alert("success " + result.getArray("records").length);
+}
+
+//initialize Client Database
+var db;
+initClientDB();
+
+//OPEN CLIENT DATABASE
+function initClientDB(){
+    try{
+        if (!window.openDatabase) {
+            alert('Not Supported -> Please try with a WebKit Browser');
+        }else {
+            db = openDatabase('SyncForceDB', '1.0', 'Client DB for salesforce', 2 * 1024 * 1024);
+            db.transaction(function (tx) {
+                
+                //1.FieldsInfo
+                tx.executeSql('CREATE TABLE IF NOT EXISTS FieldsInfo(local_id INTEGER PRIMARY KEY, entity TEXT, name TEXT, label TEXT, type TEXT, soapType TEXT, referenceTo TEXT, idLookup TEXT, calculated TEXT, dependentPicklist TEXT, controllerName TEXT, sortable TEXT, length TEXT, createable TEXT, updateable TEXT, nillable TEXT, filterable TEXT, relationshipName TEXT, calculatedFormula TEXT, defaultValueFormula TEXT, defaultedOnCreate TEXT, restrictedPicklist TEXT, externalId TEXT)');
+                
+                //2.PicklistInfo
+            tx.executeSql('CREATE TABLE IF NOT EXISTS PicklistInfo(local_id INTEGER PRIMARY KEY, entity TEXT, fieldname TEXT, fieldlabel TEXT, value TEXT, label TEXT, fieldorder INTEGER, active TEXT, defaultValue TEXT, validFor TEXT, dependentPicklist TEXT, controllerName TEXT)');
+            
+                //3.EditLayoutSectionsInfo
+                tx.executeSql('CREATE TABLE IF NOT EXISTS EditLayoutSectionsInfo(local_id INTEGER PRIMARY KEY, entity TEXT, Id TEXT, useCollapsibleSection TEXT, useHeading TEXT, heading TEXT, columns TEXT, rows TEXT, numItems TEXT, editable TEXT, placeholder TEXT, required TEXT, label TEXT, type TEXT, value TEXT, tabOrder INTEGER, displayLines TEXT)');
+                //4.DetailLayoutSectionsInfo
+                tx.executeSql('CREATE TABLE IF NOT EXISTS DetailLayoutSectionsInfo(local_id INTEGER PRIMARY KEY, entity TEXT, Id TEXT, useCollapsibleSection TEXT, useHeading TEXT, heading TEXT, columns TEXT, rows TEXT, numItems TEXT, editable TEXT, placeholder TEXT, required TEXT, label TEXT, type TEXT, value TEXT, tabOrder INTEGER, displayLines TEXT)');
+                
+                //5.RecordTypeMappingInfo
+                tx.executeSql('CREATE TABLE IF NOT EXISTS RecordTypeMappingInfo(local_id INTEGER PRIMARY KEY, name TEXT, layoutId TEXT, entity TEXT, available TEXT, defaultRecordTypeMapping TEXT, recordTypeId TEXT)');
+                
+                //6.PicklistForRecordTypeInfo
+                tx.executeSql('CREATE TABLE IF NOT EXISTS PicklistForRecordTypeInfo(local_id INTEGER PRIMARY KEY, entity TEXT, recordTypeId TEXT, picklistName TEXT, label TEXT, value TEXT, validFor TEXT, fieldorder INTEGER, active TEXT, defaultValue TEXT)');
+                
+                //7.RelatedListsInfo
+                tx.executeSql('CREATE TABLE IF NOT EXISTS RelatedListsInfo(local_id INTEGER PRIMARY KEY, entity TEXT, custom TEXT, field TEXT, label TEXT, limitRows TEXT, name TEXT, sobject TEXT, columnsFieldNames TEXT, describe TEXT)');
+                
+                //8.RelatedListColumnInfo
+                tx.executeSql('CREATE TABLE IF NOT EXISTS RelatedListColumnInfo(local_id INTEGER PRIMARY KEY, entity TEXT, sobject TEXT, field TEXT, format TEXT, label TEXT, name TEXT)');
+                
+                //9.RelatedListSortInfo
+                tx.executeSql('CREATE TABLE IF NOT EXISTS RelatedListSortInfo(local_id INTEGER PRIMARY KEY, entity TEXT, sobject TEXT, column TEXT, ascending TEXT)');
+                
+                //10.ChildRelationshipInfo
+                tx.executeSql('CREATE TABLE IF NOT EXISTS ChildRelationshipInfo(local_id INTEGER PRIMARY KEY, entity TEXT, childSObject TEXT, cascadeDelete TEXT, field TEXT, relationshipName TEXT, description TEXT)');
+                
+                //11.Property
+                tx.executeSql('CREATE TABLE IF NOT EXISTS Property(property TEXT PRIMARY KEY, value TEXT)');
+                
+                //12.Synclog
+                tx.executeSql('CREATE TABLE IF NOT EXISTS Synclog(num INTEGER PRIMARY KEY AUTOINCREMENT, task INTEGER, date TEXT, type TEXT, log TEXT, count INTEGER, Id TEXT, entity TEXT)');
+                
+                //13.TransactionInfo
+                tx.executeSql('CREATE TABLE IF NOT EXISTS TransactionInfo(TaskName TEXT PRIMARY KEY, LastSyncDate TEXT)');
+                
+                //14.EntityInfo
+                tx.executeSql('CREATE TABLE IF NOT EXISTS EntityInfo(local_id INTEGER PRIMARY KEY, name TEXT, label TEXT, labelPlural TEXT, deletable TEXT, createable TEXT, custom TEXT, updateable TEXT, keyPrefix TEXT, searchable TEXT, queryable TEXT, retrieveable TEXT, undeletable TEXT, triggerable TEXT)');
+                
+            });
+            return true;
+        }
+    }catch(e){
+        if (e == 2) {
+                 alert("Invalid database version.");
+        } else {
+            alert("Unknown error "+e+".");
+        }
+        return false;
+    }
+                             
+}
+//Synchronize Screening 
+
+var isRunning = false;
+
+function roundRect(ctx, x, y, width, height, radius) {
+    ctx.beginPath();
+    ctx.moveTo(x + radius, y);
+    ctx.lineTo(x + width - radius, y);
+    ctx.arc(x+width-radius, y+radius, radius, -Math.PI/2, Math.PI/2, false);
+    ctx.lineTo(x + radius, y + height);
+    ctx.arc(x+radius, y+radius, radius, Math.PI/2, 3*Math.PI/2, false);
+    ctx.closePath();
+    ctx.fill();
+}
+function progressBarRect(ctx, x, y, width, height, radius, max) {
+    // deplacement for chord drawing
+    var offset = 0;
+    ctx.beginPath();
+    if (width<radius) {
+        offset = radius - Math.sqrt(Math.pow(radius,2)-Math.pow((radius-width),2));
+        // Left angle
+        var left_angle = Math.acos((radius - width) / radius);
+        ctx.moveTo(x + width, y+offset);
+        ctx.lineTo(x + width, y+height-offset);
+        ctx.arc(x + radius, y + radius, radius, Math.PI - left_angle, Math.PI + left_angle, false);
+    }
+    else if (width+radius>max) {
+        offset = radius - Math.sqrt(Math.pow(radius,2)-Math.pow((radius - (max-width)),2));
+        // Right angle
+        var right_angle = Math.acos((radius - (max-width)) / radius);
+        ctx.moveTo(x + radius, y);
+        ctx.lineTo(x + width, y);
+        ctx.arc(x+max-radius, y + radius, radius, -Math.PI/2, -right_angle, false);
+        ctx.lineTo(x + width, y+height-offset);
+        ctx.arc(x+max-radius, y + radius, radius, right_angle, Math.PI/2, false);
+        ctx.lineTo(x + radius, y + height);
+        ctx.arc(x+radius, y+radius, radius, Math.PI/2, 3*Math.PI/2, false);
+    }
+    else {
+        ctx.moveTo(x + radius, y);
+        ctx.lineTo(x + width, y);
+        ctx.lineTo(x + width, y + height);
+        ctx.lineTo(x + radius, y + height);
+        ctx.arc(x+radius, y+radius, radius, Math.PI/2, 3*Math.PI/2, false);
+    }
+    ctx.closePath();
+    ctx.fill();
+ 
+    // shadow on the right
+    if (width<max-1) {
+        ctx.save();
+        ctx.shadowOffsetX = 1;
+        ctx.shadowBlur = 1;
+        ctx.shadowColor = '#666';
+        if (width+radius>max)
+            offset = offset+1;
+        ctx.fillRect(x+width,y+offset,1,total_height-offset*2);
+        ctx.restore();
+    }
+}
+function progressText(ctx, x, y, width, height, radius, max) {
+    ctx.save();
+    ctx.fillStyle = 'white';
+    var text = Math.floor(width/max*100)+"%";
+    var text_width = ctx.measureText(text).width;
+    //var text_x = x+width-text_width-radius/2;
+    var text_x = x_textprogress;
+    if (width<=radius+text_width) {
+        text_x = x+radius/2;
+    }
+    ctx.fillText(text, text_x, y+22);
+    ctx.restore();
+    
+    //progress complete
+    if(text == "100%"){
+        $('#loadingimg').hide();
+        isRunning = false;
+    }
+}
+// Define the size and position of indicator
+var i = 0;
+var res = 0;
+var context = null;
+var total_width = 595;
+var total_height = 14;
+var initial_x = 0;
+var initial_y = 0;
+var radius = total_height/2;
+
+var x_textprogress = (total_width / 2) - 10; 
+window.onload = function() {
+
+    //Initialize progressview
+    // Get the canvas element
+    var elem = document.getElementById('myCanvas');
+    // Check the canvas support with the help of browser
+    if (!elem || !elem.getContext) {
+        return;
+    }
+ 
+    context = elem.getContext('2d');
+    if (!context) {
+        return;
+    }
+ 
+    // Text’s font of the progress
+    context.font = "14px Verdana";
+ 
+    // Gradient of the progress
+    var progress_lingrad = context.createLinearGradient(0,initial_y+total_height,0,0);
+    progress_lingrad.addColorStop(0, '#4DA4F3');
+    progress_lingrad.addColorStop(0.4, '#ADD9FF');
+    progress_lingrad.addColorStop(1, '#9ED1FF');
+    context.fillStyle = progress_lingrad;
+
+    context.clearRect(initial_x-5,initial_y-5,total_width+15,total_height+15);
+    progressLayerRect(context, initial_x, initial_y, total_width, total_height, radius);
+    progressBarRect(context, initial_x, initial_y, i, total_height, radius, total_width);
+
+
+    //test
+    /*$('ul').append($('<li/>', {    //here appendin `<li>`
+    'data-role': "list-divider"
+}).append($('<a/>', {    //here appending `<a>` into `<li>`
+    'href': 'test.html',
+    'data-transition': 'slide',
+    'text': 'hello'
+})));
+
+$('ul').listview('refresh');*/
+
+
+
+}
+function draw() {
+    //percent counter = i
+    // augment the length on 1 for every iteration 
+    i+=1;
+ 
+    // Clear the layer
+    context.clearRect(initial_x-5,initial_y-5,total_width+15,total_height+15);
+    progressLayerRect(context, initial_x, initial_y, total_width, total_height, radius);
+    progressBarRect(context, initial_x, initial_y, i, total_height, radius, total_width);
+    //progressText(context, initial_x, initial_y, i, total_height, radius, total_width );
+    progressText(context, x_textprogress, initial_y - 10, i, total_height, radius, total_width );
+    // stop the animation when it reaches 100%
+    if (i>=total_width) {
+        clearInterval(res);
+    }
+}
+function roundInsetRect(ctx, x, y, width, height, radius) {
+    ctx.beginPath();
+ 
+    // draw the outward rectangle in an anti-clockwise direction
+    ctx.moveTo(1000, 1000);
+    ctx.lineTo(1000, -1000);
+    ctx.lineTo(-1000, -1000);
+    ctx.lineTo(-1000, 1000);
+    ctx.lineTo(1000, 1000);
+ 
+    ctx.moveTo(x + radius, y);
+    ctx.lineTo(x + width - radius, y);
+    ctx.arc(x+width-radius, y+radius, radius, -Math.PI/2, Math.PI/2, false);
+    ctx.lineTo(x + radius, y + height);
+    ctx.arc(x+radius, y+radius, radius, Math.PI/2, 3*Math.PI/2, false);
+    ctx.closePath();
+    ctx.fill();
+}
+
+/*function progressLayerRect(ctx, x, y, width, height, radius) {
+    ctx.save();
+    // Define the shadows
+    ctx.shadowOffsetX = 2;
+    ctx.shadowOffsetY = 2;
+    ctx.shadowBlur = 5;
+    ctx.shadowColor = '#666';
+ 
+     // first grey layer
+    ctx.fillStyle = 'rgba(189,189,189,1)';
+    roundRect(ctx, x, y, width, height, radius);
+ 
+    // second layer with gradient
+    // remove the shadow
+    ctx.shadowColor = 'rgba(0,0,0,0)';
+    var lingrad = ctx.createLinearGradient(0,y+height,0,0);
+    lingrad.addColorStop(0, 'rgba(255,255,255, 0.1)');
+    lingrad.addColorStop(0.4, 'rgba(255,255,255, 0.7)');
+    lingrad.addColorStop(1, 'rgba(255,255,255,0.4)');
+    ctx.fillStyle = lingrad;
+    roundRect(ctx, x, y, width, height, radius);
+ 
+    ctx.restore();
+}*/
+function progressLayerRect(ctx, x, y, width, height, radius) {
+    ctx.save();
+    // define the shadows
+    ctx.shadowOffsetX = 2;
+    ctx.shadowOffsetY = 2;
+    ctx.shadowBlur = 5;
+    ctx.shadowColor = '#666';
+ 
+     // first gray layer
+    ctx.fillStyle = 'rgba(189,189,189,1)';
+    roundRect(ctx, x, y, width, height, radius);
+    
+    
+    ctx.fillStyle ='white';// 'transparent';
+    roundInsetRect(ctx, x, y, width, height, radius);
+ 
+    ctx.restore();
+}
+
+  </script>
+</head>
+
+
+
+
+<body>
+	<div data-role="page" data-theme="b" id="loginpage">
+        
+        <div data-role="header">
+	        <h1>Synchronize</h1>
+	    </div>
+	    <div data-role="content" style="background-color:white" align="center" id="syncframe">
+	        <form>
+                <table>
+                    <tr>
+                        <td>SYNCTYEXT <img src="loading.gif" alt="Synchronizing" id="loadingimg"/></td> 
+                    </tr>
+                    <tr>
+                        <td><canvas id="myCanvas" width="600" height="16">Your browser does not have support for canvas.</canvas></td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td><button data-role="button" id="synchronize">Synchronize</button></td>
+                        <td><button data-role="button" id="login" onclick="window.open(loginUrl,'Login','height=480,width=440');return false; " >Login</button></td>
+                    </tr>
+                </table>
+                <br/>
+                
+                <ul data-role="listview" data-theme="c" data-dividertheme="b" style="height:47px">
+                    <li data-role="list-divider">
+                        Sync Log
+                    </li>
+                </ul>
+                <ul id="synclog" data-role="listview" data-theme="c" data-dividertheme="b" style="overflow:auto;overflow-x:hidden;height:380px;">
+                    <li><a href="test.html" data-transition="slide">List item 1</a></li>
+                    <li><a href="#acura">Acura</a></li> 
+                    <li><a href="#acura">Audi</a></li> 
+                    <li><a href="#acura">BMW</a></li> 
+                    <li><a href="#acura">Cadillac</a></li> 
+                    <li><a href="#acura">Ferrari</a></li>
+                    <li><a href="#acura">Click for more info on the Acura</a></li> 
+                </ul>
+                
+
+                
+                
+
+            </form>
+	    </div>
+        
+	    <div data-role="footer">
+	        <h4>Force.com</h4>
+	    </div>
+        
+	</div>
+	<!--<div data-role="page" data-theme="b" id="mainpage">
+
+	    <div data-role="header">
+	        <h1>Account List</h1>
+	    </div>
+	    <div data-role="content">
+	        <form>
+	            <button data-role="button" id="newbtn">New</button>
+	        </form>
+	        <ul id="accountlist" data-inset="true" data-role="listview" 
+			  data-theme="c" data-dividertheme="b">
+	        </ul>
+	    </div>
+	    <div data-role="footer">
+	        <h4>Force.com</h4>
+	    </div>
+	</div>
+	<div data-role="page" data-theme="b" id="detailpage">
+	    <div data-role="header">
+	        <h1>Account Detail</h1>
+	    </div>
+	    <div data-role="content">
+	        <table>
+	            <tr><td>Account Name:</td><td id="Name"></td></tr>
+	            <tr><td>Industry:</td><td id="Industry"></td></tr>
+	            <tr><td>Ticker Symbol:</td><td id="TickerSymbol"></td></tr>
+	        </table>
+	        <form name="accountdetail" id="accountdetail">
+	            <input type="hidden" name="Id" id="Id" />
+	            <button data-role="button" id="editbtn">Edit</button>
+	            <button data-role="button" id="deletebtn" data-icon="delete" 
+				  data-theme="e">Delete</button>
+	        </form>
+	    </div>
+	    <div data-role="footer">
+	        <h4>Force.com</h4>
+	    </div>
+	</div>
+	<div data-role="page" data-theme="b" id="editpage">
+	    <div data-role="header">
+	        <h1 id="accformheader">New Account</h1>
+	    </div>
+	    <div data-role="content">
+	        <form name="accountform" id="accountform">
+	            <input type="hidden" name="Id" id="Id" />
+	            <table>
+	                <tr>
+						<td>Account Name:</td>
+						<td><input name="Name" id="Name" data-theme="c"/></td>
+					</tr>
+	                <tr>
+						<td>Industry:</td>
+						<td><input name="Industry" id="Industry" 
+						  data-theme="c"/></td>
+					</tr>
+	                <tr>
+						<td>Ticker Symbol:</td>
+						<td><input name="TickerSymbol" id="TickerSymbol" 
+						  data-theme="c"/></td>
+					</tr>
+	            </table>
+	            <button data-role="button" id="actionbtn">Action</button>
+	        </form>
+	    </div>
+	    <div data-role="footer">
+	        <h4>Force.com</h4>
+	    </div>
+	</div>-->
+</body>
+</html>

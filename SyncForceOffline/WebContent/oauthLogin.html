@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Login</title>
+
+<link rel="stylesheet" href="jquery.mobile-1.0a4.min.css" />
+<script type="text/javascript" src="jquery-1.5.2.min.js"></script>
+
+<!-- //rest -->
+<script type="text/javascript" src="jquery.popup.js"></script>
+<script type="text/javascript" src="forcetk.js"></script>
+
+<script type="text/javascript">
+
+// OAuth Configuration 
+var loginUrl    = 'https://login.salesforce.com/';
+var clientId    = '3MVG9CVKiXR7Ri5rTXLZxJVepcjPdLuBQoKQDuP8kLZL41dwlSW0n4xQbc0yB9VF.TKvTDdaNmEa9nZ_fW5vc';
+var redirectUri = 'http://localhost:8080/SyncForceOffline/oauthcallback.html';
+//var proxyUrl    = '';
+
+// We'll get an instance of the REST API client in a callback after we do 
+// OAuth
+//var client = new forcetk.Client(clientId, loginUrl, proxyUrl);;
+
+
+function getAuthorizeUrl(loginUrl, clientId, redirectUri){
+    return loginUrl+'services/oauth2/authorize?display=touch'
+        +'&response_type=token&client_id='+escape(clientId)
+        +'&redirect_uri='+escape(redirectUri);
+}
+window.onload = function() {
+	window.location=getAuthorizeUrl(loginUrl, clientId, redirectUri) ;
+}
+//end
+</script>
+</head>
+<body>
+
+</body>
+</html>
