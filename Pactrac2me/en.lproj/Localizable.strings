@@ -1,0 +1,208 @@
+/* 
+  Localizable.strings
+  Pactrac2me
+
+  Created by Gaeasys on 9/28/12.
+  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+*/
+
+//General
+"NETWORK_UNREACHABLE"               = "Network UnReachable";
+"RELEASE_TO_REFRESH"                = "Release to refresh...";
+"PULL_DOWN_TO_REFRESH"              = "Pull down to refresh...";
+
+// Main Manu
+"MY_PARCELS"                        = "My Parcels";
+"NEW_PARCEL"                        = "New Parcel";
+"SETTINGS"                          = "Settings";
+
+// Login
+"USER"                              = "User";
+"PASSWORD"                          = "Password";
+"LOGIN"                             = "Log in";
+"SIGNUP"                            = "Sign Up";
+"LOADING"                           = "Loading...";
+"LOGIN_FAIL"                        = "Login Fail";
+"OK"                                = "OK";
+"INVALID_USER_OR_PASSWORD"          = "Invalid User Name or Password!" ;
+"CHECKING_USER"                     = "Checking User....";
+"ERROR"                             = "error";
+"RETRIEVE_FAIL"                     = "Retrieve Information Fail";
+"REQUEST_CANCEL"                    = "Request cancel by user";
+"GOOGLE_LOGIN"                      = "Google Log In";
+"SESSION_EXPIRED"                   = "Your session has expired.";
+"RETRIEVE_PASSWORD"                 = "Retrieve Password";
+"ENTER_EMAIL"                       = "Enter your email";
+"FORGOT_PASSWORD"                   = "Forgot Password";
+"PASSWORD_SENT"                     = "Password has sent to your email";
+
+// Register
+"REGISTER"                          = "Register";
+"CREATE"                            = "Create";
+"LOADING_INFORMATION"               = "Loading Information.....";
+"INVALID_EMAIL"                     = "Invalid Email";
+"ERROR_EMAIL"                       = "Please Enter UserName with an email !";
+"INVALID_PASSWORD"                  = "Invalid Password";
+"ERROR_PASSWORD_AND_REPEAT"         = "Password and Retype Password are Different";
+"DUPLICATED_MAIL"                   = "Duplicate Email";
+"MESSAGE_DUPLICATED_MAIL"           = "This email is already used!";
+"USER_NAME"                         = "User Name";
+"FIRST_NAME"                        = "First Name";
+"LAST_NAME"                         = "Last Name";
+"RETYPE_PASSWORD"                   = "Retype Password";
+"ONLY_VALID_MAIL"                   = "Only valid email";
+
+// MY Parcels
+"FIND_PARCELS"                      = "Find Parcels";
+"SYNC_PARCEL"                       = "Sync Parcel";
+"ASK_FIRST_SYNC"                    = "Do you want to sync now ?";
+"DELETE_RECORD"                     = "Deleting Record......";
+
+// New Parcel
+"EDIT_PARCEL"                       = "Edit Parcel";
+"NEW_PARCEL"                        = "New Parcel";
+"SAVE_PARCEL_ERROR"                 = "Save Parcel Error";
+"REQUIRED_FIELD_ERROR"              = "Please Fill Required field";
+"TRACKING_DUPLICATED"               = "TrackingNo Already Exist";
+"TRACKING_DUPLICATED_MESSAGE"       = "There's already a Parcel with that number, Are You Sure-> delete ?";
+"YES"                               = "Yes";
+"NO"                                = "No";
+"TAKE_PHOTO"                        = "Take Picture";
+"CAMERA"                            = "Camera";
+"LIBRARY"                           = "Library";
+"CANCEL"                            = "Cancel";
+"CALENDAR"                          = "Calendar";
+"CALENDAR_PERMISSION_ENABLE_MESSAGE"= "User has not granted permission!.Please Goto Settings > Privacy > Calendars > Parcel > ENABLE ";
+"REFUND_REMINDER"                   = "Refund reminder";
+"FINDING_STATUS"                    = "Finding Status......";
+"SENDING_RECORD"                    = "Sending Record......";
+"STATUS_NOT_FOUND"                  = "Can't find status for this TrackingNo";
+"DESCRIPTION"                       = "Description";
+"REMINDER_DATE"                     = "Reminder Date";
+"NOTE"                              = "Note";
+"TRACKING_NO"                       = "Tracking#";
+"FORWARDER"                         = "Forwarder";
+"STATUS"                            = "Status";
+"RECEIVER"                          = "Receiver";
+"SHIPPING_DATE"                     = "Shipping Date";
+"REMINDER_DATE"                     = "Reminder Date";
+"PICTURE_CONTENT"                   = "Picture content";
+"FORWARDER_LINK"                    = "Forwarder Link";
+"ASK_SAVE_RECORD"                   = "Do you wish to save ?";
+
+// Parcel Detail
+"PARCEL_DETAIL"                     = "Parcel Detail";
+"SEND_DELIVERY_PROOF"               = "Send Proof of Delivery";
+"EMAIL"                             = "Email";
+"PRINT"                             = "Print";
+"SEND_LINK_TO"                      = "Send Link To";
+"EXPORT_CLOUD"                      = "Export Cloud";
+
+
+// Settings
+// Heading
+"PREMIUM_VERSION"                   = "Go Premium";
+"LANGUAGE"                          = "Language";
+"PERSONAL"                          = "Personal";
+"SYNCHRONIZE"                       = "Synchronize";
+"SERVICE"                           = "Service";
+"OTHER"                             = "Other";
+
+// Row
+"INAPP_PURCHASE"                    = "INAPPP App Purchase";
+"USER"                              = "User";
+"LOCAL_STORAGE_VOLUME"              = "Local Storage volume";
+"DEFAULT_REMINDER_SETTING"          = "Default reminder settings";
+"PUSH_SERVICE"                      = "Push service";
+"SERVER_SYNC"                       = "Server Sync";
+"WLAN_SYNC"                         = "WLAN Sync";
+"CLOUD_SYNC"                        = "Cloud Sync";
+"INVITE_FRIEND"                     = "Invite a friend";
+"FEEDBACK"                          = "Feedback / Support";
+"TRIAL_DAY_NUMBER"                  = "30 days trial";
+"FAQ"                               = "FAQ";
+"TUTORIAL"                          = "Tutorial";
+
+// Language
+"ENGLISH"                           = "English";
+"GERMAN"                            = "German";
+"SWEDISH"                           = "Swedish";
+"FRENCH"                            = "French";
+"ITALIAN"                           = "Italian";
+"SPANISH"                           = "Spanish";
+"CHINESE"                           = "Chinese";
+
+// User
+"EDIT"                              = "Edit";
+"SAVE"                              = "Save";
+"LOGOUT"                            = "Log Out";
+"PARCEL_LOGOUT"                     = "Parcel Log out";
+"PARCEL_LOGOUT_MESSAGE"             = "Are you sure you want to Log out ?";
+"DUPLICATE_USER"                    = "Duplicate User";
+"EMAIL_IN_USED"                     = "This email already in used!";
+"CONFIRM_PASSWORD"                  = "Password and Retype Password should be the same";
+"PARCEL_SYNC_LOGOUT"                = "Sync & Logout";
+"PARCEL_SYNC_LOGOUT_MESSAGE"        = "Do you want to Sync & Log out ?";
+
+// Default reminder setting
+"REMINDER_SETTING"                  = "Reminder Setting";
+"MANUAL_INPUT"                      = "Manual Input";
+
+
+// Synchronize
+"SYNCHRONIZE"                       = "Synchronize";
+"START"                             = "Start";
+"CONNECTING_SERVER"                 = "Connecting Server....";
+"SYNC_START"                        = "Synchronization started";
+"STOP"                              = "Stop";
+"STOP_BY_USER"                      = "Synchronization stopped by user.";
+"SYNC_FAIL_CAUSE"                   = "Synchronization failed caused by";
+"SYNC_SUCCEED"                      = "Synchronization succeeded.";
+"CONNECT_ERROR"                     = "Connect Error";
+"CONNECT_SEVER_ERROR"               = "Can't connect to server";
+"CONNECT_SEVER_ERROR_MESSAGE"       = "No Device Token Found";
+
+
+//Manual Reminder
+"ABORT"                             = "Abort";
+"INDIVIDUAL_DAYS_WEEK_INPUT"        = "Individual days or weeks input";
+"OPTION"                            = "option";
+"DAYS"                              = "Day(s)";
+"DAY"                               = "Day";
+"WEEKS"                             = "Week(s)";
+"WEEK"                              = "Week";
+
+
+// Picklist
+"EXPORT_CALENDAR"                   = "Export Calendar";
+"CLEAR"                             = "Clear";
+
+
+// Take Photo
+"PICTURE_CONTENT"                   = "Picture Content";
+"TAKE_PICTURE"                      = "Take Picture";
+"CHANGE_PICTURE"                    = "Change Picture";
+
+
+// Map View
+"DELIVERY_LOCATION"                 = "Delivery Location";
+"STANDARD"                          = "Standard";
+"HYBRID"                            = "Hybrid";
+"SATELLITE"                         = "Satellite";
+"PRODUCT_INFO"                      = "Product Info";
+
+// Connecting server error
+"OFFLINE_ERROR_MESSAGE"             = "The Internet connection appears to be offline.";
+"CONFIRM_TO_STOP_SYNC"              = "Stop";
+"CONFIRM_TO_STOP_SYNC_MESS"         = "Are you sure you want to stop synchronizing";
+"STOP"                              = "Stop";
+"REQUIRED"                          = "required";
+"UPDATING_STATUS"                   = "Updating status.....";
+"UPDATE_AT_START"                   = "Update At Start";
+"PARCEL_LOGOUT_SYN_WARNING_MESSAGE" = "Synchronize your data before logout or your data could be lost";
+"PARCEL_LOGOUT_SYN_WARNING"         = "Warning";
+"INVALID_PASSWORD_MESSAGE"          = "Password is incorrect";
+"SYNC_DATA_MESSAGE"                 = "Please Sync your data first.";
+"UPDATE_ERROR"                      = "Update Error";
+"NO_STATUS_AVAILABLE"               = "No data available";
+

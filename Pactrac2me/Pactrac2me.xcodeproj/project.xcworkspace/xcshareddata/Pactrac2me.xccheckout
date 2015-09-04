@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>447E44DA-B0DC-44EF-A7A6-36F7FCF3E88C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Pactrac2me</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>7ABEE6FC-6191-4031-A6A8-CF052D74EC89</key>
+		<string>https://gaeasys.plan.io/svn/parcel/Pactrac2me</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Pactrac2me.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>7ABEE6FC-6191-4031-A6A8-CF052D74EC89</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>7ABEE6FC-6191-4031-A6A8-CF052D74EC89</key>
+		<string>https://gaeasys.plan.io/svn/parcel</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://gaeasys.plan.io/svn/parcel/Pactrac2me/Pactrac2me.xcodeproj</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>7ABEE6FC-6191-4031-A6A8-CF052D74EC89</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7ABEE6FC-6191-4031-A6A8-CF052D74EC89</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Pactrac2me</string>
+		</dict>
+	</array>
+</dict>
+</plist>

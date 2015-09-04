@@ -1,0 +1,378 @@
+//
+// Prefix header for all source files of the 'Parcel' target in the 'Parcel' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
+
+#define appdelegate ((AppDelegate*)[[UIApplication sharedApplication] delegate])
+
+#import "LanguageTool.h"
+#import "CustomUIBarButtonItem.h"
+
+/*
+ ** Standard Localization
+ */
+/*
+//General
+#define NETWORK_UNREACHABLE NSLocalizedString(@"NETWORK_UNREACHABLE",@"")
+#define MSG_YES NSLocalizedString(@"YES",@"")
+#define MSG_NO NSLocalizedString(@"NO",@"")
+#define MSG_OK NSLocalizedString(@"OK",@"")
+#define MSG_CANCEL NSLocalizedString(@"CANCEL",@"")
+#define MSG_SAVE NSLocalizedString(@"SAVE",@"")
+#define MSG_CLEAR NSLocalizedString(@"CLEAR",@"")
+#define MSG_CREATE NSLocalizedString(@"CREATE",@"")
+#define MSG_STOP NSLocalizedString(@"STOP",@"")
+#define MSG_EDIT NSLocalizedString(@"EDIT",@"")
+
+//Parcel Fields
+#define DESCRIPTION NSLocalizedString(@"DESCRIPTION",@"")
+#define REMINDER_DATE NSLocalizedString(@"REMINDER_DATE",@"")
+#define NOTE NSLocalizedString(@"NOTE",@"")
+#define TRACKING_NO NSLocalizedString(@"TRACKING_NO",@"")
+#define FORWARDER NSLocalizedString(@"FORWARDER",@"")
+#define STATUS NSLocalizedString(@"STATUS",@"")
+#define RECEIVER NSLocalizedString(@"RECEIVER",@"")
+#define SHIPPING_DATE NSLocalizedString(@"SHIPPING_DATE",@"")
+#define PICTURE_CONTENT NSLocalizedString(@"PICTURE_CONTENT",@"")
+#define FORWARDER_LINK NSLocalizedString(@"FORWARDER_LINK",@"")
+#define PICTURE_CONTENT NSLocalizedString(@"PICTURE_CONTENT",@"")
+
+//User Fields
+#define FIRST_NAME NSLocalizedString(@"FIRST_NAME",@"")
+#define LAST_NAME NSLocalizedString(@"LAST_NAME",@"")
+#define USER_NAME NSLocalizedString(@"USER_NAME",@"")
+#define PASSWORD NSLocalizedString(@"PASSWORD",@"")
+#define RETYPE_PASSWORD NSLocalizedString(@"RETYPE_PASSWORD",@"")
+
+//AppDelegate
+#define TRACKING_DUPLICATED NSLocalizedString(@"TRACKING_DUPLICATED",@"")
+#define TRACKING_DUPLICATED_MESSAGE NSLocalizedString(@"TRACKING_DUPLICATED_MESSAGE",@"")
+
+//Login
+#define LOGIN NSLocalizedString(@"LOGIN",@"")
+#define SIGNUP NSLocalizedString(@"SIGNUP",@"")
+#define FORGOT_PASSWORD NSLocalizedString(@"FORGOT_PASSWORD",@"")
+#define RETREIVE_PASSWORD NSLocalizedString(@"RETRIEVE_PASSWORD",@"")
+#define ENTER_EMAIL NSLocalizedString(@"ENTER_EMAIL",@"")
+#define INVALID_USER_OR_PASSWORD NSLocalizedString(@"INVALID_USER_OR_PASSWORD",@"")
+#define LOGIN_FAIL NSLocalizedString(@"LOGIN_FAIL",@"")
+#define CHECKING_USER NSLocalizedString(@"CHECKING_USER",@"")
+#define GOOGLE_LOGIN NSLocalizedString(@"GOOGLE_LOGIN",@"")
+#define PASSWORD_SENT NSLocalizedString(@"PASSWORD_SENT",@"")
+#define USER NSLocalizedString(@"USER",@"")
+#define PASSWORD NSLocalizedString(@"PASSWORD",@"")
+#define REQUEST_CANCEL NSLocalizedString(@"REQUEST_CANCEL",@"")
+#define RETRIEVE_FAIL NSLocalizedString(@"RETRIEVE_FAIL",@"")
+#define ERROR NSLocalizedString(@"ERROR",@"")
+#define SESSION_EXPIRED NSLocalizedString(@"SESSION_EXPIRED",@"")
+
+//Register
+#define REGISTER NSLocalizedString(@"REGISTER",@"")
+#define INVALID_EMAIL NSLocalizedString(@"INVALID_EMAIL",@"")
+#define ERROR_EMAIL NSLocalizedString(@"ERROR_EMAIL",@"")
+#define INVALID_PASSWORD NSLocalizedString(@"INVALID_PASSWORD",@"")
+#define ERROR_PASSWORD_AND_REPEAT NSLocalizedString(@"ERROR_PASSWORD_AND_REPEAT",@"")
+#define DUPLICATED_MAIL NSLocalizedString(@"DUPLICATED_MAIL",@"")
+#define MESSAGE_DUPLICATED_MAIL NSLocalizedString(@"MESSAGE_DUPLICATED_MAIL",@"")
+#define ONLY_VALID_MAIL NSLocalizedString(@"ONLY_VALID_MAIL",@"")
+
+//MainView
+#define MY_PARCELS NSLocalizedString(@"MY_PARCELS",@"")
+#define NEW_PARCEL NSLocalizedString(@"NEW_PARCEL",@"")
+#define SETTINGS NSLocalizedString(@"SETTINGS",@"")
+#define TAKE_PICTURE NSLocalizedString(@"TAKE_PICTURE",@"")
+#define CAMERA NSLocalizedString(@"CAMERA",@"")
+#define LIBRARY NSLocalizedString(@"LIBRARY",@"")
+
+//My Parcel
+#define FIND_PARCELS NSLocalizedString(@"FIND_PARCELS",@"")
+#define SYNC_PARCEL NSLocalizedString(@"SYNC_PARCEL",@"")
+#define ASK_FIRST_SYNC NSLocalizedString(@"ASK_FIRST_SYNC",@"")
+#define DELETE_RECORD NSLocalizedString(@"DELETE_RECORD",@"")
+#define UPDATING_STATUS NSLocalizedString(@"UPDATING_STATUS",@"")
+
+//Parcel Detail
+#define PARCEL_DETAIL NSLocalizedString(@"PARCEL_DETAIL",@"")
+#define SEND_DELIVERY_PROOF NSLocalizedString(@"SEND_DELIVERY_PROOF",@"")
+#define EMAIL NSLocalizedString(@"EMAIL",@"")
+#define PRINT NSLocalizedString(@"PRINT",@"")
+
+//New Parcel
+#define EDIT_PARCEL NSLocalizedString(@"EDIT_PARCEL",@"")
+#define FINDING_STATUS NSLocalizedString(@"FINDING_STATUS",@"")
+#define SAVE_PARCEL_ERROR NSLocalizedString(@"SAVE_PARCEL_ERROR",@"")
+#define REQUIRED_FIELD_ERROR NSLocalizedString(@"REQUIRED_FIELD_ERROR",@"")
+#define SENDING_RECORD NSLocalizedString(@"SENDING_RECORD",@"")
+#define STATUS_NOT_FOUND NSLocalizedString(@"STATUS_NOT_FOUND",@"")
+#define ASK_SAVE_RECORD NSLocalizedString(@"ASK_SAVE_RECORD",@"")
+#define CALENDAR NSLocalizedString(@"CALENDAR",@"")
+#define CALENDAR_PERMISSION_ENABLE_MESSAGE NSLocalizedString(@"CALENDAR_PERMISSION_ENABLE_MESSAGE",@"")
+#define REFUND_REMINDER NSLocalizedString(@"REFUND_REMINDER",@"")
+#define REQUIRED NSLocalizedString(@"REQUIRED",@"")
+
+//TakePicture
+#define CHANGE_PICTURE NSLocalizedString(@"CHANGE_PICTURE",@"")
+
+//Feedback
+#define FEEDBACK NSLocalizedString(@"FEEDBACK",@"")
+#define DESCRIPTION NSLocalizedString(@"DESCRIPTION",@"")
+
+//UserViewController
+#define DUPLICATE_USER NSLocalizedString(@"DUPLICATE_USER",@"")
+#define EMAIL_IN_USED NSLocalizedString(@"EMAIL_IN_USED",@"")
+#define CONFIRM_PASSWORD NSLocalizedString(@"CONFIRM_PASSWORD",@"")
+#define PARCEL_LOGOUT_SYN_WARNING NSLocalizedString(@"PARCEL_LOGOUT_SYN_WARNING",@"")
+#define PARCEL_LOGOUT_SYN_WARNING_MESSAGE NSLocalizedString(@"PARCEL_LOGOUT_SYN_WARNING_MESSAGE",@"")
+#define LOGOUT NSLocalizedString(@"LOGOUT",@"")
+#define PARCEL_LOGOUT NSLocalizedString(@"PARCEL_LOGOUT",@"")
+#define PARCEL_LOGOUT_MESSAGE NSLocalizedString(@"PARCEL_LOGOUT_MESSAGE",@"")
+#define PARCEL_SYNC_LOGOUT NSLocalizedString(@"PARCEL_SYNC_LOGOUT",@"")
+#define PARCEL_SYNC_LOGOUT_MESSAGE NSLocalizedString(@"PARCEL_SYNC_LOGOUT_MESSAGE",@"")
+
+//Synchronize
+#define CONNECT_ERROR NSLocalizedString(@"CONNECT_ERROR",@"")
+#define CONNECTING_SERVER NSLocalizedString(@"CONNECTING_SERVER",@"")
+#define INVALID_PASSWORD_MESSAGE NSLocalizedString(@"INVALID_PASSWORD_MESSAGE",@"")
+#define START NSLocalizedString(@"START",@"")
+#define CONFIRM_TO_STOP_SYNC NSLocalizedString(@"CONFIRM_TO_STOP_SYNC",@"")
+#define CONFIRM_TO_STOP_SYNC_MESS NSLocalizedString(@"CONFIRM_TO_STOP_SYNC_MESS",@"")
+#define SYNC_START NSLocalizedString(@"SYNC_START",@"")
+#define STOP_BY_USER NSLocalizedString(@"STOP_BY_USER",@"")
+#define SYNC_FAIL_CAUSE NSLocalizedString(@"SYNC_FAIL_CAUSE",@"")
+#define SYNC_SUCCEED NSLocalizedString(@"SYNC_SUCCEED",@"")
+
+//Refresh Table Header
+#define RELEASE_TO_REFRESH NSLocalizedString(@"RELEASE_TO_REFRESH",@"")
+#define PULL_DOWN_TO_REFRESH NSLocalizedString(@"PULL_DOWN_TO_REFRESH",@"")
+#define LOADING NSLocalizedString(@"LOADING",@"")
+
+//Default Reminder Settings
+#define REMINDER_SETTING NSLocalizedString(@"REMINDER_SETTING",@"")
+#define MANUAL_INPUT NSLocalizedString(@"MANUAL_INPUT",@"")
+
+//Manual Reminder Input
+#define ABORT NSLocalizedString(@"ABORT",@"")
+#define WEEK NSLocalizedString(@"WEEK",@"")
+#define INDIVIDUAL_DAYS_WEEK_INPUT NSLocalizedString(@"INDIVIDUAL_DAYS_WEEK_INPUT",@"")
+#define OPTION NSLocalizedString(@"OPTION",@"")
+
+//Picklist Popup
+#define EXPORT_CALENDAR NSLocalizedString(@"EXPORT_CALENDAR",@"")
+
+//Request Update
+#define OFFLINE_ERROR_MESSAGE NSLocalizedString(@"OFFLINE_ERROR_MESSAGE",@"")
+
+//Setting
+#define PREMIUM_VERSION NSLocalizedString(@"PREMIUM_VERSION",@"")
+#define LANGUAGE NSLocalizedString(@"LANGUAGE",@"")
+#define SYNCHRONIZE NSLocalizedString(@"SYNCHRONIZE",@"")
+#define SERVICE NSLocalizedString(@"SERVICE",@"")
+#define OTHER NSLocalizedString(@"OTHER",@"")
+#define INAPP_PURCHASE NSLocalizedString(@"INAPP_PURCHASE",@"")
+#define PERSONAL NSLocalizedString(@"PERSONAL",@"")
+#define DEFAULT_REMINDER_SETTING NSLocalizedString(@"DEFAULT_REMINDER_SETTING",@"")
+#define PUSH_SERVICE NSLocalizedString(@"PUSH_SERVICE",@"")
+#define SERVER_SYNC NSLocalizedString(@"SERVER_SYNC",@"")
+#define UPDATE_AT_START NSLocalizedString(@"UPDATE_AT_START",@"")
+#define INVITE_FRIEND NSLocalizedString(@"INVITE_FRIEND",@"")
+#define FAQ NSLocalizedString(@"FAQ",@"")
+#define TUTORIAL NSLocalizedString(@"TUTORIAL",@"")
+#define TRIAL_DAY_NUMBER NSLocalizedString(@"TRIAL_DAY_NUMBER",@"")
+
+//Setting Language
+#define ENGLISH NSLocalizedString(@"ENGLISH",@"")
+#define GERMAN NSLocalizedString(@"GERMAN",@"")
+*/
+ 
+/*
+ ** Customize Localization
+ */
+
+//General
+#define NETWORK_UNREACHABLE [LanguageTool localizedStringForKey:@"NETWORK_UNREACHABLE" value:@""]
+#define MSG_YES [LanguageTool localizedStringForKey:@"YES" value:@""]
+#define MSG_NO [LanguageTool localizedStringForKey:@"NO" value:@""]
+#define MSG_OK [LanguageTool localizedStringForKey:@"OK" value:@""]
+#define MSG_CANCEL [LanguageTool localizedStringForKey:@"CANCEL" value:@""]
+#define MSG_SAVE [LanguageTool localizedStringForKey:@"SAVE" value:@""]
+#define MSG_CLEAR [LanguageTool localizedStringForKey:@"CLEAR" value:@""]
+#define MSG_CREATE [LanguageTool localizedStringForKey:@"CREATE" value:@""]
+#define MSG_STOP [LanguageTool localizedStringForKey:@"STOP" value:@""]
+#define MSG_EDIT [LanguageTool localizedStringForKey:@"EDIT" value:@""]
+
+//Parcel Fields
+#define DESCRIPTION [LanguageTool localizedStringForKey:@"DESCRIPTION" value:@""]
+#define REMINDER_DATE [LanguageTool localizedStringForKey:@"REMINDER_DATE" value:@""]
+#define NOTE [LanguageTool localizedStringForKey:@"NOTE" value:@""]
+#define TRACKING_NO [LanguageTool localizedStringForKey:@"TRACKING_NO" value:@""]
+#define FORWARDER [LanguageTool localizedStringForKey:@"FORWARDER" value:@""]
+#define STATUS [LanguageTool localizedStringForKey:@"STATUS" value:@""]
+#define RECEIVER [LanguageTool localizedStringForKey:@"RECEIVER" value:@""]
+#define SHIPPING_DATE [LanguageTool localizedStringForKey:@"SHIPPING_DATE" value:@""]
+#define PICTURE_CONTENT [LanguageTool localizedStringForKey:@"PICTURE_CONTENT" value:@""]
+#define FORWARDER_LINK [LanguageTool localizedStringForKey:@"FORWARDER_LINK" value:@""]
+#define PICTURE_CONTENT [LanguageTool localizedStringForKey:@"PICTURE_CONTENT" value:@""]
+
+//User Fields
+#define FIRST_NAME [LanguageTool localizedStringForKey:@"FIRST_NAME" value:@""]
+#define LAST_NAME [LanguageTool localizedStringForKey:@"LAST_NAME" value:@""]
+#define USER_NAME [LanguageTool localizedStringForKey:@"USER_NAME" value:@""]
+#define PASSWORD [LanguageTool localizedStringForKey:@"PASSWORD" value:@""]
+#define RETYPE_PASSWORD [LanguageTool localizedStringForKey:@"RETYPE_PASSWORD" value:@""]
+
+//AppDelegate
+#define TRACKING_DUPLICATED [LanguageTool localizedStringForKey:@"TRACKING_DUPLICATED" value:@""]
+#define TRACKING_DUPLICATED_MESSAGE [LanguageTool localizedStringForKey:@"TRACKING_DUPLICATED_MESSAGE" value:@""]
+
+//Login
+#define LOGIN [LanguageTool localizedStringForKey:@"LOGIN" value:@""]
+#define SIGNUP [LanguageTool localizedStringForKey:@"SIGNUP" value:@""]
+#define FORGOT_PASSWORD [LanguageTool localizedStringForKey:@"FORGOT_PASSWORD" value:@""]
+#define RETREIVE_PASSWORD [LanguageTool localizedStringForKey:@"RETRIEVE_PASSWORD" value:@""]
+#define ENTER_EMAIL [LanguageTool localizedStringForKey:@"ENTER_EMAIL" value:@""]
+#define INVALID_USER_OR_PASSWORD [LanguageTool localizedStringForKey:@"INVALID_USER_OR_PASSWORD" value:@""]
+#define LOGIN_FAIL [LanguageTool localizedStringForKey:@"LOGIN_FAIL" value:@""]
+#define CHECKING_USER [LanguageTool localizedStringForKey:@"CHECKING_USER" value:@""]
+#define GOOGLE_LOGIN [LanguageTool localizedStringForKey:@"GOOGLE_LOGIN" value:@""]
+#define PASSWORD_SENT [LanguageTool localizedStringForKey:@"PASSWORD_SENT" value:@""]
+#define USER [LanguageTool localizedStringForKey:@"USER" value:@""]
+#define PASSWORD [LanguageTool localizedStringForKey:@"PASSWORD" value:@""]
+#define REQUEST_CANCEL [LanguageTool localizedStringForKey:@"REQUEST_CANCEL" value:@""]
+#define RETRIEVE_FAIL [LanguageTool localizedStringForKey:@"RETRIEVE_FAIL" value:@""]
+#define ERROR [LanguageTool localizedStringForKey:@"ERROR" value:@""]
+#define SESSION_EXPIRED [LanguageTool localizedStringForKey:@"SESSION_EXPIRED" value:@""]
+
+//Register
+#define REGISTER [LanguageTool localizedStringForKey:@"REGISTER" value:@""]
+#define INVALID_EMAIL [LanguageTool localizedStringForKey:@"INVALID_EMAIL" value:@""]
+#define ERROR_EMAIL [LanguageTool localizedStringForKey:@"ERROR_EMAIL" value:@""]
+#define INVALID_PASSWORD [LanguageTool localizedStringForKey:@"INVALID_PASSWORD" value:@""]
+#define ERROR_PASSWORD_AND_REPEAT [LanguageTool localizedStringForKey:@"ERROR_PASSWORD_AND_REPEAT" value:@""]
+#define DUPLICATED_MAIL [LanguageTool localizedStringForKey:@"DUPLICATED_MAIL" value:@""]
+#define MESSAGE_DUPLICATED_MAIL [LanguageTool localizedStringForKey:@"MESSAGE_DUPLICATED_MAIL" value:@""]
+#define ONLY_VALID_MAIL [LanguageTool localizedStringForKey:@"ONLY_VALID_MAIL" value:@""]
+
+//MainView
+#define MY_PARCELS [LanguageTool localizedStringForKey:@"MY_PARCELS" value:@""]
+#define NEW_PARCEL [LanguageTool localizedStringForKey:@"NEW_PARCEL" value:@""]
+#define SETTINGS [LanguageTool localizedStringForKey:@"SETTINGS" value:@""]
+#define TAKE_PICTURE [LanguageTool localizedStringForKey:@"TAKE_PICTURE" value:@""]
+#define CAMERA [LanguageTool localizedStringForKey:@"CAMERA" value:@""]
+#define LIBRARY [LanguageTool localizedStringForKey:@"LIBRARY" value:@""]
+
+//My Parcel
+#define FIND_PARCELS [LanguageTool localizedStringForKey:@"FIND_PARCELS" value:@""]
+#define SYNC_PARCEL [LanguageTool localizedStringForKey:@"SYNC_PARCEL" value:@""]
+#define ASK_FIRST_SYNC [LanguageTool localizedStringForKey:@"ASK_FIRST_SYNC" value:@""]
+#define DELETE_RECORD [LanguageTool localizedStringForKey:@"DELETE_RECORD" value:@""]
+#define UPDATING_STATUS [LanguageTool localizedStringForKey:@"UPDATING_STATUS" value:@""]
+
+//Parcel Detail
+#define PARCEL_DETAIL [LanguageTool localizedStringForKey:@"PARCEL_DETAIL" value:@""]
+#define SEND_DELIVERY_PROOF [LanguageTool localizedStringForKey:@"SEND_DELIVERY_PROOF" value:@""]
+#define EMAIL [LanguageTool localizedStringForKey:@"EMAIL" value:@""]
+#define PRINT [LanguageTool localizedStringForKey:@"PRINT" value:@""]
+
+//New Parcel
+#define EDIT_PARCEL [LanguageTool localizedStringForKey:@"EDIT_PARCEL" value:@""]
+#define FINDING_STATUS [LanguageTool localizedStringForKey:@"FINDING_STATUS" value:@""]
+#define SAVE_PARCEL_ERROR [LanguageTool localizedStringForKey:@"SAVE_PARCEL_ERROR" value:@""]
+#define REQUIRED_FIELD_ERROR [LanguageTool localizedStringForKey:@"REQUIRED_FIELD_ERROR" value:@""]
+#define SENDING_RECORD [LanguageTool localizedStringForKey:@"SENDING_RECORD" value:@""]
+#define STATUS_NOT_FOUND [LanguageTool localizedStringForKey:@"STATUS_NOT_FOUND" value:@""]
+#define ASK_SAVE_RECORD [LanguageTool localizedStringForKey:@"ASK_SAVE_RECORD" value:@""]
+#define CALENDAR [LanguageTool localizedStringForKey:@"CALENDAR" value:@""]
+#define CALENDAR_PERMISSION_ENABLE_MESSAGE [LanguageTool localizedStringForKey:@"CALENDAR_PERMISSION_ENABLE_MESSAGE" value:@""]
+#define REFUND_REMINDER [LanguageTool localizedStringForKey:@"REFUND_REMINDER" value:@""]
+#define REQUIRED [LanguageTool localizedStringForKey:@"REQUIRED" value:@""]
+
+//TakePicture
+#define CHANGE_PICTURE [LanguageTool localizedStringForKey:@"CHANGE_PICTURE" value:@""]
+
+//Feedback
+#define FEEDBACK [LanguageTool localizedStringForKey:@"FEEDBACK" value:@""]
+#define DESCRIPTION [LanguageTool localizedStringForKey:@"DESCRIPTION" value:@""]
+
+//UserViewController
+#define DUPLICATE_USER [LanguageTool localizedStringForKey:@"DUPLICATE_USER" value:@""]
+#define EMAIL_IN_USED [LanguageTool localizedStringForKey:@"EMAIL_IN_USED" value:@""]
+#define CONFIRM_PASSWORD [LanguageTool localizedStringForKey:@"CONFIRM_PASSWORD" value:@""]
+#define PARCEL_LOGOUT_SYN_WARNING [LanguageTool localizedStringForKey:@"PARCEL_LOGOUT_SYN_WARNING" value:@""]
+#define PARCEL_LOGOUT_SYN_WARNING_MESSAGE [LanguageTool localizedStringForKey:@"PARCEL_LOGOUT_SYN_WARNING_MESSAGE" value:@""]
+#define LOGOUT [LanguageTool localizedStringForKey:@"LOGOUT" value:@""]
+#define PARCEL_LOGOUT [LanguageTool localizedStringForKey:@"PARCEL_LOGOUT" value:@""]
+#define PARCEL_LOGOUT_MESSAGE [LanguageTool localizedStringForKey:@"PARCEL_LOGOUT_MESSAGE" value:@""]
+#define PARCEL_SYNC_LOGOUT [LanguageTool localizedStringForKey:@"PARCEL_SYNC_LOGOUT" value:@""]
+#define PARCEL_SYNC_LOGOUT_MESSAGE [LanguageTool localizedStringForKey:@"PARCEL_SYNC_LOGOUT_MESSAGE" value:@""]
+
+//Synchronize
+#define CONNECT_ERROR [LanguageTool localizedStringForKey:@"CONNECT_ERROR" value:@""]
+#define CONNECTING_SERVER [LanguageTool localizedStringForKey:@"CONNECTING_SERVER" value:@""]
+#define INVALID_PASSWORD_MESSAGE [LanguageTool localizedStringForKey:@"INVALID_PASSWORD_MESSAGE" value:@""]
+#define START [LanguageTool localizedStringForKey:@"START" value:@""]
+#define CONFIRM_TO_STOP_SYNC [LanguageTool localizedStringForKey:@"CONFIRM_TO_STOP_SYNC" value:@""]
+#define CONFIRM_TO_STOP_SYNC_MESS [LanguageTool localizedStringForKey:@"CONFIRM_TO_STOP_SYNC_MESS" value:@""]
+#define SYNC_START [LanguageTool localizedStringForKey:@"SYNC_START" value:@""]
+#define STOP_BY_USER [LanguageTool localizedStringForKey:@"STOP_BY_USER" value:@""]
+#define SYNC_FAIL_CAUSE [LanguageTool localizedStringForKey:@"SYNC_FAIL_CAUSE" value:@""]
+#define SYNC_SUCCEED [LanguageTool localizedStringForKey:@"SYNC_SUCCEED" value:@""]
+
+//Refresh Table Header
+#define RELEASE_TO_REFRESH [LanguageTool localizedStringForKey:@"RELEASE_TO_REFRESH" value:@""]
+#define PULL_DOWN_TO_REFRESH [LanguageTool localizedStringForKey:@"PULL_DOWN_TO_REFRESH" value:@""]
+#define LOADING [LanguageTool localizedStringForKey:@"LOADING" value:@""]
+
+//Default Reminder Settings
+#define REMINDER_SETTING [LanguageTool localizedStringForKey:@"REMINDER_SETTING" value:@""]
+#define MANUAL_INPUT [LanguageTool localizedStringForKey:@"MANUAL_INPUT" value:@""]
+
+//Manual Reminder Input
+#define ABORT [LanguageTool localizedStringForKey:@"ABORT" value:@""]
+#define WEEK [LanguageTool localizedStringForKey:@"WEEK" value:@""]
+#define INDIVIDUAL_DAYS_WEEK_INPUT [LanguageTool localizedStringForKey:@"INDIVIDUAL_DAYS_WEEK_INPUT" value:@""]
+#define OPTION [LanguageTool localizedStringForKey:@"OPTION" value:@""]
+
+//Picklist Popup
+#define EXPORT_CALENDAR [LanguageTool localizedStringForKey:@"EXPORT_CALENDAR" value:@""]
+
+//Request Update
+#define OFFLINE_ERROR_MESSAGE [LanguageTool localizedStringForKey:@"OFFLINE_ERROR_MESSAGE" value:@""]
+
+//Setting
+#define PREMIUM_VERSION [LanguageTool localizedStringForKey:@"PREMIUM_VERSION" value:@""]
+#define LANGUAGE [LanguageTool localizedStringForKey:@"LANGUAGE" value:@""]
+#define SYNCHRONIZE [LanguageTool localizedStringForKey:@"SYNCHRONIZE" value:@""]
+#define SERVICE [LanguageTool localizedStringForKey:@"SERVICE" value:@""]
+#define OTHER [LanguageTool localizedStringForKey:@"OTHER" value:@""]
+#define INAPP_PURCHASE [LanguageTool localizedStringForKey:@"INAPP_PURCHASE" value:@""]
+#define PERSONAL [LanguageTool localizedStringForKey:@"PERSONAL" value:@""]
+#define DEFAULT_REMINDER_SETTING [LanguageTool localizedStringForKey:@"DEFAULT_REMINDER_SETTING" value:@""]
+#define PUSH_SERVICE [LanguageTool localizedStringForKey:@"PUSH_SERVICE" value:@""]
+#define SERVER_SYNC [LanguageTool localizedStringForKey:@"SERVER_SYNC" value:@""]
+#define UPDATE_AT_START [LanguageTool localizedStringForKey:@"UPDATE_AT_START" value:@""]
+#define INVITE_FRIEND [LanguageTool localizedStringForKey:@"INVITE_FRIEND" value:@""]
+#define FAQ [LanguageTool localizedStringForKey:@"FAQ" value:@""]
+#define TUTORIAL [LanguageTool localizedStringForKey:@"TUTORIAL" value:@""]
+#define TRIAL_DAY_NUMBER [LanguageTool localizedStringForKey:@"TRIAL_DAY_NUMBER" value:@""]
+
+//Setting Language
+#define ENGLISH [LanguageTool localizedStringForKey:@"ENGLISH" value:@""]
+#define GERMAN [LanguageTool localizedStringForKey:@"GERMAN" value:@""]
+
+
+
+
+
+
+
+
