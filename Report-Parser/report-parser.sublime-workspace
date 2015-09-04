@@ -1,0 +1,1934 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"cell",
+				"cellQuantity"
+			],
+			[
+				"product",
+				"productId"
+			],
+			[
+				"shet",
+				"sheetDate"
+			],
+			[
+				"oppor",
+				"opportunityItems"
+			],
+			[
+				"o",
+				"opportunityIds"
+			],
+			[
+				"Oppor",
+				"Opportunity"
+			],
+			[
+				"Opport",
+				"OpportunityLineItem"
+			],
+			[
+				"Opportu",
+				"OpportunityId"
+			],
+			[
+				"item",
+				"itemList"
+			],
+			[
+				"Oppo",
+				"opportunityIDs"
+			],
+			[
+				"oppItem",
+				"oppItemMap"
+			],
+			[
+				"Quote",
+				"QuoteLineItem"
+			],
+			[
+				"to",
+				"toUpdate"
+			],
+			[
+				"Rel",
+				"Related_Date__c"
+			],
+			[
+				"Ren",
+				"Renewal_Date__c"
+			],
+			[
+				"Re",
+				"Related_Asset__c"
+			],
+			[
+				"Oppr",
+				"OpportunityLineItem"
+			],
+			[
+				"Op",
+				"OpportunityId"
+			],
+			[
+				"serv",
+				"ServiceDate"
+			],
+			[
+				"assert",
+				"assert()"
+			],
+			[
+				"Accoun",
+				"AccountContact__c"
+			],
+			[
+				"Attachme",
+				"Attachments2Opportunities"
+			],
+			[
+				"Able",
+				"Able_to_Edit_after_Closed_Won__c 	Checkbox"
+			],
+			[
+				"generateContract",
+				"PUBLIC generateContract(Id AccountId, Id ContractGroupId, Date StartDate, Date endDate) 	Contract"
+			],
+			[
+				"pbe",
+				"PUBLIC PBEMap	Map"
+			],
+			[
+				"attach",
+				"attachmentIds"
+			],
+			[
+				"asert",
+				"assertEquals()"
+			],
+			[
+				"credit",
+				"creditOpportunity"
+			],
+			[
+				"test",
+				"testMethod"
+			],
+			[
+				"Student",
+				"Student_Module__c"
+			],
+			[
+				"studen",
+				"PUBLIC studentModules	LIST"
+			],
+			[
+				"studentP",
+				"PUBLIC studentProgrammeId	Id"
+			],
+			[
+				"Wilmingto",
+				"WilmingtonTestData	[Custom Apex Class]"
+			],
+			[
+				"Programme",
+				"ProgrammeId"
+			],
+			[
+				"Studen",
+				"Student_Programme__c	[Sobject Name]"
+			],
+			[
+				"Course",
+				"Course__c"
+			],
+			[
+				"Modul",
+				"Module__r"
+			],
+			[
+				"Mate",
+				"Material__c"
+			],
+			[
+				"Material",
+				"Material_Queue__r"
+			],
+			[
+				"Contact",
+				"Contact_Material__c	[Sobject Name]"
+			],
+			[
+				"Progra",
+				"Programme__c"
+			],
+			[
+				"Conac",
+				"Contact_Material__c"
+			],
+			[
+				"Contac",
+				"Contact_Material__c"
+			],
+			[
+				"Program",
+				"Programme_Material__c"
+			],
+			[
+				"Prog",
+				"Programme__c"
+			],
+			[
+				"Wilmington",
+				"WilmingtonTestData	[Custom Apex Class]"
+			],
+			[
+				"insert",
+				"PUBLIC insertGeneralSettings() 	General_Settings__c"
+			],
+			[
+				"opportunityLin",
+				"PUBLIC generateOpportunityLineItem(Id OPPID, Id PBEID, Decimal QT, Decimal UP) 	OpportunityLineItem"
+			],
+			[
+				"Pass",
+				"Password__c"
+			],
+			[
+				"pas",
+				"Password__c"
+			],
+			[
+				"start",
+				"startEmailLimit"
+			],
+			[
+				"LA",
+				"LA1_Code__c	[Sobject Name]"
+			],
+			[
+				"Stud",
+				"Student_Password__c"
+			],
+			[
+				"Module",
+				"ModuleIDs"
+			],
+			[
+				"Conta",
+				"Contacts	[Custom Apex Class]"
+			],
+			[
+				"sha",
+				"PUBLIC sha256(String str) 	String"
+			],
+			[
+				"g",
+				"PUBLIC password(Integer length) 	String"
+			],
+			[
+				"Selec",
+				"SelectOption	[Standard Apex Class]"
+			],
+			[
+				"Exemption",
+				"Exemption_Reasons__c"
+			],
+			[
+				"Exem",
+				"Exemption_Reasons__c"
+			],
+			[
+				"Pracedo",
+				"PracedoException"
+			],
+			[
+				"Qualifi",
+				"Qualification__c"
+			],
+			[
+				"output",
+				"apex:outputText"
+			],
+			[
+				"header",
+				"headerValue	(String)"
+			],
+			[
+				"Account",
+				"AccountID"
+			],
+			[
+				"Selected",
+				"SelectedProgramme"
+			],
+			[
+				"pageblo",
+				"apex:pageBlock"
+			],
+			[
+				"Related",
+				"relatedAssets"
+			],
+			[
+				"find",
+				"PRIVATE findRelatedItems(LIST ProductIds) 	Map"
+			],
+			[
+				"Opportunity",
+				"OpportunityLineItem"
+			],
+			[
+				"Comp",
+				"Component"
+			],
+			[
+				"Events",
+				"EventsPerCourse"
+			],
+			[
+				"Cou",
+				"Course__c"
+			],
+			[
+				"Couse",
+				"CourseIDs"
+			],
+			[
+				"Cours",
+				"Course__c"
+			],
+			[
+				"Product",
+				"Product__r"
+			],
+			[
+				"sty",
+				"style	(String)"
+			],
+			[
+				"page",
+				"apex:pageBlockSection"
+			],
+			[
+				"Stl",
+				"styleClass	(String)"
+			],
+			[
+				"di",
+				"disabled	(Boolean)"
+			],
+			[
+				"Price",
+				"PricebookEntry"
+			],
+			[
+				"Pricebo",
+				"PricebookEntryMap"
+			],
+			[
+				"head",
+				"headerValue	(String)"
+			],
+			[
+				"Bundle",
+				"Bundle_Component__c"
+			],
+			[
+				"Event",
+				"EventAssignments"
+			],
+			[
+				"selecte",
+				"PUBLIC selectedStandardFee	String"
+			],
+			[
+				"Standard",
+				"Standard_Fee__c	[Sobject Name]"
+			],
+			[
+				"pageBlock",
+				"apex:pageBlockSection"
+			],
+			[
+				"Fee",
+				"Fee__c"
+			],
+			[
+				"Event_",
+				"Event_Assignment__c	[Sobject Name]"
+			],
+			[
+				"LA7",
+				"LA7_Code__c	[Sobject Name]"
+			],
+			[
+				"LA1",
+				"LA1_Code__c	[Sobject Name]"
+			],
+			[
+				"LA3",
+				"LA3Code"
+			],
+			[
+				"generate",
+				"generateContact"
+			],
+			[
+				"getDml",
+				"PUBLIC getDmlMessage(Integer index) 	String"
+			],
+			[
+				"Stan",
+				"Standard_Fee__c"
+			],
+			[
+				"Wilming",
+				"WilmingtonTestData	[Custom Apex Class]"
+			],
+			[
+				"Gene",
+				"General_Settings__c	[Sobject Name]"
+			],
+			[
+				"lstA",
+				"lstAssetUpdated"
+			],
+			[
+				"New",
+				"NewBusinessID"
+			],
+			[
+				"brand",
+				"brandLogo"
+			],
+			[
+				"Brand",
+				"Brand_URL__c"
+			],
+			[
+				"get",
+				"PUBLIC getMessage() 	String"
+			],
+			[
+				"LA1_",
+				"LA1_Legal_Entity__c"
+			],
+			[
+				"new",
+				"newOpportunityLineItem"
+			],
+			[
+				"Opportuni",
+				"Opportunities"
+			],
+			[
+				"Opp",
+				"OpportunityIDs"
+			],
+			[
+				"getUser",
+				"PUBLIC getUserId() 	String"
+			],
+			[
+				"toAdd",
+				"toAddressesList"
+			],
+			[
+				"toAd",
+				"toAddresses"
+			],
+			[
+				"toAdress",
+				"toAddressesList"
+			],
+			[
+				"Priceb",
+				"PricebookEntry"
+			],
+			[
+				"getDML",
+				"PUBLIC getDmlMessage(Integer index) 	String"
+			],
+			[
+				"ERR_",
+				"ERR_NOBOOKER"
+			],
+			[
+				"pageme",
+				"apex:pageMessages"
+			],
+			[
+				"Pricebook",
+				"PricebookEntry	[Sobject Name]"
+			],
+			[
+				"action",
+				"PUBLIC action_Next() 	PageReference"
+			],
+			[
+				"Book",
+				"BookEventController	[Custom Apex Class]"
+			],
+			[
+				"Opportunit",
+				"OpportunityLineItem	[Sobject Name]"
+			],
+			[
+				"Record",
+				"RecordIDs"
+			],
+			[
+				"lst",
+				"lstUpdateProduct"
+			],
+			[
+				"add",
+				"addmessage"
+			],
+			[
+				"Apex",
+				"ApexPages	[Standard Apex Class]"
+			],
+			[
+				"ERROR",
+				"ERROR_NODELEGATES"
+			],
+			[
+				"style",
+				"styleClass	(String)"
+			],
+			[
+				"Produ",
+				"Products"
+			],
+			[
+				"st",
+				"stdController"
+			],
+			[
+				"select",
+				"apex:selectList"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "Pricebook2[] pbs = new Pricebook2[]{\n  new Pricebook2(Unique__c = 'GE-COSTCO', IsActive = true, Name = 'GE-COSTCO'),\n  new Pricebook2(Unique__c = 'GE-AHOLD', IsActive = true, Name = 'GE-AHOLD'),\n  new Pricebook2(Unique__c = 'GE-SAMS', IsActive = true, Name = 'GE-SAMS'),\n  new Pricebook2(Unique__c = 'GE-TARGET', IsActive = true, Name = 'GE-TARGET'),\n  new Pricebook2(Unique__c = 'GE-WALMART', IsActive = true, Name = 'GE-WALMART'),\n  new Pricebook2(Unique__c = 'GE-HOMEDEPOT', IsActive = true, Name = 'GE-HOMEDEPOT'),\n\n  new Pricebook2(Unique__c = 'TCP-COSTCO', IsActive = true, Name = 'TCP-COSTCO'),\n  new Pricebook2(Unique__c = 'TCP-AHOLD', IsActive = true, Name = 'TCP-AHOLD'),\n  new Pricebook2(Unique__c = 'TCP-SAMS', IsActive = true, Name = 'TCP-SAMS'),\n  new Pricebook2(Unique__c = 'TCP-TARGET', IsActive = true, Name = 'TCP-TARGET'),\n  new Pricebook2(Unique__c = 'TCP-WALMART', IsActive = true, Name = 'TCP-WALMART'),\n  new Pricebook2(Unique__c = 'TCP-HOMEDEPOT', IsActive = true, Name = 'TCP-HOMEDEPOT'),\n\n  new Pricebook2(Unique__c = 'FEIT-COSTCO', IsActive = true, Name = 'FEIT-COSTCO'),\n  new Pricebook2(Unique__c = 'FEIT-AHOLD', IsActive = true, Name = 'FEIT-AHOLD'),\n  new Pricebook2(Unique__c = 'FEIT-SAMS', IsActive = true, Name = 'FEIT-SAMS'),\n  new Pricebook2(Unique__c = 'FEIT-TARGET', IsActive = true, Name = 'FEIT-TARGET'),\n  new Pricebook2(Unique__c = 'FEIT-WALMART', IsActive = true, Name = 'FEIT-WALMART'),\n  new Pricebook2(Unique__c = 'FEIT-HOMEDEPOT', IsActive = true, Name = 'FEIT-HOMEDEPOT'),\n\n  new Pricebook2(Unique__c = 'PHILIPPS-COSTCO', IsActive = true, Name = 'PHILIPPS-COSTCO'),\n  new Pricebook2(Unique__c = 'PHILIPPS-AHOLD', IsActive = true, Name = 'PHILIPPS-AHOLD'),\n  new Pricebook2(Unique__c = 'PHILIPPS-SAMS', IsActive = true, Name = 'PHILIPPS-SAMS'),\n  new Pricebook2(Unique__c = 'PHILIPPS-TARGET', IsActive = true, Name = 'PHILIPPS-TARGET'),\n  new Pricebook2(Unique__c = 'PHILIPPS-WALMART', IsActive = true, Name = 'PHILIPPS-WALMART'),\n  new Pricebook2(Unique__c = 'PHILIPPS-HOMEDEPOT', IsActive = true, Name = 'PHILIPPS-HOMEDEPOT')\n};\n               \ninsert pbs;\n\nProduct2[] plist = new Product2[]{\n  new Product2(Name = '4100', Manufacturer_ID__c = '4100'),\n  new Product2(Name = '13572', Manufacturer_ID__c = '13572'),\n  new Product2(Name = '17569', Manufacturer_ID__c = '17569'),\n  new Product2(Name = '17765', Manufacturer_ID__c = '17765'),\n  new Product2(Name = '22713', Manufacturer_ID__c = '22713'),\n  new Product2(Name = '22727', Manufacturer_ID__c = '22727'),\n  new Product2(Name = '24691', Manufacturer_ID__c = '24691'),\n  new Product2(Name = '24692', Manufacturer_ID__c = '24692'),\n  new Product2(Name = '24967', Manufacturer_ID__c = '24967'),\n  new Product2(Name = '24968', Manufacturer_ID__c = '24968'),\n  new Product2(Name = '26589', Manufacturer_ID__c = '26589'),\n  new Product2(Name = '26614', Manufacturer_ID__c = '26614'),\n  new Product2(Name = '27377', Manufacturer_ID__c = '27377'),\n  new Product2(Name = '28909', Manufacturer_ID__c = '28909'),\n  new Product2(Name = '31064', Manufacturer_ID__c = '31064'),\n  new Product2(Name = '35486', Manufacturer_ID__c = '35486'),\n  new Product2(Name = '35492', Manufacturer_ID__c = '35492'),\n  new Product2(Name = '35493', Manufacturer_ID__c = '35493'),\n  new Product2(Name = '36642', Manufacturer_ID__c = '36642'),\n  new Product2(Name = '36649', Manufacturer_ID__c = '36649'),\n  new Product2(Name = '36655', Manufacturer_ID__c = '36655'),\n  new Product2(Name = '42105', Manufacturer_ID__c = '42105'),\n  new Product2(Name = '42107', Manufacturer_ID__c = '42107'),\n  new Product2(Name = '42116', Manufacturer_ID__c = '42116'),\n  new Product2(Name = '42124', Manufacturer_ID__c = '42124'),\n  new Product2(Name = '42344', Manufacturer_ID__c = '42344'),\n  new Product2(Name = '43856', Manufacturer_ID__c = '43856'),\n  new Product2(Name = '43859', Manufacturer_ID__c = '43859'),\n  new Product2(Name = '43862', Manufacturer_ID__c = '43862'),\n  new Product2(Name = '43863', Manufacturer_ID__c = '43863'),\n  new Product2(Name = '43867', Manufacturer_ID__c = '43867'),\n  new Product2(Name = '47452', Manufacturer_ID__c = '47452'),\n  new Product2(Name = '47478', Manufacturer_ID__c = '47478'),\n  new Product2(Name = '47483', Manufacturer_ID__c = '47483'),\n  new Product2(Name = '47484', Manufacturer_ID__c = '47484'),\n  new Product2(Name = '47485', Manufacturer_ID__c = '47485'),\n  new Product2(Name = '47709', Manufacturer_ID__c = '47709'),\n  new Product2(Name = '47770', Manufacturer_ID__c = '47770'),\n  new Product2(Name = '51639', Manufacturer_ID__c = '51639'),\n  new Product2(Name = '52096', Manufacturer_ID__c = '52096'),\n  new Product2(Name = '52105', Manufacturer_ID__c = '52105'),\n  new Product2(Name = '52109', Manufacturer_ID__c = '52109'),\n  new Product2(Name = '52218', Manufacturer_ID__c = '52218'),\n  new Product2(Name = '52222', Manufacturer_ID__c = '52222'),\n  new Product2(Name = '52226', Manufacturer_ID__c = '52226'),\n  new Product2(Name = '52234', Manufacturer_ID__c = '52234'),\n  new Product2(Name = '52240', Manufacturer_ID__c = '52240'),\n  new Product2(Name = '53080', Manufacturer_ID__c = '53080'),\n  new Product2(Name = '53084', Manufacturer_ID__c = '53084'),\n  new Product2(Name = '53086', Manufacturer_ID__c = '53086'),\n  new Product2(Name = '60297', Manufacturer_ID__c = '60297'),\n  new Product2(Name = '60299', Manufacturer_ID__c = '60299'),\n  new Product2(Name = '62951', Manufacturer_ID__c = '62951'),\n  new Product2(Name = '63482', Manufacturer_ID__c = '63482'),\n  new Product2(Name = '63503', Manufacturer_ID__c = '63503'),\n  new Product2(Name = '63505', Manufacturer_ID__c = '63505'),\n  new Product2(Name = '64004', Manufacturer_ID__c = '64004'),\n  new Product2(Name = '64007', Manufacturer_ID__c = '64007'),\n  new Product2(Name = '64158', Manufacturer_ID__c = '64158'),\n  new Product2(Name = '65157', Manufacturer_ID__c = '65157'),\n  new Product2(Name = '66551', Manufacturer_ID__c = '66551'),\n  new Product2(Name = '66662', Manufacturer_ID__c = '66662'),\n  new Product2(Name = '66663', Manufacturer_ID__c = '66663'),\n  new Product2(Name = '66664', Manufacturer_ID__c = '66664'),\n  new Product2(Name = '66665', Manufacturer_ID__c = '66665'),\n  new Product2(Name = '66666', Manufacturer_ID__c = '66666'),\n  new Product2(Name = '68504', Manufacturer_ID__c = '68504'),\n  new Product2(Name = '68505', Manufacturer_ID__c = '68505'),\n  new Product2(Name = '68506', Manufacturer_ID__c = '68506'),\n  new Product2(Name = '68507', Manufacturer_ID__c = '68507'),\n  new Product2(Name = '68510', Manufacturer_ID__c = '68510'),\n  new Product2(Name = '68511', Manufacturer_ID__c = '68511'),\n  new Product2(Name = '68512', Manufacturer_ID__c = '68512'),\n  new Product2(Name = '68513', Manufacturer_ID__c = '68513'),\n  new Product2(Name = '68518', Manufacturer_ID__c = '68518'),\n  new Product2(Name = '68519', Manufacturer_ID__c = '68519'),\n  new Product2(Name = '68520', Manufacturer_ID__c = '68520'),\n  new Product2(Name = '68521', Manufacturer_ID__c = '68521'),\n  new Product2(Name = '69654', Manufacturer_ID__c = '69654'),\n  new Product2(Name = '69655', Manufacturer_ID__c = '69655'),\n  new Product2(Name = '69656', Manufacturer_ID__c = '69656'),\n  new Product2(Name = '69657', Manufacturer_ID__c = '69657'),\n  new Product2(Name = '69658', Manufacturer_ID__c = '69658'),\n  new Product2(Name = '69659', Manufacturer_ID__c = '69659'),\n  new Product2(Name = '69683', Manufacturer_ID__c = '69683'),\n  new Product2(Name = '69693', Manufacturer_ID__c = '69693'),\n  new Product2(Name = '70776', Manufacturer_ID__c = '70776'),\n  new Product2(Name = '70830', Manufacturer_ID__c = '70830'),\n  new Product2(Name = '70909', Manufacturer_ID__c = '70909'),\n  new Product2(Name = '70968', Manufacturer_ID__c = '70968'),\n  new Product2(Name = '71285', Manufacturer_ID__c = '71285'),\n  new Product2(Name = '72609', Manufacturer_ID__c = '72609'),\n  new Product2(Name = '72984', Manufacturer_ID__c = '72984'),\n  new Product2(Name = '74197', Manufacturer_ID__c = '74197'),\n  new Product2(Name = '74199', Manufacturer_ID__c = '74199'),\n  new Product2(Name = '74201', Manufacturer_ID__c = '74201'),\n  new Product2(Name = '74203', Manufacturer_ID__c = '74203'),\n  new Product2(Name = '74878', Manufacturer_ID__c = '74878'),\n  new Product2(Name = '75368', Manufacturer_ID__c = '75368'),\n  new Product2(Name = '75925', Manufacturer_ID__c = '75925'),\n  new Product2(Name = '76131', Manufacturer_ID__c = '76131'),\n  new Product2(Name = '76132', Manufacturer_ID__c = '76132'),\n  new Product2(Name = '77123', Manufacturer_ID__c = '77123'),\n  new Product2(Name = '78937', Manufacturer_ID__c = '78937'),\n  new Product2(Name = '78938', Manufacturer_ID__c = '78938'),\n  new Product2(Name = '78939', Manufacturer_ID__c = '78939'),\n  new Product2(Name = '78940', Manufacturer_ID__c = '78940'),\n  new Product2(Name = '78947', Manufacturer_ID__c = '78947'),\n  new Product2(Name = '78952', Manufacturer_ID__c = '78952'),\n  new Product2(Name = '78965', Manufacturer_ID__c = '78965'),\n  new Product2(Name = '85384', Manufacturer_ID__c = '85384'),\n  new Product2(Name = '85388', Manufacturer_ID__c = '85388'),\n  new Product2(Name = '85389', Manufacturer_ID__c = '85389'),\n  new Product2(Name = '85392', Manufacturer_ID__c = '85392'),\n  new Product2(Name = '89091', Manufacturer_ID__c = '89091'),\n  new Product2(Name = '89095', Manufacturer_ID__c = '89095'),\n  new Product2(Name = '89096', Manufacturer_ID__c = '89096'),\n  new Product2(Name = '92779', Manufacturer_ID__c = '92779'),\n  new Product2(Name = '92783', Manufacturer_ID__c = '92783'),\n  new Product2(Name = '94556', Manufacturer_ID__c = '94556'),\n  new Product2(Name = '94557', Manufacturer_ID__c = '94557'),\n  new Product2(Name = '94558', Manufacturer_ID__c = '94558'),\n  new Product2(Name = '94559', Manufacturer_ID__c = '94559'),\n  new Product2(Name = '94560', Manufacturer_ID__c = '94560'),\n  new Product2(Name = '94561', Manufacturer_ID__c = '94561'),\n  new Product2(Name = '97523', Manufacturer_ID__c = '97523'),\n  new Product2(Name = '97524', Manufacturer_ID__c = '97524'),\n  new Product2(Name = '97689', Manufacturer_ID__c = '97689'),\n  new Product2(Name = '97690', Manufacturer_ID__c = '97690'),\n  new Product2(Name = '97691', Manufacturer_ID__c = '97691'),\n  new Product2(Name = '97728', Manufacturer_ID__c = '97728'),\n  new Product2(Name = '101492', Manufacturer_ID__c = '101492'),\n  new Product2(Name = '101493', Manufacturer_ID__c = '101493'),\n  new Product2(Name = '107644', Manufacturer_ID__c = '107644'),\n  new Product2(Name = '107645', Manufacturer_ID__c = '107645'),\n  new Product2(Name = '117476', Manufacturer_ID__c = '117476'),\n  new Product2(Name = '149928', Manufacturer_ID__c = '149928'),\n  new Product2(Name = '149944', Manufacturer_ID__c = '149944'),\n  new Product2(Name = '151785', Manufacturer_ID__c = '151785'),\n  new Product2(Name = '153914', Manufacturer_ID__c = '153914'),\n  new Product2(Name = '338141', Manufacturer_ID__c = '338141'),\n  new Product2(Name = '377253', Manufacturer_ID__c = '377253'),\n  new Product2(Name = '395872', Manufacturer_ID__c = '395872'),\n  new Product2(Name = '446302', Manufacturer_ID__c = '446302'),\n  new Product2(Name = '457897', Manufacturer_ID__c = '457897'),\n  new Product2(Name = '459425', Manufacturer_ID__c = '459425'),\n  new Product2(Name = '471979', Manufacturer_ID__c = '471979'),\n  new Product2(Name = '534875', Manufacturer_ID__c = '534875'),\n  new Product2(Name = '605068', Manufacturer_ID__c = '605068'),\n  new Product2(Name = '605362', Manufacturer_ID__c = '605362'),\n  new Product2(Name = '636219', Manufacturer_ID__c = '636219'),\n  new Product2(Name = '640674', Manufacturer_ID__c = '640674'),\n  new Product2(Name = '641169', Manufacturer_ID__c = '641169'),\n  new Product2(Name = '664946', Manufacturer_ID__c = '664946'),\n  new Product2(Name = '720481', Manufacturer_ID__c = '720481'),\n  new Product2(Name = '720815', Manufacturer_ID__c = '720815'),\n  new Product2(Name = '789858', Manufacturer_ID__c = '789858'),\n  new Product2(Name = '790398', Manufacturer_ID__c = '790398'),\n  new Product2(Name = '826770', Manufacturer_ID__c = '826770'),\n  new Product2(Name = '977714', Manufacturer_ID__c = '977714'),\n  new Product2(Name = '999418', Manufacturer_ID__c = '999418'),\n  new Product2(Name = '1000017569', Manufacturer_ID__c = '1000017569'),\n  new Product2(Name = '1000017765', Manufacturer_ID__c = '1000017765'),\n  new Product2(Name = '1000022727', Manufacturer_ID__c = '1000022727'),\n  new Product2(Name = '1000027377', Manufacturer_ID__c = '1000027377'),\n  new Product2(Name = '1000036642', Manufacturer_ID__c = '1000036642'),\n  new Product2(Name = '1000036649', Manufacturer_ID__c = '1000036649'),\n  new Product2(Name = '1000036655', Manufacturer_ID__c = '1000036655'),\n  new Product2(Name = '1000043856', Manufacturer_ID__c = '1000043856'),\n  new Product2(Name = '1000043859', Manufacturer_ID__c = '1000043859'),\n  new Product2(Name = '1000043862', Manufacturer_ID__c = '1000043862'),\n  new Product2(Name = '1000043863', Manufacturer_ID__c = '1000043863'),\n  new Product2(Name = '1000043867', Manufacturer_ID__c = '1000043867'),\n  new Product2(Name = '1000051639', Manufacturer_ID__c = '1000051639'),\n  new Product2(Name = '1000052096', Manufacturer_ID__c = '1000052096'),\n  new Product2(Name = '1000052105', Manufacturer_ID__c = '1000052105'),\n  new Product2(Name = '1000052109', Manufacturer_ID__c = '1000052109'),\n  new Product2(Name = '1000052218', Manufacturer_ID__c = '1000052218'),\n  new Product2(Name = '1000052222', Manufacturer_ID__c = '1000052222'),\n  new Product2(Name = '1000052226', Manufacturer_ID__c = '1000052226'),\n  new Product2(Name = '1000052234', Manufacturer_ID__c = '1000052234'),\n  new Product2(Name = '1000052240', Manufacturer_ID__c = '1000052240'),\n  new Product2(Name = '1000053080', Manufacturer_ID__c = '1000053080'),\n  new Product2(Name = '1000053084', Manufacturer_ID__c = '1000053084'),\n  new Product2(Name = '1000053086', Manufacturer_ID__c = '1000053086'),\n  new Product2(Name = '1000471979', Manufacturer_ID__c = '1000471979'),\n  new Product2(Name = '1000999418', Manufacturer_ID__c = '1000999418'),\n  new Product2(Name = '1001004100', Manufacturer_ID__c = '1001004100'),\n  new Product2(Name = '1001026589', Manufacturer_ID__c = '1001026589'),\n  new Product2(Name = '1001026614', Manufacturer_ID__c = '1001026614'),\n  new Product2(Name = 'ES9M814TS4', Manufacturer_ID__c = 'ES9M814TS4'),\n  new Product2(Name = 'ES9M814TS450K', Manufacturer_ID__c = 'ES9M814TS450K'),\n  new Product2(Name = 'ES9M823TS450K', Manufacturer_ID__c = 'ES9M823TS450K'),\n  new Product2(Name = 'ES9M8094', Manufacturer_ID__c = 'ES9M8094'),\n  new Product2(Name = 'ES9R314IB2', Manufacturer_ID__c = 'ES9R314IB2'),\n  new Product2(Name = 'ES59032', Manufacturer_ID__c = 'ES59032'),\n  new Product2(Name = 'ES9M814435K', Manufacturer_ID__c = 'ES9M814435K'),\n  new Product2(Name = 'ES9M814450K', Manufacturer_ID__c = 'ES9M814450K'),\n  new Product2(Name = 'ES9M823435K', Manufacturer_ID__c = 'ES9M823435K'),\n  new Product2(Name = 'ES9M819250K', Manufacturer_ID__c = 'ES9M819250K'),\n  new Product2(Name = 'ES9M814C250K', Manufacturer_ID__c = 'ES9M814C250K'),\n  new Product2(Name = 'ES9M814DIM2', Manufacturer_ID__c = 'ES9M814DIM2'),\n  new Product2(Name = 'ES5R4192', Manufacturer_ID__c = 'ES5R4192'),\n  new Product2(Name = 'ES9M809250K', Manufacturer_ID__c = 'ES9M809250K'),\n  new Product2(Name = 'ES5M823DIM2', Manufacturer_ID__c = 'ES5M823DIM2'),\n  new Product2(Name = 'ES5M8141250K', Manufacturer_ID__c = 'ES5M8141250K'),\n  new Product2(Name = 'ES5R314650K', Manufacturer_ID__c = 'ES5R314650K'),\n  new Product2(Name = 'ES5M8234RS50K', Manufacturer_ID__c = 'ES5M8234RS50K'),\n  new Product2(Name = 'ES9M8194', Manufacturer_ID__c = 'ES9M8194'),\n  new Product2(Name = 'ES9M144RS', Manufacturer_ID__c = 'ES9M144RS'),\n  new Product2(Name = 'ES5R315DIM2', Manufacturer_ID__c = 'ES5R315DIM2'),\n  new Product2(Name = 'ES9M8234', Manufacturer_ID__c = 'ES9M8234'),\n  new Product2(Name = 'ES9D807C3', Manufacturer_ID__c = 'ES9D807C3'),\n  new Product2(Name = 'ES9R314235K', Manufacturer_ID__c = 'ES9R314235K'),\n  new Product2(Name = 'ES9R316250K', Manufacturer_ID__c = 'ES9R316250K'),\n  new Product2(Name = 'ES9M2312', Manufacturer_ID__c = 'ES9M2312'),\n  new Product2(Name = 'ES9R2142', Manufacturer_ID__c = 'ES9R2142'),\n  new Product2(Name = 'ES9M68RP', Manufacturer_ID__c = 'ES9M68RP'),\n  new Product2(Name = 'ES9A814235K', Manufacturer_ID__c = 'ES9A814235K'),\n  new Product2(Name = 'ES9M842', Manufacturer_ID__c = 'ES9M842'),\n  new Product2(Name = 'ES9R4232', Manufacturer_ID__c = 'ES9R4232'),\n  new Product2(Name = 'ES9M1412', Manufacturer_ID__c = 'ES9M1412'),\n  new Product2(Name = 'ES9R30146', Manufacturer_ID__c = 'ES9R30146'),\n  new Product2(Name = 'ES9G8142IB', Manufacturer_ID__c = 'ES9G8142IB'),\n  new Product2(Name = 'ES9G8092', Manufacturer_ID__c = 'ES9G8092'),\n  new Product2(Name = 'ES9A8142IB', Manufacturer_ID__c = 'ES9A8142IB'),\n  new Product2(Name = 'ES9M823TS4', Manufacturer_ID__c = 'ES9M823TS4'),\n  new Product2(Name = 'ES9M809235K', Manufacturer_ID__c = 'ES9M809235K'),\n  new Product2(Name = 'ES9A8092', Manufacturer_ID__c = 'ES9A8092'),\n  new Product2(Name = '1000-019-042', Manufacturer_ID__c = '1000-019-042'),\n  new Product2(Name = '1000-019-045', Manufacturer_ID__c = '1000-019-045'),\n  new Product2(Name = '1000-019-048', Manufacturer_ID__c = '1000-019-048'),\n  new Product2(Name = '1000-019-055', Manufacturer_ID__c = '1000-019-055'),\n  new Product2(Name = '148-545', Manufacturer_ID__c = '148-545'),\n  new Product2(Name = '158-653', Manufacturer_ID__c = '158-653'),\n  new Product2(Name = '159-979', Manufacturer_ID__c = '159-979'),\n  new Product2(Name = '160-588', Manufacturer_ID__c = '160-588'),\n  new Product2(Name = '160-678', Manufacturer_ID__c = '160-678'),\n  new Product2(Name = '161-167', Manufacturer_ID__c = '161-167'),\n  new Product2(Name = '186-353', Manufacturer_ID__c = '186-353'),\n  new Product2(Name = '190-729', Manufacturer_ID__c = '190-729'),\n  new Product2(Name = '191-055', Manufacturer_ID__c = '191-055'),\n  new Product2(Name = '238-809', Manufacturer_ID__c = '238-809'),\n  new Product2(Name = '238-875', Manufacturer_ID__c = '238-875'),\n  new Product2(Name = '239-073', Manufacturer_ID__c = '239-073'),\n  new Product2(Name = '250-321', Manufacturer_ID__c = '250-321'),\n  new Product2(Name = '252-763', Manufacturer_ID__c = '252-763'),\n  new Product2(Name = '323-430', Manufacturer_ID__c = '323-430'),\n  new Product2(Name = '324-684', Manufacturer_ID__c = '324-684'),\n  new Product2(Name = '384-314', Manufacturer_ID__c = '384-314'),\n  new Product2(Name = '405-101', Manufacturer_ID__c = '405-101'),\n  new Product2(Name = '423-599', Manufacturer_ID__c = '423-599'),\n  new Product2(Name = '475-110', Manufacturer_ID__c = '475-110'),\n  new Product2(Name = '481-411', Manufacturer_ID__c = '481-411'),\n  new Product2(Name = '565-180', Manufacturer_ID__c = '565-180'),\n  new Product2(Name = '567-365', Manufacturer_ID__c = '567-365'),\n  new Product2(Name = '598-833', Manufacturer_ID__c = '598-833'),\n  new Product2(Name = '599-031', Manufacturer_ID__c = '599-031'),\n  new Product2(Name = '772-720', Manufacturer_ID__c = '772-720'),\n  new Product2(Name = '780-758', Manufacturer_ID__c = '780-758'),\n  new Product2(Name = '785-800', Manufacturer_ID__c = '785-800'),\n  new Product2(Name = '791-552', Manufacturer_ID__c = '791-552'),\n  new Product2(Name = '964-196', Manufacturer_ID__c = '964-196'),\n  new Product2(Name = '964-790', Manufacturer_ID__c = '964-790'),\n  new Product2(Name = '288-506', Manufacturer_ID__c = '288-506'),\n  new Product2(Name = '565-172', Manufacturer_ID__c = '565-172'),\n  new Product2(Name = '599-163', Manufacturer_ID__c = '599-163'),\n  new Product2(Name = '967-034', Manufacturer_ID__c = '967-034'),\n  new Product2(Name = '460-929', Manufacturer_ID__c = '460-929'),\n  new Product2(Name = '963-699', Manufacturer_ID__c = '963-699'),\n  new Product2(Name = 'ES9P8232', Manufacturer_ID__c = 'ES9P8232'),\n  new Product2(Name = 'ES9M819235K', Manufacturer_ID__c = 'ES9M819235K'),\n  new Product2(Name = 'GVG142DL', Manufacturer_ID__c = 'GVG142DL'),\n  new Product2(Name = 'GVS14DL', Manufacturer_ID__c = 'GVS14DL'),\n  new Product2(Name = 'GVS144DL', Manufacturer_ID__c = 'GVS144DL'),\n  new Product2(Name = 'GVS1412', Manufacturer_ID__c = 'GVS1412'),\n  new Product2(Name = 'GVS14', Manufacturer_ID__c = 'GVS14'),\n  new Product2(Name = 'GVS144', Manufacturer_ID__c = 'GVS144'),\n  new Product2(Name = 'GVS234', Manufacturer_ID__c = 'GVS234'),\n  new Product2(Name = 'GVA092', Manufacturer_ID__c = 'GVA092'),\n  new Product2(Name = 'GVS194', Manufacturer_ID__c = 'GVS194'),\n  new Product2(Name = 'GVS2312', Manufacturer_ID__c = 'GVS2312'),\n  new Product2(Name = 'GVS194DL', Manufacturer_ID__c = 'GVS194DL'),\n  new Product2(Name = 'GVR3142', Manufacturer_ID__c = 'GVR3142'),\n  new Product2(Name = 'GVS234DL', Manufacturer_ID__c = 'GVS234DL'),\n  new Product2(Name = 'GVR3142DL', Manufacturer_ID__c = 'GVR3142DL'),\n  new Product2(Name = 'GVG142', Manufacturer_ID__c = 'GVG142'),\n  new Product2(Name = 'GVA192', Manufacturer_ID__c = 'GVA192'),\n  new Product2(Name = 'GVA142', Manufacturer_ID__c = 'GVA142'),\n  new Product2(Name = 'GVD09C3', Manufacturer_ID__c = 'GVD09C3'),\n  new Product2(Name = 'GVG092', Manufacturer_ID__c = 'GVG092'),\n  new Product2(Name = 'GVD093', Manufacturer_ID__c = 'GVD093'),\n  new Product2(Name = 'GVD09C3DL', Manufacturer_ID__c = 'GVD09C3DL'),\n  new Product2(Name = 'GVD093DL', Manufacturer_ID__c = 'GVD093DL'),\n  new Product2(Name = 'GVG092DL', Manufacturer_ID__c = 'GVG092DL'),\n  new Product2(Name = '69114IB', Manufacturer_ID__c = '69114IB'),\n  new Product2(Name = '6R3014IB', Manufacturer_ID__c = '6R3014IB'),\n  new Product2(Name = 'GVS14/68914', Manufacturer_ID__c = 'GVS14/68914'),\n  new Product2(Name = 'GVS144/689144', Manufacturer_ID__c = 'GVS144/689144'),\n  new Product2(Name = 'GVS144DL/689144DL', Manufacturer_ID__c = 'GVS144DL/689144DL'),\n  new Product2(Name = 'GVS1412/6891412', Manufacturer_ID__c = 'GVS1412/6891412'),\n  new Product2(Name = 'GVS194/689194', Manufacturer_ID__c = 'GVS194/689194'),\n  new Product2(Name = 'GVS194DL/689194DL', Manufacturer_ID__c = 'GVS194DL/689194DL'),\n  new Product2(Name = 'GVS234/689234', Manufacturer_ID__c = 'GVS234/689234'),\n  new Product2(Name = 'GVS234DL/689234DL', Manufacturer_ID__c = 'GVS234DL/689234DL'),\n  new Product2(Name = 'GVS2312/6892312', Manufacturer_ID__c = 'GVS2312/6892312'),\n  new Product2(Name = 'GVA092/694092', Manufacturer_ID__c = 'GVA092/694092'),\n  new Product2(Name = 'GVA192/694192', Manufacturer_ID__c = 'GVA192/694192'),\n  new Product2(Name = 'GVG092/691092', Manufacturer_ID__c = 'GVG092/691092'),\n  new Product2(Name = 'GVG142/691142', Manufacturer_ID__c = 'GVG142/691142'),\n  new Product2(Name = 'GVR3142/6R30142', Manufacturer_ID__c = 'GVR3142/6R30142'),\n  new Product2(Name = 'GVR3142DL/6R30142DL', Manufacturer_ID__c = 'GVR3142DL/6R30142DL'),\n  new Product2(Name = 'GVD093/697093', Manufacturer_ID__c = 'GVD093/697093'),\n  new Product2(Name = '69414IB', Manufacturer_ID__c = '69414IB'),\n  new Product2(Name = 'GVS14DL/68914DL', Manufacturer_ID__c = 'GVS14DL/68914DL'),\n  new Product2(Name = 'GVG142DL/691142DL', Manufacturer_ID__c = 'GVG142DL/691142DL'),\n  new Product2(Name = 'GVD093DL/697093DL', Manufacturer_ID__c = 'GVD093DL/697093DL'),\n  new Product2(Name = 'GVA142/694142', Manufacturer_ID__c = 'GVA142/694142'),\n  new Product2(Name = 'GVD09C3/69709C3', Manufacturer_ID__c = 'GVD09C3/69709C3'),\n  new Product2(Name = 'GVD09C3DL/69709C3DL', Manufacturer_ID__c = 'GVD09C3DL/69709C3DL'),\n  new Product2(Name = 'GVG092DL/691092DL', Manufacturer_ID__c = 'GVG092DL/691092DL'),\n  new Product2(Name = 'GVS094/689094', Manufacturer_ID__c = 'GVS094/689094'),\n  new Product2(Name = 'GVS094', Manufacturer_ID__c = 'GVS094')\n};\n\nupsert plist;",
+			"settings":
+			{
+				"buffer_size": 23712,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Send a list of parsed Orders Results\n\nFor each Order:\n  Convert data into Order\n\n  For each OrderItem:\n    Convert data into OrderItem\n\n  Send to Salesforce\n\nreturn results",
+			"settings":
+			{
+				"buffer_size": 172,
+				"line_ending": "Unix",
+				"name": "Send a list of parsed Orders Results"
+			}
+		},
+		{
+			"file": "force.js",
+			"settings":
+			{
+				"buffer_size": 5089,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "\"use strict\";\n\nvar async = require('async')\n  , TCPv1 = require('./parsers/tcp1')\n  , xlsx = require('xlsx')\n  , _ = require('underscore')\n  , jsforce = require('jsforce')\n\nvar conn = new jsforce.Connection({\n  loginUrl : 'https://test.salesforce.com'\n});\n\nvar username = 'mark@wylanenergy.com.feature1'\n  , password = 'Pracedo15!DoldlkeCwdF1Jpiu7jTnaQjT'\n\nvar workbook1 = xlsx.readFile('./test/samples/TCPv1/AEDE-WM POS WE 4.10.xlsx')\n\nvar result = TCPv1.parse(workbook1, 'AEDE-WM POS WE 4.10.xlsx');\n\nresult.manufacturer = 'TCP';\nresult.retailer = 'WM';\n\n// processOrders([result])\n\n// function processOrders(orders) {\n\n//   async.eachLimit(orders, 1, insertOrder, function(err) {\n\n//   })\n\n// }\n\n// function insertOrder(order) {\n//   order.contractId = order.manufacturer + '-' + order.retailer\n\n//   var body = {\n//     \"order\": [\n//       {\n//         \"attributes\": {\n//           \"type\": \"Order\"\n//         },\n//         \"EffectiveDate\": order.firstDate != null ? order.firstDate : order.lastDate,\n//         \"EndDate\": order.lastDate,\n//         \"Status\": \"Draft\",\n//         \"AccountId\": \"001g000000cW0if\",\n//         \"Source_Spreadsheet_Name__c\": order.fileName,\n//         \"Contract\": { \"Unique__c\": order.contractId },\n//         \"Pricebook2\": { \"Unique__c\": order.contractId },\n//         \"OrderItems\": {\n//            \"records\": []\n//         }\n//       }\n//     ]\n//   };\n\n//   handleProducts(body, order);\n\n//   console.log(JSON.stringify(body, '', '  '))\n// }\n\n// function handleProducts(body, order) {\n//   _.values(order.products).forEach(function(product) {\n//     handleProductByStores(body, order, product);\n//     handleProductByPostalCodes(body, order, product);\n//   })\n// }\n\n// function handleProductByStores(body, order, product) {\n//   if(product.stores == null || !_.isObject(product.stores)) return;\n\n//   _.values(product.stores).forEach(function(store) {\n//     body.order[0]['OrderItems']['records'].push({\n//       \"attributes\": {\n//          \"type\": \"OrderItem\"\n//       },\n//       \"PricebookEntry\": { \"Unique__c\": order.contractId + \"-\" + product.manufacturerId },\n//       \"Quantity\": store.quantity,\n//       \"UnitPrice\": store.totalPrice / store.quantity,\n//       \"Lamps_per_SKU__c\": store.lampsPerSku,\n//       \"Location_static__c\": store.storeId\n//     })\n//   });\n// }\n\n// function handleProductByPostalCodes(body, order, product) {\n//   if(product.postalCodes == null || !_.isObject(product.postalCodes)) return;\n\n//   _.values(product.postalCodes).forEach(function(store) {\n//     body.order[0]['OrderItems']['records'].push({\n//       \"attributes\": {\n//          \"type\": \"OrderItem\"\n//       },\n//       \"PricebookEntry\": { \"Unique__c\": order.contractId + \"-\" + product.manufacturerId },\n//       \"Quantity\": store.quantity,\n//       \"UnitPrice\": store.totalPrice / store.quantity,\n//       \"Lamps_per_SKU__c\": store.lampsPerSku,\n//       \"PostalCode_static__c\": store.storeId\n//     })\n//   });\n// }\n\nclass SalesforceOrder {\n  constructor(order) {\n    var contractId = order.manufacturer + '-' + order.retailer;\n    var orderItems = []\n\n    this.request = {\n      \"order\": [\n        {\n          \"attributes\": {\n            \"type\": \"Order\"\n          },\n          \"EffectiveDate\": order.firstDate != null ? order.firstDate : order.lastDate,\n          \"EndDate\": order.lastDate,\n          \"Status\": \"Draft\",\n          \"AccountId\": \"001g000000cW0if\",\n          \"Source_Spreadsheet_Name__c\": order.fileName,\n          \"Contract\": { \"Unique__c\": contractId },\n          \"Pricebook2\": { \"Unique__c\": contractId },\n          \"OrderItems\": {\n             \"records\": []\n          }\n        }\n      ]\n    };\n\n    if(order.products != null && _.isObject(order.products))\n      _.values(order.products).forEach(function(product) {\n\n        if(product.stores != null && _.isObject(product.stores))\n          _.values(product.stores).forEach(function(store) {\n            orderItems.push({\n              \"attributes\": {\n                 \"type\": \"OrderItem\"\n              },\n              \"PricebookEntry\": { \"Unique__c\": contractId + \"-\" + product.manufacturerId },\n              \"Quantity\": store.quantity,\n              \"UnitPrice\": store.totalPrice / store.quantity,\n              \"Lamps_per_SKU__c\": store.lampsPerSku,\n              \"Location_static__c\": store.storeId\n            })\n          });\n\n        if(product.postalCodes != null && _.isObject(product.postalCodes))\n          _.values(product.postalCodes).forEach(function(store) {\n            orderItems.push({\n              \"attributes\": {\n                 \"type\": \"OrderItem\"\n              },\n              \"PricebookEntry\": { \"Unique__c\": contractId + \"-\" + product.manufacturerId },\n              \"Quantity\": store.quantity,\n              \"UnitPrice\": store.totalPrice / store.quantity,\n              \"Lamps_per_SKU__c\": store.lampsPerSku,\n              \"PostalCode_static__c\": store.storeId\n            })\n          });\n      })\n\n    this.orderItems = orderItems;\n  }\n\n  post(cb) {\n    conn.login(username, password, function(err, userInfo) {\n      if (err) return cb(err);\n\n      postOrder();\n\n      // conn.apex.post(\"/services/data/v30.0/commerce/sale/order\", order, function(err, res) {\n      //   if (err) { cb(err); return; }\n\n      //   if(orderItems.length > 150) {\n      //     var orderId = res.records[0].Id\n      //       , orderItemsLeft = orderItems.slice(150, orderItems.length);\n\n      //     var updateBody = {\n      //       \"order\": [\n      //         {\n      //           \"attributes\": {\n      //             \"type\": \"Order\"\n      //           },\n      //           \"Id\": orderId,\n      //           \"OrderItems\": {\n      //              \"records\": []\n      //           }\n      //         }\n      //       ]\n      //     };\n\n      //     var batches = [];\n\n      //     var errors = [];\n\n      //     for(var i = 0; i < orderItemsLeft.length; i = i + 150) {\n      //       batches.push({\n      //         \"order\": [\n      //           {\n      //             \"attributes\": {\n      //               \"type\": \"Order\"\n      //             },\n      //             \"Id\": orderId,\n      //             \"OrderItems\": {\n      //                \"records\": orderItemsLeft.slice(i, i+150)\n      //             }\n      //           }\n      //         ]\n      //       })\n      //     }\n\n      //     async.eachLimit(batches, 1, function(order, cb) {\n\n      //       addOrderItems(order, function(err, res) {\n      //         console.log('AddOrderItems Error (if any): ' + err)\n      //         if (err) {\n      //           errors.push('Could not create extra OrderItems: ' + err.message);\n      //         }\n      //         cb()\n      //       })\n\n      //     }, function(err) {\n      //       cb(null, errors)\n      //     })\n      //   }\n      // });\n\n    });\n\n    return this.request;\n  }\n\n  postOrder() {\n    var order = this.order;\n    order.order[0].OrderItems.records = this.orderItems.slice(0, 150);\n\n    conn.apex.post(\"/services/data/v30.0/commerce/sale/order\", order, function(err, res) {\n      if (err) { cb(err); return; }\n    });\n  }\n}\n\nvar order = new SalesforceOrder(result);\n\norder.post(function(err, result) {\n  console.log(err)\n})",
+			"file": "test.js",
+			"file_size": 7060,
+			"file_write_time": 130849682090000000,
+			"settings":
+			{
+				"buffer_size": 7159,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "test3@middleware.wylanenergy.com",
+			"settings":
+			{
+				"buffer_size": 32,
+				"line_ending": "Unix",
+				"name": "test3@middleware.wylanenergy.com"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 400.0,
+		"last_filter": "pretty",
+		"selected_items":
+		[
+			[
+				"pretty",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"prettif",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"pretti",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"scheme",
+				"Schemr: List all schemes"
+			],
+			[
+				"gitignore",
+				"Gitignore: New gitignore"
+			],
+			[
+				"prett",
+				"Pretty JSON: Validate"
+			],
+			[
+				"status",
+				"Git: Status"
+			],
+			[
+				"add",
+				"Git: Add..."
+			],
+			[
+				"json",
+				"Pretty JSON: Minify (compress) JSON"
+			],
+			[
+				"trigg",
+				"MavensMate: New Apex Trigger"
+			],
+			[
+				"new",
+				"MavensMate: New Apex Class"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"class",
+				"MavensMate: New Apex Class"
+			],
+			[
+				"APEX",
+				"MavensMate: New Apex Class"
+			],
+			[
+				"apex tri",
+				"MavensMate: New Apex Trigger"
+			],
+			[
+				"trigger",
+				"MavensMate: New Apex Trigger"
+			],
+			[
+				"lower",
+				"Convert Case: Lower Case"
+			],
+			[
+				"lowerca",
+				"Convert Case: Lower Case"
+			],
+			[
+				"apex",
+				"MavensMate: New Apex Class"
+			],
+			[
+				"Apex",
+				"MavensMate: New Apex Class"
+			],
+			[
+				"visual",
+				"MavensMate: New Visualforce Page"
+			],
+			[
+				"beautif",
+				"HTMLBeautify"
+			],
+			[
+				"NEW",
+				"MavensMate: New Apex Trigger"
+			],
+			[
+				"component",
+				"MavensMate: New Visualforce Component"
+			],
+			[
+				"html",
+				"HTMLBeautify"
+			],
+			[
+				"beauti",
+				"HTMLBeautify"
+			],
+			[
+				"schemr",
+				"Schemr: List all schemes"
+			],
+			[
+				"package",
+				"Package Control: Discover Packages"
+			],
+			[
+				"sche",
+				"Schemr: List all schemes"
+			],
+			[
+				"new ",
+				"MavensMate: New Apex Class"
+			],
+			[
+				"salesfor",
+				"Salesforce Reference"
+			]
+		],
+		"width": 538.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/documentation",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/test"
+	],
+	"file_history":
+	[
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/server.js",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/documentation/structure.js",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/test-email.js",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/parsers/HOMEDEPOTSUPPLYv1.js",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/test/parser-HOMEDEPOTSUPPLYv1.js",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/import/product-import/app.js",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/parsers/PHILIPPSv2.js",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/parsers/PHILIPPSv1.js",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/parsers/feit.js",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/import/product-import/test.js",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/parsers/tcp1.js",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/app.js",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/import/product-import/parsers.json",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/import/product-import/products.txt",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/force.js",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/parsers/TCPv4.js",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/node_modules/jsforce/lib/api/apex.js",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/test/parser-TCPv1.js",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/test/parser-GEv1.js",
+		"/Users/jpmonette/Library/Application Support/Sublime Text 3/Packages/haoide/config/settings/toolingapi.sublime-settings",
+		"/Users/jpmonette/Library/Application Support/Sublime Text 3/Packages/MavensMate/mavensmate.sublime-settings",
+		"/Users/jpmonette/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/parsers/tcp2.js",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/test/parser-TCPv2.js",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/parsers/TCPv3.js",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/test/parser-TCPv3.js",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/test/parser-FEITv1.js",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/test/parser-TCPv4.js",
+		"/Users/jpmonette/Library/Application Support/Sublime Text 3/Packages/User/toolingapi.sublime-settings",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/documentation/output.json",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/parsers/ge.js",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/test/parser-GEv2.js",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/parsers/GEv2.js",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/test/samples/TCPv3/2014 VIRGINIA (WYLAN) WEEKLY SALES FILE 12.21.14.xlsx",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/documentation/fn-per-parser.json",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/test.js",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/email-data/1437576876604.json",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/structure.js",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/node_modules/jsforce/node_modules/request/request.js",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/Data Export/products.csv",
+		"/Users/jpmonette/Downloads/testtest.log",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/output.json",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/test/parser-PHILIPPSv1.js",
+		"/Users/jpmonette/Desktop/template-contact.php",
+		"/Users/jpmonette/Desktop/contact-form.php",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/fn-per-parser.json",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/CREDENTIALS.md",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/package.json",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/.gitignore",
+		"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/.gitignore.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Valiantys - Julie/src/triggers/QuoteLineItems.trigger",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Valiantys - Julie/src/triggers/Opportunities.trigger",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Valiantys - Julie/src/triggers/OpportunityLineItems.trigger",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Valiantys - Julie/src/classes/QuoteLineItems_Sync_T.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Valiantys - Julie/src/classes/ReplicateQuoteLIFieldToOpptLIField.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Valiantys - Julie/src/classes/ReplicateQuoteLIFieldToOpptLIField_Test.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Valiantys - Julie/src/classes/test_autoSink_Tgr.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Valiantys - Julie/src/classes/TestControllerTester.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Valiantys - Julie/src/classes/TestController.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Valiantys - Julie/src/classes/ValiantysRenewalChecker.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Valiantys - Julie/src/classes/BatchMaintenanceRenewal.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Valiantys - Julie/src/classes/ValiantysPlatformSender.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Valiantys - Julie/src/classes/ValiantysQueryUtility.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Valiantys - Julie/src/classes/ProductsToAssets.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Valiantys - Julie/src/triggers/ReplicateQuoteLIFieldToOpptLIField_From_OLI_Tgr.trigger",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Valiantys - Julie/src/triggers/ReplicateQuoteLIFieldToOpptLIField_Tgr.trigger",
+		"/Users/jpmonette/Library/Application Support/Sublime Text 3/Packages/User/mavensmate.sublime-settings",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Valiantys - Julie/config/.debug",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Valiantys - Julie/src/pages/ProductsToAssets.page",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Valiantys - Julie/src/triggers/MaintenanceTrigger.trigger",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Valiantys - Julie/src/classes/SchMaintenanceRenewal.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Valiantys - Julie/src/classes/AssignAcntRenewalAndNonRenewalOnOpt_Test.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Valiantys - Julie/src/classes/QuoteLineItems_Sync.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Valiantys - Julie/src/classes/AssignAcntRenewalAndNonRenewalOnOpt.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Valiantys - Julie/src/triggers/ReplicatingProductNameToAsset_Tgr.trigger",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Valiantys - Julie/src/classes/ReplicatingProductNameToAsset.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Valiantys - Julie/src/triggers/AssignAcntRenewalAndNonRenewalOnOpt_Tgr.trigger",
+		"/Users/jpmonette/Documents/workspaces/nodejs/blogue.jpmonette.net/views/index.jade",
+		"/Users/jpmonette/Documents/workspaces/nodejs/blogue.jpmonette.net/views/layout.jade",
+		"/Users/jpmonette/Documents/workspaces/nodejs/blogue.jpmonette.net/public/stylesheets/style.styl",
+		"/Users/jpmonette/Documents/workspaces/nodejs/blogue.jpmonette.net/stylus/style.styl",
+		"/Users/jpmonette/Documents/workspaces/nodejs/blogue.jpmonette.net/app.js",
+		"/Users/jpmonette/Documents/workspaces/nodejs/blogue.jpmonette.net/views/single.jade",
+		"/Users/jpmonette/Documents/workspaces/nodejs/blogue.jpmonette.net/import.js",
+		"/Users/jpmonette/Documents/workspaces/nodejs/blogue.jpmonette.net/views/import.js",
+		"/Users/jpmonette/Documents/workspaces/nodejs/blogue.jpmonette.net/export.js",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Take1.tv - UAT/src/classes/Accounts_T.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Take1.tv - UAT/src/classes/AccountContacts_FieldTracking_T.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Take1.tv - UAT/src/classes/Opportunities_FieldTracking_T.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Take1.tv - UAT/src/classes/Contacts_FieldTracking_T.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Take1.tv - UAT/src/classes/Accounts_FieldTracking_T.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Feature1/src/classes/Opportunities_CreditApproved.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Feature1/src/classes/Orders_Init_T.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Feature1/src/classes/OpportunityLineItemsService.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Feature1/src/pages/OpportunityCancellation_SelectProducts.page",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Feature1/src/classes/OpportunityCancellation.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Feature1/src/pages/OpportunityCancellation.page",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Feature1/src/pages/CreateProductBundle.page",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Feature1/src/pages/WebinarJIConfirm.page",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Feature1/src/classes/WebinarJIConfirmController.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Feature1/src/classes/QuoteWebService.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Feature1/src/classes/CreateProductBundle.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Feature1/src/classes/AddProductsController.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Feature1/src/classes/AssetWebService_T.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Feature1/src/classes/OpportunityLineItems_UniqueLA1_T.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Feature1/src/classes/Attachments2OpportunitiesBatch.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Feature1/src/classes/OpportunityCancellation_T.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Feature1/src/classes/Attachments2OpportunitiesBatch_T2.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Feature1/src/triggers/OpportunityTrigger.trigger",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Feature1/src/classes/OpportunityTrigger_T.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Feature1/src/classes/OpportunityLineItems_UniqueLA1.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Feature1/src/classes/WilmingtonTestData.cls",
+		"/Users/jpmonette/Documents/workspaces/pracedo/testing/index.html",
+		"/Users/jpmonette/Documents/workspaces/pracedo/testing/test.html",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Feature1/src/classes/TestOpportunityTrigger.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Feature1/src/classes/Accreditation_T.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Feature1/src/classes/BookEventController.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Feature1/src/classes/BookEventController_T.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Feature1/src/classes/TestCreateDelegateTrackDelegateSesion.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Feature1/src/classes/CreateDelegateTrackDelegateSession.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Feature1/src/triggers/SetAccountDefaults.trigger",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Feature1/src/classes/SetAccountDefaultsTest.cls",
+		"/Users/jpmonette/Desktop/notes-certification.txt",
+		"/Users/jpmonette/Desktop/kryterion.log",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Feature1/src/classes/Assets_Validations_T.cls",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Feature1/src/classes/BatchesWebService.cls",
+		"/Users/jpmonette/Desktop/test2.html",
+		"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Feature1/src/classes/BatchesWebService_T.cls"
+	],
+	"find":
+	{
+		"height": 38.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/node_modules",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Feature1/src",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Feature1/src/classes",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Feature1/src",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Feature1/src/classes",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Feature1/src",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Feature1/src/classes",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src/classes",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src/triggers",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src/classes",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src/triggers",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src/classes",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src/triggers",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src/classes",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src/triggers",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src/classes",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src/components",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src/components",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src/classes",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src/triggers",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src/classes",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src/triggers",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src/classes",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src/triggers",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src/classes",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src/triggers",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src/classes",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src/triggers",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src/classes",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src/components",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src/pages",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src/classes",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src/classes",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src/classes",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src/classes",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src/pages",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src/classes",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src/pages",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src/triggers",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src/classes",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src/objects",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src/classes",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src/triggers",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src/pages",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src/components",
+			"/Users/jpmonette/Documents/workspaces/mavensmate/Wilmington-Pracedo3/src/classes",
+			"field",
+			"field."
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"mailgun",
+			"processExtraItems",
+			"PHILIPPS",
+			"console.l",
+			"End Date: ",
+			"Start date: ",
+			"firstDate",
+			"send",
+			"createOrderBatches",
+			"Source_Spreadsheet_Name__c",
+			"Order Items",
+			"batches",
+			"AEDE-WM POS WE 7.11.xlsx",
+			"xlsx",
+			"console",
+			"extension",
+			"cls",
+			"console",
+			"totalPacksCol",
+			"~~",
+			"UnitPrice",
+			"length",
+			"manufacturer:philips#",
+			"'L4'",
+			"parseProduct",
+			"sendEma",
+			"send",
+			"getRetailer",
+			"Could not create",
+			"process",
+			"length",
+			"process(",
+			"manufa",
+			"manufacturer",
+			"'",
+			"\"",
+			"instanceUrl",
+			"Invalid URI",
+			";",
+			"AccountId = '001g000000cW0if'",
+			"files",
+			"process(",
+			"TCPv1",
+			"- ",
+			"match",
+			"GVD09C3DL/69709C3DL",
+			"GVS094/689094",
+			"GVR3142DL/6R30142DL",
+			"GVS144/689144",
+			"tcpi",
+			"967034",
+			"160588",
+			"186353",
+			"1000019042",
+			"550540204",
+			"551640165",
+			"new Asset",
+			";",
+			":",
+			",\nOpportunity.",
+			"opportunity",
+			"Opportunity",
+			"Opportunities",
+			"contact",
+			"Contact",
+			"Contacts",
+			"account",
+			"Account",
+			"ItemWrapper",
+			"WebinarJIConfirmController",
+			"checkPrecondition",
+			"ApexPages.current",
+			"assert",
+			"email",
+			"mapOppAndOppLineRecapture",
+			"insertContract",
+			"sOppRecapture",
+			"PBEMap",
+			"Products",
+			"@testSetup",
+			"CreateDelegateTrackDelegateSession",
+			"/",
+			",",
+			"/",
+			"%,",
+			"Parser",
+			"/",
+			",",
+			"BatchCloneOpportunity",
+			"Owner",
+			"for update",
+			"BookingConfirmationController",
+			"studentProgramme",
+			"venue",
+			"Student_Module",
+			"creditItems",
+			"scontroller",
+			"Standard_Fee__c",
+			"OpportunityBundleService",
+			"renewalOpportunities",
+			"itemMap",
+			"Booker",
+			"AddEditEvent",
+			"button",
+			"RedirectProductController",
+			"ClsLineItemSync",
+			"AutoPopulateOppValue",
+			"BookingConfirmationController",
+			"ClsQuoteSync",
+			"MarkConfirmation",
+			"isPass",
+			"MarkConfirmationController",
+			"getResitFee",
+			"group",
+			"TYP_DATA_NAME",
+			"insertStudentProgramme",
+			"group=",
+			"severity=\"",
+			"severity",
+			"insertUser",
+			"new Student_Programme__c",
+			"tooling",
+			"#FBFBFB",
+			"Twitter",
+			"generateOpportunityLineItem",
+			"ServiceDate",
+			"ERR_FAMILY",
+			"lstAssets"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"#enddate:",
+			"#startdate:",
+			"",
+			"cellId",
+			"\"",
+			"'",
+			",",
+			"IsActive = true, Name = ''",
+			"",
+			"42107",
+			"42105",
+			"97728",
+			"68505",
+			"ES9A8142IB",
+			"ES59032",
+			"ES9M823435K",
+			"ES9M814TS4",
+			"GVD09C3DL/69709C3DL",
+			"GVS094/689094",
+			"",
+			", ",
+			"accountContact",
+			"Account_Contact__c",
+			"Account Contacts",
+			"opportunity",
+			"Opportunity",
+			"Opportunities",
+			"contact",
+			"Contact",
+			";",
+			"/x",
+			"%,=",
+			";",
+			",",
+			"/-",
+			";",
+			"Password__c",
+			"Password",
+			"Password__c",
+			"",
+			"        'Trigger should have sent two emails containing new password for ' +\n        'each LA1 - Initial: ' + startEmailLimit + ', Result: ' + endEmailLimit + '.'",
+			"",
+			"UpdateOPPs",
+			"",
+			"proname",
+			" =",
+			"=",
+			"pracedo",
+			"",
+			"th",
+			" ",
+			"",
+			".handle",
+			"handle",
+			"handler",
+			"    public virtual void ",
+			";",
+			"",
+			"void",
+			"Venue_Full_Address__c",
+			"",
+			"family ",
+			"a",
+			"\"",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 23712,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3193,
+								3193
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 172,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								134,
+								134
+							]
+						],
+						"settings":
+						{
+							"auto_name": "Send a list of parsed Orders Results",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "force.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5089,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1896,
+								1841
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1151.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "test.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7159,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7045,
+								7045
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3258.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 32,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								29,
+								32
+							]
+						],
+						"settings":
+						{
+							"auto_name": "test3@middleware.wylanenergy.com",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.9o:///Users/jpmonette/Travail/Clients/WylanEnergy/report-parser":
+	{
+		"height": 122.0
+	},
+	"output.9o:///Users/jpmonette/Travail/Clients/WylanEnergy/report-parser/parsers":
+	{
+		"height": 122.0
+	},
+	"output.MavensMate-OutputPanel":
+	{
+		"height": 270.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "report-parser.sublime-project",
+	"replace":
+	{
+		"height": 72.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"structure",
+				"documentation/structure.js"
+			],
+			[
+				"opportunty",
+				"src/triggers/OpportunityLineItems.trigger"
+			],
+			[
+				"quotelineitems",
+				"src/classes/QuoteLineItems_Sync_T.cls"
+			],
+			[
+				"replicate",
+				"src/classes/ReplicateQuoteLIFieldToOpptLIField.cls"
+			],
+			[
+				"quote",
+				"src/classes/ReplicateQuoteLIFieldToOpptLIField_Test.cls"
+			],
+			[
+				"batch",
+				"src/classes/BatchMaintenanceRenewal.cls"
+			],
+			[
+				"valiantysplatformsender",
+				"src/classes/ValiantysPlatformSender.cls"
+			],
+			[
+				"valiantysrenewalchecker",
+				"src/classes/ValiantysRenewalChecker.cls"
+			],
+			[
+				"valiantysqueryutility",
+				"src/classes/ValiantysQueryUtility.cls"
+			],
+			[
+				"controller",
+				"src/classes/TestController.cls"
+			],
+			[
+				"testcontrollertest",
+				"src/classes/TestControllerTester.cls"
+			],
+			[
+				"test_auto",
+				"src/classes/test_autoSink_Tgr.cls"
+			],
+			[
+				"replicatequotelifieldtoopptlifield",
+				"src/classes/ReplicateQuoteLIFieldToOpptLIField.cls"
+			],
+			[
+				"productstoassets",
+				"src/classes/ProductsToAssets.cls"
+			],
+			[
+				"quotel",
+				"src/classes/QuoteLineItems_Sync_T.cls"
+			],
+			[
+				"",
+				"config/.debug"
+			],
+			[
+				"_t",
+				"src/classes/QuoteLineItems_Sync_T.cls"
+			],
+			[
+				"replicatequotelifieldtoopptlifield_tgr",
+				"src/triggers/ReplicateQuoteLIFieldToOpptLIField_Tgr.trigger"
+			],
+			[
+				"products",
+				"src/pages/ProductsToAssets.page"
+			],
+			[
+				"maintenancetrigger",
+				"src/triggers/MaintenanceTrigger.trigger"
+			],
+			[
+				"schmaintenancerenwal",
+				"src/classes/SchMaintenanceRenewal.cls"
+			],
+			[
+				"batchmaintenancerenewal",
+				"src/classes/BatchMaintenanceRenewal.cls"
+			],
+			[
+				"assignacntrenewalandnonrenewalonopt_test",
+				"src/classes/AssignAcntRenewalAndNonRenewalOnOpt_Test.cls"
+			],
+			[
+				"replicatequote",
+				"src/triggers/ReplicateQuoteLIFieldToOpptLIField_Tgr.trigger"
+			],
+			[
+				"assignacntrenewalandnonrenewalonopt",
+				"src/classes/AssignAcntRenewalAndNonRenewalOnOpt.cls"
+			],
+			[
+				"assignacntrenewalandnonrenewalonopt_tgr",
+				"src/triggers/AssignAcntRenewalAndNonRenewalOnOpt_Tgr.trigger"
+			],
+			[
+				"replicatingproductnametoasset",
+				"src/classes/ReplicatingProductNameToAsset.cls"
+			],
+			[
+				"replicatingproductnametoasset_tgr",
+				"src/triggers/ReplicatingProductNameToAsset_Tgr.trigger"
+			],
+			[
+				"trigger",
+				"src/triggers/PracedoTrigger_T_Trigger.trigger"
+			],
+			[
+				"opportunitylineitems",
+				"src/classes/OpportunityLineItemsService.cls"
+			],
+			[
+				"opportunities",
+				"src/classes/Opportunities.cls"
+			],
+			[
+				"opportunites_cre",
+				"src/classes/Opportunities_CreditApproved.cls"
+			],
+			[
+				"opportunitycancellation_",
+				"src/pages/OpportunityCancellation_SelectProducts.page"
+			],
+			[
+				"opportunitycancel",
+				"src/pages/OpportunityCancellation.page"
+			],
+			[
+				"cancella",
+				"src/classes/OpportunityCancellation.cls"
+			],
+			[
+				"quotewebservi",
+				"src/classes/QuoteWebService.cls"
+			],
+			[
+				"webinarjiconfirmcontro",
+				"src/classes/WebinarJIConfirmController.cls"
+			],
+			[
+				"createproductbundle",
+				"src/classes/CreateProductBundle.cls"
+			],
+			[
+				"addproductscontroller",
+				"src/classes/AddProductsController.cls"
+			],
+			[
+				"assetwebservice_t",
+				"src/classes/AssetWebService_T.cls"
+			],
+			[
+				"uniquela1_t",
+				"src/classes/OpportunityLineItems_UniqueLA1_T.cls"
+			],
+			[
+				"opportunitylineitems_unique",
+				"src/classes/OpportunityLineItems_UniqueLA1.cls"
+			],
+			[
+				"wilmingtontest",
+				"src/classes/WilmingtonTestData.cls"
+			],
+			[
+				"attachments2",
+				"src/classes/Attachments2OpportunitiesBatch_T2.cls"
+			],
+			[
+				"opportunitytrig",
+				"src/triggers/OpportunityTrigger.trigger"
+			],
+			[
+				"opportunitycance",
+				"src/classes/OpportunityCancellation_T.cls"
+			],
+			[
+				"opportunitytri",
+				"src/classes/OpportunityTrigger_T.cls"
+			],
+			[
+				"addproducts",
+				"src/classes/AddProductsController.cls"
+			],
+			[
+				"attachments",
+				"src/classes/Attachments2OpportunitiesBatch.cls"
+			],
+			[
+				"opportunitytrigger",
+				"src/classes/TestOpportunityTrigger.cls"
+			],
+			[
+				"bookeventcontroller",
+				"src/classes/BookEventController_T.cls"
+			],
+			[
+				"createdelegatetrackdelegatesession",
+				"src/classes/CreateDelegateTrackDelegateSession.cls"
+			],
+			[
+				"createdelegatetrack",
+				"src/classes/TestCreateDelegateTrackDelegateSesion.cls"
+			],
+			[
+				"setaccount",
+				"src/triggers/SetAccountDefaults.trigger"
+			],
+			[
+				"accountdefaults",
+				"src/classes/SetAccountDefaultsTest.cls"
+			],
+			[
+				"renewalemailcontroller",
+				"src/classes/RenewalEmailController.cls"
+			],
+			[
+				"auto_renewal_60",
+				"src/components/Auto_Renewal_60.component"
+			],
+			[
+				"batcheswebservice",
+				"src/classes/BatchesWebService.cls"
+			],
+			[
+				"opportunitycancell",
+				"src/classes/OpportunityCancellation_T.cls"
+			],
+			[
+				"bookingconfirmationcontrol",
+				"src/classes/BookingConfirmationController_T.cls"
+			],
+			[
+				"assets_validations_t",
+				"src/classes/Assets_Validations_T.cls"
+			],
+			[
+				"batchesweb",
+				"src/classes/BatchesWebService_T.cls"
+			],
+			[
+				"assets",
+				"src/classes/Assets_Validations_T.cls"
+			],
+			[
+				"batchcloneopportunity",
+				"src/classes/TestBatchCloneOpportunity.cls"
+			],
+			[
+				"schedule",
+				"src/classes/ScheduleCloneOpportunity.cls"
+			],
+			[
+				"batchcloneopp2",
+				"src/classes/BatchCloneOpp2.cls"
+			],
+			[
+				"scheduleclonerenewalopportunity",
+				"src/classes/ScheduleCloneRenewalOpportunity.cls"
+			],
+			[
+				"attach",
+				"src/classes/Attachments2OpportunitiesBatch.cls"
+			],
+			[
+				"opportunitycancellation.",
+				"src/classes/OpportunityCancellation.cls"
+			],
+			[
+				"opportunitylineitemsservice_t",
+				"src/classes/OpportunityLineItemsService_T.cls"
+			],
+			[
+				"testopportunitytrigger",
+				"src/classes/TestOpportunityTrigger.cls"
+			],
+			[
+				"assets_validations",
+				"src/classes/Assets_Validations_T.cls"
+			],
+			[
+				"accredita",
+				"src/classes/Accreditation_T.cls"
+			],
+			[
+				"attachments2opportunitiesbatch",
+				"src/classes/Attachments2OpportunitiesBatch.cls"
+			],
+			[
+				"batcheswebs",
+				"src/classes/BatchesWebService.cls"
+			],
+			[
+				"batches",
+				"src/classes/Batches.cls"
+			],
+			[
+				"marksmaa",
+				"src/classes/MarksManager_T.cls"
+			],
+			[
+				"wilmingonttest",
+				"src/classes/WilmingtonTestData.cls-meta.xml"
+			],
+			[
+				"bookingconfirma",
+				"src/classes/BookingConfirmationController.cls"
+			],
+			[
+				"bookingc",
+				"src/classes/BookingConfirmationController_T.cls"
+			],
+			[
+				"assetweb",
+				"src/classes/AssetWebService_T.cls"
+			],
+			[
+				"opportunitycan",
+				"src/classes/OpportunityCancellation.cls"
+			],
+			[
+				"pracedosecu",
+				"src/classes/PracedoSecurity.cls"
+			],
+			[
+				"marks",
+				"src/classes/MarksManager_T.cls"
+			],
+			[
+				"opportunitybundleservice",
+				"src/pages/OpportunityBundleService.page"
+			],
+			[
+				"marksmana",
+				"src/classes/MarksManager_T.cls"
+			],
+			[
+				"addeditevent",
+				"src/classes/AddEditEventAssignment_T.cls"
+			],
+			[
+				"opportunities_credita",
+				"src/classes/Opportunities_CreditApproved.cls"
+			],
+			[
+				"opportunitybundleoppproduct_trg",
+				"src/triggers/OpportunityBundleOppProduct_Trg.trigger"
+			],
+			[
+				"opportunitybundle",
+				"src/classes/OpportunityBundleService.cls"
+			],
+			[
+				"bookingconfirm",
+				"src/classes/BookingConfirmationController.cls"
+			],
+			[
+				"opportuni",
+				"src/classes/Opportunities.cls"
+			],
+			[
+				"opportunitycancellation_upda",
+				"src/pages/OpportunityCancellation_UpdateOpp.page"
+			],
+			[
+				"opportunityca",
+				"src/classes/OpportunityCancellation.cls"
+			],
+			[
+				"opportunitycancellation_selec",
+				"src/pages/OpportunityCancellation_SelectProducts.page"
+			],
+			[
+				"addediteventassignment",
+				"src/pages/AddEditEventAssignment.page"
+			],
+			[
+				"opportunitycancellation_select",
+				"src/pages/OpportunityCancellation_SelectProducts.page"
+			],
+			[
+				"studentprogrammeswebservice",
+				"src/classes/StudentProgrammesWebService_T.cls"
+			],
+			[
+				"cl",
+				"src/classes/ClsLineItemSync.cls"
+			],
+			[
+				"cls",
+				"src/classes/ClsLineItemSyncTest.cls"
+			],
+			[
+				"pricebookentries_t",
+				"src/classes/PricebookEntries_T.cls"
+			],
+			[
+				"pricebookentries",
+				"src/classes/PricebookEntries.cls"
+			],
+			[
+				"clslineitemsync",
+				"src/classes/ClsLineItemSync.cls"
+			],
+			[
+				"test",
+				"src/pages/Test.page"
+			],
+			[
+				"markconfirmat",
+				"src/components/MarkConfirmation.component"
+			],
+			[
+				"pricebookent",
+				"src/classes/PricebookEntries.cls"
+			],
+			[
+				"wilmin",
+				"src/classes/WilmingtonTestData.cls"
+			],
+			[
+				"bookingcon",
+				"src/components/BookingConfirmation.component"
+			],
+			[
+				"wilming",
+				"src/classes/WilmingtonTestData.cls"
+			],
+			[
+				"booking",
+				"src/classes/BookingConfirmationController_T.cls"
+			],
+			[
+				"accred",
+				"src/classes/Accreditation_T.cls"
+			],
+			[
+				"contracts",
+				"src/classes/Contracts_Processes_T.cls"
+			],
+			[
+				"createmsa",
+				"src/classes/CreateMSA_Contract_Order.cls"
+			],
+			[
+				"bookresit",
+				"src/classes/BookResit.cls"
+			],
+			[
+				"bookingconfi",
+				"src/components/BookingConfirmation.component"
+			],
+			[
+				"accredi",
+				"src/classes/Accreditation.cls"
+			],
+			[
+				"bookresits",
+				"src/classes/BookResit.cls"
+			],
+			[
+				"contracts_validations_t",
+				"src/classes/Contracts_Validations_T.cls"
+			],
+			[
+				"addprogramme",
+				"src/classes/AddProgrammeModules_T.cls"
+			],
+			[
+				"wil",
+				"src/classes/WilmingtonTestData.cls"
+			],
+			[
+				"bookconfirmation",
+				"src/classes/BookingConfirmationController.cls"
+			],
+			[
+				"joininginstructions",
+				"src/classes/JoiningInstructionsController.cls"
+			],
+			[
+				"joining",
+				"src/components/JoiningInstructions.component"
+			],
+			[
+				"joinin",
+				"src/components/JoiningInstructions.component"
+			],
+			[
+				"assetwe",
+				"src/classes/AssetWebService.cls"
+			],
+			[
+				"wilmintontestd",
+				"src/classes/WilmingtonTestData.cls"
+			],
+			[
+				"create",
+				"src/classes/CreateMSA_Contract_Order_T.cls"
+			],
+			[
+				"batchclone",
+				"src/classes/BatchCloneOpp2.cls"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 261.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

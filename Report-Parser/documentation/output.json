@@ -1,0 +1,7546 @@
+[
+  {
+    "sku": 550540189,
+    "id": "GVS14/68914",
+    "name": "14W SW Spiral CFL 1 PK",
+    "stores": [
+      {
+        "id": 1309,
+        "city": "SALEM",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 1,
+        "rebate": "0.20"
+      },
+      {
+        "id": 1730,
+        "city": "TAPPAHANNOCK",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 3,
+        "rebate": "0.60"
+      },
+      {
+        "id": 2160,
+        "city": "PETERSBURG",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 1,
+        "rebate": "0.20"
+      },
+      {
+        "id": 2337,
+        "city": "ROCKY MOUNT",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 2520,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 3,
+        "rebate": "0.60"
+      },
+      {
+        "id": 2645,
+        "city": "BLACKSTONE",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 2808,
+        "city": "MIDLOTHIAN",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 3480,
+        "city": "LEBANON",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 1,
+        "rebate": "0.20"
+      },
+      {
+        "id": 4636,
+        "city": "APPOMATTOX",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 1,
+        "rebate": "0.20"
+      },
+      {
+        "id": 5731,
+        "city": "LOCUST GROVE",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 2,
+        "rebate": "0.40"
+      }
+    ]
+  },
+  {
+    "sku": 550540180,
+    "id": "GVS14DL/68914DL",
+    "name": "14W DL Spiral CFL 1 PK",
+    "stores": [
+      {
+        "id": 1023,
+        "city": "GALAX",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 1,
+        "rebate": "0.20"
+      },
+      {
+        "id": 1301,
+        "city": "ROANOKE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 1,
+        "rebate": "0.20"
+      },
+      {
+        "id": 1406,
+        "city": "WINCHESTER",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 1525,
+        "city": "MECHANICSVILLE",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 1687,
+        "city": "SUFFOLK",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 1,
+        "rebate": "0.20"
+      },
+      {
+        "id": 1811,
+        "city": "NORFOLK",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 1,
+        "rebate": "0.20"
+      },
+      {
+        "id": 1833,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 1,
+        "rebate": "0.20"
+      },
+      {
+        "id": 2089,
+        "city": "BRISTOL",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 1,
+        "rebate": "0.20"
+      },
+      {
+        "id": 2194,
+        "city": "ALEXANDRIA",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 2437,
+        "city": "WARRENTON",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 1,
+        "rebate": "0.20"
+      },
+      {
+        "id": 2565,
+        "city": "MADISON HEIGHTS",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 1,
+        "rebate": "0.20"
+      },
+      {
+        "id": 2805,
+        "city": "EMPORIA",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 1,
+        "rebate": "0.20"
+      },
+      {
+        "id": 2808,
+        "city": "MIDLOTHIAN",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 1,
+        "rebate": "0.20"
+      },
+      {
+        "id": 3077,
+        "city": "HAYMARKET",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 3219,
+        "city": "WILLIAMSBURG",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 1,
+        "rebate": "0.20"
+      },
+      {
+        "id": 3243,
+        "city": "ROANOKE",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 3270,
+        "city": "WYTHEVILLE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 1,
+        "rebate": "0.20"
+      },
+      {
+        "id": 3644,
+        "city": "CHESAPEAKE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 1,
+        "rebate": "0.20"
+      },
+      {
+        "id": 3768,
+        "city": "ALTAVISTA",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 1,
+        "rebate": "0.20"
+      },
+      {
+        "id": 4258,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 1,
+        "rebate": "0.20"
+      },
+      {
+        "id": 4514,
+        "city": "WINCHESTER",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 4636,
+        "city": "APPOMATTOX",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 5105,
+        "city": "FRONT ROYAL",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 1,
+        "rebate": "0.20"
+      },
+      {
+        "id": 5343,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 5847,
+        "city": "POWHATAN",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 1,
+        "rebate": "0.20"
+      }
+    ]
+  },
+  {
+    "sku": 550540190,
+    "id": "GVS144/689144",
+    "name": "14W SW Spiral CFL 4 PK",
+    "stores": [
+      {
+        "id": 1023,
+        "city": "GALAX",
+        "state": "VA",
+        "skus": 32,
+        "lamps": 128,
+        "rebate": "25.60"
+      },
+      {
+        "id": 1243,
+        "city": "MARTINSVILLE",
+        "state": "VA",
+        "skus": 23,
+        "lamps": 92,
+        "rebate": "18.40"
+      },
+      {
+        "id": 1292,
+        "city": "CHRISTIANSBURG",
+        "state": "VA",
+        "skus": 25,
+        "lamps": 100,
+        "rebate": "20.00"
+      },
+      {
+        "id": 1301,
+        "city": "ROANOKE",
+        "state": "VA",
+        "skus": 20,
+        "lamps": 80,
+        "rebate": "16.00"
+      },
+      {
+        "id": 1309,
+        "city": "SALEM",
+        "state": "VA",
+        "skus": 17,
+        "lamps": 68,
+        "rebate": "13.60"
+      },
+      {
+        "id": 1335,
+        "city": "LEXINGTON",
+        "state": "VA",
+        "skus": 11,
+        "lamps": 44,
+        "rebate": "8.80"
+      },
+      {
+        "id": 1336,
+        "city": "MARION",
+        "state": "VA",
+        "skus": 12,
+        "lamps": 48,
+        "rebate": "9.60"
+      },
+      {
+        "id": 1344,
+        "city": "STAUNTON",
+        "state": "VA",
+        "skus": 17,
+        "lamps": 68,
+        "rebate": "13.60"
+      },
+      {
+        "id": 1345,
+        "city": "SOUTH BOSTON",
+        "state": "VA",
+        "skus": 14,
+        "lamps": 56,
+        "rebate": "11.20"
+      },
+      {
+        "id": 1350,
+        "city": "LYNCHBURG",
+        "state": "VA",
+        "skus": 26,
+        "lamps": 104,
+        "rebate": "20.80"
+      },
+      {
+        "id": 1399,
+        "city": "BEDFORD",
+        "state": "VA",
+        "skus": 18,
+        "lamps": 72,
+        "rebate": "14.40"
+      },
+      {
+        "id": 1406,
+        "city": "WINCHESTER",
+        "state": "VA",
+        "skus": 12,
+        "lamps": 48,
+        "rebate": "9.60"
+      },
+      {
+        "id": 1424,
+        "city": "COLONIAL HEIGHTS",
+        "state": "VA",
+        "skus": 22,
+        "lamps": 88,
+        "rebate": "17.60"
+      },
+      {
+        "id": 1465,
+        "city": "DANVILLE",
+        "state": "VA",
+        "skus": 28,
+        "lamps": 112,
+        "rebate": "22.40"
+      },
+      {
+        "id": 1486,
+        "city": "FARMVILLE",
+        "state": "VA",
+        "skus": 23,
+        "lamps": 92,
+        "rebate": "18.40"
+      },
+      {
+        "id": 1523,
+        "city": "GLEN ALLEN",
+        "state": "VA",
+        "skus": 36,
+        "lamps": 144,
+        "rebate": "28.80"
+      },
+      {
+        "id": 1524,
+        "city": "CHESTER",
+        "state": "VA",
+        "skus": 15,
+        "lamps": 60,
+        "rebate": "12.00"
+      },
+      {
+        "id": 1525,
+        "city": "MECHANICSVILLE",
+        "state": "VA",
+        "skus": 28,
+        "lamps": 112,
+        "rebate": "22.40"
+      },
+      {
+        "id": 1631,
+        "city": "HAMPTON",
+        "state": "VA",
+        "skus": 27,
+        "lamps": 108,
+        "rebate": "21.60"
+      },
+      {
+        "id": 1652,
+        "city": "DUBLIN",
+        "state": "VA",
+        "skus": 7,
+        "lamps": 28,
+        "rebate": "5.60"
+      },
+      {
+        "id": 1682,
+        "city": "CHESAPEAKE",
+        "state": "VA",
+        "skus": 12,
+        "lamps": 48,
+        "rebate": "9.60"
+      },
+      {
+        "id": 1687,
+        "city": "SUFFOLK",
+        "state": "VA",
+        "skus": 8,
+        "lamps": 32,
+        "rebate": "6.40"
+      },
+      {
+        "id": 1688,
+        "city": "VIRGINIA BEACH",
+        "state": "VA",
+        "skus": 21,
+        "lamps": 84,
+        "rebate": "16.80"
+      },
+      {
+        "id": 1726,
+        "city": "HARRISONBURG",
+        "state": "VA",
+        "skus": 22,
+        "lamps": 88,
+        "rebate": "17.60"
+      },
+      {
+        "id": 1730,
+        "city": "TAPPAHANNOCK",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1759,
+        "city": "GLOUCESTER",
+        "state": "VA",
+        "skus": 18,
+        "lamps": 72,
+        "rebate": "14.40"
+      },
+      {
+        "id": 1763,
+        "city": "BLUEFIELD",
+        "state": "VA",
+        "skus": 15,
+        "lamps": 60,
+        "rebate": "12.00"
+      },
+      {
+        "id": 1773,
+        "city": "NEWPORT NEWS",
+        "state": "VA",
+        "skus": 23,
+        "lamps": 92,
+        "rebate": "18.40"
+      },
+      {
+        "id": 1780,
+        "city": "CHARLOTTESVILLE",
+        "state": "VA",
+        "skus": 18,
+        "lamps": 72,
+        "rebate": "14.40"
+      },
+      {
+        "id": 1811,
+        "city": "NORFOLK",
+        "state": "VA",
+        "skus": 20,
+        "lamps": 80,
+        "rebate": "16.00"
+      },
+      {
+        "id": 1825,
+        "city": "MANASSAS",
+        "state": "VA",
+        "skus": 21,
+        "lamps": 84,
+        "rebate": "16.80"
+      },
+      {
+        "id": 1833,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 30,
+        "lamps": 120,
+        "rebate": "24.00"
+      },
+      {
+        "id": 1841,
+        "city": "CHESAPEAKE",
+        "state": "VA",
+        "skus": 28,
+        "lamps": 112,
+        "rebate": "22.40"
+      },
+      {
+        "id": 1852,
+        "city": "WOODBRIDGE",
+        "state": "VA",
+        "skus": 48,
+        "lamps": 192,
+        "rebate": "38.40"
+      },
+      {
+        "id": 1904,
+        "city": "LEESBURG",
+        "state": "VA",
+        "skus": 23,
+        "lamps": 92,
+        "rebate": "18.40"
+      },
+      {
+        "id": 1934,
+        "city": "SOUTH HILL",
+        "state": "VA",
+        "skus": 17,
+        "lamps": 68,
+        "rebate": "13.60"
+      },
+      {
+        "id": 1969,
+        "city": "MIDLOTHIAN",
+        "state": "VA",
+        "skus": 15,
+        "lamps": 60,
+        "rebate": "12.00"
+      },
+      {
+        "id": 2015,
+        "city": "FAIRFAX",
+        "state": "VA",
+        "skus": 20,
+        "lamps": 80,
+        "rebate": "16.00"
+      },
+      {
+        "id": 2038,
+        "city": "STERLING",
+        "state": "VA",
+        "skus": 32,
+        "lamps": 128,
+        "rebate": "25.60"
+      },
+      {
+        "id": 2089,
+        "city": "BRISTOL",
+        "state": "VA",
+        "skus": 42,
+        "lamps": 168,
+        "rebate": "33.60"
+      },
+      {
+        "id": 2136,
+        "city": "CULPEPER",
+        "state": "VA",
+        "skus": 18,
+        "lamps": 72,
+        "rebate": "14.40"
+      },
+      {
+        "id": 2160,
+        "city": "PETERSBURG",
+        "state": "VA",
+        "skus": 14,
+        "lamps": 56,
+        "rebate": "11.20"
+      },
+      {
+        "id": 2194,
+        "city": "ALEXANDRIA",
+        "state": "VA",
+        "skus": 51,
+        "lamps": 204,
+        "rebate": "40.80"
+      },
+      {
+        "id": 2258,
+        "city": "ALEXANDRIA",
+        "state": "VA",
+        "skus": 12,
+        "lamps": 48,
+        "rebate": "9.60"
+      },
+      {
+        "id": 2295,
+        "city": "RICHMOND",
+        "state": "VA",
+        "skus": 15,
+        "lamps": 60,
+        "rebate": "12.00"
+      },
+      {
+        "id": 2312,
+        "city": "ROANOKE",
+        "state": "VA",
+        "skus": 36,
+        "lamps": 144,
+        "rebate": "28.80"
+      },
+      {
+        "id": 2337,
+        "city": "ROCKY MOUNT",
+        "state": "VA",
+        "skus": 9,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 2437,
+        "city": "WARRENTON",
+        "state": "VA",
+        "skus": 14,
+        "lamps": 56,
+        "rebate": "11.20"
+      },
+      {
+        "id": 2438,
+        "city": "STAFFORD",
+        "state": "VA",
+        "skus": 24,
+        "lamps": 96,
+        "rebate": "19.20"
+      },
+      {
+        "id": 2520,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 11,
+        "lamps": 44,
+        "rebate": "8.80"
+      },
+      {
+        "id": 2529,
+        "city": "VIRGINIA BEACH",
+        "state": "VA",
+        "skus": 44,
+        "lamps": 176,
+        "rebate": "35.20"
+      },
+      {
+        "id": 2564,
+        "city": "LURAY",
+        "state": "VA",
+        "skus": 12,
+        "lamps": 48,
+        "rebate": "9.60"
+      },
+      {
+        "id": 2565,
+        "city": "MADISON HEIGHTS",
+        "state": "VA",
+        "skus": 14,
+        "lamps": 56,
+        "rebate": "11.20"
+      },
+      {
+        "id": 2645,
+        "city": "BLACKSTONE",
+        "state": "VA",
+        "skus": 11,
+        "lamps": 44,
+        "rebate": "8.80"
+      },
+      {
+        "id": 2646,
+        "city": "PEARISBURG",
+        "state": "VA",
+        "skus": 12,
+        "lamps": 48,
+        "rebate": "9.60"
+      },
+      {
+        "id": 2647,
+        "city": "WOODSTOCK",
+        "state": "VA",
+        "skus": 9,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 2662,
+        "city": "COVINGTON",
+        "state": "VA",
+        "skus": 14,
+        "lamps": 56,
+        "rebate": "11.20"
+      },
+      {
+        "id": 2705,
+        "city": "FRANKLIN",
+        "state": "VA",
+        "skus": 10,
+        "lamps": 40,
+        "rebate": "8.00"
+      },
+      {
+        "id": 2761,
+        "city": "POUNDING MILL",
+        "state": "VA",
+        "skus": 23,
+        "lamps": 92,
+        "rebate": "18.40"
+      },
+      {
+        "id": 2762,
+        "city": "FAIRLAWN",
+        "state": "VA",
+        "skus": 8,
+        "lamps": 32,
+        "rebate": "6.40"
+      },
+      {
+        "id": 2795,
+        "city": "ASHLAND",
+        "state": "VA",
+        "skus": 11,
+        "lamps": 44,
+        "rebate": "8.80"
+      },
+      {
+        "id": 2805,
+        "city": "EMPORIA",
+        "state": "VA",
+        "skus": 9,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 2807,
+        "city": "HARRISONBURG",
+        "state": "VA",
+        "skus": 7,
+        "lamps": 28,
+        "rebate": "5.60"
+      },
+      {
+        "id": 2808,
+        "city": "MIDLOTHIAN",
+        "state": "VA",
+        "skus": 30,
+        "lamps": 120,
+        "rebate": "24.00"
+      },
+      {
+        "id": 2821,
+        "city": "RICHMOND",
+        "state": "VA",
+        "skus": 15,
+        "lamps": 60,
+        "rebate": "12.00"
+      },
+      {
+        "id": 3077,
+        "city": "HAYMARKET",
+        "state": "VA",
+        "skus": 21,
+        "lamps": 84,
+        "rebate": "16.80"
+      },
+      {
+        "id": 3214,
+        "city": "SUFFOLK",
+        "state": "VA",
+        "skus": 15,
+        "lamps": 60,
+        "rebate": "12.00"
+      },
+      {
+        "id": 3216,
+        "city": "VIRGINIA BEACH",
+        "state": "VA",
+        "skus": 13,
+        "lamps": 52,
+        "rebate": "10.40"
+      },
+      {
+        "id": 3219,
+        "city": "WILLIAMSBURG",
+        "state": "VA",
+        "skus": 18,
+        "lamps": 72,
+        "rebate": "14.40"
+      },
+      {
+        "id": 3243,
+        "city": "ROANOKE",
+        "state": "VA",
+        "skus": 22,
+        "lamps": 88,
+        "rebate": "17.60"
+      },
+      {
+        "id": 3265,
+        "city": "YORKTOWN",
+        "state": "VA",
+        "skus": 18,
+        "lamps": 72,
+        "rebate": "14.40"
+      },
+      {
+        "id": 3270,
+        "city": "WYTHEVILLE",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 20,
+        "rebate": "4.00"
+      },
+      {
+        "id": 3303,
+        "city": "GRUNDY",
+        "state": "VA",
+        "skus": 14,
+        "lamps": 56,
+        "rebate": "11.20"
+      },
+      {
+        "id": 3344,
+        "city": "WINCHESTER",
+        "state": "VA",
+        "skus": 27,
+        "lamps": 108,
+        "rebate": "21.60"
+      },
+      {
+        "id": 3480,
+        "city": "LEBANON",
+        "state": "VA",
+        "skus": 10,
+        "lamps": 40,
+        "rebate": "8.00"
+      },
+      {
+        "id": 3573,
+        "city": "MANASSAS",
+        "state": "VA",
+        "skus": 26,
+        "lamps": 104,
+        "rebate": "20.80"
+      },
+      {
+        "id": 3588,
+        "city": "DUMFRIES",
+        "state": "VA",
+        "skus": 23,
+        "lamps": 92,
+        "rebate": "18.40"
+      },
+      {
+        "id": 3644,
+        "city": "CHESAPEAKE",
+        "state": "VA",
+        "skus": 18,
+        "lamps": 72,
+        "rebate": "14.40"
+      },
+      {
+        "id": 3768,
+        "city": "ALTAVISTA",
+        "state": "VA",
+        "skus": 12,
+        "lamps": 48,
+        "rebate": "9.60"
+      },
+      {
+        "id": 3770,
+        "city": "STUART",
+        "state": "VA",
+        "skus": 9,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 3869,
+        "city": "RICHMOND",
+        "state": "VA",
+        "skus": 27,
+        "lamps": 108,
+        "rebate": "21.60"
+      },
+      {
+        "id": 4258,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 4350,
+        "city": "KILMARNOCK",
+        "state": "VA",
+        "skus": 14,
+        "lamps": 56,
+        "rebate": "11.20"
+      },
+      {
+        "id": 4378,
+        "city": "ONLEY",
+        "state": "VA",
+        "skus": 13,
+        "lamps": 52,
+        "rebate": "10.40"
+      },
+      {
+        "id": 4476,
+        "city": "CHESTERFIELD",
+        "state": "VA",
+        "skus": 18,
+        "lamps": 72,
+        "rebate": "14.40"
+      },
+      {
+        "id": 4514,
+        "city": "WINCHESTER",
+        "state": "VA",
+        "skus": 10,
+        "lamps": 40,
+        "rebate": "8.00"
+      },
+      {
+        "id": 4623,
+        "city": "NEWPORT NEWS",
+        "state": "VA",
+        "skus": 9,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 4636,
+        "city": "APPOMATTOX",
+        "state": "VA",
+        "skus": 6,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 4638,
+        "city": "RUCKERSVILLE",
+        "state": "VA",
+        "skus": 9,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 4682,
+        "city": "GORDONSVILLE",
+        "state": "VA",
+        "skus": 19,
+        "lamps": 76,
+        "rebate": "15.20"
+      },
+      {
+        "id": 4697,
+        "city": "LYNCHBURG",
+        "state": "VA",
+        "skus": 11,
+        "lamps": 44,
+        "rebate": "8.80"
+      },
+      {
+        "id": 5105,
+        "city": "FRONT ROYAL",
+        "state": "VA",
+        "skus": 9,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 5117,
+        "city": "WAYNESBORO",
+        "state": "VA",
+        "skus": 26,
+        "lamps": 104,
+        "rebate": "20.80"
+      },
+      {
+        "id": 5227,
+        "city": "BURKE",
+        "state": "VA",
+        "skus": 25,
+        "lamps": 100,
+        "rebate": "20.00"
+      },
+      {
+        "id": 5253,
+        "city": "CHESAPEAKE",
+        "state": "VA",
+        "skus": 10,
+        "lamps": 40,
+        "rebate": "8.00"
+      },
+      {
+        "id": 5343,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 14,
+        "lamps": 56,
+        "rebate": "11.20"
+      },
+      {
+        "id": 5488,
+        "city": "NORFOLK",
+        "state": "VA",
+        "skus": 25,
+        "lamps": 100,
+        "rebate": "20.00"
+      },
+      {
+        "id": 5731,
+        "city": "LOCUST GROVE",
+        "state": "VA",
+        "skus": 12,
+        "lamps": 48,
+        "rebate": "9.60"
+      },
+      {
+        "id": 5753,
+        "city": "ALEXANDRIA",
+        "state": "VA",
+        "skus": 12,
+        "lamps": 48,
+        "rebate": "9.60"
+      },
+      {
+        "id": 5779,
+        "city": "KING GEORGE",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 20,
+        "rebate": "4.00"
+      },
+      {
+        "id": 5847,
+        "city": "POWHATAN",
+        "state": "VA",
+        "skus": 12,
+        "lamps": 48,
+        "rebate": "9.60"
+      },
+      {
+        "id": 5880,
+        "city": "FAIRFAX",
+        "state": "VA",
+        "skus": 21,
+        "lamps": 84,
+        "rebate": "16.80"
+      },
+      {
+        "id": 5936,
+        "city": "VIENNA",
+        "state": "VA",
+        "skus": 10,
+        "lamps": 40,
+        "rebate": "8.00"
+      },
+      {
+        "id": 5969,
+        "city": "CHANTILLY",
+        "state": "VA",
+        "skus": 14,
+        "lamps": 56,
+        "rebate": "11.20"
+      }
+    ]
+  },
+  {
+    "sku": 550540181,
+    "id": "GVS144DL/689144DL",
+    "name": "14W DL Spiral CFL 4 PK",
+    "stores": [
+      {
+        "id": 1023,
+        "city": "GALAX",
+        "state": "VA",
+        "skus": 10,
+        "lamps": 40,
+        "rebate": "8.00"
+      },
+      {
+        "id": 1243,
+        "city": "MARTINSVILLE",
+        "state": "VA",
+        "skus": 8,
+        "lamps": 32,
+        "rebate": "6.40"
+      },
+      {
+        "id": 1292,
+        "city": "CHRISTIANSBURG",
+        "state": "VA",
+        "skus": 13,
+        "lamps": 52,
+        "rebate": "10.40"
+      },
+      {
+        "id": 1301,
+        "city": "ROANOKE",
+        "state": "VA",
+        "skus": 8,
+        "lamps": 32,
+        "rebate": "6.40"
+      },
+      {
+        "id": 1309,
+        "city": "SALEM",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1335,
+        "city": "LEXINGTON",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1336,
+        "city": "MARION",
+        "state": "VA",
+        "skus": 7,
+        "lamps": 28,
+        "rebate": "5.60"
+      },
+      {
+        "id": 1344,
+        "city": "STAUNTON",
+        "state": "VA",
+        "skus": 8,
+        "lamps": 32,
+        "rebate": "6.40"
+      },
+      {
+        "id": 1345,
+        "city": "SOUTH BOSTON",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1350,
+        "city": "LYNCHBURG",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 1399,
+        "city": "BEDFORD",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 1406,
+        "city": "WINCHESTER",
+        "state": "VA",
+        "skus": 6,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 1424,
+        "city": "COLONIAL HEIGHTS",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 1465,
+        "city": "DANVILLE",
+        "state": "VA",
+        "skus": 11,
+        "lamps": 44,
+        "rebate": "8.80"
+      },
+      {
+        "id": 1486,
+        "city": "FARMVILLE",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1523,
+        "city": "GLEN ALLEN",
+        "state": "VA",
+        "skus": 10,
+        "lamps": 40,
+        "rebate": "8.00"
+      },
+      {
+        "id": 1524,
+        "city": "CHESTER",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 20,
+        "rebate": "4.00"
+      },
+      {
+        "id": 1525,
+        "city": "MECHANICSVILLE",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 1652,
+        "city": "DUBLIN",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 1682,
+        "city": "CHESAPEAKE",
+        "state": "VA",
+        "skus": 6,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 1687,
+        "city": "SUFFOLK",
+        "state": "VA",
+        "skus": 6,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 1688,
+        "city": "VIRGINIA BEACH",
+        "state": "VA",
+        "skus": 13,
+        "lamps": 52,
+        "rebate": "10.40"
+      },
+      {
+        "id": 1726,
+        "city": "HARRISONBURG",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 1730,
+        "city": "TAPPAHANNOCK",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 1759,
+        "city": "GLOUCESTER",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 1763,
+        "city": "BLUEFIELD",
+        "state": "VA",
+        "skus": 7,
+        "lamps": 28,
+        "rebate": "5.60"
+      },
+      {
+        "id": 1773,
+        "city": "NEWPORT NEWS",
+        "state": "VA",
+        "skus": 6,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 1780,
+        "city": "CHARLOTTESVILLE",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 1811,
+        "city": "NORFOLK",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 1825,
+        "city": "MANASSAS",
+        "state": "VA",
+        "skus": 9,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 1833,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 1841,
+        "city": "CHESAPEAKE",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1852,
+        "city": "WOODBRIDGE",
+        "state": "VA",
+        "skus": 9,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 1904,
+        "city": "LEESBURG",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1934,
+        "city": "SOUTH HILL",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 1969,
+        "city": "MIDLOTHIAN",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 2015,
+        "city": "FAIRFAX",
+        "state": "VA",
+        "skus": 11,
+        "lamps": 44,
+        "rebate": "8.80"
+      },
+      {
+        "id": 2038,
+        "city": "STERLING",
+        "state": "VA",
+        "skus": 20,
+        "lamps": 80,
+        "rebate": "16.00"
+      },
+      {
+        "id": 2089,
+        "city": "BRISTOL",
+        "state": "VA",
+        "skus": 13,
+        "lamps": 52,
+        "rebate": "10.40"
+      },
+      {
+        "id": 2160,
+        "city": "PETERSBURG",
+        "state": "VA",
+        "skus": 10,
+        "lamps": 40,
+        "rebate": "8.00"
+      },
+      {
+        "id": 2194,
+        "city": "ALEXANDRIA",
+        "state": "VA",
+        "skus": 12,
+        "lamps": 48,
+        "rebate": "9.60"
+      },
+      {
+        "id": 2258,
+        "city": "ALEXANDRIA",
+        "state": "VA",
+        "skus": 7,
+        "lamps": 28,
+        "rebate": "5.60"
+      },
+      {
+        "id": 2295,
+        "city": "RICHMOND",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 20,
+        "rebate": "4.00"
+      },
+      {
+        "id": 2312,
+        "city": "ROANOKE",
+        "state": "VA",
+        "skus": 10,
+        "lamps": 40,
+        "rebate": "8.00"
+      },
+      {
+        "id": 2337,
+        "city": "ROCKY MOUNT",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 2438,
+        "city": "STAFFORD",
+        "state": "VA",
+        "skus": 7,
+        "lamps": 28,
+        "rebate": "5.60"
+      },
+      {
+        "id": 2520,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 2529,
+        "city": "VIRGINIA BEACH",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 20,
+        "rebate": "4.00"
+      },
+      {
+        "id": 2564,
+        "city": "LURAY",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 2565,
+        "city": "MADISON HEIGHTS",
+        "state": "VA",
+        "skus": 11,
+        "lamps": 44,
+        "rebate": "8.80"
+      },
+      {
+        "id": 2646,
+        "city": "PEARISBURG",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 2647,
+        "city": "WOODSTOCK",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 2662,
+        "city": "COVINGTON",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 2705,
+        "city": "FRANKLIN",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 2761,
+        "city": "POUNDING MILL",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 2762,
+        "city": "FAIRLAWN",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 2795,
+        "city": "ASHLAND",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 20,
+        "rebate": "4.00"
+      },
+      {
+        "id": 2805,
+        "city": "EMPORIA",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 2807,
+        "city": "HARRISONBURG",
+        "state": "VA",
+        "skus": 7,
+        "lamps": 28,
+        "rebate": "5.60"
+      },
+      {
+        "id": 2808,
+        "city": "MIDLOTHIAN",
+        "state": "VA",
+        "skus": 6,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 2821,
+        "city": "RICHMOND",
+        "state": "VA",
+        "skus": 10,
+        "lamps": 40,
+        "rebate": "8.00"
+      },
+      {
+        "id": 3214,
+        "city": "SUFFOLK",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 3216,
+        "city": "VIRGINIA BEACH",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 3243,
+        "city": "ROANOKE",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 3265,
+        "city": "YORKTOWN",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 3270,
+        "city": "WYTHEVILLE",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 3303,
+        "city": "GRUNDY",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 3344,
+        "city": "WINCHESTER",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 3480,
+        "city": "LEBANON",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 3573,
+        "city": "MANASSAS",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 3588,
+        "city": "DUMFRIES",
+        "state": "VA",
+        "skus": 7,
+        "lamps": 28,
+        "rebate": "5.60"
+      },
+      {
+        "id": 3644,
+        "city": "CHESAPEAKE",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 3768,
+        "city": "ALTAVISTA",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 20,
+        "rebate": "4.00"
+      },
+      {
+        "id": 3770,
+        "city": "STUART",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 3831,
+        "city": "PORTSMOUTH",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 3869,
+        "city": "RICHMOND",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 20,
+        "rebate": "4.00"
+      },
+      {
+        "id": 4258,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 4378,
+        "city": "ONLEY",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 4476,
+        "city": "CHESTERFIELD",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 4623,
+        "city": "NEWPORT NEWS",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 4636,
+        "city": "APPOMATTOX",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 4638,
+        "city": "RUCKERSVILLE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 4682,
+        "city": "GORDONSVILLE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 4697,
+        "city": "LYNCHBURG",
+        "state": "VA",
+        "skus": 12,
+        "lamps": 48,
+        "rebate": "9.60"
+      },
+      {
+        "id": 5117,
+        "city": "WAYNESBORO",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 5227,
+        "city": "BURKE",
+        "state": "VA",
+        "skus": 10,
+        "lamps": 40,
+        "rebate": "8.00"
+      },
+      {
+        "id": 5253,
+        "city": "CHESAPEAKE",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 5343,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 6,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 5488,
+        "city": "NORFOLK",
+        "state": "VA",
+        "skus": 13,
+        "lamps": 52,
+        "rebate": "10.40"
+      },
+      {
+        "id": 5731,
+        "city": "LOCUST GROVE",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 5753,
+        "city": "ALEXANDRIA",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 5847,
+        "city": "POWHATAN",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 5880,
+        "city": "FAIRFAX",
+        "state": "VA",
+        "skus": 8,
+        "lamps": 32,
+        "rebate": "6.40"
+      },
+      {
+        "id": 5936,
+        "city": "VIENNA",
+        "state": "VA",
+        "skus": 14,
+        "lamps": 56,
+        "rebate": "11.20"
+      },
+      {
+        "id": 5969,
+        "city": "CHANTILLY",
+        "state": "VA",
+        "skus": 6,
+        "lamps": 24,
+        "rebate": "4.80"
+      }
+    ]
+  },
+  {
+    "sku": 550540185,
+    "id": "GVS1412/6891412",
+    "name": "14W SW Spiral CFL 12 PK",
+    "stores": [
+      {
+        "id": 1023,
+        "city": "GALAX",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 60,
+        "rebate": "12.00"
+      },
+      {
+        "id": 1243,
+        "city": "MARTINSVILLE",
+        "state": "VA",
+        "skus": 10,
+        "lamps": 120,
+        "rebate": "24.00"
+      },
+      {
+        "id": 1292,
+        "city": "CHRISTIANSBURG",
+        "state": "VA",
+        "skus": 8,
+        "lamps": 96,
+        "rebate": "19.20"
+      },
+      {
+        "id": 1301,
+        "city": "ROANOKE",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 60,
+        "rebate": "12.00"
+      },
+      {
+        "id": 1309,
+        "city": "SALEM",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1335,
+        "city": "LEXINGTON",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 1336,
+        "city": "MARION",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 1344,
+        "city": "STAUNTON",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 48,
+        "rebate": "9.60"
+      },
+      {
+        "id": 1345,
+        "city": "SOUTH BOSTON",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 1350,
+        "city": "LYNCHBURG",
+        "state": "VA",
+        "skus": 6,
+        "lamps": 72,
+        "rebate": "14.40"
+      },
+      {
+        "id": 1399,
+        "city": "BEDFORD",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 1406,
+        "city": "WINCHESTER",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1424,
+        "city": "COLONIAL HEIGHTS",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 1465,
+        "city": "DANVILLE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1486,
+        "city": "FARMVILLE",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 1523,
+        "city": "GLEN ALLEN",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 1524,
+        "city": "CHESTER",
+        "state": "VA",
+        "skus": 6,
+        "lamps": 72,
+        "rebate": "14.40"
+      },
+      {
+        "id": 1525,
+        "city": "MECHANICSVILLE",
+        "state": "VA",
+        "skus": 9,
+        "lamps": 108,
+        "rebate": "21.60"
+      },
+      {
+        "id": 1631,
+        "city": "HAMPTON",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 48,
+        "rebate": "9.60"
+      },
+      {
+        "id": 1652,
+        "city": "DUBLIN",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 1682,
+        "city": "CHESAPEAKE",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 60,
+        "rebate": "12.00"
+      },
+      {
+        "id": 1687,
+        "city": "SUFFOLK",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 48,
+        "rebate": "9.60"
+      },
+      {
+        "id": 1688,
+        "city": "VIRGINIA BEACH",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 48,
+        "rebate": "9.60"
+      },
+      {
+        "id": 1726,
+        "city": "HARRISONBURG",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 1759,
+        "city": "GLOUCESTER",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 1763,
+        "city": "BLUEFIELD",
+        "state": "VA",
+        "skus": 7,
+        "lamps": 84,
+        "rebate": "16.80"
+      },
+      {
+        "id": 1773,
+        "city": "NEWPORT NEWS",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 60,
+        "rebate": "12.00"
+      },
+      {
+        "id": 1780,
+        "city": "CHARLOTTESVILLE",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 60,
+        "rebate": "12.00"
+      },
+      {
+        "id": 1811,
+        "city": "NORFOLK",
+        "state": "VA",
+        "skus": 12,
+        "lamps": 144,
+        "rebate": "28.80"
+      },
+      {
+        "id": 1825,
+        "city": "MANASSAS",
+        "state": "VA",
+        "skus": 6,
+        "lamps": 72,
+        "rebate": "14.40"
+      },
+      {
+        "id": 1833,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 1841,
+        "city": "CHESAPEAKE",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 48,
+        "rebate": "9.60"
+      },
+      {
+        "id": 1852,
+        "city": "WOODBRIDGE",
+        "state": "VA",
+        "skus": 6,
+        "lamps": 72,
+        "rebate": "14.40"
+      },
+      {
+        "id": 1904,
+        "city": "LEESBURG",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1934,
+        "city": "SOUTH HILL",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1969,
+        "city": "MIDLOTHIAN",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 2015,
+        "city": "FAIRFAX",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 2038,
+        "city": "STERLING",
+        "state": "VA",
+        "skus": 7,
+        "lamps": 84,
+        "rebate": "16.80"
+      },
+      {
+        "id": 2089,
+        "city": "BRISTOL",
+        "state": "VA",
+        "skus": 7,
+        "lamps": 84,
+        "rebate": "16.80"
+      },
+      {
+        "id": 2136,
+        "city": "CULPEPER",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 2160,
+        "city": "PETERSBURG",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 2194,
+        "city": "ALEXANDRIA",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 2258,
+        "city": "ALEXANDRIA",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 2295,
+        "city": "RICHMOND",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 2312,
+        "city": "ROANOKE",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 2437,
+        "city": "WARRENTON",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 2520,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 2529,
+        "city": "VIRGINIA BEACH",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 60,
+        "rebate": "12.00"
+      },
+      {
+        "id": 2564,
+        "city": "LURAY",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 2565,
+        "city": "MADISON HEIGHTS",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 48,
+        "rebate": "9.60"
+      },
+      {
+        "id": 2645,
+        "city": "BLACKSTONE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 2646,
+        "city": "PEARISBURG",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 2647,
+        "city": "WOODSTOCK",
+        "state": "VA",
+        "skus": 6,
+        "lamps": 72,
+        "rebate": "14.40"
+      },
+      {
+        "id": 2761,
+        "city": "POUNDING MILL",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 2795,
+        "city": "ASHLAND",
+        "state": "VA",
+        "skus": 6,
+        "lamps": 72,
+        "rebate": "14.40"
+      },
+      {
+        "id": 2805,
+        "city": "EMPORIA",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 2807,
+        "city": "HARRISONBURG",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 2808,
+        "city": "MIDLOTHIAN",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 2821,
+        "city": "RICHMOND",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 48,
+        "rebate": "9.60"
+      },
+      {
+        "id": 3214,
+        "city": "SUFFOLK",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 3216,
+        "city": "VIRGINIA BEACH",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 3219,
+        "city": "WILLIAMSBURG",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 3243,
+        "city": "ROANOKE",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 3265,
+        "city": "YORKTOWN",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 48,
+        "rebate": "9.60"
+      },
+      {
+        "id": 3270,
+        "city": "WYTHEVILLE",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 48,
+        "rebate": "9.60"
+      },
+      {
+        "id": 3344,
+        "city": "WINCHESTER",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 3480,
+        "city": "LEBANON",
+        "state": "VA",
+        "skus": 6,
+        "lamps": 72,
+        "rebate": "14.40"
+      },
+      {
+        "id": 3573,
+        "city": "MANASSAS",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 3588,
+        "city": "DUMFRIES",
+        "state": "VA",
+        "skus": 7,
+        "lamps": 84,
+        "rebate": "16.80"
+      },
+      {
+        "id": 3644,
+        "city": "CHESAPEAKE",
+        "state": "VA",
+        "skus": 6,
+        "lamps": 72,
+        "rebate": "14.40"
+      },
+      {
+        "id": 3768,
+        "city": "ALTAVISTA",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 3770,
+        "city": "STUART",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 3869,
+        "city": "RICHMOND",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 48,
+        "rebate": "9.60"
+      },
+      {
+        "id": 4258,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 4350,
+        "city": "KILMARNOCK",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 4378,
+        "city": "ONLEY",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 4476,
+        "city": "CHESTERFIELD",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 4514,
+        "city": "WINCHESTER",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 48,
+        "rebate": "9.60"
+      },
+      {
+        "id": 4623,
+        "city": "NEWPORT NEWS",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 48,
+        "rebate": "9.60"
+      },
+      {
+        "id": 4638,
+        "city": "RUCKERSVILLE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 4682,
+        "city": "GORDONSVILLE",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 4697,
+        "city": "LYNCHBURG",
+        "state": "VA",
+        "skus": 7,
+        "lamps": 84,
+        "rebate": "16.80"
+      },
+      {
+        "id": 5105,
+        "city": "FRONT ROYAL",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 60,
+        "rebate": "12.00"
+      },
+      {
+        "id": 5227,
+        "city": "BURKE",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 5253,
+        "city": "CHESAPEAKE",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 5343,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 5488,
+        "city": "NORFOLK",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 5731,
+        "city": "LOCUST GROVE",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 48,
+        "rebate": "9.60"
+      },
+      {
+        "id": 5779,
+        "city": "KING GEORGE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 5880,
+        "city": "FAIRFAX",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 5969,
+        "city": "CHANTILLY",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 24,
+        "rebate": "4.80"
+      }
+    ]
+  },
+  {
+    "sku": 550540207,
+    "id": "GVS194/689194",
+    "name": "19W SW Spiral CFL 4 PK",
+    "stores": [
+      {
+        "id": 1023,
+        "city": "GALAX",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1243,
+        "city": "MARTINSVILLE",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 1292,
+        "city": "CHRISTIANSBURG",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 1301,
+        "city": "ROANOKE",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 20,
+        "rebate": "4.00"
+      },
+      {
+        "id": 1335,
+        "city": "LEXINGTON",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 1336,
+        "city": "MARION",
+        "state": "VA",
+        "skus": 6,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 1344,
+        "city": "STAUNTON",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 1345,
+        "city": "SOUTH BOSTON",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1350,
+        "city": "LYNCHBURG",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 1399,
+        "city": "BEDFORD",
+        "state": "VA",
+        "skus": 10,
+        "lamps": 40,
+        "rebate": "8.00"
+      },
+      {
+        "id": 1406,
+        "city": "WINCHESTER",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1424,
+        "city": "COLONIAL HEIGHTS",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 1486,
+        "city": "FARMVILLE",
+        "state": "VA",
+        "skus": 7,
+        "lamps": 28,
+        "rebate": "5.60"
+      },
+      {
+        "id": 1523,
+        "city": "GLEN ALLEN",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 1524,
+        "city": "CHESTER",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 20,
+        "rebate": "4.00"
+      },
+      {
+        "id": 1525,
+        "city": "MECHANICSVILLE",
+        "state": "VA",
+        "skus": 8,
+        "lamps": 32,
+        "rebate": "6.40"
+      },
+      {
+        "id": 1631,
+        "city": "HAMPTON",
+        "state": "VA",
+        "skus": 8,
+        "lamps": 32,
+        "rebate": "6.40"
+      },
+      {
+        "id": 1682,
+        "city": "CHESAPEAKE",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1687,
+        "city": "SUFFOLK",
+        "state": "VA",
+        "skus": 7,
+        "lamps": 28,
+        "rebate": "5.60"
+      },
+      {
+        "id": 1688,
+        "city": "VIRGINIA BEACH",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 20,
+        "rebate": "4.00"
+      },
+      {
+        "id": 1726,
+        "city": "HARRISONBURG",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 1730,
+        "city": "TAPPAHANNOCK",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1759,
+        "city": "GLOUCESTER",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 1763,
+        "city": "BLUEFIELD",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 1773,
+        "city": "NEWPORT NEWS",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1780,
+        "city": "CHARLOTTESVILLE",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 20,
+        "rebate": "4.00"
+      },
+      {
+        "id": 1825,
+        "city": "MANASSAS",
+        "state": "VA",
+        "skus": 6,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 1833,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 6,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 1852,
+        "city": "WOODBRIDGE",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 20,
+        "rebate": "4.00"
+      },
+      {
+        "id": 1904,
+        "city": "LEESBURG",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1934,
+        "city": "SOUTH HILL",
+        "state": "VA",
+        "skus": 9,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 1969,
+        "city": "MIDLOTHIAN",
+        "state": "VA",
+        "skus": 6,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 2015,
+        "city": "FAIRFAX",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 2089,
+        "city": "BRISTOL",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 20,
+        "rebate": "4.00"
+      },
+      {
+        "id": 2136,
+        "city": "CULPEPER",
+        "state": "VA",
+        "skus": 6,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 2160,
+        "city": "PETERSBURG",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 2194,
+        "city": "ALEXANDRIA",
+        "state": "VA",
+        "skus": 8,
+        "lamps": 32,
+        "rebate": "6.40"
+      },
+      {
+        "id": 2258,
+        "city": "ALEXANDRIA",
+        "state": "VA",
+        "skus": 6,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 2295,
+        "city": "RICHMOND",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 2312,
+        "city": "ROANOKE",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 2437,
+        "city": "WARRENTON",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 20,
+        "rebate": "4.00"
+      },
+      {
+        "id": 2438,
+        "city": "STAFFORD",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 2520,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 2529,
+        "city": "VIRGINIA BEACH",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 20,
+        "rebate": "4.00"
+      },
+      {
+        "id": 2564,
+        "city": "LURAY",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 2565,
+        "city": "MADISON HEIGHTS",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 2645,
+        "city": "BLACKSTONE",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 2646,
+        "city": "PEARISBURG",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 2647,
+        "city": "WOODSTOCK",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 2662,
+        "city": "COVINGTON",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 2705,
+        "city": "FRANKLIN",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 2761,
+        "city": "POUNDING MILL",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 20,
+        "rebate": "4.00"
+      },
+      {
+        "id": 2762,
+        "city": "FAIRLAWN",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 2795,
+        "city": "ASHLAND",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 2805,
+        "city": "EMPORIA",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 2807,
+        "city": "HARRISONBURG",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 2808,
+        "city": "MIDLOTHIAN",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 3077,
+        "city": "HAYMARKET",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 3214,
+        "city": "SUFFOLK",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 3216,
+        "city": "VIRGINIA BEACH",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 3219,
+        "city": "WILLIAMSBURG",
+        "state": "VA",
+        "skus": 10,
+        "lamps": 40,
+        "rebate": "8.00"
+      },
+      {
+        "id": 3243,
+        "city": "ROANOKE",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 3265,
+        "city": "YORKTOWN",
+        "state": "VA",
+        "skus": 6,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 3270,
+        "city": "WYTHEVILLE",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 3303,
+        "city": "GRUNDY",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 3344,
+        "city": "WINCHESTER",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 20,
+        "rebate": "4.00"
+      },
+      {
+        "id": 3480,
+        "city": "LEBANON",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 3573,
+        "city": "MANASSAS",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 3588,
+        "city": "DUMFRIES",
+        "state": "VA",
+        "skus": 8,
+        "lamps": 32,
+        "rebate": "6.40"
+      },
+      {
+        "id": 3644,
+        "city": "CHESAPEAKE",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 3768,
+        "city": "ALTAVISTA",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 3770,
+        "city": "STUART",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 3831,
+        "city": "PORTSMOUTH",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 20,
+        "rebate": "4.00"
+      },
+      {
+        "id": 4350,
+        "city": "KILMARNOCK",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 4378,
+        "city": "ONLEY",
+        "state": "VA",
+        "skus": 7,
+        "lamps": 28,
+        "rebate": "5.60"
+      },
+      {
+        "id": 4476,
+        "city": "CHESTERFIELD",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 20,
+        "rebate": "4.00"
+      },
+      {
+        "id": 4514,
+        "city": "WINCHESTER",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 4638,
+        "city": "RUCKERSVILLE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 4682,
+        "city": "GORDONSVILLE",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 4697,
+        "city": "LYNCHBURG",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 20,
+        "rebate": "4.00"
+      },
+      {
+        "id": 5105,
+        "city": "FRONT ROYAL",
+        "state": "VA",
+        "skus": 6,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 5117,
+        "city": "WAYNESBORO",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 5227,
+        "city": "BURKE",
+        "state": "VA",
+        "skus": 8,
+        "lamps": 32,
+        "rebate": "6.40"
+      },
+      {
+        "id": 5253,
+        "city": "CHESAPEAKE",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 5343,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 5488,
+        "city": "NORFOLK",
+        "state": "VA",
+        "skus": 8,
+        "lamps": 32,
+        "rebate": "6.40"
+      },
+      {
+        "id": 5731,
+        "city": "LOCUST GROVE",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 5753,
+        "city": "ALEXANDRIA",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 5779,
+        "city": "KING GEORGE",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 5880,
+        "city": "FAIRFAX",
+        "state": "VA",
+        "skus": 8,
+        "lamps": 32,
+        "rebate": "6.40"
+      },
+      {
+        "id": 5936,
+        "city": "VIENNA",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 5969,
+        "city": "CHANTILLY",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      }
+    ]
+  },
+  {
+    "sku": 550540191,
+    "id": "GVS194DL/689194DL",
+    "name": "19W DL Spiral CFL 4 PK",
+    "stores": [
+      {
+        "id": 1292,
+        "city": "CHRISTIANSBURG",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 1309,
+        "city": "SALEM",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 1336,
+        "city": "MARION",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 1344,
+        "city": "STAUNTON",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 1345,
+        "city": "SOUTH BOSTON",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 20,
+        "rebate": "4.00"
+      },
+      {
+        "id": 1350,
+        "city": "LYNCHBURG",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 1399,
+        "city": "BEDFORD",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 1406,
+        "city": "WINCHESTER",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 1424,
+        "city": "COLONIAL HEIGHTS",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 1465,
+        "city": "DANVILLE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 1486,
+        "city": "FARMVILLE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 1523,
+        "city": "GLEN ALLEN",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 1524,
+        "city": "CHESTER",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 1525,
+        "city": "MECHANICSVILLE",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 1631,
+        "city": "HAMPTON",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1682,
+        "city": "CHESAPEAKE",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1688,
+        "city": "VIRGINIA BEACH",
+        "state": "VA",
+        "skus": 7,
+        "lamps": 28,
+        "rebate": "5.60"
+      },
+      {
+        "id": 1773,
+        "city": "NEWPORT NEWS",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1811,
+        "city": "NORFOLK",
+        "state": "VA",
+        "skus": 6,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 1825,
+        "city": "MANASSAS",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 1833,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1841,
+        "city": "CHESAPEAKE",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 1852,
+        "city": "WOODBRIDGE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 1904,
+        "city": "LEESBURG",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1934,
+        "city": "SOUTH HILL",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 2015,
+        "city": "FAIRFAX",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 2038,
+        "city": "STERLING",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 2089,
+        "city": "BRISTOL",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 2160,
+        "city": "PETERSBURG",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 2194,
+        "city": "ALEXANDRIA",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 2258,
+        "city": "ALEXANDRIA",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 2337,
+        "city": "ROCKY MOUNT",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 2437,
+        "city": "WARRENTON",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 2438,
+        "city": "STAFFORD",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 2520,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 2529,
+        "city": "VIRGINIA BEACH",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 2565,
+        "city": "MADISON HEIGHTS",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 2645,
+        "city": "BLACKSTONE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 2662,
+        "city": "COVINGTON",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 2761,
+        "city": "POUNDING MILL",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 2795,
+        "city": "ASHLAND",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 2807,
+        "city": "HARRISONBURG",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 3214,
+        "city": "SUFFOLK",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 3265,
+        "city": "YORKTOWN",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 3270,
+        "city": "WYTHEVILLE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 3303,
+        "city": "GRUNDY",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 3344,
+        "city": "WINCHESTER",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 3480,
+        "city": "LEBANON",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 3573,
+        "city": "MANASSAS",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 3588,
+        "city": "DUMFRIES",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 3768,
+        "city": "ALTAVISTA",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 4378,
+        "city": "ONLEY",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 4623,
+        "city": "NEWPORT NEWS",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 4638,
+        "city": "RUCKERSVILLE",
+        "state": "VA",
+        "skus": -1,
+        "lamps": -4,
+        "rebate": "-0.80"
+      },
+      {
+        "id": 4697,
+        "city": "LYNCHBURG",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 5105,
+        "city": "FRONT ROYAL",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 5227,
+        "city": "BURKE",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 5253,
+        "city": "CHESAPEAKE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 5488,
+        "city": "NORFOLK",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 5753,
+        "city": "ALEXANDRIA",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 5779,
+        "city": "KING GEORGE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 5880,
+        "city": "FAIRFAX",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 5936,
+        "city": "VIENNA",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 5969,
+        "city": "CHANTILLY",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      }
+    ]
+  },
+  {
+    "sku": 550540192,
+    "id": "GVS234/689234",
+    "name": "23W SW Spiral CFL 4 PK",
+    "stores": [
+      {
+        "id": 1023,
+        "city": "GALAX",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 1243,
+        "city": "MARTINSVILLE",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1292,
+        "city": "CHRISTIANSBURG",
+        "state": "VA",
+        "skus": 11,
+        "lamps": 44,
+        "rebate": "8.80"
+      },
+      {
+        "id": 1301,
+        "city": "ROANOKE",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 1309,
+        "city": "SALEM",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 1336,
+        "city": "MARION",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1344,
+        "city": "STAUNTON",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 1350,
+        "city": "LYNCHBURG",
+        "state": "VA",
+        "skus": 6,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 1399,
+        "city": "BEDFORD",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 20,
+        "rebate": "4.00"
+      },
+      {
+        "id": 1406,
+        "city": "WINCHESTER",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1424,
+        "city": "COLONIAL HEIGHTS",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 1465,
+        "city": "DANVILLE",
+        "state": "VA",
+        "skus": 10,
+        "lamps": 40,
+        "rebate": "8.00"
+      },
+      {
+        "id": 1486,
+        "city": "FARMVILLE",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 20,
+        "rebate": "4.00"
+      },
+      {
+        "id": 1523,
+        "city": "GLEN ALLEN",
+        "state": "VA",
+        "skus": 11,
+        "lamps": 44,
+        "rebate": "8.80"
+      },
+      {
+        "id": 1524,
+        "city": "CHESTER",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1525,
+        "city": "MECHANICSVILLE",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 1631,
+        "city": "HAMPTON",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1652,
+        "city": "DUBLIN",
+        "state": "VA",
+        "skus": 6,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 1682,
+        "city": "CHESAPEAKE",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1687,
+        "city": "SUFFOLK",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 1688,
+        "city": "VIRGINIA BEACH",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 1726,
+        "city": "HARRISONBURG",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 1730,
+        "city": "TAPPAHANNOCK",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 1759,
+        "city": "GLOUCESTER",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 1763,
+        "city": "BLUEFIELD",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 1773,
+        "city": "NEWPORT NEWS",
+        "state": "VA",
+        "skus": 7,
+        "lamps": 28,
+        "rebate": "5.60"
+      },
+      {
+        "id": 1780,
+        "city": "CHARLOTTESVILLE",
+        "state": "VA",
+        "skus": 10,
+        "lamps": 40,
+        "rebate": "8.00"
+      },
+      {
+        "id": 1811,
+        "city": "NORFOLK",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1825,
+        "city": "MANASSAS",
+        "state": "VA",
+        "skus": 9,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 1833,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1841,
+        "city": "CHESAPEAKE",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 20,
+        "rebate": "4.00"
+      },
+      {
+        "id": 1852,
+        "city": "WOODBRIDGE",
+        "state": "VA",
+        "skus": 10,
+        "lamps": 40,
+        "rebate": "8.00"
+      },
+      {
+        "id": 1904,
+        "city": "LEESBURG",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 1934,
+        "city": "SOUTH HILL",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 1969,
+        "city": "MIDLOTHIAN",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 2015,
+        "city": "FAIRFAX",
+        "state": "VA",
+        "skus": 12,
+        "lamps": 48,
+        "rebate": "9.60"
+      },
+      {
+        "id": 2038,
+        "city": "STERLING",
+        "state": "VA",
+        "skus": 8,
+        "lamps": 32,
+        "rebate": "6.40"
+      },
+      {
+        "id": 2089,
+        "city": "BRISTOL",
+        "state": "VA",
+        "skus": 9,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 2136,
+        "city": "CULPEPER",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 2160,
+        "city": "PETERSBURG",
+        "state": "VA",
+        "skus": 8,
+        "lamps": 32,
+        "rebate": "6.40"
+      },
+      {
+        "id": 2194,
+        "city": "ALEXANDRIA",
+        "state": "VA",
+        "skus": 9,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 2258,
+        "city": "ALEXANDRIA",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 2295,
+        "city": "RICHMOND",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 20,
+        "rebate": "4.00"
+      },
+      {
+        "id": 2312,
+        "city": "ROANOKE",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 2337,
+        "city": "ROCKY MOUNT",
+        "state": "VA",
+        "skus": 7,
+        "lamps": 28,
+        "rebate": "5.60"
+      },
+      {
+        "id": 2437,
+        "city": "WARRENTON",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 2438,
+        "city": "STAFFORD",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 20,
+        "rebate": "4.00"
+      },
+      {
+        "id": 2520,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 2529,
+        "city": "VIRGINIA BEACH",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 2564,
+        "city": "LURAY",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 2565,
+        "city": "MADISON HEIGHTS",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 2645,
+        "city": "BLACKSTONE",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 2646,
+        "city": "PEARISBURG",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 2647,
+        "city": "WOODSTOCK",
+        "state": "VA",
+        "skus": 6,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 2662,
+        "city": "COVINGTON",
+        "state": "VA",
+        "skus": 6,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 2705,
+        "city": "FRANKLIN",
+        "state": "VA",
+        "skus": 11,
+        "lamps": 44,
+        "rebate": "8.80"
+      },
+      {
+        "id": 2761,
+        "city": "POUNDING MILL",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 2762,
+        "city": "FAIRLAWN",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 2795,
+        "city": "ASHLAND",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 2805,
+        "city": "EMPORIA",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 2807,
+        "city": "HARRISONBURG",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 2808,
+        "city": "MIDLOTHIAN",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 2821,
+        "city": "RICHMOND",
+        "state": "VA",
+        "skus": 6,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 3077,
+        "city": "HAYMARKET",
+        "state": "VA",
+        "skus": 6,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 3214,
+        "city": "SUFFOLK",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 3216,
+        "city": "VIRGINIA BEACH",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 3219,
+        "city": "WILLIAMSBURG",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 3243,
+        "city": "ROANOKE",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 3265,
+        "city": "YORKTOWN",
+        "state": "VA",
+        "skus": 6,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 3270,
+        "city": "WYTHEVILLE",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 3303,
+        "city": "GRUNDY",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 3344,
+        "city": "WINCHESTER",
+        "state": "VA",
+        "skus": 6,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 3480,
+        "city": "LEBANON",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 3573,
+        "city": "MANASSAS",
+        "state": "VA",
+        "skus": 6,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 3588,
+        "city": "DUMFRIES",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 3644,
+        "city": "CHESAPEAKE",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 3768,
+        "city": "ALTAVISTA",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 3770,
+        "city": "STUART",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 3831,
+        "city": "PORTSMOUTH",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 3869,
+        "city": "RICHMOND",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 4258,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 4350,
+        "city": "KILMARNOCK",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 4378,
+        "city": "ONLEY",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 4476,
+        "city": "CHESTERFIELD",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 4514,
+        "city": "WINCHESTER",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 4623,
+        "city": "NEWPORT NEWS",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 4636,
+        "city": "APPOMATTOX",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 4638,
+        "city": "RUCKERSVILLE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 4697,
+        "city": "LYNCHBURG",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 20,
+        "rebate": "4.00"
+      },
+      {
+        "id": 5105,
+        "city": "FRONT ROYAL",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 5117,
+        "city": "WAYNESBORO",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 20,
+        "rebate": "4.00"
+      },
+      {
+        "id": 5227,
+        "city": "BURKE",
+        "state": "VA",
+        "skus": 13,
+        "lamps": 52,
+        "rebate": "10.40"
+      },
+      {
+        "id": 5253,
+        "city": "CHESAPEAKE",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 5343,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 7,
+        "lamps": 28,
+        "rebate": "5.60"
+      },
+      {
+        "id": 5488,
+        "city": "NORFOLK",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 5731,
+        "city": "LOCUST GROVE",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 5753,
+        "city": "ALEXANDRIA",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 5847,
+        "city": "POWHATAN",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 5880,
+        "city": "FAIRFAX",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 5936,
+        "city": "VIENNA",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 5969,
+        "city": "CHANTILLY",
+        "state": "VA",
+        "skus": 6,
+        "lamps": 24,
+        "rebate": "4.80"
+      }
+    ]
+  },
+  {
+    "sku": 550540193,
+    "id": "GVS234DL/689234DL",
+    "name": "23W DL Spiral CFL 4 PK",
+    "stores": [
+      {
+        "id": 1023,
+        "city": "GALAX",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 1292,
+        "city": "CHRISTIANSBURG",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1301,
+        "city": "ROANOKE",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 1309,
+        "city": "SALEM",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 1335,
+        "city": "LEXINGTON",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 1336,
+        "city": "MARION",
+        "state": "VA",
+        "skus": 9,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 1344,
+        "city": "STAUNTON",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 1350,
+        "city": "LYNCHBURG",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1399,
+        "city": "BEDFORD",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 1406,
+        "city": "WINCHESTER",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1465,
+        "city": "DANVILLE",
+        "state": "VA",
+        "skus": 6,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 1486,
+        "city": "FARMVILLE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 1523,
+        "city": "GLEN ALLEN",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 1524,
+        "city": "CHESTER",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 1631,
+        "city": "HAMPTON",
+        "state": "VA",
+        "skus": 7,
+        "lamps": 28,
+        "rebate": "5.60"
+      },
+      {
+        "id": 1652,
+        "city": "DUBLIN",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 1682,
+        "city": "CHESAPEAKE",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1687,
+        "city": "SUFFOLK",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 1688,
+        "city": "VIRGINIA BEACH",
+        "state": "VA",
+        "skus": 9,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 1726,
+        "city": "HARRISONBURG",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 1759,
+        "city": "GLOUCESTER",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 1763,
+        "city": "BLUEFIELD",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 1773,
+        "city": "NEWPORT NEWS",
+        "state": "VA",
+        "skus": 9,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 1780,
+        "city": "CHARLOTTESVILLE",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 1825,
+        "city": "MANASSAS",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 1833,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 1841,
+        "city": "CHESAPEAKE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 1852,
+        "city": "WOODBRIDGE",
+        "state": "VA",
+        "skus": 7,
+        "lamps": 28,
+        "rebate": "5.60"
+      },
+      {
+        "id": 1904,
+        "city": "LEESBURG",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 2015,
+        "city": "FAIRFAX",
+        "state": "VA",
+        "skus": 9,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 2038,
+        "city": "STERLING",
+        "state": "VA",
+        "skus": 10,
+        "lamps": 40,
+        "rebate": "8.00"
+      },
+      {
+        "id": 2136,
+        "city": "CULPEPER",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 2160,
+        "city": "PETERSBURG",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 2194,
+        "city": "ALEXANDRIA",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 2258,
+        "city": "ALEXANDRIA",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 2295,
+        "city": "RICHMOND",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 2312,
+        "city": "ROANOKE",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 2337,
+        "city": "ROCKY MOUNT",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 2437,
+        "city": "WARRENTON",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 2520,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 2529,
+        "city": "VIRGINIA BEACH",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 2565,
+        "city": "MADISON HEIGHTS",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 2645,
+        "city": "BLACKSTONE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 2646,
+        "city": "PEARISBURG",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 2647,
+        "city": "WOODSTOCK",
+        "state": "VA",
+        "skus": 8,
+        "lamps": 32,
+        "rebate": "6.40"
+      },
+      {
+        "id": 2761,
+        "city": "POUNDING MILL",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 2795,
+        "city": "ASHLAND",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 2807,
+        "city": "HARRISONBURG",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 3077,
+        "city": "HAYMARKET",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 3214,
+        "city": "SUFFOLK",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 3219,
+        "city": "WILLIAMSBURG",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 3344,
+        "city": "WINCHESTER",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 3480,
+        "city": "LEBANON",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 3573,
+        "city": "MANASSAS",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 3588,
+        "city": "DUMFRIES",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 3644,
+        "city": "CHESAPEAKE",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 3768,
+        "city": "ALTAVISTA",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 3770,
+        "city": "STUART",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 3831,
+        "city": "PORTSMOUTH",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 3869,
+        "city": "RICHMOND",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 4258,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 4350,
+        "city": "KILMARNOCK",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 4378,
+        "city": "ONLEY",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 4476,
+        "city": "CHESTERFIELD",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 4636,
+        "city": "APPOMATTOX",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 4638,
+        "city": "RUCKERSVILLE",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 4682,
+        "city": "GORDONSVILLE",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 4697,
+        "city": "LYNCHBURG",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 5105,
+        "city": "FRONT ROYAL",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 5117,
+        "city": "WAYNESBORO",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 5227,
+        "city": "BURKE",
+        "state": "VA",
+        "skus": 9,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 5253,
+        "city": "CHESAPEAKE",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 5343,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 20,
+        "rebate": "4.00"
+      },
+      {
+        "id": 5488,
+        "city": "NORFOLK",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 5753,
+        "city": "ALEXANDRIA",
+        "state": "VA",
+        "skus": 18,
+        "lamps": 72,
+        "rebate": "14.40"
+      },
+      {
+        "id": 5779,
+        "city": "KING GEORGE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 5847,
+        "city": "POWHATAN",
+        "state": "VA",
+        "skus": 7,
+        "lamps": 28,
+        "rebate": "5.60"
+      },
+      {
+        "id": 5880,
+        "city": "FAIRFAX",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 5936,
+        "city": "VIENNA",
+        "state": "VA",
+        "skus": 12,
+        "lamps": 48,
+        "rebate": "9.60"
+      },
+      {
+        "id": 5969,
+        "city": "CHANTILLY",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      }
+    ]
+  },
+  {
+    "sku": 550540208,
+    "id": "GVS2312/6892312",
+    "name": "23W SW Spiral CFL 12 PK",
+    "stores": [
+      {
+        "id": 1023,
+        "city": "GALAX",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1301,
+        "city": "ROANOKE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1309,
+        "city": "SALEM",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1336,
+        "city": "MARION",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1344,
+        "city": "STAUNTON",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1345,
+        "city": "SOUTH BOSTON",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1350,
+        "city": "LYNCHBURG",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 1406,
+        "city": "WINCHESTER",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1424,
+        "city": "COLONIAL HEIGHTS",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1486,
+        "city": "FARMVILLE",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 1523,
+        "city": "GLEN ALLEN",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 1524,
+        "city": "CHESTER",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 1525,
+        "city": "MECHANICSVILLE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1682,
+        "city": "CHESAPEAKE",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 48,
+        "rebate": "9.60"
+      },
+      {
+        "id": 1687,
+        "city": "SUFFOLK",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 1726,
+        "city": "HARRISONBURG",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1763,
+        "city": "BLUEFIELD",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1773,
+        "city": "NEWPORT NEWS",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1780,
+        "city": "CHARLOTTESVILLE",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 1833,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1852,
+        "city": "WOODBRIDGE",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 48,
+        "rebate": "9.60"
+      },
+      {
+        "id": 1904,
+        "city": "LEESBURG",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 1934,
+        "city": "SOUTH HILL",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 2038,
+        "city": "STERLING",
+        "state": "VA",
+        "skus": -1,
+        "lamps": -12,
+        "rebate": "-2.40"
+      },
+      {
+        "id": 2136,
+        "city": "CULPEPER",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 2194,
+        "city": "ALEXANDRIA",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 2258,
+        "city": "ALEXANDRIA",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 2312,
+        "city": "ROANOKE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 2437,
+        "city": "WARRENTON",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 2438,
+        "city": "STAFFORD",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 2564,
+        "city": "LURAY",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 2645,
+        "city": "BLACKSTONE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 2705,
+        "city": "FRANKLIN",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 2795,
+        "city": "ASHLAND",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 2807,
+        "city": "HARRISONBURG",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 3077,
+        "city": "HAYMARKET",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 3214,
+        "city": "SUFFOLK",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 3216,
+        "city": "VIRGINIA BEACH",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 3219,
+        "city": "WILLIAMSBURG",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 3303,
+        "city": "GRUNDY",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 3344,
+        "city": "WINCHESTER",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 3480,
+        "city": "LEBANON",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 3588,
+        "city": "DUMFRIES",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 3644,
+        "city": "CHESAPEAKE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 4378,
+        "city": "ONLEY",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 4476,
+        "city": "CHESTERFIELD",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 4514,
+        "city": "WINCHESTER",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 4623,
+        "city": "NEWPORT NEWS",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 4697,
+        "city": "LYNCHBURG",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 5105,
+        "city": "FRONT ROYAL",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 5117,
+        "city": "WAYNESBORO",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 5253,
+        "city": "CHESAPEAKE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 5343,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 5779,
+        "city": "KING GEORGE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 5880,
+        "city": "FAIRFAX",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 12,
+        "rebate": "2.40"
+      }
+    ]
+  },
+  {
+    "sku": 550540200,
+    "id": "GVA092/694092",
+    "name": "9W SW A-LAMP CFL 2 PK",
+    "stores": [
+      {
+        "id": 1301,
+        "city": "ROANOKE",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 6,
+        "rebate": "1.20"
+      },
+      {
+        "id": 1309,
+        "city": "SALEM",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 1350,
+        "city": "LYNCHBURG",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 1424,
+        "city": "COLONIAL HEIGHTS",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 1465,
+        "city": "DANVILLE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 1523,
+        "city": "GLEN ALLEN",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 1525,
+        "city": "MECHANICSVILLE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 1631,
+        "city": "HAMPTON",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 1759,
+        "city": "GLOUCESTER",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 1763,
+        "city": "BLUEFIELD",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 1825,
+        "city": "MANASSAS",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 1833,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 1841,
+        "city": "CHESAPEAKE",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 6,
+        "rebate": "1.20"
+      },
+      {
+        "id": 1934,
+        "city": "SOUTH HILL",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 2038,
+        "city": "STERLING",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 2194,
+        "city": "ALEXANDRIA",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 2258,
+        "city": "ALEXANDRIA",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 2807,
+        "city": "HARRISONBURG",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 3270,
+        "city": "WYTHEVILLE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 3344,
+        "city": "WINCHESTER",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 3573,
+        "city": "MANASSAS",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 5343,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 6,
+        "rebate": "1.20"
+      }
+    ]
+  },
+  {
+    "sku": 550540184,
+    "id": "GVA142/694142",
+    "name": "14W SW A-LAMP CFL 2 PK",
+    "stores": [
+      {
+        "id": 2312,
+        "city": "ROANOKE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 2529,
+        "city": "VIRGINIA BEACH",
+        "state": "VA",
+        "skus": -1,
+        "lamps": -2,
+        "rebate": "-0.40"
+      },
+      {
+        "id": 3303,
+        "city": "GRUNDY",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 5253,
+        "city": "CHESAPEAKE",
+        "state": "VA",
+        "skus": -1,
+        "lamps": -2,
+        "rebate": "-0.40"
+      },
+      {
+        "id": 5847,
+        "city": "POWHATAN",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 10,
+        "rebate": "2.00"
+      }
+    ]
+  },
+  {
+    "sku": 550540195,
+    "id": "GVA192/694192",
+    "name": "19W SW A-LAMP CFL 2 PK",
+    "stores": [
+      {
+        "id": 1301,
+        "city": "ROANOKE",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 1335,
+        "city": "LEXINGTON",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 1465,
+        "city": "DANVILLE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 1525,
+        "city": "MECHANICSVILLE",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 1652,
+        "city": "DUBLIN",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 1773,
+        "city": "NEWPORT NEWS",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 1841,
+        "city": "CHESAPEAKE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 1969,
+        "city": "MIDLOTHIAN",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 2194,
+        "city": "ALEXANDRIA",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 2647,
+        "city": "WOODSTOCK",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 2821,
+        "city": "RICHMOND",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 3265,
+        "city": "YORKTOWN",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 3573,
+        "city": "MANASSAS",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 5117,
+        "city": "WAYNESBORO",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 5227,
+        "city": "BURKE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      }
+    ]
+  },
+  {
+    "sku": 550540201,
+    "id": "GVG092/691092",
+    "name": "9W SW G25 GLOBE CFL 2 PK",
+    "stores": [
+      {
+        "id": 1292,
+        "city": "CHRISTIANSBURG",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 1525,
+        "city": "MECHANICSVILLE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 1763,
+        "city": "BLUEFIELD",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 1780,
+        "city": "CHARLOTTESVILLE",
+        "state": "VA",
+        "skus": 12,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 1969,
+        "city": "MIDLOTHIAN",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 2136,
+        "city": "CULPEPER",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 2565,
+        "city": "MADISON HEIGHTS",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 2662,
+        "city": "COVINGTON",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 3344,
+        "city": "WINCHESTER",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 3869,
+        "city": "RICHMOND",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      }
+    ]
+  },
+  {
+    "sku": 550540202,
+    "id": "GVG092DL/691092DL",
+    "name": "9W DL G25GLOBE CFL 2 PK",
+    "stores": [
+      {
+        "id": 1780,
+        "city": "CHARLOTTESVILLE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 2520,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      }
+    ]
+  },
+  {
+    "sku": 550540186,
+    "id": "GVG142/691142",
+    "name": "14W SW G25 GLOBE CFL 2 PK",
+    "stores": [
+      {
+        "id": 1345,
+        "city": "SOUTH BOSTON",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 1350,
+        "city": "LYNCHBURG",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 1523,
+        "city": "GLEN ALLEN",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 6,
+        "rebate": "1.20"
+      },
+      {
+        "id": 1524,
+        "city": "CHESTER",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 1763,
+        "city": "BLUEFIELD",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 6,
+        "rebate": "1.20"
+      },
+      {
+        "id": 1773,
+        "city": "NEWPORT NEWS",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 1833,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 10,
+        "rebate": "2.00"
+      },
+      {
+        "id": 2136,
+        "city": "CULPEPER",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 2295,
+        "city": "RICHMOND",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 2808,
+        "city": "MIDLOTHIAN",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 4697,
+        "city": "LYNCHBURG",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 5253,
+        "city": "CHESAPEAKE",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 5847,
+        "city": "POWHATAN",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 4,
+        "rebate": "0.80"
+      }
+    ]
+  },
+  {
+    "sku": 550540178,
+    "id": "GVG142DL/691142DL",
+    "name": "14W DL G25 GLOBE CFL 2 PK",
+    "stores": [
+      {
+        "id": 3770,
+        "city": "STUART",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 4258,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      }
+    ]
+  },
+  {
+    "sku": 550540187,
+    "id": "GVR3142/6R30142",
+    "name": "14W SW R30 CFL 2 PK",
+    "stores": [
+      {
+        "id": 1292,
+        "city": "CHRISTIANSBURG",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 1350,
+        "city": "LYNCHBURG",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 1523,
+        "city": "GLEN ALLEN",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 1833,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 2089,
+        "city": "BRISTOL",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 6,
+        "rebate": "1.20"
+      },
+      {
+        "id": 2194,
+        "city": "ALEXANDRIA",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 6,
+        "rebate": "1.20"
+      },
+      {
+        "id": 4476,
+        "city": "CHESTERFIELD",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 5343,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 10,
+        "rebate": "2.00"
+      }
+    ]
+  },
+  {
+    "sku": 550540179,
+    "id": "GVR3142DL/6R30142DL",
+    "name": "14W DL R30 CFL 2 PK",
+    "stores": [
+      {
+        "id": 1825,
+        "city": "MANASSAS",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 2136,
+        "city": "CULPEPER",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 2194,
+        "city": "ALEXANDRIA",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 2647,
+        "city": "WOODSTOCK",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 2705,
+        "city": "FRANKLIN",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 2761,
+        "city": "POUNDING MILL",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 2762,
+        "city": "FAIRLAWN",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 2808,
+        "city": "MIDLOTHIAN",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 6,
+        "rebate": "1.20"
+      },
+      {
+        "id": 3270,
+        "city": "WYTHEVILLE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 4378,
+        "city": "ONLEY",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 4476,
+        "city": "CHESTERFIELD",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 4697,
+        "city": "LYNCHBURG",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 2,
+        "rebate": "0.40"
+      },
+      {
+        "id": 5343,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 6,
+        "rebate": "1.20"
+      }
+    ]
+  },
+  {
+    "sku": 550540203,
+    "id": "GVD09C3/69709C3",
+    "name": "9W SW TORPEDO CFL 3 PK CAND BASE",
+    "stores": [
+      {
+        "id": 1292,
+        "city": "CHRISTIANSBURG",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 6,
+        "rebate": "1.20"
+      },
+      {
+        "id": 1301,
+        "city": "ROANOKE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 3,
+        "rebate": "0.60"
+      },
+      {
+        "id": 1344,
+        "city": "STAUNTON",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 3,
+        "rebate": "0.60"
+      },
+      {
+        "id": 1524,
+        "city": "CHESTER",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 3,
+        "rebate": "0.60"
+      },
+      {
+        "id": 1631,
+        "city": "HAMPTON",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 3,
+        "rebate": "0.60"
+      },
+      {
+        "id": 1780,
+        "city": "CHARLOTTESVILLE",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 9,
+        "rebate": "1.80"
+      },
+      {
+        "id": 2089,
+        "city": "BRISTOL",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 3,
+        "rebate": "0.60"
+      },
+      {
+        "id": 2705,
+        "city": "FRANKLIN",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 6,
+        "rebate": "1.20"
+      },
+      {
+        "id": 4623,
+        "city": "NEWPORT NEWS",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 3,
+        "rebate": "0.60"
+      },
+      {
+        "id": 5488,
+        "city": "NORFOLK",
+        "state": "VA",
+        "skus": -1,
+        "lamps": -3,
+        "rebate": "-0.60"
+      }
+    ]
+  },
+  {
+    "sku": 550540204,
+    "id": "GVD09C3DL/69709C3DL",
+    "name": "9W DL TORPEDO CFL 3 PK CAND BASE",
+    "stores": [
+      {
+        "id": 1780,
+        "city": "CHARLOTTESVILLE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 3,
+        "rebate": "0.60"
+      },
+      {
+        "id": 3831,
+        "city": "PORTSMOUTH",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 6,
+        "rebate": "1.20"
+      }
+    ]
+  },
+  {
+    "sku": 550540205,
+    "id": "GVD093/697093",
+    "name": "9W SW TORPEDO CFL 3 PK",
+    "stores": [
+      {
+        "id": 1309,
+        "city": "SALEM",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 6,
+        "rebate": "1.20"
+      },
+      {
+        "id": 1336,
+        "city": "MARION",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 3,
+        "rebate": "0.60"
+      },
+      {
+        "id": 1486,
+        "city": "FARMVILLE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 3,
+        "rebate": "0.60"
+      },
+      {
+        "id": 1780,
+        "city": "CHARLOTTESVILLE",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1934,
+        "city": "SOUTH HILL",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 6,
+        "rebate": "1.20"
+      },
+      {
+        "id": 2646,
+        "city": "PEARISBURG",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 6,
+        "rebate": "1.20"
+      },
+      {
+        "id": 3219,
+        "city": "WILLIAMSBURG",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 3,
+        "rebate": "0.60"
+      },
+      {
+        "id": 3831,
+        "city": "PORTSMOUTH",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 3,
+        "rebate": "0.60"
+      },
+      {
+        "id": 5847,
+        "city": "POWHATAN",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 6,
+        "rebate": "1.20"
+      }
+    ]
+  },
+  {
+    "sku": 550540206,
+    "id": "GVD093DL/697093DL",
+    "name": "9W DL TORPEDO CFL 3 PK",
+    "stores": [
+      {
+        "id": 2160,
+        "city": "PETERSBURG",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 3,
+        "rebate": "0.60"
+      },
+      {
+        "id": 2312,
+        "city": "ROANOKE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 3,
+        "rebate": "0.60"
+      },
+      {
+        "id": 2437,
+        "city": "WARRENTON",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 3,
+        "rebate": "0.60"
+      }
+    ]
+  },
+  {
+    "sku": 551640165,
+    "id": "GVS094/689094",
+    "name": "9W SW Spiral CFL 4 PK",
+    "stores": [
+      {
+        "id": 1023,
+        "city": "GALAX",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 1292,
+        "city": "CHRISTIANSBURG",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1301,
+        "city": "ROANOKE",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 1309,
+        "city": "SALEM",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 1335,
+        "city": "LEXINGTON",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 1344,
+        "city": "STAUNTON",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 20,
+        "rebate": "4.00"
+      },
+      {
+        "id": 1350,
+        "city": "LYNCHBURG",
+        "state": "VA",
+        "skus": 6,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 1399,
+        "city": "BEDFORD",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 1406,
+        "city": "WINCHESTER",
+        "state": "VA",
+        "skus": 8,
+        "lamps": 32,
+        "rebate": "6.40"
+      },
+      {
+        "id": 1424,
+        "city": "COLONIAL HEIGHTS",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 1465,
+        "city": "DANVILLE",
+        "state": "VA",
+        "skus": 6,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 1486,
+        "city": "FARMVILLE",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1523,
+        "city": "GLEN ALLEN",
+        "state": "VA",
+        "skus": 8,
+        "lamps": 32,
+        "rebate": "6.40"
+      },
+      {
+        "id": 1524,
+        "city": "CHESTER",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 1525,
+        "city": "MECHANICSVILLE",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1631,
+        "city": "HAMPTON",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 20,
+        "rebate": "4.00"
+      },
+      {
+        "id": 1652,
+        "city": "DUBLIN",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 20,
+        "rebate": "4.00"
+      },
+      {
+        "id": 1682,
+        "city": "CHESAPEAKE",
+        "state": "VA",
+        "skus": 6,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 1687,
+        "city": "SUFFOLK",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1688,
+        "city": "VIRGINIA BEACH",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1726,
+        "city": "HARRISONBURG",
+        "state": "VA",
+        "skus": 10,
+        "lamps": 40,
+        "rebate": "8.00"
+      },
+      {
+        "id": 1730,
+        "city": "TAPPAHANNOCK",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 1759,
+        "city": "GLOUCESTER",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 1763,
+        "city": "BLUEFIELD",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 1773,
+        "city": "NEWPORT NEWS",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 1780,
+        "city": "CHARLOTTESVILLE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 1825,
+        "city": "MANASSAS",
+        "state": "VA",
+        "skus": 6,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 1833,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 1841,
+        "city": "CHESAPEAKE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 1852,
+        "city": "WOODBRIDGE",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 1904,
+        "city": "LEESBURG",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 20,
+        "rebate": "4.00"
+      },
+      {
+        "id": 1934,
+        "city": "SOUTH HILL",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 1969,
+        "city": "MIDLOTHIAN",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 2015,
+        "city": "FAIRFAX",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 2038,
+        "city": "STERLING",
+        "state": "VA",
+        "skus": 7,
+        "lamps": 28,
+        "rebate": "5.60"
+      },
+      {
+        "id": 2089,
+        "city": "BRISTOL",
+        "state": "VA",
+        "skus": 9,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 2136,
+        "city": "CULPEPER",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 2160,
+        "city": "PETERSBURG",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 2194,
+        "city": "ALEXANDRIA",
+        "state": "VA",
+        "skus": 7,
+        "lamps": 28,
+        "rebate": "5.60"
+      },
+      {
+        "id": 2258,
+        "city": "ALEXANDRIA",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 2295,
+        "city": "RICHMOND",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 2312,
+        "city": "ROANOKE",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 20,
+        "rebate": "4.00"
+      },
+      {
+        "id": 2437,
+        "city": "WARRENTON",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 2438,
+        "city": "STAFFORD",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 2520,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 2565,
+        "city": "MADISON HEIGHTS",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 2645,
+        "city": "BLACKSTONE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 2646,
+        "city": "PEARISBURG",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 2647,
+        "city": "WOODSTOCK",
+        "state": "VA",
+        "skus": -5,
+        "lamps": -20,
+        "rebate": "-4.00"
+      },
+      {
+        "id": 2662,
+        "city": "COVINGTON",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 2705,
+        "city": "FRANKLIN",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 2761,
+        "city": "POUNDING MILL",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 2795,
+        "city": "ASHLAND",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 2805,
+        "city": "EMPORIA",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 2807,
+        "city": "HARRISONBURG",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 2821,
+        "city": "RICHMOND",
+        "state": "VA",
+        "skus": 11,
+        "lamps": 44,
+        "rebate": "8.80"
+      },
+      {
+        "id": 3077,
+        "city": "HAYMARKET",
+        "state": "VA",
+        "skus": 9,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 3214,
+        "city": "SUFFOLK",
+        "state": "VA",
+        "skus": 9,
+        "lamps": 36,
+        "rebate": "7.20"
+      },
+      {
+        "id": 3216,
+        "city": "VIRGINIA BEACH",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 3219,
+        "city": "WILLIAMSBURG",
+        "state": "VA",
+        "skus": 7,
+        "lamps": 28,
+        "rebate": "5.60"
+      },
+      {
+        "id": 3243,
+        "city": "ROANOKE",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 20,
+        "rebate": "4.00"
+      },
+      {
+        "id": 3265,
+        "city": "YORKTOWN",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 3270,
+        "city": "WYTHEVILLE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 3303,
+        "city": "GRUNDY",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 3344,
+        "city": "WINCHESTER",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 20,
+        "rebate": "4.00"
+      },
+      {
+        "id": 3480,
+        "city": "LEBANON",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 3573,
+        "city": "MANASSAS",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 3588,
+        "city": "DUMFRIES",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 3768,
+        "city": "ALTAVISTA",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 3770,
+        "city": "STUART",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 3831,
+        "city": "PORTSMOUTH",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 3869,
+        "city": "RICHMOND",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 4258,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 4350,
+        "city": "KILMARNOCK",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 4378,
+        "city": "ONLEY",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 4476,
+        "city": "CHESTERFIELD",
+        "state": "VA",
+        "skus": 10,
+        "lamps": 40,
+        "rebate": "8.00"
+      },
+      {
+        "id": 4514,
+        "city": "WINCHESTER",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 4636,
+        "city": "APPOMATTOX",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 4638,
+        "city": "RUCKERSVILLE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 4682,
+        "city": "GORDONSVILLE",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 20,
+        "rebate": "4.00"
+      },
+      {
+        "id": 4697,
+        "city": "LYNCHBURG",
+        "state": "VA",
+        "skus": 6,
+        "lamps": 24,
+        "rebate": "4.80"
+      },
+      {
+        "id": 5105,
+        "city": "FRONT ROYAL",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 5117,
+        "city": "WAYNESBORO",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 5227,
+        "city": "BURKE",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 5343,
+        "city": "FREDERICKSBURG",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 20,
+        "rebate": "4.00"
+      },
+      {
+        "id": 5488,
+        "city": "NORFOLK",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 5753,
+        "city": "ALEXANDRIA",
+        "state": "VA",
+        "skus": 2,
+        "lamps": 8,
+        "rebate": "1.60"
+      },
+      {
+        "id": 5779,
+        "city": "KING GEORGE",
+        "state": "VA",
+        "skus": 1,
+        "lamps": 4,
+        "rebate": "0.80"
+      },
+      {
+        "id": 5880,
+        "city": "FAIRFAX",
+        "state": "VA",
+        "skus": 4,
+        "lamps": 16,
+        "rebate": "3.20"
+      },
+      {
+        "id": 5936,
+        "city": "VIENNA",
+        "state": "VA",
+        "skus": 3,
+        "lamps": 12,
+        "rebate": "2.40"
+      },
+      {
+        "id": 5969,
+        "city": "CHANTILLY",
+        "state": "VA",
+        "skus": 5,
+        "lamps": 20,
+        "rebate": "4.00"
+      }
+    ]
+  }
+]
