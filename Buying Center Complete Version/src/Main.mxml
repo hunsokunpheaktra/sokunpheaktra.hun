@@ -1,0 +1,1303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   creationComplete="initApp()"
+			   xmlns:mx="library://ns.adobe.com/flex/mx" 
+			   xmlns:buttons="com.anotherflexdev.ui.buttons.*" 
+			   xmlns:diagrammer="com.anotherflexdev.diagrammer.*" xmlns:diagrammer1="diagrammer.*" xmlns:skins="diagrammer.skins.*"
+			   >
+	<fx:Style source="/diagrammer/assets/style/style.css" />
+	<fx:Style>
+		@namespace s "library://ns.adobe.com/flex/spark";
+		@namespace mx "library://ns.adobe.com/flex/mx";
+		@namespace buttons "com.anotherflexdev.ui.buttons.*";
+		@namespace diagrammer "com.anotherflexdev.diagrammer.*";
+		@namespace diagrammer1 "diagrammer.*";
+		.keyrelationshiptitle{
+			font-family:arial;
+			font-size:20;
+			font-weight:bold;
+			font-style:italic; 
+			vertical-align:middle;
+			text-align:center;
+			color:#000080;
+		}
+		
+		.gridSkin{
+			borderSkin : ClassReference("diagrammer.skins.GridSkin");
+		}
+		.emptySkin{
+			borderSkin : ClassReference("diagrammer.skins.EmptySkin");
+		}
+		
+	</fx:Style>
+	<fx:Script>
+		
+		<![CDATA[
+			import com.anotherflexdev.diagrammer.Link;
+			import com.anotherflexdev.diagrammer.LinkShort;
+			import com.salesforce.*;
+			import com.salesforce.objects.*;
+			import com.salesforce.results.*;
+			
+			import diagrammer.KeyPlayer;
+			import diagrammer.QuotationInProcess;
+			import diagrammer.skins.EmptySkin;
+			import diagrammer.skins.GridSkin;
+			
+			import mx.collections.ArrayCollection;
+			import mx.controls.Alert;
+			import mx.controls.Image;
+			import mx.controls.List;
+			import mx.core.UIComponent;
+			import mx.events.CloseEvent;
+			import mx.managers.PopUpManager;
+			
+			import spark.components.BorderContainer;
+			import spark.components.Button;
+			import spark.components.Label;
+			import spark.components.RadioButton;
+			import spark.components.TextInput;
+			import spark.components.TitleWindow;
+			
+			//*****Global Variables*****
+			public var applicationType:String;
+			[Bindable] public var sfdc:Connection = new Connection();
+			[Bindable] public var progressName:String;
+			//*******************************************************
+			
+			//*****Decision Maker analysis application variables*****
+			[Bindable] private var renderAsDecisionMakerAnanlysis:Boolean;
+			private var opId:String;
+			private var lColor:uint;
+			private var nid:int;
+			private var accId:String;
+			private var brokerId:String;
+			private var flagText:Array = [];
+			[Bindable] public var arrInfluencer:ArrayCollection = new ArrayCollection();
+			[Bindable] private var stId:String;
+			[Bindable] public var custom:Array = new Array;
+			[Bindable] public var imageUrl:Object = new Object;
+			[Bindable] public var arrContact:Array = new Array();
+			//*******************************************************
+			
+			//*****Key Player Relationships application variables*****
+			[Bindable] private var renderAsKeyPlayerRelationships:Boolean;
+			private var specifictext:String = "<Specific>";
+			private var stratId:String;
+			//*******************************************************
+			
+			//*****Global Functions*****
+			private function login():void {
+				var lr:LoginRequest = new LoginRequest();
+				lr.server_url = this.parameters.server_url;
+				lr.session_id = this.parameters.session_id;
+				applicationType = this.parameters.applicationType;
+				renderAsDecisionMakerAnanlysis = applicationType == "DecisionMakerAnanlysis";
+				renderAsKeyPlayerRelationships = applicationType == "KeyPlayerRelationships";
+				
+				//LOCAL TEST_________
+				//renderAsDecisionMakerAnanlysis = true;
+				//renderAsKeyPlayerRelationships = true;
+				if(renderAsDecisionMakerAnanlysis){
+					stId = this.parameters.stId;
+					opId = this.parameters.opId;
+					accId = this.parameters.accId;
+					brokerId = this.parameters.brokerId;
+					custom = this.parameters.helpText.split('~',9);
+					flagText = this.parameters.flagText.split('~',19); 
+				}
+				if(renderAsKeyPlayerRelationships){
+					stratId = this.parameters.stratId;
+				}
+				lr.callback = new AsyncResponder(loginSuccess, loginFault); 
+				sfdc.login(lr);
+			}
+			
+			private function loginFault(fault:Object):void{
+				Alert.show("Could not log into SFDC: "+fault.fault.faultString,"Login Error");
+			}
+			
+			private function loginSuccess(result:Object):void{
+				if(renderAsDecisionMakerAnanlysis){
+					initInfluencer();
+					initContacts();
+				}
+				if(renderAsKeyPlayerRelationships){
+					loadKeyPlayerRelationShipDiagram();
+				}
+			}
+			
+			// (Loader) Application initialization
+			public function initApp():void{
+				progressName = "Loading"
+				loadPanel.visible = false;
+				Security.allowDomain( "*" );
+				Security.loadPolicyFile( "/crossdomain.xml" );
+				var request:URLRequest = new URLRequest( "/crossdomain.xml" );
+				var loader:URLLoader = new URLLoader();
+				loader.load( request ); 
+				login();
+			}
+			//*******************************************************
+			
+			
+			//*****Key Player Relationships application methods*****
+			//load key realtion diagram 
+			private var linkKeyLoaders:Array = [];
+			public function loadKeyPlayerRelationShipDiagram():void{
+				progressName = "Loading";
+				loadPanel.visible = true;
+				sfdc.query("Select Id,Role__c, Position_Y__c,Specific_Text__c, Position_X__c, Ex_UID__c, " +
+					"Contact_Name__c , ColorCode__c From Key_Player_Relationship__c " +
+					"Where Strategic_Account_Plan__c = '" + stratId + "'",
+					new AsyncResponder(
+						function (qr:QueryResult):void {
+							if (qr.size > 0) {
+								for (var j:int=0;j<qr.size;j++) {
+									
+									var node:KeyPlayer = new KeyPlayer();
+									node.x = qr.records[j].Position_X__c;
+									node.y = qr.records[j].Position_Y__c;
+									node.uid = valQuery(qr.records[j].Ex_UID__c);
+									node.name = valQuery(qr.records[j].Ex_UID__c);
+									specifictext = valQuery(qr.records[j].Specific_Text__c);
+									diagram2.addChild(node);
+									node.lblName.setStyle("backgroundColor",qr.records[j].ColorCode__c);
+									node.lblPosition.setStyle("backgroundColor",qr.records[j].ColorCode__c);
+									node.myBorder.setStyle("backgroundColor",qr.records[j].ColorCode__c);
+									node.lblName.text = qr.records[j].Contact_Name__c;
+									node.lblPosition.text = qr.records[j].Role__c;
+									node.txtNam.text = qr.records[j].Contact_Name__c;
+									node.txtPos.text = qr.records[j].Role__c;
+									node.lblspec.text = specifictext;
+									node.item.textspec = specifictext;
+									
+									setSurveyTableValues(qr.records[j].Id,node);
+									
+								}
+								//create all links for nodes
+								setAllLinks();
+								
+								loadPanel.visible = false;
+							}else{
+								loadPanel.visible = false;
+							}
+						},sfdcFailure
+					)
+				);  	
+			}
+			
+			private function setAllLinks():void{
+				
+				sfdc.query("Select To_Node__r.Ex_UID__c, Strategic_Account_Plan__c, From_Node__r.Ex_UID__c From Key_Relation_Link__c " +
+					"where Strategic_Account_Plan__c = '" + stratId + "'",
+					new AsyncResponder(function (qr:QueryResult):void {
+						
+						for (var j:int=0;j<qr.size;j++) {
+							
+							var fromnodeUID:String = qr.records[j].From_Node__r.Ex_UID__c;
+							var tonodeUID:String = qr.records[j].To_Node__r.Ex_UID__c;
+							var link:LinkShort =  new LinkShort();
+							link.fromNode = diagram2.getChildByName(fromnodeUID);
+							(diagram2.getChildByName(fromnodeUID) as KeyPlayer).addLeavingLink(link);
+							link.toNode = diagram2.getChildByName(tonodeUID);
+							(diagram2.getChildByName(tonodeUID)as KeyPlayer).addArrivingLink(link);
+							diagram2.addChild(link);
+							diagram2.setChildIndex(link,j);
+						}
+						
+					},sfdcFailure)
+				);
+				
+			}
+			
+			private function setSurveyTableValues(keyId:String,node:KeyPlayer):void{
+				
+				sfdc.query("Select Type__c, Terms_and_Conditions__c, Strategy_Alignment__c, Specific__c, " +
+					"Service__c, Relationship__c, Offering__c, Claims__c, Business_Understanding__c " +
+					"From Survey_Result__c where Key_Player_Relationship__c = '" + keyId + "'",
+					new AsyncResponder(function (qr:QueryResult):void {
+						
+						for (var j:int=0;j<qr.size;j++) {
+							
+							if(qr.records[j].Type__c == "Importance"){
+								
+								node.impo_busi.selectedItem = getPicklistVal(String(qr.records[j].Business_Understanding__c));
+								node.impo_clai.selectedItem = getPicklistVal(String(qr.records[j].Claims__c));
+								node.impo_offe.selectedItem = getPicklistVal(String(qr.records[j].Offering__c));
+								node.impo_rela.selectedItem = getPicklistVal(String(qr.records[j].Relationship__c));
+								node.impo_serv.selectedItem = getPicklistVal(String(qr.records[j].Service__c));
+								node.impo_spec.selectedItem = getPicklistVal(String(qr.records[j].Specific__c));
+								node.impo_stra.selectedItem = getPicklistVal(String(qr.records[j].Strategy_Alignment__c));
+								node.impo_term.selectedItem = getPicklistVal(String(qr.records[j].Terms_and_Conditions__c));
+								
+							}else if(qr.records[j].Type__c == "AGCS"){
+								node.agcs_busi.selectedItem = getPicklistVal(String(qr.records[j].Business_Understanding__c));
+								node.agcs_clai.selectedItem = getPicklistVal(String(qr.records[j].Claims__c));
+								node.agcs_offe.selectedItem = getPicklistVal(String(qr.records[j].Offering__c));
+								node.agcs_rela.selectedItem = getPicklistVal(String(qr.records[j].Relationship__c));
+								node.agcs_serv.selectedItem = getPicklistVal(String(qr.records[j].Service__c));
+								node.agcs_spec.selectedItem = getPicklistVal(String(qr.records[j].Specific__c));
+								node.agcs_stra.selectedItem = getPicklistVal(String(qr.records[j].Strategy_Alignment__c));
+								node.agcs_term.selectedItem = getPicklistVal(String(qr.records[j].Terms_and_Conditions__c));
+								
+							}else{
+								node.best_busi.selectedItem = getPicklistVal(String(qr.records[j].Business_Understanding__c));
+								node.best_clai.selectedItem = getPicklistVal(String(qr.records[j].Claims__c));
+								node.best_offe.selectedItem = getPicklistVal(String(qr.records[j].Offering__c));
+								node.best_rela.selectedItem = getPicklistVal(String(qr.records[j].Relationship__c));
+								node.best_serv.selectedItem = getPicklistVal(String(qr.records[j].Service__c));
+								node.best_spec.selectedItem = getPicklistVal(String(qr.records[j].Specific__c));
+								node.best_stra.selectedItem = getPicklistVal(String(qr.records[j].Strategy_Alignment__c));
+								node.best_term.selectedItem = getPicklistVal(String(qr.records[j].Terms_and_Conditions__c));
+							}
+							
+						}
+						
+					},sfdcFailure)
+				);
+				
+			}
+			
+			private function setKeyPlayerComponentVisable(visable:Boolean):void{
+				
+				
+				for each(var diaChild:Object  in  diagram2.getChildren()){
+					
+					if(isKeyPlayerNode(diaChild)){
+						
+						var node:KeyPlayer = KeyPlayer(diaChild);
+						node.btnGreen.visible = visable;
+						node.btnGrey.visible = visable;
+						node.btnRed.visible = visable;
+						node.btnWhite.visible = visable;
+						node.btnYellow.visible = visable;
+						
+						node.hovtable.visible = visable;
+					}
+					
+				}
+				
+				if(visable) diagram2.styleName = "gridSkin";
+				else diagram2.styleName = "emptySkin";
+				
+				
+			}
+			
+			//save key relationship diagram
+			private function saveKeyPlayerRelationShip():void{
+				
+				progressName = "Saving";
+				loadPanel.visible = true;
+				var nodeDatas : Array = [];
+				var linkDatas : Array = [];
+				
+				for each(var diaChild:Object  in  diagram2.getChildren()){
+					
+					if(diaChild.toString().indexOf('LinkContextPanel') != -1) continue;
+					
+					if(isKeyPlayerNode(diaChild)){
+						
+						var node:KeyPlayer = KeyPlayer(diaChild);
+						//node information
+						var nodeData:String = new String(); 
+						nodeData += valQuery(node.lblName.text) + dseparator;	
+						nodeData += valQuery(node.lblPosition.text) + dseparator;
+						nodeData += node.x + dseparator + node.y + dseparator + node.lblName.getStyle("backgroundColor")+ dseparator;
+						nodeData += formatKeyPlayerUID(node.uid) + dseparator;
+						
+						//survey table type importance
+						nodeData += getPicklistVal(node.impo_spec.selectedItem) + dseparator;
+						nodeData += getPicklistVal(node.impo_rela.selectedItem) + dseparator;
+						nodeData += getPicklistVal(node.impo_offe.selectedItem) + dseparator;
+						nodeData += getPicklistVal(node.impo_busi.selectedItem) + dseparator;
+						nodeData += getPicklistVal(node.impo_serv.selectedItem) + dseparator;
+						nodeData += getPicklistVal(node.impo_term.selectedItem) + dseparator;
+						nodeData += getPicklistVal(node.impo_clai.selectedItem) + dseparator;
+						nodeData += getPicklistVal(node.impo_stra.selectedItem) + dseparator;
+						
+						//survey table type AGCS
+						nodeData += getPicklistVal(node.agcs_spec.selectedItem) + dseparator;
+						nodeData += getPicklistVal(node.agcs_rela.selectedItem) + dseparator;
+						nodeData += getPicklistVal(node.agcs_offe.selectedItem) + dseparator;
+						nodeData += getPicklistVal(node.agcs_busi.selectedItem) + dseparator;
+						nodeData += getPicklistVal(node.agcs_serv.selectedItem) + dseparator;
+						nodeData += getPicklistVal(node.agcs_term.selectedItem) + dseparator;
+						nodeData += getPicklistVal(node.agcs_clai.selectedItem) + dseparator;
+						nodeData += getPicklistVal(node.agcs_stra.selectedItem) + dseparator;
+						
+						//survey table type best-in-class
+						nodeData += getPicklistVal(node.best_spec.selectedItem) + dseparator;
+						nodeData += getPicklistVal(node.best_rela.selectedItem) + dseparator;
+						nodeData += getPicklistVal(node.best_offe.selectedItem) + dseparator;
+						nodeData += getPicklistVal(node.best_busi.selectedItem) + dseparator;
+						nodeData += getPicklistVal(node.best_serv.selectedItem) + dseparator;
+						nodeData += getPicklistVal(node.best_term.selectedItem) + dseparator;
+						nodeData += getPicklistVal(node.best_clai.selectedItem) + dseparator;
+						nodeData += getPicklistVal(node.best_stra.selectedItem) + dseparator;
+						
+						nodeData += specifictext;
+						
+						nodeDatas.push(nodeData);
+						
+					}else if(isKeyPlayerLink(diaChild)){
+						var link:LinkShort =  LinkShort(diaChild);
+						if(link.fromNode == null || link.toNode == null) continue;
+						if(link.fromNode == link.toNode){
+							diagram2.removeChild(link);
+							continue;
+						}
+						var fromNode:KeyPlayer = KeyPlayer(link.fromNode);
+						var toNode:KeyPlayer = KeyPlayer(link.toNode);
+						var fromNodeUid:String = formatKeyPlayerUID(fromNode.uid);
+						var toNodeUid:String = formatKeyPlayerUID(toNode.uid);
+						var linkdata:String = fromNodeUid + dseparator + toNodeUid;
+						linkDatas.push(linkdata);
+						
+					}		
+				}
+				var firstParam:Parameter = new Parameter ("nodedata", nodeDatas);
+				var secondParam:Parameter = new Parameter ("linkdata", linkDatas);
+				var thirdParam:Parameter = new Parameter ("dSeparator", dseparator);
+				var fouthParam:Parameter = new Parameter ("stratId", stratId);
+				var params:Array = [firstParam, secondParam, thirdParam, fouthParam]; 
+				
+				if(nodeDatas.length == 0 ){
+					loadPanel.visible = false;
+					sfdc.execute("StratAccountController", "saveKeyRealtionDiagramNoNodes", params,new AsyncResponder(
+						function(qr:Object):void
+						{
+							
+							//Alert.show("All items removed");
+						},sfdcFailure));
+				}else if(linkDatas.length == 0){
+					sfdc.execute("StratAccountController", "saveKeyRealtionDiagramNoLink", params,new AsyncResponder(
+						function(qr:Object):void
+						{
+							
+							//Alert.show("All items saved successfully");
+						},sfdcFailure));
+				}else{
+					sfdc.execute("StratAccountController", "saveKeyRealtionDiagramWithLink", params,new AsyncResponder(
+						function(qr:Object):void
+						{
+							
+							//Alert.show("All items saved successfully");
+						},sfdcFailure));
+				}  
+				
+				////////////// save attachment to stratergy account plan /////////////////
+				
+					sfdc.query("Select Id,ParentId from Attachment where ParentId = '" + stratId + "'",
+						new AsyncResponder(function (qr:QueryResult):void {
+							
+							setKeyPlayerComponentVisable(false);
+							diagram2.exportToPng();
+							setKeyPlayerComponentVisable(true);
+							
+							if(qr.size > 0) {
+								var firstParam:Parameter = new Parameter ("stratAccId", stratId);
+								var pa:Array = [firstParam];
+								sfdc.execute("StratAccountController", "deleteAttachment", pa,new AsyncResponder(
+									function(qr:Object):void
+									{
+										loadPanel.visible = false;	
+									},sfdcFailure));
+							}
+							var attachment:SObject = new SObject();
+							attachment.type = "Attachment";
+							attachment.Body = diagram2.str;
+							attachment.ParentId = stratId;
+							attachment.Name = 'AccountRoadmap.png';
+							sfdc.create([attachment], new AsyncResponder(
+								function(q:Object):void{
+									loadPanel.visible = false;	
+								},sfdcFailure), false);
+						},sfdcFailure));
+					
+					
+					
+				
+
+				
+			}
+			
+			private function getPicklistVal(val:String):String{
+				if( val == "-" ) return "0";
+				if( val == "0" ) return "-";
+				return val;
+			}
+			
+			private function addKeyPlayer(event:MouseEvent):void{
+				var node:KeyPlayer = new KeyPlayer;
+				node.x = 100;
+				node.y = 100;
+				node.focusEnabled = true;
+				node.setFocus();
+				node.sfdc = sfdc;
+				node.item = {textBox1:''};
+				node.item.textspec = specifictext;
+				diagram2.addChild(node);
+			}
+			
+			private function changeAllSepecficText():void{
+				for each(var diaChild:Object in diagram2.getChildren()){
+					if(diaChild.name.indexOf('KeyPlayer') == -1) continue;
+					var node:KeyPlayer = KeyPlayer(diaChild);
+					node.item.textspec = specifictext;
+					node.lblspec.text = specifictext;
+				}
+			} 
+			
+			protected function zoomout_clickHandler(event:MouseEvent):void{
+				if(diagram2.scaleX > 0.7 && diagram2.scaleY > 0.7){
+					diagram2.scaleX = diagram2.scaleX - 0.1;
+					diagram2.scaleY = diagram2.scaleY - 0.1;
+				}
+			}
+			
+			protected function zoomin_clickHandler(event:MouseEvent):void{
+				if(diagram2.scaleX < 1.5 && diagram2.scaleY < 1.5){
+					diagram2.scaleX = diagram2.scaleX + 0.1;
+					diagram2.scaleY = diagram2.scaleY + 0.1;
+				}
+			}
+			
+			protected function specific_clickHandler(event:MouseEvent):void{
+				var t:TitleWindow = new TitleWindow();
+				t.title = 'Edit Specific';
+				t.width = 190;
+				t.height = 110;
+				
+				var t1:TextInput = new TextInput();
+				t1.text = specifictext; 
+				t1.x = 20;
+				t1.y = 10;
+				t1.width = 150;
+				t1.height = 22;
+				t1.tabEnabled = true;
+				t1.tabIndex = 1;
+				
+				var b1:Button = new Button();
+				b1.label = 'OK';
+				b1.x = 20;
+				b1.y = 40;
+				b1.width = 70;
+				b1.tabEnabled = true;
+				b1.tabIndex = 2;
+				
+				var b2:Button = new Button();
+				b2.label = 'Cancel';
+				b2.x = 100;
+				b2.y = 40;
+				b2.width = 70;
+				b2.tabEnabled = true;
+				b2.tabIndex = 3;
+				
+				t.addEventListener(CloseEvent.CLOSE,function():void{PopUpManager.removePopUp(t);});
+				b1.addEventListener(MouseEvent.CLICK,
+					function(event:MouseEvent):void{
+						specifictext = t1.text;
+						changeAllSepecficText();
+						PopUpManager.removePopUp(t);
+					}
+				);
+				b2.addEventListener(MouseEvent.CLICK,function(event:MouseEvent):void{PopUpManager.removePopUp(t);});
+				t.addElement(t1);	
+				t.addElement(b1);
+				t.addElement(b2);
+				t1.focusEnabled = true;
+				t1.setFocus();
+				PopUpManager.addPopUp(t,this,true);
+				PopUpManager.centerPopUp(t);
+			}
+			
+			private function formatKeyPlayerUID(uidentifier:String) : String{
+				var uid : String = uidentifier.split(".").pop();
+				if(uid.indexOf(stratId)== -1) uid = stratId +  uid;
+				return uid;
+			}
+			
+			private function isKeyPlayerLink(node:Object):Boolean{
+				return (node.toString().indexOf('LinkShort') != -1);
+			}
+			
+			private function isKeyPlayerNode(node:Object):Boolean{
+				return (node.toString().indexOf('KeyPlayer') != -1);
+			}
+			
+			//*******************************************************
+			
+			//*****Decision Maker analysis application methods*****
+			private function initContacts():void{
+				sfdc.query("Select Id,Name From Contact Where AccountId = '" + accId + "'",
+					new AsyncResponder(
+						function (qr:QueryResult):void {
+							if (qr.size > 0) {
+								for(var j:int=0;j<qr.size;j++) {
+									var obj:Object = new Object();
+									obj.id = qr.records[j].Id;
+									obj.label = qr.records[j].Name;
+									arrContact.push(obj);
+								}
+							}
+						},sfdcFailure
+					)
+				);
+				if(brokerId != '' && brokerId != null){
+					sfdc.query("Select Id,Name From Contact Where AccountId = '" + brokerId + "'",
+						new AsyncResponder(
+							function (qr:QueryResult):void {
+								if (qr.size > 0) {
+									for(var j:int=0;j<qr.size;j++) {
+										var obj:Object = new Object();
+										obj.id = qr.records[j].Id;
+										obj.label = qr.records[j].Name;
+										arrContact.push(obj);
+									}
+								}
+							},sfdcFailure
+						)
+					);
+				}
+			}
+			
+			private function initInfluencer():void{
+				sfdc.query("Select o.User.FirstName, o.User.LastName, o.UserId, o.Id From OpportunityTeamMember o Where OpportunityId = '" + opId + "'",
+					new AsyncResponder(
+						function (qr:QueryResult):void {
+							if (qr.size > 0) {
+								for (var j:int=0;j<qr.size;j++) {
+									var lname : String = qr.records[j].User.LastName;
+									var fname : String = qr.records[j].User.FirstName;
+									var object:Object = new Object();
+									object.label = fname + ' ' + lname;
+									object.data = fname.charAt(0) + '' + lname.charAt(0);
+									object.name = qr.records[j].UserId;
+									arrInfluencer.addItem(object);
+								}
+							}
+							loadSavedDiagram();
+						},sfdcFailure
+					)
+				);  
+			}
+			
+			private function sfdcFailure(fault:Object):void {
+				loadPanel.visible = false;
+				Alert.show(fault.faultstring);
+			} 
+			
+			private function createPopupWindow(arrData:Array):void{
+				var t:TitleWindow = new TitleWindow();
+				t.title = 'Selection of Contacts';
+				t.width = 353;
+				t.height = 270;
+				
+				var l:Label = new Label();
+				l.text = 'Select one or more contact to create committee';
+				l.x = 10;
+				l.y = 15;
+				
+				var lst:List = new List();
+				lst.allowMultipleSelection = true;
+				lst.x = 10;
+				lst.y = 35;
+				lst.width = 330;
+				lst.height = 160;
+				lst.dataProvider = arrData;
+				
+				var b1:Button = new Button();
+				b1.label = 'OK';
+				b1.x = 190;
+				b1.y = 205;
+				
+				var b2:Button = new Button();
+				b2.label = 'Cancel';
+				b2.x = 270;
+				b2.y = 205;
+				
+				t.addEventListener(CloseEvent.CLOSE,function():void{PopUpManager.removePopUp(t);});
+				
+				b1.addEventListener(MouseEvent.CLICK,
+					function():void{
+						if(lst.selectedItems.length > 0){
+							for each(var obj:Object in lst.selectedItems){
+								var n:QuotationInProcess = QuotationInProcess(diagram.getChildAt(int(obj.index)));
+								n.color = 0xf63232;
+								PopUpManager.removePopUp(t);
+							}
+						}
+					}
+				);
+				
+				b2.addEventListener(MouseEvent.CLICK,function(event:MouseEvent):void{PopUpManager.removePopUp(t);});
+				
+				t.addElement(l);
+				t.addElement(lst);
+				t.addElement(b1);
+				t.addElement(b2);
+				
+				PopUpManager.addPopUp(t,this,true);
+				PopUpManager.centerPopUp(t);
+			}
+			
+			private function addNewContact(l:List):void{
+				
+				var t:TitleWindow = new TitleWindow();
+				t.title = 'Add Contact';
+				t.width = 266;
+				t.height = 156;
+				
+				var r1:RadioButton = new RadioButton();
+				r1.label = 'Client';
+				r1.selected = true;
+				r1.x = 10;
+				r1.y = 5;
+				r1.tabEnabled = true;
+				r1.tabIndex = 1;
+				
+				var r2:RadioButton = new RadioButton();
+				r2.label = 'Broker';
+				r2.x = 101;
+				r2.y = 5;
+				r2.tabEnabled = true;
+				r2.tabIndex = 2;
+				if(brokerId == '' || brokerId == null)r2.enabled = false;
+				else r2.enabled = true;
+				
+				var l1:Label = new Label();
+				l1.x = 10;
+				l1.y = 33;
+				l1.text = 'First Name ';
+				
+				lblWarn1.visible = true;
+				lblWarn1.x = 96;
+				lblWarn1.y = 28;
+				lblWarn1.height = 22;
+				lblWarn1.width = 3;
+				
+				var t1:TextInput = new TextInput();
+				t1.x = 101;
+				t1.y = 28;
+				t1.width = 150;
+				t1.height = 22;
+				t1.tabEnabled = true;
+				t1.tabIndex = 3;
+				
+				var l2:Label = new Label();
+				l2.x = 10;
+				l2.y = 60;
+				l2.text = 'Last Name ';
+				
+				lblWarn2.visible = true;
+				lblWarn2.x = 96;
+				lblWarn2.y = 56;
+				lblWarn2.height = 22;
+				lblWarn2.width = 3;
+				
+				var t2:TextInput = new TextInput();
+				t2.x = 101;
+				t2.y = 56;
+				t2.width = 150;
+				t2.height = 22;
+				t2.tabEnabled = true;
+				t2.tabIndex = 4;
+				
+				var b1:Button = new Button();
+				b1.label = 'OK';
+				b1.x = 10;
+				b1.width = 114;
+				b1.y = 86;
+				r1.tabEnabled = true;
+				r2.tabIndex = 5;
+				
+				var b2:Button = new Button();
+				b2.label = 'Cancel';
+				b2.x = 137;
+				b2.width = 114;
+				b2.y = 86;
+				b1.tabEnabled = true;
+				b2.tabIndex = 6;
+				
+				t.addEventListener(CloseEvent.CLOSE,function():void{PopUpManager.removePopUp(t);});
+				b1.addEventListener(MouseEvent.CLICK,
+					function(event:MouseEvent):void{
+						if(t1.text != '' && t2.text != ''){
+							var aId:String = new String();
+							if(r1.selected)aId = accId;
+							if(r2.selected)aId = brokerId;
+							addContact(l,t1.text,t2.text,aId);
+							PopUpManager.removePopUp(t);
+						}
+					}
+				);
+				b2.addEventListener(MouseEvent.CLICK,function(event:MouseEvent):void{PopUpManager.removePopUp(t);});
+				
+				t.addElement(r1);
+				t.addElement(r2);
+				t.addElement(l1);
+				t.addElement(lblWarn1);
+				t.addElement(t1);
+				t.addElement(l2);
+				t.addElement(lblWarn2);
+				t.addElement(t2);		
+				t.addElement(b1);
+				t.addElement(b2);
+				
+				t1.focusEnabled = true;
+				t1.setFocus();
+				PopUpManager.addPopUp(t,this,true);
+				PopUpManager.centerPopUp(t);
+			} 
+			
+			private function addContact(li:List,fn:String,ln:String,aId:String):void{
+				var firstParam:Parameter = new Parameter ("accId", aId);
+				var secondParam:Parameter = new Parameter ("fName", fn);
+				var thirdParam:Parameter = new Parameter ("lName", ln);
+				var params:Array = [firstParam, secondParam, thirdParam];  
+				
+				sfdc.execute("SubmissionsPageController", "insertContact", params,new AsyncResponder(
+					function(qr:Object):void
+					{
+						loadPanel.visible = false;
+					},sfdcFailure));  
+				
+				var obj:Object = new Object();
+				obj.label = fn + ' ' + ln;
+				arrContact.push(obj);
+				li.dataProvider = arrContact;
+			}
+			
+			private function addNode(event:MouseEvent):void{
+				var t:TitleWindow = new TitleWindow();
+				t.title = 'Selection of Contacts';
+				t.width = 371;
+				t.height = 270;
+				
+				var l:Label = new Label();
+				l.text = 'Select one or more contact to add as node contact';
+				l.x = 10;
+				l.y = 15;
+				
+				var lst:List = new List();
+				lst.allowMultipleSelection = true;
+				lst.x = 10;
+				lst.y = 35;
+				lst.width = 348;
+				lst.height = 160;
+				lst.dataProvider = arrContact;
+				
+				var b1:Button = new Button();
+				b1.label = 'OK';
+				b1.x = 10;
+				b1.y = 205;
+				
+				var b3:Button = new Button();
+				b3.label = 'Create Contact';
+				b3.x = 85;
+				b3.y = 205;
+				
+				var b4:Button = new Button();
+				b4.label = 'Blank Post-it';
+				b4.x = 193;
+				b4.y = 205;
+				
+				var b2:Button = new Button();
+				b2.label = 'Cancel';
+				b2.x = 288;
+				b2.y = 205;
+				
+				if(accId == '' && brokerId == '') b3.enabled = false;
+				else b3.enabled = true;
+				
+				t.addEventListener(CloseEvent.CLOSE,function():void{PopUpManager.removePopUp(t);});
+				
+				b1.addEventListener(MouseEvent.CLICK,function(event:MouseEvent):void{
+					for each(var obj:Object in lst.selectedItems){
+						var node:QuotationInProcess = new QuotationInProcess;
+						node.x = 100;
+						node.y = 100;
+						node.focusEnabled = true;
+						node.setFocus();
+						
+						node.helpText1 = String(custom[0]);
+						node.helpText2 = String(custom[1]);
+						node.helpText3 = String(custom[2]);
+						node.helpText4 = String(custom[3]);
+						node.helpText5 = String(custom[4]);
+						node.helpText6 = String(custom[5]);
+						node.helpText7 = String(custom[6]);
+						node.helpText8 = String(custom[7]);
+						node.helpText9 = String(custom[8]);
+						
+						node.flagText1 = String(flagText[0]);
+						node.flagText2 = String(flagText[1]);
+						node.flagText3 = String(flagText[2]);
+						node.flagText4 = String(flagText[3]);
+						node.flagText5 = String(flagText[4]);
+						
+						node.FLAG_043_T = String(flagText[5]);
+						node.FLAG_044_E = String(flagText[6]);
+						node.FLAG_045_T = String(flagText[7]);
+						node.FLAG_046_E = String(flagText[8]);
+						node.FLAG_047_T = String(flagText[9]);
+						node.FLAG_048_E = String(flagText[10]);
+						node.FLAG_059_T = String(flagText[11]);
+						node.FLAG_060_E = String(flagText[12]);
+						node.FLAG_061_T = String(flagText[13]);
+						node.FLAG_062_E = String(flagText[14]);
+						node.FLAG_063_T = String(flagText[15]);
+						node.FLAG_064_E = String(flagText[16]);
+						node.FLAG_037_T = String(flagText[17]);
+						node.FLAG_038_E = String(flagText[18]);
+						
+						node.item = {textBox1:obj.label};
+						node.mySalesTeam  = arrInfluencer.toArray();
+						diagram.addChild(node);
+					}
+					PopUpManager.removePopUp(t);
+				});
+				b2.addEventListener(MouseEvent.CLICK,function(event:MouseEvent):void{PopUpManager.removePopUp(t);});
+				b3.addEventListener(MouseEvent.CLICK,function(event:MouseEvent):void{
+					addNewContact(lst);
+				});
+				b4.addEventListener(MouseEvent.CLICK,function(event:MouseEvent):void{
+					var node:QuotationInProcess = new QuotationInProcess;
+					node.x = 100;
+					node.y = 100;
+					node.focusEnabled = true;
+					node.setFocus();
+					
+					node.helpText1 = String(custom[0]);
+					node.helpText2 = String(custom[1]);
+					node.helpText3 = String(custom[2]);
+					node.helpText4 = String(custom[3]);
+					node.helpText5 = String(custom[4]);
+					node.helpText6 = String(custom[5]);
+					node.helpText7 = String(custom[6]);
+					node.helpText8 = String(custom[7]);
+					node.helpText9 = String(custom[8]);
+					
+					node.flagText1 = String(flagText[0]);
+					node.flagText2 = String(flagText[1]);
+					node.flagText3 = String(flagText[2]);
+					node.flagText4 = String(flagText[3]);
+					node.flagText5 = String(flagText[4]);
+					
+					node.FLAG_043_T = String(flagText[5]);
+					node.FLAG_044_E = String(flagText[6]);
+					node.FLAG_045_T = String(flagText[7]);
+					node.FLAG_046_E = String(flagText[8]);
+					node.FLAG_047_T = String(flagText[9]);
+					node.FLAG_048_E = String(flagText[10]);
+					node.FLAG_059_T = String(flagText[11]);
+					node.FLAG_060_E = String(flagText[12]);
+					node.FLAG_061_T = String(flagText[13]);
+					node.FLAG_062_E = String(flagText[14]);
+					node.FLAG_063_T = String(flagText[15]);
+					node.FLAG_064_E = String(flagText[16]);
+					node.FLAG_037_T = String(flagText[17]);
+					node.FLAG_038_E = String(flagText[18]);
+					
+					node.sfdc = sfdc;
+					node.accId = accId;
+					node.brokerId = brokerId;
+					node.arrContact = arrContact; 
+					node.item = {textBox1:''};
+					node.mySalesTeam  = arrInfluencer.toArray();
+					
+					diagram.addChild(node);
+					PopUpManager.removePopUp(t);
+					
+				});
+				t.addElement(l);
+				t.addElement(lst);
+				t.addElement(b1);
+				t.addElement(b2);
+				t.addElement(b3);
+				t.addElement(b4);
+				PopUpManager.addPopUp(t,this,true);
+				PopUpManager.centerPopUp(t);
+			}
+			
+			protected function image1_clickHandler(event:MouseEvent):void{
+				if(diagram.scaleX > 0.7 && diagram.scaleY > 0.7){
+					diagram.scaleX = diagram.scaleX - 0.1;
+					diagram.scaleY = diagram.scaleY - 0.1;
+				}
+			}
+			
+			protected function image2_clickHandler(event:MouseEvent):void{
+				if(diagram.scaleX < 1.5 && diagram.scaleY < 1.5){
+					diagram.scaleX = diagram.scaleX + 0.1;
+					diagram.scaleY = diagram.scaleY + 0.1;
+				}
+			}
+			
+			[Bindable] private var influencerseparator:String = "$";
+			[Bindable] private var dseparator:String = "#";
+			private var linkLoaders:Array = [];
+			public function loadSavedDiagram():void{
+				progressName = "Loading";
+				loadPanel.visible = true;
+				sfdc.query("Select First_Name__c, Last_Name__c, Position__c, Type_of_Buyer__c, Degree_of_Influence__c, " +
+					"Urgency__c, Opinion__c, Business_Goals__c, Personal_Goals__c, Decision_Criteria__c, Position_X__c, " +
+					"Position_Y__c, BorderColor__c, Position_Symbol__c, Type_of_Buyer_Symbol__c, Degree_of_Influence_Symbol__c, " +
+					"Urgency_Symbol__c, Opinion_Symbol__c, Business_Goals_Symbol__c, Personal_Goals_Symbol__c, Decision_Criteria_Symbol__c, " +
+					"Reports_To__c, Does_Not_Get_Along_With__c, Gets_Along_With__c, Ex_UID__c,  " +
+					"Internal_Contact1__c, Internal_Contact1__r.Users_First_Name__c, Internal_Contact1__r.LastName__c, Internal_Contact1__r.User__c, " +
+					"Internal_Contact2__c, Internal_Contact2__r.Users_First_Name__c, Internal_Contact2__r.LastName__c, Internal_Contact2__r.User__c, " +
+					"Reports_To__r.Ex_UID__c, Does_Not_Get_Along_With__r.Ex_UID__c,Gets_Along_With__r.Ex_UID__c " +
+					"From Buying_Center__c o Where Sales_Transformation__c = '" + stId + "'",
+					new AsyncResponder(
+						function (qr:QueryResult):void {
+							if (qr.size > 0) {
+								for (var j:int=0;j<qr.size;j++) {
+									var node:QuotationInProcess = new QuotationInProcess();
+									node.helpText1 = String(custom[0]);
+									node.helpText2 = String(custom[1]);
+									node.helpText3 = String(custom[2]);
+									node.helpText4 = String(custom[3]);
+									node.helpText5 = String(custom[4]);
+									node.helpText6 = String(custom[5]);
+									node.helpText7 = String(custom[6]);
+									node.helpText8 = String(custom[7]);
+									node.helpText9 = String(custom[8]);
+									
+									node.flagText1 = String(flagText[0]);
+									node.flagText2 = String(flagText[1]);
+									node.flagText3 = String(flagText[2]);
+									node.flagText4 = String(flagText[3]);
+									node.flagText5 = String(flagText[4]);
+									
+									node.FLAG_043_T = String(flagText[5]);
+									node.FLAG_044_E = String(flagText[6]);
+									node.FLAG_045_T = String(flagText[7]);
+									node.FLAG_046_E = String(flagText[8]);
+									node.FLAG_047_T = String(flagText[9]);
+									node.FLAG_048_E = String(flagText[10]);
+									node.FLAG_059_T = String(flagText[11]);
+									node.FLAG_060_E = String(flagText[12]);
+									node.FLAG_061_T = String(flagText[13]);
+									node.FLAG_062_E = String(flagText[14]);
+									node.FLAG_063_T = String(flagText[15]);
+									node.FLAG_064_E = String(flagText[16]);
+									node.FLAG_037_T = String(flagText[17]);
+									node.FLAG_038_E = String(flagText[18]);
+									
+									node.x = qr.records[j].Position_X__c;
+									node.y = qr.records[j].Position_Y__c;
+									node.color =  qr.records[j].BorderColor__c;
+									node.uid = qr.records[j].Ex_UID__c;
+									node.name = qr.records[j].Ex_UID__c;
+									diagram.addChild(node);
+									node.focusEnabled = true;
+									node.setFocus();
+									node.lbl1.text = valQuery(qr.records[j].First_Name__c) + ' ' + valQuery(qr.records[j].Last_Name__c);
+									node.item.textBox1 = node.lbl1.text;
+									
+									node.sfdc = sfdc;
+									node.arrContact = arrContact;
+									node.brokerId = brokerId;
+									node.accId = accId;
+									
+									if(valQuery(qr.records[j].Position__c) != ''){
+										node.lbl1.text = node.lbl1.text + '\n' + valQuery(qr.records[j].Position__c);
+										node.txt1.text = valQuery(qr.records[j].Position__c);
+									} 
+									
+									if(qr.records[j].Internal_Contact1__c != null){
+										node.lbl2.text = valQuery(qr.records[j].Internal_Contact1__r.Users_First_Name__c).charAt(0)+''+valQuery(qr.records[j].Internal_Contact1__r.LastName__c).charAt(0);	
+										node.lbl2.name = valQuery(qr.records[j].Internal_Contact1__r.User__c);
+									}
+									if(qr.records[j].Internal_Contact2__c != null){
+										node.lbl2.text += '\n' + valQuery(qr.records[j].Internal_Contact2__r.Users_First_Name__c).charAt(0)+''+valQuery(qr.records[j].Internal_Contact2__r.LastName__c).charAt(0);	
+										node.lbl2.name += influencerseparator + valQuery(qr.records[j].Internal_Contact2__r.User__c);
+									}
+									
+									node.lbl3.text = valQuery(qr.records[j].Type_of_Buyer__c);
+									node.lbl4.text = valQuery(qr.records[j].Degree_of_Influence__c);
+									node.lbl5.text = valQuery(qr.records[j].Urgency__c);
+									node.lbl6.text = valQuery(qr.records[j].Opinion__c);
+									node.lbl7.text = valQuery(qr.records[j].Business_Goals__c);
+									node.txt7.text = node.lbl7.text;
+									node.lbl8.text = valQuery(qr.records[j].Personal_Goals__c);
+									node.txt8.text = node.lbl8.text;
+									node.lbl9.text = valQuery(qr.records[j].Decision_Criteria__c);
+									node.txt9.text = node.lbl9.text;
+									defineIcon(node, qr.records[j].Position_Symbol__c ,node.img1);
+									defineIcon(node, qr.records[j].Type_of_Buyer_Symbol__c ,node.img3);
+									defineIcon(node, qr.records[j].Degree_of_Influence_Symbol__c ,node.img4);
+									defineIcon(node, qr.records[j].Urgency_Symbol__c ,node.img5);
+									defineIcon(node, qr.records[j].Opinion_Symbol__c ,node.img6);
+									defineIcon(node, qr.records[j].Business_Goals_Symbol__c ,node.img7);
+									defineIcon(node, qr.records[j].Personal_Goals_Symbol__c ,node.img8);
+									defineIcon(node, qr.records[j].Decision_Criteria_Symbol__c ,node.img9);
+									node.mySalesTeam  = arrInfluencer.toArray();
+									
+									if(valQuery(qr.records[j].Reports_To__c) != ""){
+										var linker:String = "";
+										linker = node.uid + dseparator + "lineColor" + dseparator + qr.records[j].Reports_To__r.Ex_UID__c ;
+										linkLoaders.push(linker);
+									}
+									if(valQuery(qr.records[j].Does_Not_Get_Along_With__c) != ""){
+										var linker2:String = "";
+										linker2 = node.uid + dseparator + "lineColor2" + dseparator + qr.records[j].Does_Not_Get_Along_With__r.Ex_UID__c ;
+										linkLoaders.push(linker2);
+									}
+									if(valQuery(qr.records[j].Gets_Along_With__c) != ""){
+										var linker3:String = "";
+										linker3 = node.uid + dseparator + "lineColor3" + dseparator + qr.records[j].Gets_Along_With__r.Ex_UID__c ;
+										linkLoaders.push(linker3);
+									}
+								}
+								//Alert.show("link loader" + linkLoaders.toString());
+								for each(var l:String in linkLoaders){
+									var arrl:Array = l.split(dseparator);
+									var fromnodeUID:String = arrl[0];
+									var tonodeUID:String = arrl[2];
+									var link:Link =  new Link();
+									link.fromNode = diagram.getChildByName(fromnodeUID);
+									(diagram.getChildByName(fromnodeUID) as QuotationInProcess).addLeavingLink(link);
+									link.toNode = diagram.getChildByName(tonodeUID);
+									(diagram.getChildByName(tonodeUID)as QuotationInProcess).addArrivingLink(link);
+									link.lineColorStyleName = arrl[1]; 
+									diagram.addChild(link);
+								}
+								loadPanel.visible = false;
+							}else{
+								loadPanel.visible = false;
+							}
+						},sfdcFailure
+					)
+				);  	
+			}
+			
+			private function valQuery(val:String):String{
+				if(val == null){
+					return "";
+				}
+				return val;
+			}
+			
+			private function defineIcon(node:QuotationInProcess, iconName:String , myImage:Image):void {
+				if(iconName == '' || iconName == null ) return ;
+				if(iconName == 'openIcon'){ myImage.source = node.openIcon;}
+				else if(iconName == 'openIcon1'){ myImage.source = node.openIcon1;}
+				else if(iconName == 'openIcon2'){ myImage.source = node.openIcon2;}
+				else if(iconName == 'openIcon3'){ myImage.source = '';}
+				else if(iconName == 'openIcon4'){ myImage.source = node.openIcon4;}
+			}
+			
+			private function setVisableHelp(node:QuotationInProcess,vis:Boolean):void{
+				node.nodeContextPanel.setVisible(vis);
+				node.borderImage1.visible = vis;
+				node.borderImage2.visible = vis;
+				node.borderImage3.visible = vis;
+				node.borderImage4.visible = vis;
+				node.borderImage5.visible = vis;
+				node.borderImage6.visible = vis;
+				node.borderImage7.visible = vis;
+				node.borderImage8.visible = vis;
+				node.borderImage9.visible = vis;
+			}
+			
+			private function saveHandler():void{
+				progressName = "Saving";
+				loadPanel.visible = true;
+				var nodeDatas : Array = [];
+				var linkDatas : Array = [];
+				var nodeVis : Array = [];
+				for each(var diaChild:Object  in  diagram.getChildren()){
+					if(diaChild.toString().indexOf('LinkContextPanel') != -1) continue;
+					if(isDiagramNode(diaChild)){
+						var node:QuotationInProcess = QuotationInProcess(diaChild);
+						nodeVis.push(node);
+						var textNamePosition : String = node.lbl1.text;
+						if(textNamePosition.indexOf("\n") == -1) textNamePosition = textNamePosition + dseparator;
+						else textNamePosition = textNamePosition.replace("\n",dseparator);
+						var nodedata:String = textNamePosition + dseparator;
+						nodedata += node.lbl3.text + dseparator + node.lbl2.name + dseparator;
+						nodedata += node.lbl4.text + dseparator + node.lbl5.text + dseparator;
+						nodedata += node.lbl6.text + dseparator + node.lbl7.text + dseparator;
+						nodedata += node.lbl8.text + dseparator + node.lbl9.text + dseparator;
+						nodedata += node.x + dseparator +  node.y + dseparator + node.color + dseparator;
+						
+						nodedata += defineFlag(node.img1.source) + dseparator + defineFlag(node.img3.source) + dseparator;
+						nodedata += defineFlag(node.img4.source) + dseparator + defineFlag(node.img5.source) + dseparator;
+						nodedata += defineFlag(node.img6.source) + dseparator + defineFlag(node.img7.source) + dseparator;
+						nodedata += defineFlag(node.img8.source) + dseparator + defineFlag(node.img9.source) + dseparator;
+						nodedata += formatUID(node.uid);
+						nodeDatas.push(nodedata);
+						
+					}else if(isLink(diaChild)){
+						var link:Link =  Link(diaChild);
+						if(link.fromNode == null || link.toNode == null) continue;
+						if(link.fromNode == link.toNode){
+							diagram.removeChild(link);
+							continue;
+						}
+						var fromNode:QuotationInProcess = QuotationInProcess(link.fromNode);
+						var toNode:QuotationInProcess = QuotationInProcess(link.toNode);
+						
+						//blue is default
+						var connectType :String = "reports to";//lineColor
+						if(link.lineColorStyleName.indexOf("2") != -1 ){//red lineColor2
+							connectType = "does not get along with"
+						}else if(link.lineColorStyleName.indexOf("3") != -1 ){//green lineColor3
+							connectType = "gets along with"
+						}
+						var fromNodeUid:String = formatUID(fromNode.uid);
+						var toNodeUid:String = formatUID(toNode.uid);
+						var linkdata:String = fromNodeUid + dseparator + connectType + dseparator + toNodeUid;
+						linkDatas.push(linkdata);
+					}
+					
+				}
+				for each(var obj:Object in nodeVis){
+					var n:QuotationInProcess = QuotationInProcess(obj);
+					setVisableHelp(n,false);
+				}  
+				
+				var firstParam:Parameter = new Parameter ("nodedata", nodeDatas);
+				var secondParam:Parameter = new Parameter ("linkdata", linkDatas);
+				var thirdParam:Parameter = new Parameter ("dSeparator", dseparator);
+				var fouthParam:Parameter = new Parameter ("influencerSeparator", influencerseparator);
+				var fifthParam:Parameter =new Parameter("stId",stId);
+				var params:Array = [firstParam, secondParam, thirdParam, fouthParam,fifthParam]; 
+				if(nodeDatas.length == 0 ){
+					loadPanel.visible = false;
+					sfdc.execute("SubmissionsPageController", "saveFlexDiagramNull", params,new AsyncResponder(
+						function(qr:Object):void
+						{
+							loadPanel.visible = false;
+							//Alert.show("All items removed");
+						},sfdcFailure));
+				}else if(linkDatas.length == 0){
+					sfdc.execute("SubmissionsPageController", "saveFlexDiagramWOLink", params,new AsyncResponder(
+						function(qr:Object):void
+						{
+							loadPanel.visible = false;
+							//Alert.show("All items saved successfully");
+						},sfdcFailure));
+				}else{
+					sfdc.execute("SubmissionsPageController", "saveFlexDiagramWithLink", params,new AsyncResponder(
+						function(qr:Object):void
+						{
+							loadPanel.visible = false;
+							//Alert.show("All items saved successfully");
+						},sfdcFailure));
+				}  
+				if(diagram.getChildren().length > 0 ){
+					sfdc.query("Select Id,ParentId from Attachment where ParentId = '" + stId + "'",
+						new AsyncResponder(function (qr:QueryResult):void {	
+							diagram.exportToPng();
+							for each(var obj:Object in nodeVis){
+								var n:QuotationInProcess = QuotationInProcess(obj);
+								setVisableHelp(n,true);
+							}  
+							if(qr.size > 0) {
+								sfdc.deleteIds([qr.records[0].Id],new AsyncResponder(
+									function(q:Object):void{
+										loadPanel.visible = false;
+										//Alert.show("All items saved successfully");
+									},sfdcFailure));
+							}
+							var attachment:SObject = new SObject();
+							attachment.type = "Attachment";
+							attachment.Body = diagram.str;
+							attachment.ParentId = stId;
+							attachment.Name = 'BuyingCenter.png';
+							sfdc.create([attachment], new AsyncResponder(
+								function(q:Object):void{
+									loadPanel.visible = false;
+									//Alert.show("All items saved successfully");
+								},sfdcFailure), false);
+						},sfdcFailure)); 
+				}
+			} 
+			
+			private function formatUID(uidentifier:String) : String{
+				var uid : String = uidentifier.split(".").pop();
+				if(uid.indexOf(stId)== -1) uid = stId +  uid;
+				return uid;
+			}
+			
+			private function defineFlag(srcname:Object):String{
+				if(srcname == null) return ""; 
+				srcname = srcname.toString();
+				if(srcname == "") return "";
+				return srcname.split("_")[1].toString().replace("]","");
+			}
+			
+			private function isLink(node:Object):Boolean{
+				return (node.toString().indexOf('Link') != -1);
+			}
+			
+			private function isDiagramNode(node:Object):Boolean{
+				return (node.toString().indexOf('QuotationInProcess') != -1);
+			}
+			
+			protected function button1_clickHandler(event:MouseEvent):void{
+				var arrData:Array = new Array;
+				for(var i:int=0;i<diagram.getChildren().length;i++){
+					var n:Object = diagram.getChildAt(i);
+					if(n.toString().indexOf("QuotationInProcess") != -1){
+						var node:QuotationInProcess = QuotationInProcess(n);
+						var s:String = node.lbl1.text;
+						if(s.indexOf('\n') != -1) s = s.substring(0,s.indexOf('\n'));
+						var obj:Object = new Object();
+						obj.label = s;
+						obj.index = i;
+						arrData.push(obj);
+					}
+				}
+				createPopupWindow(arrData);
+			}
+			//*******************************************************
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<fx:XML id="myMenuData"> 
+			<root>
+				<menuitem label="Add Person to Buying Center..."/> 
+			</root>
+		</fx:XML>
+	</fx:Declarations>
+	
+	<s:BorderContainer borderVisible="false" width="100%" height="100%" visible="{renderAsDecisionMakerAnanlysis}">
+		<s:Label backgroundColor="#FF0000" id="lblWarn1" visible="false" />
+		<s:Label backgroundColor="#FF0000" id="lblWarn2" visible="false" />
+		<buttons:GlowButton toolTip="Decision Maker Analysis..." source="@Embed(source='/diagrammer/assets/images/add-1.png')" y="3" right="8" click="addNode(event)"  width="32" height="28"/>
+		<buttons:GlowButton toolTip="Zoom in" source="@Embed(source='/diagrammer/assets/images/search-plus.png')" width="32" height="30" right="8" click="image2_clickHandler(event)" y="38"/>
+		<buttons:GlowButton toolTip="Zoom out" source="@Embed(source='/diagrammer/assets/images/search-min.png')" right="8" width="32" height="33" click="image1_clickHandler(event)" y="76"/>
+		<buttons:GlowButton toolTip="Save" source="@Embed(source='/diagrammer/assets/images/save_button.png')" y="120" click="saveHandler()" right="3"/>
+		<buttons:GlowButton toolTip="Create Committee" source="@Embed(source='/diagrammer/assets/images/comittee.png')" right="3" y="160" click="button1_clickHandler(event)" />
+		<diagrammer:Diagram id="diagram" left="0" top="0" right="50" bottom="0" ></diagrammer:Diagram>
+	</s:BorderContainer>
+	
+	<s:BorderContainer borderVisible="false" width="100%" height="100%" visible="{renderAsKeyPlayerRelationships}">
+		<mx:HBox width="100%" borderVisible="false" horizontalGap="0">
+			<s:Label width="25%" height="40" text="Positive" styleName="keyrelationshiptitle" backgroundColor="#C6EFCE"/><!--green-->
+			<s:Label width="25%" height="40" text="Negative" styleName="keyrelationshiptitle" backgroundColor="#FFC7CE"/><!--red-->
+			<s:Label width="25%" height="40" text="Neutral" styleName="keyrelationshiptitle" backgroundColor="#FFEB9C"/> <!--yellow-->
+			<s:Label width="25%" height="40" text="No Relationship" styleName="keyrelationshiptitle" backgroundColor="#A5A5A5"/><!--grey-->
+		</mx:HBox>
+		
+		<buttons:GlowButton toolTip="Add Key Player" source="@Embed(source='/diagrammer/assets/images/add-1.png')" y="45" right="8"  width="32" height="28"  click="addKeyPlayer(event)"/>
+		<buttons:GlowButton toolTip="Zoom in" source="@Embed(source='/diagrammer/assets/images/search-plus.png')"  y="80" width="32" height="30" right="8" click="zoomin_clickHandler(event)"/>
+		<buttons:GlowButton toolTip="Zoom out" source="@Embed(source='/diagrammer/assets/images/search-min.png')" y="118" right="8" width="32" height="33" click="zoomout_clickHandler(event)" />
+		<buttons:GlowButton toolTip="Save" source="@Embed(source='/diagrammer/assets/images/save_button.png')" y="160" right="3" click="saveKeyPlayerRelationShip()"/>
+		<buttons:GlowButton toolTip="Define Specific" source="@Embed(source='/diagrammer/assets/images/specific.png')" y="205" right="5" click="specific_clickHandler(event)"/>
+		<diagrammer:DiagramShort id="diagram2" left="0" top="40" right="50" bottom="0" ></diagrammer:DiagramShort>
+	</s:BorderContainer>
+	
+	<s:BorderContainer id="loadPanel" width="100%" height="100%" backgroundColor="#D0D0D0" backgroundAlpha="0.55" visible="false">
+		<s:layout>
+			<s:VerticalLayout verticalAlign="middle" horizontalAlign="center" />
+		</s:layout>
+		<mx:ProgressBar indeterminate="true" minimum="0" maximum="100" label="{progressName} In Progress" labelPlacement="center" color="#000066"/>
+	</s:BorderContainer>
+</s:Application>

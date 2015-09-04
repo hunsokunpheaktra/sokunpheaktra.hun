@@ -1,0 +1,1137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BaseNode xmlns="com.anotherflexdev.diagrammer.*"
+		  xmlns:s="library://ns.adobe.com/flex/spark"
+		  xmlns:fx="http://ns.adobe.com/mxml/2009"
+		  xmlns:mx="library://ns.adobe.com/flex/mx"
+		  nodeName="" editable="false" textMargin="20" xmlns:buttons="com.anotherflexdev.ui.buttons.*" height="128">
+	
+	<fx:Style>
+		@namespace  "com.anotherflexdev.diagrammer.*";
+		@namespace s "library://ns.adobe.com/flex/spark";
+		@namespace mx "library://ns.adobe.com/flex/mx";
+		@namespace buttons "com.anotherflexdev.ui.buttons.*";
+		
+		.backgroundImage{
+			
+			background-position : 0px 0px;
+			
+		}
+		
+		.border{
+			
+			border-color : orange;
+		}
+		
+		
+	</fx:Style>
+	
+	<fx:Script>
+		<![CDATA[
+			import com.anotherflexdev.diagrammer.Diagram;
+			import com.salesforce.Connection;
+			import com.salesforce.objects.Parameter;
+			
+			import flash.utils.clearInterval;
+			import flash.utils.setInterval;
+			
+			import flashx.textLayout.operations.CopyOperation;
+			
+			import mx.collections.ArrayCollection;
+			import mx.controls.ColorPicker;
+			import mx.events.CloseEvent;
+			
+			import spark.components.RadioButton;
+			
+			[Bindable] [Embed("assets/images/information.png")] public var openIcon:Class;
+			[Bindable] [Embed("assets/images/question.png")] public var openIcon1:Class;
+			[Bindable] [Embed("assets/images/hand.png")] public var openIcon2:Class;
+			[Bindable] [Embed("assets/images/cross.png")] public var openIcon3:Class;
+			[Bindable] [Embed("assets/images/true.png")] public var openIcon4:Class;
+			[Bindable] [Embed("assets/images/help1.png")] public var openIcon5:Class;
+			[Bindable] [Embed("assets/images/help2.png")] public var openIcon6:Class;
+			
+			import mx.collections.ArrayList;
+			import mx.controls.Alert;
+			import spark.components.Button;
+			import mx.controls.List;
+			import mx.controls.Menu;
+			import mx.core.FlexGlobals;
+			import mx.events.MenuEvent;
+			import mx.managers.PopUpManager;
+			import com.salesforce.*;
+			import com.salesforce.objects.*;
+			import com.salesforce.results.*;
+			
+			import spark.components.TitleWindow;
+			
+			private var interval1:Number=0;
+			private var myMouseEvent:MouseEvent
+			private var myImage:Image;
+			private var mainMenu:Array = [];
+			private var myLabel:Label;
+			private var hasContact:Boolean;
+			
+			[Bindable]public var imgUrl:Object;
+			[Bindable]public var sfdc:Connection = new Connection();
+			[Bindable]public var helpText1:String;
+			[Bindable]public var helpText2:String;
+			[Bindable]public var helpText3:String;
+			[Bindable]public var helpText4:String;
+			[Bindable]public var helpText5:String;
+			[Bindable]public var helpText6:String;
+			[Bindable]public var helpText7:String;
+			[Bindable]public var helpText8:String;
+			[Bindable]public var helpText9:String;
+			
+			[Bindable]public var flagText1:String = new String();
+			[Bindable]public var flagText2:String = new String();
+			[Bindable]public var flagText3:String = new String();
+			[Bindable]public var flagText4:String = new String();
+			[Bindable]public var flagText5:String = new String();
+			
+			[Bindable]public var FLAG_043_T:String = new String();
+			[Bindable]public var FLAG_044_E:String = new String();
+			[Bindable]public var FLAG_045_T:String = new String();
+			[Bindable]public var FLAG_046_E:String = new String();
+			[Bindable]public var FLAG_047_T:String = new String();
+			[Bindable]public var FLAG_048_E:String = new String();
+			[Bindable]public var FLAG_059_T:String = new String();
+			[Bindable]public var FLAG_060_E:String = new String();
+			[Bindable]public var FLAG_061_T:String = new String();
+			[Bindable]public var FLAG_062_E:String = new String();
+			[Bindable]public var FLAG_063_T:String = new String();
+			[Bindable]public var FLAG_064_E:String = new String();
+			[Bindable]public var FLAG_037_T:String = new String();
+			[Bindable]public var FLAG_038_E:String = new String();
+						
+			[Bindable]public var item:Object = new Object();
+			[Bindable]public var color:uint;
+			[Bindable]public var accId:String = new String();
+			[Bindable]public var brokerId:String = new String();
+			[Bindable]public var arrContact:Array = new Array();
+			
+			private function createPopupWindow():void{
+				
+				var t:TitleWindow = new TitleWindow();
+				
+				t.title = 'Selection of Sales Team Members';
+				t.width = 393;
+				t.height = 270;
+				
+				var l:Label = new Label();
+				l.text = 'Select responsible Sales Team member of the Decision Maker Unit';
+				l.x = 10;
+				l.y = 15;
+				
+				var lst:List = new List();
+				lst.allowMultipleSelection = true;
+				lst.x = 10;
+				lst.y = 35;
+				lst.width = 370;
+				lst.height = 160;
+				
+				lst.dataProvider = mySalesTeam;
+				
+				var b1:Button = new Button();
+				b1.label = 'OK';
+				b1.x = 230;
+				b1.y = 205;
+				
+				var b2:Button = new Button();
+				b2.label = 'Cancel';
+				b2.x = 310;
+				b2.y = 205;
+				
+				t.addEventListener(CloseEvent.CLOSE,function():void{PopUpManager.removePopUp(t);});
+				
+				b1.addEventListener(MouseEvent.CLICK,
+					
+					function():void{
+						
+						if(lst.selectedItems.length <= 2){
+						
+						var s:String = '';
+						var ids:String = '';
+						
+						for(var i:int=0;i<lst.selectedItems.length;i++){
+							s += lst.selectedItems[i].data + '\n';	
+							ids += lst.selectedItems[i].name + '$';
+						}
+						
+						if(lst.selectedItems.length != 0){
+							lbl2.text = s;
+							lbl2.name = ids.slice(0,ids.length-1);
+						}
+						
+						PopUpManager.removePopUp(t);
+						
+						}
+						
+						else
+							
+							Alert.show('Can not Select more than 2 items','Influencer selection');
+						
+					}
+					
+				);
+				
+				b2.addEventListener(MouseEvent.CLICK,function(event:MouseEvent):void{PopUpManager.removePopUp(t);});
+			
+				t.addElement(l);
+				t.addElement(lst);
+				t.addElement(b1);
+				t.addElement(b2);
+				
+				PopUpManager.addPopUp(t,this,true);
+				PopUpManager.centerPopUp(t);
+				
+			}
+			
+			
+			
+			private function createPopupMenu(e:MouseEvent,menu:XML):void{
+				
+				var myMenu:Menu = Menu.createMenu(null,menu,false);
+				
+				myMenu.labelField = "@label";
+				
+				var l:Label = e.currentTarget as Label;
+			
+				myMenu.addEventListener(MenuEvent.ITEM_CLICK,
+					
+					function(event:MenuEvent):void{
+						
+						l.text = event.item.@data;
+						
+					}
+					
+				);
+				
+				myMenu.show(e.stageX,e.stageY);
+				
+			}
+			
+			protected function lbl1_clickHandler(event:MouseEvent):void
+			{
+				if(Diagram(parent).isLinking){this.nodeContextPanel.visible=true;return;} 
+					
+				myLabel = event.currentTarget as Label;
+				myMouseEvent = event;
+				myImage = img1;
+				var str:String = lbl1.text;
+				if(str == '' || str == ' '){
+					
+					createMenu(1);
+				}
+				else{
+					
+					var arr:Array = str.split('\n',2);
+					
+					if(String(arr[0]) == '' || String(arr[0]) == ' ')createMenu(1);
+					else createMenu(2);;
+					
+				}  
+				//mainMenu = mainMenu1;
+				clearInterval(interval1);
+				interval1 = setInterval(deferredItemClickHandler,300);	
+				
+			}
+			
+			private function addNewContact():void{
+				
+				var t:TitleWindow = new TitleWindow();
+				t.title = 'Add Contact';
+				t.width = 266;
+				t.height = 156;
+				
+				var r1:RadioButton = new RadioButton();
+				r1.label = 'Client';
+				r1.selected = true;
+				r1.x = 10;
+				r1.y = 5;
+				r1.tabEnabled = true;
+				r1.tabIndex = 1;
+				
+				var r2:RadioButton = new RadioButton();
+				r2.label = 'Broker';
+				r2.x = 101;
+				r2.y = 5;
+				r2.tabEnabled = true;
+				r2.tabIndex = 2;
+				if(brokerId == '' || brokerId == null)r2.enabled = false;
+				else r2.enabled = true;
+				
+				var l1:Label = new Label();
+				l1.x = 10;
+				l1.y = 33;
+				l1.text = 'First Name ';
+				
+				lblWarn1.visible = true;
+				lblWarn1.x = 96;
+				lblWarn1.y = 28;
+				lblWarn1.height = 22;
+				lblWarn1.width = 3;
+				
+				var t1:TextInput = new TextInput();
+				t1.x = 101;
+				t1.y = 28;
+				t1.width = 150;
+				t1.height = 22;
+				t1.tabEnabled = true;
+				t1.tabIndex = 3;
+				
+				var l2:Label = new Label();
+				l2.x = 10;
+				l2.y = 60;
+				l2.text = 'Last Name ';
+				
+				lblWarn2.visible = true;
+				lblWarn2.x = 96;
+				lblWarn2.y = 56;
+				lblWarn2.height = 22;
+				lblWarn2.width = 3;
+				
+				var t2:TextInput = new TextInput();
+				t2.x = 101;
+				t2.y = 56;
+				t2.width = 150;
+				t2.height = 22;
+				t2.tabEnabled = true;
+				t2.tabIndex = 4;
+				
+				var b1:Button = new Button();
+				b1.label = 'OK';
+				b1.x = 10;
+				b1.width = 114;
+				b1.y = 86;
+				r1.tabEnabled = true;
+				r2.tabIndex = 5;
+				
+				var b2:Button = new Button();
+				b2.label = 'Cancel';
+				b2.x = 137;
+				b2.width = 114;
+				b2.y = 86;
+				b1.tabEnabled = true;
+				b2.tabIndex = 6;
+				
+				t.addEventListener(CloseEvent.CLOSE,function():void{PopUpManager.removePopUp(t);});
+				
+				b1.addEventListener(MouseEvent.CLICK,
+					
+					function(event:MouseEvent):void{
+						
+						if((t1.text != '' || t1.text != ' ') && (t2.text != '' || t2.text != ' ')){
+							checkContact(t1.text+ ' ' +t2.text);	
+							var aId:String = new String();
+							
+							if(r1.selected)aId = accId;
+							if(r2.selected)aId = brokerId;
+							
+							item.textBox1 = t1.text+ ' ' +t2.text;
+							lbl1.text = t1.text+ ' ' +t2.text;
+							if(hasContact){ 
+								
+								if(lbl1.text == '' || lbl1.text == ' ') lbl1.text = t1.text+ ' ' +t2.text;
+								else{		
+									var arr:Array = lbl1.text.split('\n',2);
+									lbl1.text = t1.text+ ' ' +t2.text + '\n' + String(arr[1]); 
+								}
+							 }
+							
+							else addContact(t1.text,t2.text,aId);
+							
+							PopUpManager.removePopUp(t); 
+							
+						}
+						
+					}
+					
+				);
+				
+				b2.addEventListener(MouseEvent.CLICK,function(event:MouseEvent):void{PopUpManager.removePopUp(t);});
+				
+				t.addElement(r1);
+				t.addElement(r2);
+				t.addElement(l1);
+				t.addElement(lblWarn1);
+				t.addElement(t1);
+				t.addElement(l2);
+				t.addElement(lblWarn2);
+				t.addElement(t2);		
+				t.addElement(b1);
+				t.addElement(b2);
+				
+				t1.focusEnabled = true;
+				t1.setFocus();
+				
+				PopUpManager.addPopUp(t,this,true);
+				
+				PopUpManager.centerPopUp(t);
+				
+			}
+			
+			private function sfdcFailure(fault:Object):void {
+				Alert.show(fault.faultstring);
+			} 
+			
+			private function checkRecord(qr:QueryResult):void{
+				
+				if(qr.size > 0) hasContact = true;
+				else hasContact = false;
+				
+			}
+			
+			private function checkContact(contactName:String):void{
+				
+				sfdc.query("Select Id,Name From Contact Where Name like '" + contactName + "'",
+					new AsyncResponder(
+						function (qr:QueryResult):void {
+							
+							checkRecord(qr);
+							
+						},sfdcFailure)
+				);
+				
+			}
+			
+			private function addContact(fn:String,ln:String,aId:String):void{
+				
+				var firstParam:Parameter = new Parameter ("accId", aId);
+				var secondParam:Parameter = new Parameter ("fName", fn);
+				var thirdParam:Parameter = new Parameter ("lName", ln);
+				
+				var params:Array = [firstParam, secondParam, thirdParam];  
+				
+				sfdc.execute("SubmissionsPageController", "insertContact", params,new AsyncResponder(
+					function(qr:Object):void{
+						
+					}
+					
+				,sfdcFailure)); 
+				
+				var obj:Object = new Object();
+				obj.label = fn + ' ' + ln;
+				
+				arrContact.push(obj);
+				
+			}
+
+
+			protected function lbl2_clickHandler(event:MouseEvent):void
+			{
+				if(Diagram(parent).isLinking){this.nodeContextPanel.visible=true;return;} 
+				clearInterval(interval1);
+				createPopupWindow();
+			}
+
+			protected function lbl4_clickHandler(event:MouseEvent):void
+			{
+				if(Diagram(parent).isLinking){this.nodeContextPanel.visible=true;return;} 
+				myLabel = event.currentTarget as Label;
+				myMouseEvent = event;
+				myImage = img4;
+				createMenu(4);
+				clearInterval(interval1);
+				interval1 = setInterval(deferredItemClickHandler,300);	
+				
+				
+			}
+
+
+			protected function lbl5_clickHandler(event:MouseEvent):void
+			{
+				if(Diagram(parent).isLinking){this.nodeContextPanel.visible=true;return;} 
+				myLabel = event.currentTarget as Label;
+				myMouseEvent = event;
+				myImage = img5;
+				createMenu(5);
+				clearInterval(interval1);
+				interval1 = setInterval(deferredItemClickHandler,300);	
+				
+			}
+
+
+			protected function lbl6_clickHandler(event:MouseEvent):void
+			{
+				if(Diagram(parent).isLinking){this.nodeContextPanel.visible=true;return;} 
+				myLabel = event.currentTarget as Label;
+				myMouseEvent = event;
+				myImage = img6;
+				createMenu(6);
+				clearInterval(interval1);
+				interval1 = setInterval(deferredItemClickHandler,300);	
+				
+			}
+
+
+
+			protected function lbl9_clickHandler(event:MouseEvent):void
+			{
+				if(Diagram(parent).isLinking){this.nodeContextPanel.visible=true;return;} 
+				myLabel = event.currentTarget as Label;
+				myMouseEvent = event;
+				myImage = img9;
+				createMenu(9);
+				clearInterval(interval1);
+				interval1 = setInterval(deferredItemClickHandler,300);	
+				
+				
+			}
+
+
+			protected function lbl3_doubleClickHandler(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				clearInterval(interval1);
+				createPopupMenu(event,orangeMenu);
+				
+			}
+			
+			
+			protected function lbl3_clickHandler(event:MouseEvent):void
+			{
+				if(Diagram(parent).isLinking){this.nodeContextPanel.visible=true;return;} 
+				myLabel = event.currentTarget as Label;
+				myMouseEvent = event;
+				myImage = img3;
+				createMenu(3);
+				clearInterval(interval1);
+				interval1 = setInterval(deferredItemClickHandler,300);	
+				
+			}
+			
+			private function menuItemClick(event:MenuEvent):void{
+				
+				var s :String = myLabel.text;
+				
+				if(event.item.icon == openIcon) myImage.source = openIcon;
+				
+				if(event.item.icon == openIcon1) myImage.source = openIcon1;
+				
+				if(event.item.icon == openIcon2) myImage.source = openIcon2;
+				
+				if(event.item.icon == '') myImage.source = '';
+				
+				if(event.item.icon == openIcon4) myImage.source = openIcon4;
+				
+				myLabel.text = event.item.data;
+	
+				if(myLabel.text == "" || myLabel.text == null || myLabel.text == " "){
+					
+					myLabel.text = s;				
+					
+				}
+					
+				if(event.label == 'Change Position...'){
+					
+					lbl1_doubleClickHandler(myMouseEvent);
+					
+				}
+					
+				if(event.label == 'Change Business Goals...')
+						
+					lbl7_doubleClickHandler(myMouseEvent);
+					
+				if(event.label == 'Change Personal Goals...')
+						
+					lbl8_doubleClickHandler(myMouseEvent);
+					
+				if(event.label == 'Change Decision Criteria...')
+						
+					lbl9_doubleClickHandler(myMouseEvent);
+				
+				 if(event.label == "Add Contact's Name...")addNewContact();
+					 
+				if(event.label == 'Change Frame Color...'){
+				
+					var t:TitleWindow = new TitleWindow();
+					
+					t.title = 'Color';
+					t.width = 253;
+					t.height = 280;
+					
+					cp.visible = true;
+					
+					var b1:Button = new Button();
+					b1.label = 'OK';
+					b1.x = 90;
+					b1.y = 220;
+					
+					var b2:Button = new Button();
+					b2.label = 'Cancel';
+					b2.x = 170;
+					b2.y = 220;
+					
+					b1.addEventListener(MouseEvent.CLICK,
+						
+						function():void{
+							
+							color = cp.selectedColor;
+							
+							PopUpManager.removePopUp(t)
+							
+						}
+						
+					);
+					b2.addEventListener(MouseEvent.CLICK,function(event:MouseEvent):void{PopUpManager.removePopUp(t);});
+					
+					t.addElement(cp);
+					t.addElement(b1);
+					t.addElement(b2);
+					
+					PopUpManager.addPopUp(t,this,true);
+					PopUpManager.centerPopUp(t);
+					cp.open();
+					
+					
+					
+				}
+				
+				
+			}
+			
+			private function deferredItemClickHandler():void{
+				
+				var myMenu:Menu = Menu.createMenu(this,mainMenu,false);
+				
+				myMenu.addEventListener(MenuEvent.ITEM_CLICK,menuItemClick);
+				
+				myMenu.show(myMouseEvent.stageX,myMouseEvent.stageY);
+				
+				clearInterval(interval1);
+				
+			}
+
+
+			protected function lbl1_doubleClickHandler(event:MouseEvent):void
+			{
+				clearInterval(interval1);
+				
+				txt1.visible = true;
+				lbl1.setFocus();
+				txt1.setFocus();
+				
+				txt1.addEventListener(KeyboardEvent.KEY_DOWN,
+					
+					function(event:KeyboardEvent):void{
+						
+						if(event.keyCode == Keyboard.ENTER){
+							
+							lbl1.text = item.textBox1 + '\n' + txt1.text;
+							
+							txt1.visible = false;
+							
+						}
+						
+					}
+					
+				);
+				
+				txt1.addEventListener(FocusEvent.MOUSE_FOCUS_CHANGE,
+					
+					function(event:FocusEvent):void{
+						
+						lbl1.text = item.textBox1 + '\n' + txt1.text
+						
+						txt1.visible = false;	
+						
+					}
+					
+				);
+				
+				
+				
+			}
+
+
+			protected function lbl7_clickHandler(event:MouseEvent):void
+			{
+				if(Diagram(parent).isLinking){this.nodeContextPanel.visible=true;return;} 
+				myLabel = event.currentTarget as Label;
+				myMouseEvent = event;
+				myImage = img7;
+				createMenu(7);
+				clearInterval(interval1);
+				interval1 = setInterval(deferredItemClickHandler,300);	
+			}
+
+
+			protected function lbl8_clickHandler(event:MouseEvent):void
+			{
+				if(Diagram(parent).isLinking){this.nodeContextPanel.visible=true;return;} 
+				myLabel = event.currentTarget as Label;
+				myMouseEvent = event;
+				myImage = img8;
+				createMenu(8);
+				clearInterval(interval1);
+				interval1 = setInterval(deferredItemClickHandler,300);	
+			}
+
+			protected function lbl7_doubleClickHandler(event:MouseEvent):void
+			{
+				
+				clearInterval(interval1);
+				
+				txt7.visible = true;
+				txt7.setFocus();
+				txt7.addEventListener(KeyboardEvent.KEY_DOWN,
+					
+					function(e:KeyboardEvent):void{
+						
+						if(e.keyCode == Keyboard.ENTER){
+							
+							lbl7.text = txt7.text;
+							
+							txt7.visible = false;			
+							
+						}
+						
+					}
+					
+				);
+				
+				txt7.addEventListener(FocusEvent.MOUSE_FOCUS_CHANGE,
+					
+					function(event:FocusEvent):void{
+						
+						lbl7.text = txt7.text;
+						
+						txt7.visible = false;
+					
+					}
+					
+				);
+				
+			}
+
+
+			protected function lbl4_doubleClickHandler(event:MouseEvent):void
+			{
+			
+				clearInterval(interval1);
+				
+				createPopupMenu(event,greenBlueMenu);
+				
+			}
+
+
+			protected function lbl5_doubleClickHandler(event:MouseEvent):void
+			{
+				
+				clearInterval(interval1);
+				
+				createPopupMenu(event,greyMenu);
+				
+			}
+
+
+			protected function lbl6_doubleClickHandler(event:MouseEvent):void
+			{
+				
+				clearInterval(interval1);
+				
+				createPopupMenu(event,greenMenu);
+				
+			}
+
+
+			protected function lbl8_doubleClickHandler(event:MouseEvent):void
+			{
+				
+				clearInterval(interval1);
+				
+				txt8.visible = true;
+				txt8.setFocus();
+				txt8.addEventListener(KeyboardEvent.KEY_DOWN,
+					
+					function(e:KeyboardEvent):void{
+						
+						if(e.keyCode == Keyboard.ENTER){
+							
+							lbl8.text = txt8.text;
+							
+							txt8.visible = false;			
+							
+						}
+						
+					}
+					
+				);
+				
+				txt8.addEventListener(FocusEvent.MOUSE_FOCUS_CHANGE,
+					
+					function(event:FocusEvent):void{
+						
+						lbl8.text = txt8.text;
+						
+						txt8.visible = false;
+						
+					}
+					
+				);
+				
+			}
+
+
+			protected function lbl9_doubleClickHandler(event:MouseEvent):void
+			{
+				
+				clearInterval(interval1);
+				
+				txt9.visible = true;
+				txt9.setFocus();
+				txt9.addEventListener(KeyboardEvent.KEY_DOWN,
+					
+					function(e:KeyboardEvent):void{
+						
+						if(e.keyCode == Keyboard.ENTER){
+							
+							lbl9.text = txt9.text;
+							
+							txt9.visible = false;
+							
+						}
+						
+					}
+					
+				);
+				
+				txt9.addEventListener(FocusEvent.MOUSE_FOCUS_CHANGE,
+					
+					function(event:FocusEvent):void{
+						
+						lbl9.text = txt9.text;
+						
+						txt9.visible = false;
+						
+					}
+					
+				);
+				
+			}
+
+
+			
+
+			protected function bordercontainer_mouseOverHandler(event:MouseEvent,help:String):void{
+				
+				var border:BorderContainer = BorderContainer(event.currentTarget);
+				
+				border.setStyle("backgroundImage",openIcon6);
+				
+				borderPopup.visible = true;
+				lblPop.text = help;
+				borderPopup.x = border.x - 150;
+				borderPopup.y = border.y + 20;
+				
+			}
+
+
+			protected function bordercontainer_mouseOutHandler(event:MouseEvent):void{
+				
+				var border:BorderContainer = BorderContainer(event.currentTarget);
+				
+				border.setStyle("backgroundImage",openIcon5);
+				
+				borderPopup.visible = false;
+				
+			}
+			
+			private function createMenu(index:int):void{
+				
+				switch(index){
+					
+					case 1: mainMenu = 	[{label: "Add Contact's Name..."},{label: "Change Position..."},{label: "Flags" ,
+											children: [{label: FLAG_038_E , icon: openIcon},
+											{label: flagText2 , icon: openIcon1 },
+											{label: FLAG_037_T , icon: openIcon2 },
+											{label: flagText4 , icon: openIcon4 },
+											{label: flagText5 , icon: "" }
+											]},
+											
+											{type: "separator"},
+											{label: "Change Frame Color..."}
+										
+										];break;
+					case 2: mainMenu = 	[{label: "Change Position..."},{label: "Flags" ,
+											children: [{label: FLAG_038_E , icon: openIcon},
+												{label: flagText2 , icon: openIcon1 },
+												{label: FLAG_037_T , icon: openIcon2 },
+												{label: flagText4 , icon: openIcon4 },
+												{label: flagText5 , icon: "" }
+											]},
+											
+											{type: "separator"},
+											{label: "Change Frame Color..."}
+											
+										];break;
+					
+					case 3: mainMenu = 	[{label: "Type of Buyer" , children:[
+											{label: "Assessor" , data: "A"},
+											{label: "Decider" , data: "D"},
+											{label: "Endorser" , data: "E"},
+											{label: "User" , data: "U"},
+											{label: "Coach" , data: "C"},
+											{label: "Assessor/Decider" , data: "A/D"},
+											{label: "Assessor/Endorser" , data: "A/E"},
+											{label: "Assessor/User" , data: "A/U"},
+											{label: "Assessor/Coach" , data: "A/C"},
+											{label: "Decider/Endorser" , data: "D/E"},
+											{label: "Decider/User" , data: "D/U"},
+											{label: "Decider/Coach" , data: "D/C"},
+											{label: "Endorser/User" , data: "E/U"},
+											{label: "Endorser/Coach" , data: "E/C"},
+											{label: "User/Coach" , data: "U/C"}
+										]},
+										{label: "Flags" , children: [{label: flagText1 , icon: openIcon},
+												{label: flagText2 , icon: openIcon1 },
+												{label: flagText3 , icon: openIcon2 },
+												{label: flagText4 , icon: openIcon4 },
+												{label: flagText5 , icon: "" }
+											]},
+											
+											{type: "separator"},
+											{label: "Change Frame Color..."}
+											
+										];break;
+					
+					case 4: mainMenu = 	mainMenu = 	[{label: "Degree of influence" , children:[
+											{label: "High" , data: "H"},
+											{label: "Medium" , data: "M"},
+											{label: "Low" , data: "L"}
+											
+											]},
+											{label: "Flags" , children: [{label: FLAG_044_E , icon: openIcon},
+												{label: flagText2 , icon: openIcon1 },
+												{label: FLAG_043_T , icon: openIcon2 },
+												{label: flagText4 , icon: openIcon4 },
+												{label: flagText5 , icon: "" }
+											]},
+											
+											{type: "separator"},
+											{label: "Change Frame Color..."}
+											
+										];break;
+					
+					case 5: mainMenu = 	mainMenu = 	[{label: "Urgency" , children:[
+												{label: "Compelling" , data: "C"},
+												{label: "Significant" , data: "S"},
+												{label: "Minor" , data: "M"},
+												{label: "None" , data: "N"}
+											]},
+												{label: "Flags" , children: [{label: FLAG_046_E , icon: openIcon},
+													{label: flagText2 , icon: openIcon1 },
+													{label: FLAG_045_T , icon: openIcon2 },
+													{label: flagText4 , icon: openIcon4 },
+													{label: flagText5 , icon: "" }
+												]},
+												
+												{type: "separator"},
+												{label: "Change Frame Color..."}
+												
+											];break;
+					
+					case 6: mainMenu = 	mainMenu = 	[{label: "Opinion" , children:[
+												{label: "Enthusiastic(++)" , data: "++"},
+												{label: "Supportive(+)" , data: "+"},
+												{label: "Neutral(0)" , data: "0"},
+												{label: "Negative(-)" , data: "-"},
+												{label: "Hostile(--)" , data: "--"}
+											]},
+												{label: "Flags" , children: [{label: FLAG_048_E , icon: openIcon},
+													{label: flagText2 , icon: openIcon1 },
+													{label: FLAG_047_T , icon: openIcon2 },
+													{label: flagText4 , icon: openIcon4 },
+													{label: flagText5 , icon: "" }
+												]},
+												
+												{type: "separator"},
+												{label: "Change Frame Color..."}
+												
+											];break;
+					
+					case 7: mainMenu = 	[{label: "Change Business Goals..."},{label: "Flags" ,
+											children: [{label: FLAG_060_E , icon: openIcon},
+												{label: flagText2 , icon: openIcon1 },
+												{label: FLAG_059_T , icon: openIcon2 },
+												{label: flagText4 , icon: openIcon4 },
+												{label: "remove flag" , icon: "" }
+											]},
+											
+											{type: "separator"},
+											{label: "Change Frame Color..."}
+											
+										];break;
+					
+					case 8: mainMenu = 	[{label: "Change Personal Goals..."},{label: "Flags" ,
+											children: [{label: FLAG_062_E , icon: openIcon},
+												{label: flagText2 , icon: openIcon1 },
+												{label: FLAG_061_T , icon: openIcon2 },
+												{label: flagText4 , icon: openIcon4 },
+												{label: flagText5 , icon: "" }
+											]},
+											
+											{type: "separator"},
+											{label: "Change Frame Color..."}
+											
+										];break;
+					
+					case 9: mainMenu = 	[{label: "Change Decision Criteria..."},{label: "Flags" ,
+											children: [{label: FLAG_064_E , icon: openIcon},
+												{label: flagText2 , icon: openIcon1 },
+												{label: FLAG_063_T , icon: openIcon2 },
+												{label: flagText4 , icon: openIcon4 },
+												{label: flagText5 , icon: "" }
+											]},
+											
+											{type: "separator"},
+											{label: "Change Frame Color..."}
+											
+										];break;
+					
+				}
+				
+			}
+
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		
+		<fx:Array id="mySalesTeam">
+			
+		</fx:Array>
+		
+		<fx:XML id="orangeMenu"> 
+			<root>
+				
+				<menuitem label="Type of Buyer">
+					
+					<menuitem label="Assessor" data="A" />
+					<menuitem label="Decider" data="D" />
+					<menuitem label="Endorser" data="E" />
+					<menuitem label="User" data="U" />
+					<menuitem label="Coach" data="C" />
+					<menuitem label="Assessor/Decider" data="A/D" />
+					<menuitem label="Assessor/Endorser" data="A/E" />
+					<menuitem label="Assessor/User" data="A/U" />
+					<menuitem label="Assessor/Coach" data="A/C" />
+					<menuitem label="Decider/Endorser" data="D/E" />
+					<menuitem label="Decider/User" data="D/U" />
+					<menuitem label="Decider/Coach" data="D/C" />
+					<menuitem label="Endorser/User" data="E/U" />
+					<menuitem label="Endorser/Coach" data="E/C" />
+					<menuitem label="User/Coach" data="U/C" />
+					
+				</menuitem>	
+				
+			</root>
+		</fx:XML>
+		
+		<fx:XML id="greenBlueMenu"> 
+			<root>
+				
+				<menuitem label="Degree of influence">
+					
+					<menuitem label="High" data="H" />
+					<menuitem label="Medium" data="M" />
+					<menuitem label="Low" data="L" />
+					
+				</menuitem>	
+				
+			</root>
+		</fx:XML>
+		
+		<fx:XML id="greyMenu"> 
+			<root>
+				
+				<menuitem label="Urgency">
+					
+					<menuitem label="Compelling" data="C" />
+					<menuitem label="Significant" data="S" />
+					<menuitem label="Minor" data="M" />
+					<menuitem label="None" data="N" />
+					
+				</menuitem>	
+				
+			</root>
+		</fx:XML>
+		
+		<fx:XML id="greenMenu"> 
+			<root>
+				
+				<menuitem label="Opinion">
+					
+					<menuitem label="Enthusiastic(++)" data="++" />
+					<menuitem label="Supportive(+)" data="+" />
+					<menuitem label="Neutral(0)" data="0" />
+					<menuitem label="Negative(-)" data="-" />
+					<menuitem label="Hostile(--)" data="--" />
+					
+				</menuitem>	
+				
+			</root>
+		</fx:XML>	
+		
+	</fx:Declarations>
+	
+	<s:Label backgroundColor="#FF0000" id="lblWarn1" visible="false" />	
+	<s:Label backgroundColor="#FF0000" id="lblWarn2" visible="false" />
+	
+	<s:BorderContainer borderColor="{color}" name="myBorder" id="myBorder" y="0" horizontalCenter="0" width="305" height="127" backgroundColor="#FDFDFD" chromeColor="#020202" borderWeight="2" symbolColor="#000000">
+		
+		<s:Label text="{item.textBox1}" x="0" y="0" width="229" height="36" paddingTop="5" fontWeight="bold" verticalAlign="top" textAlign="center" fontSize="12" backgroundColor="#FFFFFF" id="lbl1" click="lbl1_clickHandler(event)" doubleClickEnabled="true" doubleClick="lbl1_doubleClickHandler(event)" />
+		<s:Label x="0" y="36" width="76" height="22" fontWeight="bold" verticalAlign="middle" paddingLeft="20" paddingRight="5" textAlign="left" fontSize="11" backgroundColor="#FFCB99" id="lbl3" click="lbl3_clickHandler(event)" doubleClickEnabled="true" doubleClick="lbl3_doubleClickHandler(event)"  />
+		<s:Label x="0" y="58" width="301" height="22" verticalAlign="middle" paddingLeft="20" paddingRight="5" textAlign="left" fontSize="11" backgroundColor="#FDFFCB" id="lbl7" click="lbl7_clickHandler(event)" doubleClickEnabled="true" doubleClick="lbl7_doubleClickHandler(event)" />
+		<s:Label x="0" y="80" width="301" height="22" verticalAlign="middle" paddingLeft="20" paddingRight="5" textAlign="left" fontSize="11" backgroundColor="#FECCFD" id="lbl8" click="lbl8_clickHandler(event)" doubleClickEnabled="true" doubleClick="lbl8_doubleClickHandler(event)" />
+		<s:Label x="0" y="101" width="301" height="22" verticalAlign="middle" paddingLeft="20" paddingRight="5" textAlign="left" fontSize="11" backgroundColor="#CCCCFE" id="lbl9" click="lbl9_clickHandler(event)" doubleClickEnabled="true" doubleClick="lbl9_doubleClickHandler(event)"/>
+		<s:Label x="74" y="36" width="76" height="22" fontWeight="bold" verticalAlign="middle" paddingLeft="20" paddingRight="5" textAlign="left" fontSize="11" backgroundColor="#CCFFFF" id="lbl4" click="lbl4_clickHandler(event)" doubleClickEnabled="true" doubleClick="lbl4_doubleClickHandler(event)" />
+		<s:Label x="150" y="36" width="76" height="22" fontWeight="bold" verticalAlign="middle" paddingLeft="20" paddingRight="5" textAlign="left" fontSize="11" backgroundColor="#EAEAEA" id="lbl5" click="lbl5_clickHandler(event)" doubleClickEnabled="true" doubleClick="lbl5_doubleClickHandler(event)" />
+		<s:Label x="226" y="36" width="75" height="22" fontWeight="bold" verticalAlign="middle" paddingLeft="20" paddingRight="5" textAlign="left" fontSize="11" backgroundColor="#CDFFCC" id="lbl6" click="lbl6_clickHandler(event)" doubleClickEnabled="true" doubleClick="lbl6_doubleClickHandler(event)" />
+		<s:Label x="226" y="0" width="75" height="36" fontWeight="bold" verticalAlign="middle" textAlign="center" fontSize="12" backgroundColor="#FFFFFF" id="lbl2" click="lbl2_clickHandler(event)" />
+		<s:TextInput focusEnabled="true" x="0" y="20" width="226" height="18" id="txt1" visible="false"/>
+		<mx:Image x="50" y="36" id="img3"  />
+		<mx:Image x="199" y="6" id="img1" />
+		<mx:Image x="125" y="36" id="img4" />
+		<mx:Image x="199" y="36" id="img5" />
+		<mx:Image x="275" y="36" id="img6" />
+		<mx:Image x="275" y="57" id="img7" />
+		<mx:Image x="275" y="79" id="img8" />
+		<mx:Image x="275" y="101" id="img9"  />
+		
+		<s:BorderContainer x="2" y="5" id="borderImage1" backgroundImageFillMode="clip" styleName="backgroundImage" borderVisible="false" backgroundImage="{openIcon5}" width="15" height="15" mouseOver="bordercontainer_mouseOverHandler(event,helpText1)" mouseOut="bordercontainer_mouseOutHandler(event)" />
+		<s:BorderContainer x="228" y="5" id="borderImage2" backgroundImageFillMode="clip" styleName="backgroundImage" borderVisible="false" backgroundImage="{openIcon5}" width="15" height="15" mouseOver="bordercontainer_mouseOverHandler(event,helpText2)" mouseOut="bordercontainer_mouseOutHandler(event)" />
+		<s:BorderContainer x="2" y="38" id="borderImage3" backgroundImageFillMode="clip" styleName="backgroundImage" borderVisible="false" backgroundImage="{openIcon5}" width="15" height="15" mouseOver="bordercontainer_mouseOverHandler(event,helpText3)" mouseOut="bordercontainer_mouseOutHandler(event)" />
+		<s:BorderContainer x="73" y="38" id="borderImage4" backgroundImageFillMode="clip" styleName="backgroundImage" borderVisible="false" backgroundImage="{openIcon5}" width="15" height="15" mouseOver="bordercontainer_mouseOverHandler(event,helpText4)" mouseOut="bordercontainer_mouseOutHandler(event)" />
+		<s:BorderContainer x="152" y="38" id="borderImage5" backgroundImageFillMode="clip" styleName="backgroundImage" borderVisible="false" backgroundImage="{openIcon5}" width="15" height="15" mouseOver="bordercontainer_mouseOverHandler(event,helpText5)" mouseOut="bordercontainer_mouseOutHandler(event)" />
+		<s:BorderContainer x="228" y="38" id="borderImage6" backgroundImageFillMode="clip" styleName="backgroundImage" borderVisible="false" backgroundImage="{openIcon5}" width="15" height="15" mouseOver="bordercontainer_mouseOverHandler(event,helpText6)" mouseOut="bordercontainer_mouseOutHandler(event)" />
+		<s:BorderContainer x="2" y="60" id="borderImage7" backgroundImageFillMode="clip" styleName="backgroundImage" borderVisible="false" backgroundImage="{openIcon5}" width="15" height="15" mouseOver="bordercontainer_mouseOverHandler(event,helpText7)" mouseOut="bordercontainer_mouseOutHandler(event)" />
+		<s:BorderContainer x="2" y="82" id="borderImage8" backgroundImageFillMode="clip" styleName="backgroundImage" borderVisible="false" backgroundImage="{openIcon5}" width="15" height="15" mouseOver="bordercontainer_mouseOverHandler(event,helpText8)" mouseOut="bordercontainer_mouseOutHandler(event)" />
+		<s:BorderContainer x="2" y="103" id="borderImage9" backgroundImageFillMode="clip" styleName="backgroundImage" borderVisible="false" backgroundImage="{openIcon5}" width="15" height="15" mouseOver="bordercontainer_mouseOverHandler(event,helpText9)" mouseOut="bordercontainer_mouseOutHandler(event)" />
+		
+		<s:TextInput focusEnabled="true" x="20" y="58" width="280" height="22" contentBackgroundColor="#FDFFCB" id="txt7" visible="false"/>
+		<s:TextInput focusEnabled="true" x="20" y="80" width="280" height="22" contentBackgroundColor="#FECCFD" id="txt8" visible="false"/>
+		<s:TextInput focusEnabled="true" x="20" y="101" width="280" height="22" contentBackgroundColor="#CCCCFE" id="txt9" visible="false"/>
+		<mx:VRule x="226" y="0" height="36"/>
+		 
+		<mx:VBox styleName="border" borderStyle="solid" borderVisible="true" id="borderPopup" backgroundColor="#fefdB9" borderColor="0xFDD017" width="150" visible="false">
+			
+			<s:Label id="lblPop" textAlign="left" paddingLeft="5" paddingBottom="5" paddingRight="5" paddingTop="5" width="145" />
+			
+		</mx:VBox>
+
+		
+	</s:BorderContainer>
+	<mx:ColorPicker id="cp" showTextField="true" x="10" y="10" selectedColor="0xFFFFFF" visible="false"/>
+	<lblNodeName>
+		<mx:Text y="{myBorder.height + 10}" text="{nodeName}" selectable="false" left="1" right="1" textAlign="center"/>
+		
+	</lblNodeName>
+	<propertyPanel>
+		<mx:Canvas borderStyle="solid" backgroundColor="#FFFFFF" dropShadowVisible="true" cornerRadius="10">
+			
+		</mx:Canvas>		
+	</propertyPanel>
+	
+</BaseNode>

@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BaseNodeShort xmlns="com.anotherflexdev.diagrammer.*"
+			   xmlns:s="library://ns.adobe.com/flex/spark"
+			   xmlns:fx="http://ns.adobe.com/mxml/2009"
+			   xmlns:mx="library://ns.adobe.com/flex/mx"
+			   nodeName="" editable="false" textMargin="20" xmlns:buttons="com.anotherflexdev.ui.buttons.*" height="94">
+	<fx:Style>
+		@namespace  "com.anotherflexdev.diagrammer.*";
+		@namespace s "library://ns.adobe.com/flex/spark";
+		@namespace mx "library://ns.adobe.com/flex/mx";
+		@namespace buttons "com.anotherflexdev.ui.buttons.*";
+		.backgroundImage{
+			background-position : 0px 0px;
+		}
+		.border{ 
+			border-color : orange;
+		} 
+		.namestyle{
+			font-family:arial; 
+			font-size:15;
+			font-weight:bold;
+			vertical-align:bottom;
+			text-align:center;
+		}
+		.positionstyle{
+			font-family:arial;
+			font-size:14;
+			font-weight:bold;
+			vertical-align:top;
+			text-align:center;
+			padding-top:4;
+		}
+		.tableresultlabel{
+			font-weight:bold;
+			text-align:left;
+		}
+	</fx:Style>
+	<fx:Script>
+		<![CDATA[
+			import com.anotherflexdev.diagrammer.DiagramShort;
+			import com.salesforce.*;
+			import com.salesforce.objects.*;
+			import com.salesforce.results.*;
+			
+			import mx.controls.Alert;
+			import mx.controls.ColorPicker;
+			import mx.events.CloseEvent;
+			import mx.managers.PopUpManager;
+			
+			private var interval1:Number=0;
+			private var myMouseEvent:MouseEvent
+			private var mainMenu:Array = [];
+			private var myLabel:Label;
+			private var hasContact:Boolean;
+			[Bindable]public var sfdc:Connection = new Connection();
+			
+			[Bindable]public var item:Object = new Object();
+			[Bindable]public var color:uint;
+			[Bindable]public var accId:String = new String();
+			[Bindable]public var brokerId:String = new String();
+			[Bindable]public var arrContact:Array = new Array();
+			[Bindable] [Embed("assets/images/help1.png")] public var openIcon5:Class;
+			[Bindable] [Embed("assets/images/help2.png")] public var openIcon6:Class;
+			[Bindable] [Embed("assets/images/HoverTable.png")] public var hovtableIcon:Class;
+			
+			[Bindable] public var nwidth :Number = 160;
+			[Bindable] public var nheight:Number = 43;
+			[Bindable] public var pwidth :Number = nwidth + 4;
+			[Bindable] public var pheight:Number = nheight*2 + 8;
+			private function sfdcFailure(fault:Object):void {
+				Alert.show(fault.faultstring);
+			} 
+			
+			private function checkRecord(qr:QueryResult):void{
+				if(qr.size > 0) hasContact = true;
+				else hasContact = false;
+			}
+			
+			//************Node Components Functions*******************
+			protected function lblName_clickHandler(event:MouseEvent):void
+			{
+				if(DiagramShort(parent).isLinking){this.nodeContextPanelShort.visible=true;} 
+			}
+			
+			protected function lblName_doubleClickHandler(event:MouseEvent):void
+			{
+				clearInterval(interval1);
+				txtNam.visible = true;
+				lblName.setFocus();
+				txtNam.setFocus();
+				txtNam.addEventListener(KeyboardEvent.KEY_DOWN,
+					function(event:KeyboardEvent):void{
+						if(event.keyCode == Keyboard.ENTER){
+							lblName.text = txtNam.text;
+							txtNam.visible = false;
+						}
+					}
+				);
+				txtNam.addEventListener(FocusEvent.MOUSE_FOCUS_CHANGE,
+					function(event:FocusEvent):void{
+						lblName.text = txtNam.text
+						txtNam.visible = false;	
+					}
+				);
+			}
+			
+			protected function lblPosition_clickHandler(event:MouseEvent):void
+			{
+				if(DiagramShort(parent).isLinking){this.nodeContextPanelShort.visible=true;} 
+			}
+			
+			protected function lblPosition_doubleClickHandler(event:MouseEvent):void
+			{
+				clearInterval(interval1);
+				txtPos.visible = true;
+				lblPosition.setFocus();
+				txtPos.setFocus();
+				txtPos.addEventListener(KeyboardEvent.KEY_DOWN,
+					function(event:KeyboardEvent):void{
+						if(event.keyCode == Keyboard.ENTER){
+							lblPosition.text = txtPos.text;
+							txtPos.visible = false;
+						}
+					}
+				);
+				txtPos.addEventListener(FocusEvent.MOUSE_FOCUS_CHANGE,
+					function(event:FocusEvent):void{
+						lblPosition.text = txtPos.text
+						txtPos.visible = false;	
+					}
+				);
+			}
+			
+			protected function changeColor_handler(colorcode:String):void{
+				lblName.setStyle("backgroundColor",colorcode);
+				lblPosition.setStyle("backgroundColor",colorcode);
+				myBorder.setStyle("backgroundColor",colorcode);
+			}
+			
+			
+			//************Bubble Help Functions*******************
+			protected function bordercontainer_mouseOverHandler(event:MouseEvent,help:String):void{
+				var border:BorderContainer = BorderContainer(event.currentTarget);
+				borderPopup.visible = true;
+				lblPop.text = help;
+				borderPopup.x = border.x - 150;
+				borderPopup.y = border.y + 20;
+				//hovertablePanel.addEventListener(CloseEvent.CLOSE,function():void{PopUpManager.removePopUp(hovertablePanel);
+			}
+			
+			protected function bordercontainer_mouseOutHandler(event:MouseEvent):void{
+				//var border:BorderContainer = BorderContainer(event.currentTarget);
+				//borderPopup.visible = false;
+				
+			}
+			
+			//************Hover Table Functions*******************
+			[Bindable] private var hovwidth:int = 500; 
+			[Bindable] private var columnwidth:int =80;
+			[Bindable] private  var hovheight:int = 270;
+			[Bindable] private var firstcolwidth:int = hovwidth-(columnwidth*4);
+			[Bindable] private var arrvalues:Array = new Array("-","1","2","3","4","5","6","7","8","9","10");
+			[Bindable] private var ddlbasex:int = (hovwidth - firstcolwidth) /3;
+			protected function hovericon_mouseOverHandler(event:MouseEvent):void{
+				this.nodeContextPanelShort.visible = false;
+				
+				var border:GlowButton = GlowButton(event.currentTarget);
+				var childrensize:int = DiagramShort(parent).getChildren().length;
+				DiagramShort(parent).setChildIndex(this.nodeContextPanelShort,childrensize - 1);
+				DiagramShort(parent).setChildIndex(this,childrensize - 2);
+				
+				hovertablePanel.x = border.x + 2;
+				hovertablePanel.y = border.y - 2;
+				hovertablePanel.visible = true;
+				hovertablePanel.setFocus();
+				//DiagramShort(parent).addChild(this.hovertablePanel);
+				hovertablePanel.addEventListener(CloseEvent.CLOSE,function():void{hovertablePanel.visible=false;});
+				//hovertablePanel.addEventListener(FocusEvent.MOUSE_FOCUS_CHANGE,function():void{hovertablePanel.visible=false;});
+			}
+			
+			
+			protected function hovericon_mouseOutHandler(event:MouseEvent):void{
+				//this.nodeContextPanelShort.visible = true;
+				//var border:BorderContainer = BorderContainer(event.currentTarget);
+				//hovertablePanel.visible = false;
+				//DiagramShort(parent).removeChild(this.hovertablePanel);
+				
+			}
+			
+			protected function hovertable_mouseOutHandler(event:MouseEvent):void{
+				//this.hovertablePanel.visible = false;
+				//var border:BorderContainer = BorderContainer(event.currentTarget);
+				//hovertablePanel.visible = false;
+				//DiagramShort(parent).removeChild(this.hovertablePanel);
+				
+			}
+			
+			protected function hovertable_mouseOverHandler(event:MouseEvent):void{
+				this.nodeContextPanelShort.visible = false;
+				//var border:BorderContainer = BorderContainer(event.currentTarget);
+				//hovertablePanel.visible = true;
+				//DiagramShort(parent).removeChild(this.hovertablePanel);
+				
+			}
+			
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		
+		
+	</fx:Declarations>
+	
+	
+	
+	<s:BorderContainer name="myBorder" id="myBorder" y="0" horizontalCenter="0" width="{pwidth}" height="{pheight}" backgroundColor="#FDFDFD" borderWeight="2">
+		<s:Label styleName="namestyle" text="{item.textName}" x="0" y="0" width="{nwidth}" height="{nheight}" id="lblName" backgroundColor="#FFFFFF" doubleClickEnabled="true" click="lblName_clickHandler(event)" doubleClick="lblName_doubleClickHandler(event)" mouseOver="hovertable_mouseOutHandler(event)"/>
+		<s:TextInput borderVisible="false" focusEnabled="true" text="{item.textName}" x="0" y="0" width="{nwidth}" height="{nheight}" id="txtNam" visible="false" mouseOver="hovertable_mouseOutHandler(event)"/>
+		
+		<s:Label styleName="positionstyle" text="{item.textPosition}" x="0" y="{nheight}" width="{nwidth}" height="{nheight}" backgroundColor="#FFFFFF" id="lblPosition" doubleClickEnabled="true" click="lblPosition_clickHandler(event)" doubleClick="lblPosition_doubleClickHandler(event)" mouseOver="hovertable_mouseOutHandler(event)"/>
+		<s:TextInput borderVisible="false" focusEnabled="true" text="{item.textPosition}" x="0" y="{nheight}" width="{nwidth}" height="{nheight}" id="txtPos" visible="false" mouseOver="hovertable_mouseOutHandler(event)"/>
+		
+		<!--Color Seletor-->
+		<s:Button id="btnGreen" x="0" y="{pheight-3}"  width="{(nwidth)/5}" height="12" chromeColor="#C6EFCE" click="changeColor_handler('#C6EFCE');" mouseOver="hovericon_mouseOutHandler(event)"/>
+		<s:Button id="btnRed" x="{nwidth/5}" y="{pheight-3}"  width="{(nwidth)/5}" height="12" chromeColor="#FFC7CE" click="changeColor_handler('#FFC7CE');" mouseOver="hovericon_mouseOutHandler(event)"/>
+		<s:Button id="btnYellow" x="{(nwidth/5)*2}" y="{pheight-3}"  width="{(nwidth)/5}" height="12" chromeColor="#FFEB9C" click="changeColor_handler('#FFEB9C');" mouseOver="hovericon_mouseOutHandler(event)"/>
+		<s:Button id="btnGrey" x="{(nwidth/5)*3}" y="{pheight-3}"  width="{(nwidth)/5}" height="12" chromeColor="#A5A5A5" click="changeColor_handler('#A5A5A5');" mouseOver="hovericon_mouseOutHandler(event)"/>
+		<s:Button id="btnWhite" x="{(nwidth/5)*4}" y="{pheight-3}"  width="{(nwidth)/5}" height="12" chromeColor="#FFFFFF" click="changeColor_handler('#FFFFFF');" mouseOver="hovericon_mouseOutHandler(event)"/>
+		
+		<!--/Help Bubble/-->
+		<s:BorderContainer x="2" y="1" id="borderImage1" backgroundImageFillMode="clip" styleName="backgroundImage" borderVisible="false" backgroundImage="{openIcon5}" width="15" height="15" mouseOver="bordercontainer_mouseOverHandler(event,'')" mouseOut="bordercontainer_mouseOutHandler(event)" visible="false"/>
+		<mx:VBox styleName="border" borderStyle="solid" borderVisible="true" id="borderPopup" backgroundColor="#fefdB9" borderColor="0xFDD017" width="150" visible="false">
+			<s:Label id="lblPop" textAlign="left" paddingLeft="5" paddingBottom="5" paddingRight="5" paddingTop="5" width="145" />
+		</mx:VBox>
+		
+		<!--Hover Table Data Editor-->
+		
+		<buttons:GlowButton x="2" y="1" id="hovtable" width="18" height="22" source="{hovtableIcon}" click="hovericon_mouseOverHandler(event)" />
+		<s:TitleWindow title="Survey Table"
+					   horizontalCenter="0" verticalCenter="0"
+					   id="hovertablePanel"
+					   width="{hovwidth}"
+					   height="{hovheight + 20}"
+					   visible="false"
+					   mouseOver="hovertable_mouseOverHandler(event)"
+					   mouseOut="hovertable_mouseOutHandler(event)">
+			
+			<s:Label id="impo" x="{firstcolwidth}" y="5" width="{columnwidth}" textAlign="center" text="Importance" styleName="tableresultlabel"/>
+			<s:Label id="agcs" x="{firstcolwidth+ddlbasex}" y="5" width="{columnwidth}" textAlign="center" text="AGCS" styleName="tableresultlabel"/>
+			<s:Label id="best" x="{firstcolwidth+ddlbasex*2}" y="5" width="{columnwidth}" textAlign="center" text="Best-in-Class" styleName="tableresultlabel"/>
+			
+			<!--<Specific>-->
+			<s:Label id="lblspec" x="5" y="{hovheight/9}" width="{firstcolwidth-10}"  styleName="tableresultlabel" text="{item.textspec}"/>
+			<s:DropDownList id="impo_spec" x="{firstcolwidth}" y="{hovheight/9 - 6}" width="{columnwidth}"
+							requireSelection="true"
+							dropShadowVisible="true"
+							textAlign="center">
+				<s:dataProvider>
+					<s:ArrayList source="{arrvalues}"/>
+				</s:dataProvider>
+			</s:DropDownList>
+			
+			<s:DropDownList id="agcs_spec" x="{firstcolwidth+ddlbasex}" y="{hovheight/9 - 6}" width="{columnwidth}" 
+							requireSelection="true"
+							dropShadowVisible="true"
+							textAlign="center">
+				<s:dataProvider>
+					<s:ArrayList source="{arrvalues}"/>
+				</s:dataProvider>
+			</s:DropDownList>
+			
+			<s:DropDownList id="best_spec" x="{firstcolwidth+ddlbasex*2}" y="{hovheight/9 - 6}" width="{columnwidth}"
+							requireSelection="true"
+							dropShadowVisible="true"
+							textAlign="center">
+				<s:dataProvider>
+					<s:ArrayList source="{arrvalues}"/>
+				</s:dataProvider>
+			</s:DropDownList>
+			
+			<!--Relationship-->
+			<s:Label id="rela" x="5" y="{(hovheight/9)*2}"  width="{firstcolwidth}" styleName="tableresultlabel" text="Relationship" />
+			<s:DropDownList id="impo_rela" x="{firstcolwidth}" y="{(hovheight/9)*2 - 6}" width="{columnwidth}"
+							requireSelection="true"
+							dropShadowVisible="true"
+							textAlign="center">
+				<s:dataProvider>
+					<s:ArrayList source="{arrvalues}"/>
+				</s:dataProvider>
+			</s:DropDownList>
+			
+			<s:DropDownList id="agcs_rela" x="{firstcolwidth+ddlbasex}" y="{(hovheight/9)*2 - 6}" width="{columnwidth}"
+							requireSelection="true"
+							dropShadowVisible="true"
+							textAlign="center">
+				<s:dataProvider>
+					<s:ArrayList source="{arrvalues}"/>
+				</s:dataProvider>
+			</s:DropDownList>
+			
+			<s:DropDownList id="best_rela" x="{firstcolwidth+ddlbasex*2}" y="{(hovheight/9)*2 - 6}" width="{columnwidth}"
+							requireSelection="true"
+							dropShadowVisible="true"
+							textAlign="center">
+				<s:dataProvider>
+					<s:ArrayList source="{arrvalues}"/>
+				</s:dataProvider>
+			</s:DropDownList>
+			
+			<!--Offering-->
+			<s:Label id="offe" x="5" y="{(hovheight/9)*3}"  width="{firstcolwidth}" styleName="tableresultlabel" text="Offering" />
+			<s:DropDownList id="impo_offe" x="{firstcolwidth}" y="{(hovheight/9)*3 - 6}" width="{columnwidth}"
+							requireSelection="true"
+							dropShadowVisible="true"
+							textAlign="center">
+				<s:dataProvider>
+					<s:ArrayList source="{arrvalues}"/>
+				</s:dataProvider>
+			</s:DropDownList>
+			
+			<s:DropDownList id="agcs_offe" x="{firstcolwidth+ddlbasex}" y="{(hovheight/9)*3 - 6}" width="{columnwidth}"
+							requireSelection="true"
+							dropShadowVisible="true"
+							textAlign="center">
+				<s:dataProvider>
+					<s:ArrayList source="{arrvalues}"/>
+				</s:dataProvider>
+			</s:DropDownList>
+			
+			<s:DropDownList id="best_offe" x="{firstcolwidth+ddlbasex*2}" y="{(hovheight/9)*3 - 6}" width="{columnwidth}"
+							requireSelection="true"
+							dropShadowVisible="true"
+							textAlign="center">
+				<s:dataProvider>
+					<s:ArrayList source="{arrvalues}"/>
+				</s:dataProvider>
+			</s:DropDownList>
+			
+			<!--Business Understanding-->
+			<s:Label id="busi" x="5" y="{(hovheight/9)*4}"  width="{firstcolwidth}" styleName="tableresultlabel" text="Business Understanding" />
+			<s:DropDownList id="impo_busi" x="{firstcolwidth}" y="{(hovheight/9)*4 - 6}" width="{columnwidth}"
+							requireSelection="true"
+							dropShadowVisible="true"
+							textAlign="center">
+				<s:dataProvider>
+					<s:ArrayList source="{arrvalues}"/>
+				</s:dataProvider>
+			</s:DropDownList>
+			
+			<s:DropDownList id="agcs_busi" x="{firstcolwidth+ddlbasex}" y="{(hovheight/9)*4 - 6}" width="{columnwidth}"
+							requireSelection="true"
+							dropShadowVisible="true"
+							textAlign="center">
+				<s:dataProvider>
+					<s:ArrayList source="{arrvalues}"/>
+				</s:dataProvider>
+			</s:DropDownList>
+			
+			<s:DropDownList id="best_busi" x="{firstcolwidth+ddlbasex*2}" y="{(hovheight/9)*4 - 6}" width="{columnwidth}"
+							requireSelection="true"
+							dropShadowVisible="true"
+							textAlign="center">
+				<s:dataProvider>
+					<s:ArrayList source="{arrvalues}"/>
+				</s:dataProvider>
+			</s:DropDownList>
+			
+			<!--Service-->
+			<s:Label id="serv" x="5" y="{(hovheight/9)*5}"  width="{firstcolwidth}" styleName="tableresultlabel" text="Service" />
+			<s:DropDownList id="impo_serv" x="{firstcolwidth}" y="{(hovheight/9)*5 - 6}" width="{columnwidth}"
+							requireSelection="true"
+							dropShadowVisible="true"
+							textAlign="center">
+				<s:dataProvider>
+					<s:ArrayList source="{arrvalues}"/>
+				</s:dataProvider>
+			</s:DropDownList>
+			
+			<s:DropDownList id="agcs_serv" x="{firstcolwidth+ddlbasex}" y="{(hovheight/9)*5 - 6}" width="{columnwidth}"
+							requireSelection="true"
+							dropShadowVisible="true"
+							textAlign="center">
+				<s:dataProvider>
+					<s:ArrayList source="{arrvalues}"/>
+				</s:dataProvider>
+			</s:DropDownList>
+			
+			<s:DropDownList id="best_serv" x="{firstcolwidth+ddlbasex*2}" y="{(hovheight/9)*5 - 6}" width="{columnwidth}"
+							requireSelection="true"
+							dropShadowVisible="true"
+							textAlign="center">
+				<s:dataProvider>
+					<s:ArrayList source="{arrvalues}"/>
+				</s:dataProvider>
+			</s:DropDownList>
+			
+			<!--Terms&Conditions-->
+			<s:Label id="term" x="5" y="{(hovheight/9)*6}"  width="{firstcolwidth}" styleName="tableresultlabel" text="Terms and Conditions" />
+			<s:DropDownList id="impo_term" x="{firstcolwidth}" y="{(hovheight/9)*6 - 6}" width="{columnwidth}" 
+							requireSelection="true"
+							dropShadowVisible="true"
+							textAlign="center">
+				<s:dataProvider>
+					<s:ArrayList source="{arrvalues}"/>
+				</s:dataProvider>
+			</s:DropDownList>
+			
+			<s:DropDownList id="agcs_term" x="{firstcolwidth+ddlbasex}" y="{(hovheight/9)*6 - 6}" width="{columnwidth}"
+							requireSelection="true"
+							dropShadowVisible="true"
+							textAlign="center">
+				<s:dataProvider>
+					<s:ArrayList source="{arrvalues}"/>
+				</s:dataProvider>
+			</s:DropDownList>
+			
+			<s:DropDownList id="best_term" x="{firstcolwidth+ddlbasex*2}" y="{(hovheight/9)*6 - 6}" width="{columnwidth}"
+							requireSelection="true"
+							dropShadowVisible="true"
+							textAlign="center">
+				<s:dataProvider>
+					<s:ArrayList source="{arrvalues}"/>
+				</s:dataProvider>
+			</s:DropDownList>
+			
+			
+			<!--Claims-->
+			<s:Label id="clai" x="5" y="{(hovheight/9)*7}"  width="{firstcolwidth}" styleName="tableresultlabel" text="Claims" />
+			
+			<s:DropDownList id="impo_clai" x="{firstcolwidth}" y="{(hovheight/9)*7 - 6}" width="{columnwidth}" 
+							requireSelection="true"
+							dropShadowVisible="true"
+							textAlign="center">
+				<s:dataProvider>
+					<s:ArrayList source="{arrvalues}"/>
+				</s:dataProvider>
+			</s:DropDownList>
+			
+			<s:DropDownList id="agcs_clai" x="{firstcolwidth+ddlbasex}" y="{(hovheight/9)*7 - 6}" width="{columnwidth}" 
+							requireSelection="true"
+							dropShadowVisible="true"
+							textAlign="center">
+				<s:dataProvider>
+					<s:ArrayList source="{arrvalues}"/>
+				</s:dataProvider>
+			</s:DropDownList>
+			
+			<s:DropDownList id="best_clai" x="{firstcolwidth+ddlbasex*2}" y="{(hovheight/9)*7 - 6}" width="{columnwidth}"
+							requireSelection="true"
+							dropShadowVisible="true"
+							textAlign="center">
+				<s:dataProvider>
+					<s:ArrayList source="{arrvalues}"/>
+				</s:dataProvider>
+			</s:DropDownList>
+			
+			<!--Strategy Alignment-->
+			<s:Label id="stra" x="5" y="{(hovheight/9)*8}"  width="{firstcolwidth}" styleName="tableresultlabel" text="Strategy Alignment" />
+			
+			<s:DropDownList id="impo_stra" x="{firstcolwidth}" y="{(hovheight/9)*8 - 8}" width="{columnwidth}" 
+							requireSelection="true"
+							dropShadowVisible="true"
+							textAlign="center">
+				<s:dataProvider>
+					<s:ArrayList source="{arrvalues}"/>
+				</s:dataProvider>
+			</s:DropDownList>
+			
+			<s:DropDownList id="agcs_stra" x="{firstcolwidth+ddlbasex}" y="{(hovheight/9)*8 - 8}" width="{columnwidth}" 
+							requireSelection="true"
+							dropShadowVisible="true"
+							textAlign="center">
+				<s:dataProvider>
+					<s:ArrayList source="{arrvalues}"/>
+				</s:dataProvider>
+			</s:DropDownList>
+			
+			<s:DropDownList id="best_stra" x="{firstcolwidth+ddlbasex*2}" y="{(hovheight/9)*8 - 8}" width="{columnwidth}" 
+							requireSelection="true"
+							dropShadowVisible="true"
+							textAlign="center">
+				<s:dataProvider>
+					<s:ArrayList source="{arrvalues}"/>
+				</s:dataProvider>
+			</s:DropDownList>
+			
+		</s:TitleWindow>
+	</s:BorderContainer>
+	
+	<mx:ColorPicker id="cp" showTextField="true" x="10" y="10" selectedColor="0xFFFFFF" visible="false"/>
+	<lblNodeName>
+		<mx:Text y="{myBorder.height + 10}" text="{nodeName}" selectable="false" left="1" right="1" textAlign="center"/>
+	</lblNodeName>
+	<propertyPanel>
+		<mx:Canvas borderStyle="solid" backgroundColor="#FFFFFF" dropShadowVisible="true" cornerRadius="10"></mx:Canvas>		
+	</propertyPanel>
+</BaseNodeShort>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diagrammer:GenericLinkContextPanel xmlns:diagrammer="com.anotherflexdev.diagrammer.*" 
+									xmlns:mx="http://www.adobe.com/2006/mxml" 
+									cornerRadius="10" 
+									borderStyle="solid" 
+									dropShadowVisible="true" 
+									backgroundColor="#FFFFFF" 
+									width="166" 
+									height="112">
+	<mx:Script>
+		<![CDATA[
+			import com.anotherflexdev.diagrammer.LabelLinkEvent;
+			
+			import mx.collections.ArrayCollection;
+			import mx.controls.Alert;
+			import mx.events.ItemClickEvent;
+			import mx.events.ListEvent;
+			[Bindable] public var dataProvider:ArrayCollection;
+			
+			private function handleItemClick(event:ListEvent):void {
+				
+				dispatchEvent(new LabelLinkEvent(event.itemRenderer.data.label));
+			}
+			
+			private function handleRemoveMe(event:MouseEvent):void {
+				dispatchEvent(new Event('removeLink'));
+			}
+			
+		]]>
+	</mx:Script>
+	<mx:List left="3" right="3" top="10" bottom="35" dataProvider="{this.dataProvider}" labelField="label" borderStyle="none" textAlign="center" itemClick="handleItemClick(event)" verticalScrollPolicy="off" horizontalScrollPolicy="off">
+	</mx:List>
+	<mx:Button label="Remove Me" horizontalCenter="0" bottom="5" click="handleRemoveMe(event)"/>
+</diagrammer:GenericLinkContextPanel>

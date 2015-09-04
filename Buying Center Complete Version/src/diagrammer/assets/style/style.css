@@ -1,0 +1,66 @@
+/* CSS file */
+
+/*------------------------------------------------------------------------------ Fonts */
+
+
+@namespace diagrammer "com.anotherflexdev.diagrammer.*";
+diagrammer|Diagram
+{
+	borderSkin: ClassReference("diagrammer.skins.GridSkin");
+	
+	
+}
+
+diagrammer|BaseNode
+{
+	linkingGlowColor: #FFFFFF;
+	labelFontFamily : 'Verdana';
+	labelFontColor: #404040;
+	labelFontSize: 10;
+	labelFontWeight: regular;
+}
+
+diagrammer|Link
+{
+	template-bottom-line-color: #B3B3B3;
+	tempalte-line-color: #2B60DE;
+	tempalte-line-color2: #FF0000;
+	tempalte-line-color3: #00FF00;
+	bottom-line-color: #B3B3B3;
+	line-color: #2554C7;
+	line-color2: #C11B17;
+	line-color3: #4CC552;
+	labelFontFamily : 'Verdana';
+	labelFontColor: #FFFFFF;
+	labelFontSize: 10;
+	labelFontWeight: normal;
+	lineThickness: 2;
+}
+
+diagrammer|DiagramShort
+{
+	borderSkin: ClassReference("diagrammer.skins.GridSkin");
+	
+}
+
+diagrammer|BaseNodeShort
+{
+	linkingGlowColor: #FFFFFF;
+	labelFontFamily : 'Verdana';
+	labelFontColor: #404040;
+	labelFontSize: 10;
+	labelFontWeight: regular;
+}
+
+diagrammer|LinkShort
+{
+	template-bottom-line-color: #606860;
+	tempalte-line-color: #808080;
+	bottom-line-color: #606860;
+	line-color: #000000;
+	labelFontFamily : 'Verdana';
+	labelFontColor: #FFFFFF;
+	labelFontSize: 10;
+	labelFontWeight: normal;
+	lineThickness: 2;
+}
