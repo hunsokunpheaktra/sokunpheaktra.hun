@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+            
+            <!-- jquery mobile library -->
+            <link rel="stylesheet" href="./res/css/jquery.mobile-1.1.0.min.css" />
+            
+            <script type="text/javascript" src="./res/jquery/jquery-1.7.1.min.js"></script>
+            <script type="text/javascript" src="./res/jquery/jquery.mobile-1.1.0.min.js"></script>
+            
+            <!-- local usage -->
+            <link rel="stylesheet" href="./res/css/indexStyle.css" />
+            
+            <script type="text/javascript" src="js/Map.js"></script> 
+            <script type="text/javascript" src="js/date.format.js"></script> 
+            <script type="text/javascript" src="js/SyncCallPlugin.js"></script>    
+            <script type="text/javascript" src="jquery.mobile.listview.accordion.js"></script>    
+            <script type="text/javascript" src="js/json2.js"></script>    
+            <script type="text/javascript" charset="utf-8" src="js/cordova-1.6.1.js"></script>
+            <script type="text/javascript" charset="utf-8" src="js/DeviceManager.js"></script>
+            
+            <script>
+                
+                var isIphoneDevice = DeviceManager.isiPhone();
+
+                $(window).scroll(function(){
+                    setPositionPopup(jQuery.event.special.orientationchange.orientation());
+                });
+                
+                function setPositionPopup(orientation){
+                    var scrollpos = getScrollingPosition();
+                    var top = (window.innerHeight + scrollpos[1]);
+                    
+                    document.getElementById('block-ui').style.top = scrollpos[1]+"px";
+            
+                    if(orientation == "portrait"){
+                        document.getElementById('landing').style.top = top + "px";
+                        document.getElementById('inputForm').style.top = top + "px";
+                        
+                        if(!isIphoneDevice){
+                            document.getElementById('landing').style.marginTop = "-800px";
+                            document.getElementById('inputForm').style.marginTop = "-800px";
+                        }else{
+                            document.getElementById('landing').style.marginTop = "-400px";
+                            document.getElementById('inputForm').style.marginTop = "-300px";
+                        }
+                    }else{
+                        document.getElementById('landing').style.top = top + "px";
+                        document.getElementById('inputForm').style.top = top + "px";
+                        
+                        if(!isIphoneDevice){
+                            document.getElementById('landing').style.marginTop = "-100px";
+                            document.getElementById('inputForm').style.marginTop = "-600px";
+                        }else{
+                            document.getElementById('landing').style.marginTop = "-240px";
+                            document.getElementById('inputForm').style.marginTop = "-200px";
+                        }
+                    }
+                    
+                }
+                
+                function getScrollingPosition(){
+                    
+                    var position = [0,0];
+                    if (typeof window.pageYOffset != 'undefined'){
+                        position = [window.pageXOffset , window.pageYOffset];
+                    }else if (typeof document.documentElement.scrollTop != 'undefined' && document.documentElement.scrollTop > 0){
+                        position = [document.documentElement.scrollLeft , document.documentElement.scrollTop];
+                    }else if (typeof document.body.scrollTop != 'undefined'){
+                        position = [document.body.scrollLeft , document.body.scrollTop];
+                    }
+                    return position;
+                }
+                
+                $(window).bind('orientationchange', orientationHandler);
+                function orientationHandler(event){
+                    $("#header1").css({"width":$(window).width()+"px"});
+                    setPositionPopup(event.orientation);
+                }
+                
+            </script>
+            
+            <script type="text/javascript" charset="utf-8" src="js/database accessor/CascadingPickist.js"></script>
+            <script type="text/javascript" charset="utf-8" src="js/database accessor/EntityInfoManager.js"></script>
+            <script type="text/javascript" charset="utf-8" src="js/database accessor/EntityManager.js"></script>
+            <script type="text/javascript" charset="utf-8" src="js/database accessor/FieldInfoManager.js"></script>
+            <script type="text/javascript" charset="utf-8" src="js/database accessor/LayoutManager.js"></script>
+            <script type="text/javascript" charset="utf-8" src="js/database accessor/RelatedListManager.js"></script>
+            <script type="text/javascript" charset="utf-8" src="js/database accessor/RecordtypeMappingManager.js"></script>
+            
+            <script type="text/javascript">
+                
+                var currentList;
+                var currentIndex;
+                var mapRelatedListValue = new Map();
+                var currentItem;
+                var backList = [];
+                var pictureSource; 
+                var destinationType;
+                
+                function onBodyLoad()
+                {	
+                    document.addEventListener("deviceready", onDeviceReady, false);
+                    
+                }
+                function backToNative(){
+                    $("#main").children().remove();
+                    window.location.reload();
+                }
+                
+                function onDeviceReady()
+                {
+                    pictureSource = navigator.camera.PictureSourceType;
+                    destinationType = navigator.camera.DestinationType;
+                    
+                    SyncCallPlugin.nativeFunction(["SandBox","getPropertyValue"],null,null,"getPropertyValue");
+                    
+                    EntityManager.initData("Survey__c");
+                    EntityManager.initData("Event");
+                    
+                    FieldInfoManager.initInfo("Survey__c");
+                    FieldInfoManager.initInfo("Event");
+                    
+                    RelatedListManager.initRelatedListColumnInfo("Survey__c");
+                    RelatedListManager.initRelatedListColumnInfo("Event");
+                    
+                    CascadingPickist.initCascadingPicklist("Survey__c");
+                    CascadingPickist.initCascadingPicklist("Event");
+                    
+                    $("#loading").hide();
+                    $("#block-ui").hide();
+                    
+                }
+                
+                function update_list(entity,displayList) {
+                    
+                    document.getElementById('btnAdd').setAttribute("onClick","addNewRecord('"+entity+"','','')");
+                    
+                    $("#listContent").children().remove();
+                    
+                    for(var i=0;i<displayList.length;i++){
+                        var item = displayList[i];
+                        var subName = EntityManager.getTitle(entity,item);
+                        var li = $("<li />");
+                        
+                        li.append("<a onClick=openScreen('detail',"+i+",'"+entity+"')>"+subName+"</a>");
+                        
+                        if(isIphoneDevice){
+                            li.css({"font-size":"15px"});
+                        }
+        
+                        $("#listContent").append(li);
+                    }
+                    
+                    $("#listContent").listview("refresh");
+                }
+                
+                function changeListDisplay(entity){
+                    
+                    if(entity == "Survey__c"){
+                        document.getElementById('btnAdd').style.display = "block";
+                        document.getElementById('btnAdd').setAttribute("onClick","addNewRecord('Survey__c','','')");
+                    }else{
+                        document.getElementById('btnAdd').style.display = "none";
+                    }
+                    
+                    currentList = EntityManager.getData(entity);
+                    update_list(entity,currentList);
+                    
+                }
+                
+                function oneToOneRelationShipClickHandler (previousEntity,currentEntity,index,oldIndex) {
+                                    
+                    currentList = EntityManager.getData(currentEntity);
+                    currentIndex = index;
+                    currentItem = currentList[index];
+                    
+                    EntityManager.addListData(currentEntity,currentList);
+                    
+                    var recordTypeId = "012000000000000AAA";
+                    if (currentItem['RecordTypeId'] != null && currentItem['RecordTypeId'].length >0) {
+                        recordTypeId = currentItem['RecordTypeId'];
+                    }
+                    
+                    backList.push({pageName:"detail",entity:previousEntity,index:oldIndex,listItem:[],isFromEditAll:false});
+                    
+                    RelatedListManager.initRelatedListColumnInfo(currentEntity);
+                    FieldInfoManager.initInfo(currentEntity);
+                    
+                    LayoutManager.initLayout(currentEntity,recordTypeId,"detail",index,currentItem);
+                    detailViewClickHandler(0,currentEntity);
+                    document.getElementById('btnRelatedList').setAttribute("onClick","detailViewClickHandler(1,'"+currentEntity+"')");
+                    document.getElementById('btnEdit').setAttribute("onClick","openScreen('edit',"+index+",'"+currentEntity+"');"); 
+                    
+                    var value = EntityManager.getTitle(currentEntity,currentItem);
+                    var currentEntityLabel = EntityInfoManager.getEntityInfo (currentEntity)['label'];
+                    
+                    $("#header1 .ui-title").html(currentEntityLabel + "("+value+")");
+                    
+                }   
+                
+                function navigate2relation (entityName,index,oldIndex,key,parentEntity) {
+                    
+                    backList.push({pageName:"relatedListData",entity:parentEntity,index:oldIndex,listItem:[],isFromEditAll:false});
+                    
+                    document.getElementById('detailView').style.display = "block";
+                    document.getElementById('relatedListView').style.display = "none";
+                    document.getElementById('btnEdit').style.display = "block";
+                    document.getElementById('btnEditAll').style.display = "none";
+                    
+                    var recordTypeId;
+                    
+                    currentList = RelatedListManager.getRelatedListData(key);
+                    currentIndex = index;
+                    currentItem = currentList[index];
+                    
+                    EntityManager.addListData(entityName,currentList);
+            
+                    if (currentItem['RecordTypeId'] != null && currentItem['RecordTypeId'].length >0) {
+                        recordTypeId = currentItem['RecordTypeId'];
+                    }else {
+                        recordTypeId = "012000000000000AAA";
+                    }
+                    
+                  //  FieldInfoManager.initInfo(entityName);
+                    RelatedListManager.initRelatedListColumnInfo(entityName);
+                    
+                    LayoutManager.initLayout(entityName,recordTypeId,"detail",index,currentItem);
+                    detailViewClickHandler(0,entityName);
+                    
+                    //openScreen ('detail',index,entityName);
+                    document.getElementById('btnRelatedList').setAttribute("onClick","detailViewClickHandler(1,'"+entityName+"')");
+                    document.getElementById('btnEdit').setAttribute("onClick","openScreen('edit',"+index+",'"+entityName+"');");
+                    
+                    value = EntityManager.getTitle(entityName,currentItem);
+                    var currentEntityLabel = EntityInfoManager.getEntityInfo (entityName)['label'];
+                    $("#header1 .ui-title").html(currentEntityLabel + "("+value+")");
+                    
+                }
+                
+                function openScreen(name,index, entityName){
+                    $("#header1").css({"position":"fixed"});
+                    if(name == "main"){
+                        
+                        document.getElementById('listView').style.display = "block";
+                        document.getElementById('detailView').style.display = "none";
+                        document.getElementById('editView').style.display = "none";
+                        document.getElementById('btnEdit').style.display = "none";
+                        document.getElementById('btnSave').style.display = "none";
+                        document.getElementById('btnMenu').style.display = "block";
+                        document.getElementById('btnBack').style.display = "none";
+                        document.getElementById('preferenceView').style.display = "none";
+                        document.getElementById('btnAdd').style.display = "block";
+                        
+                        EntityManager.refreshData(entityName,false);
+                        
+                        detailViewClickHandler(0,entityName);
+                        if (entityName == "Event") document.getElementById('btnAdd').style.display = "none";
+                        
+                        $("#header1 .ui-title").html("RetailForce");
+                        
+                    }else if(name == "preference"){
+                        
+                        document.getElementById('listView').style.display = "none";
+                        document.getElementById('preferenceView').style.display = "block";
+                        document.getElementById('btnAdd').style.display = "none";
+                        document.getElementById('btnMenu').style.display = "none";
+                        document.getElementById('btnBack').style.display = "block";
+                        
+                        backList.push({pageName:"main",entity:"Survey__c",index:currentIndex,listItem:[],isFromEditAll:false});
+                        
+                        $("#select-choice-Menu :first-child").attr('selected','selected');
+                        $("#select-choice-Menu").selectmenu('refresh');
+                        $("#header1 .ui-title").html("Setting");
+                        
+                    }else if(name == "detail"){
+                        
+                        currentIndex = index;
+                        currentList = EntityManager.getData(entityName);
+                        currentItem = currentList[currentIndex];
+                        
+                        mapRelatedListValue = new Map();
+                        document.getElementById('listView').style.display = "none";
+                        document.getElementById('detailView').style.display = "block";
+                        document.getElementById('editView').style.display = "none";
+                        document.getElementById('btnEdit').style.display = "block";
+                        document.getElementById('btnSave').style.display = "none";
+                        document.getElementById('btnMenu').style.display = "none";
+                        document.getElementById('preferenceView').style.display = "none";
+                        document.getElementById('relatedListView').style.display = "none";
+                        document.getElementById('btnBack').style.display = "block";
+                        document.getElementById('btnAdd').style.display = "none";
+                        
+                        if (backList.length == 0) {
+                            backList.push({pageName:"main",entity:entityName,index:currentIndex,listItem:[],isFromEditAll:false});
+                        }    
+                        
+                        document.getElementById('btnEdit').setAttribute("onClick","openScreen('edit',"+index+",'"+entityName+"');"); 
+                        
+                        $("#detailDisplay").children().remove();
+                        
+                        var recordTypeId = "012000000000000AAA";
+                        if (currentItem['RecordTypeId'] != undefined) recordTypeId = currentItem['RecordTypeId'];
+                        
+                        document.getElementById('btnRelatedList').setAttribute("onClick","detailViewClickHandler(1,'"+entityName + "')");
+                    
+                        //viewRelatedList(entityName,currentItem['Id']);
+                        LayoutManager.initLayout(entityName,recordTypeId,"detail",index,currentItem);
+                        
+                        var value = EntityManager.getTitle(entityName,currentItem);
+                        var currentEntityLabel = EntityInfoManager.getEntityInfo(entityName)['label'];
+                        var header = currentEntityLabel + "(" + value + ")";
+                        
+                        $("#header1 .ui-title").html(header);
+                        
+                    } else if (name == "relatedListData") {
+                        
+                        document.getElementById('detailView').style.display = "none";
+                        document.getElementById('btnEdit').style.display = "none";
+                        document.getElementById('relatedListView').style.display = "block"; 
+                        
+                    } else{
+                    
+                        var entityItem = EntityInfoManager.getEntityInfo(entityName);
+                        if(entityItem == null){
+                            alert("No Layout Avaible Please Synchronize before add new record");
+                            goBack();
+                            return;
+                        }
+                        
+                        document.getElementById('listView').style.display = "none";
+                        document.getElementById('detailView').style.display = "none";
+                        document.getElementById('editView').style.display = "block";
+                        document.getElementById('btnEdit').style.display = "none";
+                        document.getElementById('btnSave').style.display = "block";
+                        document.getElementById('btnMenu').style.display = "none";
+                        document.getElementById('btnBack').style.display = "block";
+                        document.getElementById('preferenceView').style.display = "none";
+                        document.getElementById('btnAdd').style.display = "none";
+                        
+                        var header = "";
+                        var recordTypeId="012000000000000AAA";
+                        var mode = "edit";
+                        
+                        if(name == "Add"){
+                            
+                            mode = "add";
+                            var currentEntityLabel;
+                            currentEntityLabel = entityItem['label'];
+                            
+                            header = "New (";
+                            header += currentEntityLabel;
+                            header += ")";
+                            
+                        }else{
+                            var originalItem = $.extend(true, {}, currentItem);
+                            var title = EntityManager.getTitle(entityName,currentItem);
+                            
+                            backList.push({pageName:"detail",entity:entityName,index:currentIndex,listItem:[originalItem],isFromEditAll:false});
+                            
+                            header = "Edit (";
+                            header += title;
+                            header += ")";
+                            
+                        }
+                        
+                        document.getElementById('cancel').setAttribute("onClick","hideReferencePopup(false)");
+                        if (currentItem['RecordTypeId'] != undefined) recordTypeId = currentItem['RecordTypeId'];
+                        
+                        $("#header1 .ui-title").html(header);
+                        $("#editDisplay").children().remove();
+                        
+                        LayoutManager.initLayout(entityName,recordTypeId,mode,index,currentItem);
+                        document.getElementById('btnSave').setAttribute("onClick","saveHandler(false,'"+entityName+"','"+recordTypeId+"');"); 
+                        
+                    }
+                }
+                
+                function saveHandler(isAdd,entity,recordTypeId){
+                    var item = currentItem;
+                    
+                    if(!checkMadatoryInfo(entity,recordTypeId,item)){
+                        if(isAdd){
+                            EntityManager.insertData(entity,item);
+                        }else{
+                            EntityManager.updateData(entity,item);
+                        }
+                        EntityManager.refreshData(entity,true);
+                    }
+                }
+                
+                function saveAllRelatedListEdit(parentEntity,childName,parentId){
+                    
+                    var isSuccess = true;
+                    for(var i=0;i<currentList.length;i++){
+                        var item = currentList[i];
+                        var recordTypeId = "012000000000000AAA";
+                        if (item['RecordTypeId'] != undefined) recordTypeId = item['RecordTypeId'];
+                        
+                        if(!checkMadatoryInfo(childName,recordTypeId,item)){
+                            EntityManager.updateData(childName,item);
+                        }else{
+                            isSuccess = false;
+                            break;
+                        }
+                    }
+                    if(isSuccess){
+                        RelatedListManager.initRelatedListData(parentId,parentEntity,childName);
+                        goBack();
+                    }
+                    
+                }                
+                
+                function checkMadatoryInfo(entityName,recordTypeId,item){
+                    
+                    var mapLayoutInfo = LayoutManager.getLayoutInfo(entityName + recordTypeId);
+                    for (var x =0 ; x < mapLayoutInfo.size() ; x++){
+                        var key = mapLayoutInfo.keySet()[x];
+                        var layoutItem = mapLayoutInfo.get(key);
+                        var fieldName = layoutItem["value"];
+                        var value = item[fieldName];
+
+                        //**** check cascading picklist value
+                        var info = FieldInfoManager.getFieldInformation (entityName,fieldName,'name');
+                        if(info != undefined){
+                            if (info['type'] == "picklist" && info['controllerName']!= null && info['controllerName'].length >0){
+                            
+                                var controllerVal = item[info['controllerName']];
+                                var mapPicklistConval = CascadingPickist.getMapCascad(entityName+fieldName+info['controllerName']);
+                                var picklistValues = mapPicklistConval.get(controllerVal);
+                                if (picklistValues == null)  continue;
+                                
+                            }
+                        }
+                        //****
+                        if(layoutItem["required"] == 'true'){
+                            if(value == undefined || $.trim(value) == ""){
+                                var labelField = FieldInfoManager.getFieldLabel(entityName,fieldName);
+                                alert("Please Enter " + labelField);
+                                return true;
+                            }
+                        }
+                        
+                    }
+                    return false;
+                    
+                }
+                
+                function detailViewClickHandler(index,entityName){
+                    
+                    if(index == 0){
+                        document.getElementById('detailDisplay').style.display = "block";
+                        document.getElementById('detailRelatedListDisplay').style.display = "none";
+                        $("#btnDetail").removeClass().addClass("ui-btn-active ui-btn ui-btn-inline ui-btn-up-c");
+                        $("#btnRelatedList").removeClass().addClass("ui-btn ui-btn-inline ui-btn-up-c");
+                    }else{
+                        document.getElementById('detailRelatedListDisplay').style.display = "block";
+                        document.getElementById('detailDisplay').style.display = "none";
+                        $("#btnDetail").removeClass().addClass("ui-btn ui-btn-inline ui-btn-up-c");
+                        $("#btnRelatedList").removeClass().addClass("ui-btn-active ui-btn ui-btn-inline ui-btn-up-c");
+                        displayRelatedList(entityName);
+                    }
+                    
+                }
+                
+                function goBack(){ 
+                    
+                    $("#selectMenu").hide();
+                    
+                    var backItem = backList.pop();
+                    var pageName = backItem['pageName'];
+                    var index = backItem['index'];
+                    var entityName = backItem['entity'];
+                    var listItems = backItem['listItem'];
+                    
+                    document.getElementById('btnEditAll').style.display = "none";
+                    if(backItem['isFromEditAll']){
+                        document.getElementById('detailNavbar').style.display = "block";
+                        document.getElementById('btnSaveAll').style.display = "none";
+                        document.getElementById('btnEdit').style.display = "block";
+                        
+                        if(listItems.length > 0){
+                            var key = listItems.pop();
+                            RelatedListManager.putRelatedListData(key,listItems);
+                        }
+                    }else{
+                        
+                        if(listItems.length > 0){
+                            currentList[currentIndex] = listItems[0];
+                        }
+                    }
+                    if(pageName == "relatedList"){
+                        realtedListShowAllChildren(backItem['childName'],entityName,backItem['parentId']);
+                    }else{
+                        openScreen(pageName,index, entityName);
+                        if(pageName == "relatedListData"){
+                            document.getElementById('btnEditAll').style.display = "block";
+                        }
+                        displayRelatedList(entityName);
+                    }
+                }
+                
+                function addNewRecord(entityName,childName,parentId){
+                    
+                    currentItem = {};
+                    
+                    var entity = entityName;
+                    if (parentId == "") {
+                        backList.push({pageName:"main",entity:entityName,index:currentIndex,listItem:[],isFromEditAll:false});
+                    }else{
+                        entity = childName;
+                        backList.push({pageName:"relatedList",entity:entityName,index:currentIndex,listItem:[],childName:childName,parentId:parentId,isFromEditAll:true});
+                        
+                        var relationInfo = RelatedListManager.getRelationShipInfo(entityName,childName);
+                        currentItem[relationInfo['field']] = parentId;
+                        
+                    }
+                    
+                    //currentIndex = -1;
+                    document.getElementById('cancel').setAttribute("onClick","hideReferencePopup(true)");
+                    RecordtypeMappingManager.initRecordType(entity,currentItem);
+                    
+                }
+            
+                function hideReferencePopup(isAdd){
+                    if(isAdd){
+                        var backItem = backList.pop();
+                        currentIndex = backItem['index'];
+                    }
+                    $("#block-ui").hide();
+                    $("#landing").hide();
+                }
+                
+                function getPropertyValue(propertyName,value){
+                    
+                    var valueName = value == "yes" ? "Sandbox" : "Developer";
+                    //sandbox
+                    if(value == "no"){
+                        $("#selectMenuItem1").removeClass().addClass("ui-btn ui-btn-icon-right ui-btn-active ui-li ui-btn-up-c");
+                        $("#selectMenuItem2").removeClass().addClass("ui-btn ui-btn-icon-right ui-li ui-btn-up-c");
+                    }else{
+                        $("#selectMenuItem2").removeClass().addClass("ui-btn ui-btn-icon-right ui-btn-active ui-li ui-btn-up-c");
+                        $("#selectMenuItem1").removeClass().addClass("ui-btn ui-btn-icon-right ui-li ui-btn-up-c");
+                    }
+                    
+                    $("#environmentText").html(valueName);
+                    
+                }
+                
+                $("#main").live("pageinit",function(event){
+                    $("#loading").show();
+                    $("#block-ui").show();
+                });
+                
+                //////////////// ************ RelatedList Draw Section ************* ///////////////
+                function viewRelatedList(parentEntity,parentId) { 
+                    if (parentId == undefined) return; 
+                    var mapCol = RelatedListManager.getRelatedListColumnInfo(parentEntity);
+                    for (var n =0; n < mapCol.keySet().length; n++) {
+                        
+                        var childName = mapCol.keySet()[n];
+                        RelatedListManager.initRelatedListData(parentId,parentEntity,childName);
+                        RelatedListManager.initRelationShipInfo(parentEntity,childName);
+                
+                    }
+                }
+                
+                function realtedListShowAllChildren(relatedName,entityName,parentId){
+                    
+                    backList.push({pageName:"detail",entity:entityName,index:currentIndex,listItem:[],isFromEditAll:false});
+                    $("#detailRelatedListDisplay").children().remove();
+                    $("#relatedlistContent").children().remove();
+                    
+                    document.getElementById('detailView').style.display = "none";
+                    document.getElementById('btnEdit').style.display = "none";
+                    document.getElementById('relatedListView').style.display = "block";
+                    document.getElementById('btnEditAll').style.display = "block";
+                    document.getElementById('relatedlistnavbar').style.display = "block";
+                    document.getElementById('editView').style.display = "none";
+                    document.getElementById('btnSave').style.display = "none"; 
+                    
+                    document.getElementById('btnEditAll').setAttribute("onClick","realtedListEditAllClickHandler('"+relatedName+"','"+entityName+"','"+parentId+"')");
+                    
+                    var childName = RelatedListManager.getLabelOfRelatedObjectName(entityName,relatedName);
+                    
+                    $("#relatedlistContent").children().remove();
+                    $("#btnRelatedName").children().remove();
+                    
+                    var spanNew = $("<span class='buttonsNew' />");
+                    var buttonNew = $("<a class='button white' />").html("New");
+                    buttonNew.attr("onClick","addNewRecord('"+entityName+"','"+relatedName+"','"+parentId+"')");
+                    
+                    spanNew.append(buttonNew);
+                    
+                    var spanText = $("<span class='relatedListHeaderText' />").html(childName);
+                    
+                    $("#btnRelatedName").append(spanNew);
+                    $("#btnRelatedName").append(spanText);
+                    
+                    FieldInfoManager.initInfo(relatedName);
+                    var displayList = RelatedListManager.getRelatedListData(entityName+relatedName+parentId);
+                    for(var i=0;i<displayList.length;i++){
+                        var item = displayList[i];
+                        var subName = EntityManager.getTitle(relatedName,item);
+                        var li = $("<li />");
+                        
+                        if(isIphoneDevice){
+                            var a = $("<a />").html(subName);
+                            a.attr("onClick","navigate2relation('"+relatedName+"','"+i+"','"+currentIndex+"','"+entityName+relatedName+parentId+"','"+entityName+"')");
+                            
+                            li.append(a);
+                        }
+                        $("#relatedlistContent").append(li);
+                    }
+                    $("#relatedlistContent").listview("refresh");
+                }
+                
+                function displayRelatedList(entityName){
+                    
+                    $("#detailRelatedListDisplay").children().remove();
+                    
+                    var mapCol = RelatedListManager.getRelatedListColumnInfo(entityName);
+                    var parentId = currentList[currentIndex]['Id'];
+                    
+                    if (parentId == undefined) return;
+                    for (var n =0; n < mapCol.keySet().length; n++) {
+                        
+                        var relatedName = mapCol.keySet()[n];
+                        var nbRecord  = RelatedListManager.getRelatedListData(entityName + relatedName + parentId).length;
+                        var childName = RelatedListManager.getLabelOfRelatedObjectName(entityName,relatedName) + "("+nbRecord+")";
+                        
+                        if(isIphoneDevice){
+                            
+                            var li = $("<li />");
+                            var buttonId = "relatedListButton" + n;
+                            var a = $("<a data-role='button' id='"+buttonId+"' />").html(childName);
+                            a.attr("onClick","realtedListShowAllChildren('"+relatedName+"','"+entityName+"','"+parentId+"')");
+                            li.append(a);
+                            li.append("<a />");
+                            
+                            $("#detailRelatedListDisplay").append(li);
+                            
+                        }else{
+                            
+                            var liHead = $("<li data-icon='false' class='ui-li-accordion-head' />");
+                            var buttonId = "relatedListButton" + n;
+                            var a = $("<a data-role='button' id='"+buttonId+"' />").html(childName);
+                            var span = $("<span class='buttons' />");
+                            var buttonNew = $("<a class='button white' />").html("New");
+                            var buttonEdit = $("<a class='button white' />").html("Edit All");
+                            
+                            liHead.append(a);
+                            buttonNew.attr("onClick","addNewRecord('"+entityName+"','"+relatedName+"','"+parentId+"')");
+                            buttonEdit.attr("onClick","realtedListEditAllClickHandler('"+relatedName+"','"+entityName+"','"+parentId+"')");
+                            
+                            span.append(buttonNew);
+                            span.append(buttonEdit);
+                            
+                            liHead.append(span);
+                            
+                            var liContent = $("<li />");
+                            var divContent = $("<div class='ui-li-accordion' />");
+                            var content = $("<li />");
+                            
+                            content.append(drawRealtedList(relatedName,entityName,parentId));
+                            
+                            divContent.append(content);
+                            liContent.append(divContent);
+                            
+                            $("#detailRelatedListDisplay").append(liHead);
+                            $("#detailRelatedListDisplay").append(liContent);
+                            
+                        }
+                        
+                    }
+                    $("#detailRelatedListDisplay").listview("refresh");
+                }
+                
+                function realtedListEditAllClickHandler(childName,entityName,parentId){
+                    
+                    $("#editDisplay").children().remove();
+                    //$("#relatedListView").children().remove();
+                    $("#relatedlistContent").children().remove();
+                    
+                    var key = entityName + childName + parentId;
+                    var listData = RelatedListManager.getRelatedListData(key);
+                    var originalListData = $.extend(true, [], listData);
+                    
+                    currentList = listData;
+                    originalListData.push(key);
+                    
+                    document.getElementById('btnSaveAll').setAttribute("onClick","saveAllRelatedListEdit('"+entityName+"','"+childName+"','"+parentId+"');");
+                    
+                    backList.push({pageName:"relatedList",entity:entityName,index:currentIndex,listItem:originalListData,childName:childName,parentId:parentId,isFromEditAll:true});
+                    LayoutManager.initRelatedListLayout(childName,"edit",listData);
+                    
+                    var currentEntityLabel = EntityInfoManager.getEntityInfo (childName)['label'];
+                    
+                    //$("#header1 .ui-title").html("Edit All " + currentEntityLabel);
+                    
+                    document.getElementById('relatedlistnavbar').style.display = "none";
+                    document.getElementById('btnSaveAll').style.display = "block";
+                    document.getElementById('btnEdit').style.display = "none";
+                    document.getElementById('btnEditAll').style.display = "none";
+                    
+                }
+                
+                //relatedlist table
+                function drawRealtedList(childName,entityName,parentId) {  
+                    var lisData = RelatedListManager.getRelatedListData(entityName+childName+parentId);
+                    var listColumns = RelatedListManager.getRelatedListColumnInfo(entityName);
+                    var listColInfo = [];
+                    for (var x = 0; x < listColumns.get(childName).length; x++){ 
+                        if (listColumns.get(childName)[x]['sobject'] == childName) 
+                        listColInfo.push (listColumns.get(childName)[x]);
+                    }
+                    
+                    var divTable =  $("<div />") ;    
+                    var tbl =  $("<table />");
+                    tbl.addClass("sample");
+                    
+                    var tBody = $("<tBody />");
+                    var mapTypeFiled = new Map ();
+                    
+                    for (var i = 0; i < lisData.length; i++) {
+                        var tr = $("<tr />");
+                        tr.addClass("alt");
+                        
+                        for (var k = 0; k < listColInfo.length; k++) {
+                            var colName = listColInfo[k]['name'];
+                            
+                            if (colName.indexOf('toLabel(') > -1 ) {
+                                colName = colName.replace('toLabel(','');
+                                colName = colName.substr(0,colName.length-1);
+                            }
+                            
+                            colName = colName.split('.');
+                            
+                            if (colName.length == 1) {
+                                var tmField = FieldInfoManager.getFieldInformation(listColInfo[k]['sobject'],colName[0],'name');
+                                mapTypeFiled.put(k,tmField['type']);
+                            }
+                            
+                            var valueDisplay = '';
+                            var findValItem = lisData[i];
+                            var findingObj = listColInfo[k]['sobject']; 
+                            var findingValId = '';
+                            var isStop = false;
+                            
+                            for (var n = 0 ; n < colName.length-1 ; n++) {
+                                var str = $.trim(colName[n]);
+                                str = str.substr(str.length-3,str.length);
+                                
+                                if (str == '__c') {
+                                    
+                                    var tmField = FieldInfoManager.getFieldInformation(findingObj,colName[n],'name');
+                                    var keyPrefix;
+                                    var findRef;
+                                    
+                                    if (findValItem[colName[n]] != undefined) findingValId = findValItem[colName[n]];
+                                    if (findingValId.length > 0) keyPrefix = findingValId.substr(0,3);
+                                    if (keyPrefix != null) findRef = EntityInfoManager.findEntityInfo(keyPrefix)['name'];
+                                    if (keyPrefix == null || findRef == undefined) findRef = tmField['referenceTo'];
+                                    
+                                    var tm = FieldInfoManager.getReferenceName(findRef,findingValId);
+                                    findValItem = tm.get('item'); 
+                                    findingObj = tm.get('info')[0];
+                                    
+                                } else {
+                                    
+                                    var tmField = FieldInfoManager.getFieldInformation(findingObj,colName[n],'relationshipName');
+                                    if (findValItem[tmField['name']] != undefined) findingValId = findValItem[tmField['name']];
+                                    
+                                    var keyPrefix;
+                                    var findRef;
+                                    
+                                    if (findingValId.length > 0) keyPrefix = findingValId.substr(0,3);
+                                    if (keyPrefix != null) findRef = EntityInfoManager.findEntityInfo(keyPrefix)['name'];
+                                    if (keyPrefix == null || findRef == undefined) findRef = tmField['referenceTo'];
+                                    
+                                    var tm = FieldInfoManager.getReferenceName(findRef,findingValId);
+                                    if ( findingValId.length >0 && tm != -1) {
+                                        findValItem = tm.get('item'); 
+                                        findingObj = tm.get('info')[0]; 
+                                    }else {
+                                        var tmField = FieldInfoManager.getFieldInformation(listColInfo[k]['sobject'],colName[0],'relationshipName');
+                                        if (lisData[i][tmField['name']] != undefined) valueDisplay = lisData[i][tmField['name']];
+                                        
+                                        isStop = true;
+                                        break;
+                                    }
+                                    
+                                }
+                                
+                            }
+                            
+                            if (!isStop && findValItem[colName[colName.length-1]] != undefined) 
+                                valueDisplay = findValItem[colName[colName.length-1]];
+                            
+                            if ( mapTypeFiled.get(k) == 'datetime' || mapTypeFiled.get(k) == 'date') {
+                                if (mapTypeFiled.get(k) == 'datetime') {
+                                    valueDisplay = dateFormat(valueDisplay, "dd/mm/yyyy hh:MM TT","UTC:yyyy-mm-dd'T'HH:MM:ss'Z'");
+                                }   
+                            }
+                            
+                            var label = $("<label />").html(valueDisplay);    
+                            label.attr ("onClick","navigate2relation('"+childName+"','"+i+"','"+currentIndex+"','"+entityName+childName+parentId+"','"+entityName+"')");
+                            
+                            if(k == 0)label.css({"color":"blue","border-bottom":"1px solid","width":"auto"});
+                            
+                            var td = $("<td />");
+                            
+                            if (mapTypeFiled.get(k) == 'double' || mapTypeFiled.get(k)  == 'int' || mapTypeFiled.get(k)  == 'currency'){
+                                td.css ({'text-align':'right'});
+                            }
+                            
+                            td.append(label);
+                            td.css({"padding":"2px"});
+                            
+                            tr.append(td);
+                            
+                        }   
+                        
+                        tBody.append(tr);
+                        tbl.append(tBody);
+                        
+                    }
+                    
+                    var thead = $("<tHead />");
+                    var tTr = $("<tr />");
+                    
+                    for (var i = 0; i < listColInfo.length; i++) {    
+                        var type = mapTypeFiled.get(i);
+                        var tdH1 = $("<th />").html(listColInfo[i]['label']);
+                        
+                        if (type == 'double' || type == 'int' || type == 'currency') {
+                            tdH1.css ({'text-align':'right'});
+                        }
+                        
+                        tTr.append(tdH1);
+                    }
+                    
+                    thead.append(tTr);
+                    tbl.append(thead);
+                    divTable.append(tbl);
+                    
+                    return divTable;
+                    
+                } 
+                
+                function openEnvironmentList(e){
+                    
+                    e.stopPropagation();
+                    $("#selectMenu").show();
+                    
+                }
+                
+                function clearData(){
+                    if(confirm("Are you sure to clear data ?")){
+                        SyncCallPlugin.nativeFunction(["backToNative"],null,null,"clearData");
+                    }
+                }
+                
+                $(document).ready(function(){
+                    
+                    $('#main').bind('hideOpenMenus', function(){
+                        $("#mainMenu").hide();
+                        $("#selectMenu").hide();
+                    }); 
+                    var menuHandler = function(e) {
+                        $('#main').trigger('hideOpenMenus');
+                        $("#mainMenu").show();
+                        e.stopPropagation();
+                    };
+                                  
+                    var environmentHandler = function(e) {
+                        $('#main').trigger('hideOpenMenus');
+                        $("#selectMenu").show();
+                        e.stopPropagation();
+                    };
+                    
+                    $("#selectMenu ul li").click(function(e) {
+                        var value = $(this).find('a').html();
+                        $("#selectMenu").find(".ui-btn-active").removeClass().addClass("ui-btn ui-btn-icon-right ui-li ui-btn-up-c");;
+                        $(this).removeClass().addClass("ui-btn ui-btn-icon-right ui-btn-active ui-li ui-btn-up-c");
+                        $("#environmentText").html(value);
+                                                 
+                        SyncCallPlugin.nativeFunction([value],null,null,"updateEnvironment");
+                    });                            
+                    
+                    $("#mainMenu ul li").click(function(e) {
+                        var value = $(this).find('a').html();
+                        $('#main').trigger('hideOpenMenus');
+                        if(value == "Synchronize"){
+                            SyncCallPlugin.nativeFunction([],null,null,"openSynchronizeScreen");  
+                        }else{
+                            openScreen("preference", 0 , '');
+                        }
+                        e.stopPropagation();
+                    });
+                                  
+                    $('#main').delegate("#btnHost",'click',environmentHandler);
+                    $('#main').delegate("#btnMenu",'click',menuHandler);
+                    $('#main').click(function(e){
+                        $('#main').trigger('hideOpenMenus');
+                    });
+                                  
+                    $(".ui-mobile .ui-page .ui-content .ui-collapsible .ui-collapsible-heading .ui-btn-text").css({"margin-left":"-20px","font-size":"12pt"});
+                      
+                    if(isIphoneDevice){
+                        //navbar setting
+                        $("#btnSurvey").css({"font-size":"14px"});
+                        $("#btnEvent").css({"font-size":"14px"});
+                        $("#btnDetail").css({"font-size":"14px"});
+                        $("#btnRelatedList").css({"font-size":"14px"});
+                        
+                        $("#header1").css({"z-index":"5"});
+                        $("#header1 .ui-title").css({"font-size":"16px","margin":"16px 27% 16px 28%"});
+                        $("#header1 .ui-btn").css({"margin-top":"6px"});
+                          
+                        $("#landing").css({"width":"260px","margin-left":"-140px"});
+                        
+                        $("#previewForm").css({"width":"87%","margin-left":"-44%","margin-top":"-48.5%","height":"33%"});
+                        $("#inputForm").css({"width":"270px","margin-left":"-140px"});
+                        $("#attachmentName").css({"width":"170px","margin-left":"10px"});
+                
+                    }else{ 
+                        //title setting
+                        $("#header1 .ui-title").css({"font-size":"15pt","margin-top":"14px"});
+                        $("#header1 .ui-btn").css({"height":"35px","margin-top":"5px"});
+                        $("#header1 .ui-btn-icon-left .ui-icon, .ui-footer .ui-btn-icon-left .ui-icon, .ui-mini.ui-btn-icon-left .ui-icon, .ui-mini .ui-btn-icon-left .ui-icon").css({"left":"5px","top":"17px"});
+                        $("#header1 .ui-btn .ui-btn-inner .ui-btn-text").css({"font-size":"11pt","top":"1px"});
+                          
+                        $("#relatedListDisplay li").css({"width":"350px"});
+                        $("#landing").css({"margin-left":"-180px"});          
+                          
+                        $("#inputForm").css({"width":"600px"});          
+                        $("#attachmentName").css({"width":"274px","margin-left":"-20px"});
+                          
+                    }
+                      
+                });
+                
+                /////********** camera section *******///////////
+                function capturePhoto(parentId) {
+                    $("#block-ui").show();
+                    $("#inputForm").show();
+                    
+                    document.getElementById('saveName').setAttribute("onClick","takePhoto('"+parentId+"')");
+                    
+                }
+                
+                function takePhoto(parentId){
+                    
+                    var value = document.getElementById('attachmentName').value;
+                    
+                    if($.trim(value) == ""){
+                        alert("Please Input attachment name !");
+                    }else{
+                        // Take picture using device camera and retrieve image as base64-encoded string
+                        navigator.camera.getPicture(function onPhotoDataSuccess(imageUrl){
+                                                    
+                            var smallImage = document.getElementById('smallImage');
+                            smallImage.style.display = 'block';
+                            smallImage.src = imageUrl;
+                            SyncCallPlugin.nativeFunction([imageUrl,parentId,value],null,null,"savePicture");  
+                                                    
+                        }, onFail, { quality: 50 });
+                        
+                        cancelInputForm();
+                    }
+                    
+                }
+                
+                function cancelInputForm(){
+                    $("#block-ui").hide();
+                    $("#inputForm").hide();
+                }
+                
+                function closePreview(){
+                    $("#block-ui").hide();
+                    $("#previewForm").hide();
+                }
+                
+                function onFail(message) {
+                    
+                    if(message != "no image selected"){
+                        alert(message);
+                    }
+                }
+                
+                </script>
+            </head>
+    
+    <body onload="onBodyLoad()">
+        
+        <div id="block-ui"></div>
+        <div class="ui-loader ui-corner-all ui-body-a ui-loader-verbose" id="loading">
+            <img class="loadingAnimation" src="res/css/images/ajax-loader.gif" />
+            <h1 style="margin-top:10px;">Loading...</h1>
+        </div>
+        <div data-role="page" id="main">
+            
+            <div data-role="header" data-theme="b" data-position="fixed" id="header1">   
+                
+                <h1>RetailForce</h1>
+            
+                <a data-icon="grid" id="btnMenu" class="ui-btn-left">Menu</a>
+                <a data-icon="plus" id="btnAdd" class="ui-btn-right">New</a>
+                
+                <a id="btnBack" class="ui-btn-left" data-icon="back" onClick="goBack()" data-rel="back" style="display:none;">Back</a>
+                <a data-icon="arrow-r" data-iconpos="right" id="btnEdit" class="ui-btn-right" style="display:none;">Edit</a>
+                <a data-icon="arrow-r" id="btnEditAll" class="ui-btn-right" style="display:none;">EditAll</a>
+                <a data-icon="arrow-d" id="btnSaveAll" class="ui-btn-right" style="display:none;">Save All</a>
+                <a data-icon="arrow-d" id="btnSave" onClick="saveHandler()" class="ui-btn-right" style="display:none;">Save</a>
+            </div>
+            
+            <div id="mainMenu" class="ui-selectmenu ui-overlay-shadow ui-corner-all ui-body-a pop in">
+                 
+                 <ul data-theme="b" data-role="listview">
+                     <li data-icon="false"><a>Preferences</a></li>
+                     <li data-icon="false"><a>Synchronize</a></li>
+                 </ul>
+                 
+            </div>
+            
+            <!-- popup list for preference -->
+            <div id="selectMenu" class="ui-selectmenu ui-overlay-shadow ui-corner-all ui-body-a pop in" style="display:none;width:130px;">
+                
+                <ul class="ui-selectmenu-list ui-listview" id="preferenceListview" style="width:130px;">
+                    <li id="selectMenuItem1" class="ui-btn ui-btn-icon-right ui-btn-active ui-li ui-btn-up-c" onClick="changeActiveSelect('selectMenuItem1','selectMenuItem2','Developer')">
+                        <div class="ui-btn-inner ui-li">
+                            <div class="ui-btn-text">
+                                <a class="ui-link-inherit" style="font-size:15px;">Developer</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="selectMenuItem2" class="ui-btn ui-btn-icon-right ui-li ui-btn-up-c" onClick="changeActiveSelect('selectMenuItem2','selectMenuItem1','Sandbox')">
+                        <div class="ui-btn-inner ui-li">
+                            <div class="ui-btn-text">
+                                <a class="ui-link-inherit" style="font-size:15px;">SandBox</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                
+            </div>
+            
+            <div data-role="content">
+                
+                <!-- main view -->
+                <div id="listView">
+                    
+                    <div id = "navbar" data-role="navbar">
+                        <ul>
+                            <li><a id="btnSurvey" style="font-size:12pt;" data-role="button" class="ui-btn-active" onclick="changeListDisplay('Survey__c');">Surveys</a></li>
+                            <li><a id="btnEvent" style="font-size:12pt;" data-role="button" onclick="changeListDisplay('Event');">Events</a></li>
+                        </ul>
+                    </div>
+                    <ul data-role='listview' data-inset="true" style="margin-top:4px;" id="listContent" class="ui-listview"  data-split-theme="b" data-split-icon="delete">
+                        
+                    </ul>
+                </div>
+                
+                
+                <!--related list data view -->
+                <div id="relatedListView" style="display:none;">
+                    <div id = "relatedlistnavbar" data-role="navbar">
+                        <ul id="relatedNavBarItem">
+                            <li>
+                                <div id="btnRelatedName" class="ui-btn-active ui-grid-a" style="height:40px;">
+                            
+                                </div>   
+                            </li>
+                        </ul>    
+                    
+                    </div>
+                    
+                    <ul data-role='listview' data-inset="true" style="margin-top:4px;" id="relatedlistContent" class="ui-listview" data-split-theme="b" data-split-icon="delete">
+                    </ul>
+                
+                </div>    
+                
+                <!-- preference view -->
+                <div id="preferenceView" style="display:none;padding:0px 15px 10px 15px;">
+                    
+                    <ul data-role='listview' data-inset="true">
+                        
+                        <li data-role="list-divider">Environment</li>
+                        <li>
+                            <a id="btnHost" onClick="openEnvironmentList(event)">Host</a>
+                            <span id="environmentText" class="rightText">Developer</span>
+                        </li>
+                        <li data-role="list-divider">Access</li>
+                        <li data-icon="false" style="height:80px;">
+                            <a>Consumer Key</a>
+                            <input type="text" value="3MVG9CVKiXR7Ri5rTXLZxJVepcjPdLuBQoKQDuP8kLZL41dwlSW0n4xQbc0yB9VF.TKvTDdaNmEa9nZ_fW5vc" />
+                            
+                        </li>
+                        
+                    </ul>
+                    <span class="button1 red" onClick="clearData()">Clear Data</span>
+                    
+                </div>
+                
+                <!-- detail view -->
+                <div id="detailView" style="display:none;">
+                    <div data-role="navbar" id="detailNavbar">
+                        <ul>
+                            <li><a id="btnDetail" style="font-size:12pt;" id="btnDetail" data-role="button" onClick="detailViewClickHandler(0,'');" class="ui-btn-active">Detail</a></li>
+                            <li><a id="btnRelatedList" style="font-size:12pt;" id="btnRelatedList" data-role="button" onClick="detailViewClickHandler(1,'');">Related List</a></li>
+                        </ul>
+                    </div>
+                    <ul data-role='listview' data-inset="true" style="margin-top:4px;" id="detailDisplay" class="ui-listview">
+                        
+                    </ul>
+                    <ul data-role='listview' data-inset="true" data-theme="c" data-split-theme="b" data-split-icon="gear" style="margin-top:4px;display:none;" id="detailRelatedListDisplay" class="ui-listview"> 
+                        
+                    </ul>
+                    
+                </div>
+                
+                <!-- editView -->
+                <div style="display:none;" id="editView">
+                    <div data-role="fieldcontain">
+                        <ul data-role="listview" data-inset="true" style="margin :0px 0px;" id="editDisplay">
+                            
+                        </ul>        
+                    </div>		
+                </div>	
+                
+            </div><!-- close content -->
+            
+            <!-- popup list for combobox and reference type -->
+            <div id="landing" class="ui-selectmenu ui-overlay-shadow ui-corner-all ui-body-a pop in" style="display:none">
+                <div class="ui-header ui-bar-b">
+                    <h1 class="ui-title" id="header" style="font-size:15px;">Choose options</h1>
+                    <a id="cancel" class="ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-btn-up-b" onClick="hideReferencePopup();">
+                        <span class="ui-btn-inner ui-btn-corner-all">
+                            <span class="ui-btn-text"></span>
+                            <span class="ui-icon ui-icon-delete ui-icon-shadow"></span>
+                        </span>
+                    </a>
+                    
+                    <ul class="ui-selectmenu-list ui-listview" id="relatedListDisplay">
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Attachment Name enter form popup -->
+            <div id="inputForm" class="ui-selectmenu ui-overlay-shadow ui-corner-all ui-body-a pop in" style="display:none;">
+                <div class="ui-header ui-bar-b">
+                    <h1 class="ui-title">Enter Attachment Name</h1>
+                    <a onClick="cancelInputForm()" class="ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-btn-up-b" onClick="hideReferencePopup();">
+                        <span class="ui-btn-inner ui-btn-corner-all">
+                            <span class="ui-btn-text"></span>
+                            <span class="ui-icon ui-icon-delete ui-icon-shadow"></span>
+                        </span>
+                    </a>
+                </div>
+                <div data-role="fieldcontain" class="ui-field-contain ui-body">
+                    <label class="ui-input-text ui-block-a" style="margin-top:8px;">Name</label>
+                    <input id="attachmentName" type="text" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset ui-block-b" />
+                    <a data-role="button" id="saveName" class="ui-block-a" style="margin-left:25%;" data-theme="b" data-inline="true">Save</a>
+                    <a data-role="button" class="ui-block-b" data-theme="a" data-inline="true" onClick="cancelInputForm()">Cancel</a>
+                </div>
+                
+            </div>
+
+            <!-- image preview -->
+            <div id="previewForm" class="ui-popup-container ui-overlay-shadow pop in">
+                <div data-role="popup" data-overlay-theme="a" data-corners="false" data-shadow="true" data-transition="pop">
+                    <a onClick="closePreview()" class="ui-popup-btn-close ui-btn ui-btn-up-a ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-btn-right">
+                        <span class="ui-btn-inner ui-btn-corner-all">
+                            <span class="ui-icon ui-icon-delete ui-icon-shadow"></span>
+                        </span>
+                    </a>
+                    <img id="previewImage" width="99.5%" height="99.7%" style="margin:-30px 1px 1px 1px;" />
+                </div>
+            </div>
+
+        </div><!-- close page -->
+        
+    </body> 
+    
+</html>
